@@ -4,7 +4,7 @@
   <title><![CDATA[Juanito Fatas Huang]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-10-31T16:46:02+08:00</updated>
+  <updated>2011-10-31T17:07:38+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -39,7 +39,1048 @@
     <link href="http://JuanitoFatas.github.com/blog/2011/10/31/test/"/>
     <updated>2011-10-31T13:48:00+08:00</updated>
     <id>http://JuanitoFatas.github.com/blog/2011/10/31/test</id>
-    <content type="html"><![CDATA[<p>Liquid error: ClassNotFound: no lexer for alias &#8216;lisp&#8217; found</p>
+    <content type="html"><![CDATA[
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+<span class='line-number'>189</span>
+<span class='line-number'>190</span>
+<span class='line-number'>191</span>
+<span class='line-number'>192</span>
+<span class='line-number'>193</span>
+<span class='line-number'>194</span>
+<span class='line-number'>195</span>
+<span class='line-number'>196</span>
+<span class='line-number'>197</span>
+<span class='line-number'>198</span>
+<span class='line-number'>199</span>
+<span class='line-number'>200</span>
+<span class='line-number'>201</span>
+<span class='line-number'>202</span>
+<span class='line-number'>203</span>
+<span class='line-number'>204</span>
+<span class='line-number'>205</span>
+<span class='line-number'>206</span>
+<span class='line-number'>207</span>
+<span class='line-number'>208</span>
+<span class='line-number'>209</span>
+<span class='line-number'>210</span>
+<span class='line-number'>211</span>
+<span class='line-number'>212</span>
+<span class='line-number'>213</span>
+<span class='line-number'>214</span>
+<span class='line-number'>215</span>
+<span class='line-number'>216</span>
+<span class='line-number'>217</span>
+<span class='line-number'>218</span>
+<span class='line-number'>219</span>
+<span class='line-number'>220</span>
+<span class='line-number'>221</span>
+<span class='line-number'>222</span>
+<span class='line-number'>223</span>
+<span class='line-number'>224</span>
+<span class='line-number'>225</span>
+<span class='line-number'>226</span>
+<span class='line-number'>227</span>
+<span class='line-number'>228</span>
+<span class='line-number'>229</span>
+<span class='line-number'>230</span>
+<span class='line-number'>231</span>
+<span class='line-number'>232</span>
+<span class='line-number'>233</span>
+<span class='line-number'>234</span>
+<span class='line-number'>235</span>
+<span class='line-number'>236</span>
+<span class='line-number'>237</span>
+<span class='line-number'>238</span>
+<span class='line-number'>239</span>
+<span class='line-number'>240</span>
+<span class='line-number'>241</span>
+<span class='line-number'>242</span>
+<span class='line-number'>243</span>
+<span class='line-number'>244</span>
+<span class='line-number'>245</span>
+<span class='line-number'>246</span>
+<span class='line-number'>247</span>
+<span class='line-number'>248</span>
+<span class='line-number'>249</span>
+<span class='line-number'>250</span>
+<span class='line-number'>251</span>
+<span class='line-number'>252</span>
+<span class='line-number'>253</span>
+<span class='line-number'>254</span>
+<span class='line-number'>255</span>
+<span class='line-number'>256</span>
+<span class='line-number'>257</span>
+<span class='line-number'>258</span>
+<span class='line-number'>259</span>
+<span class='line-number'>260</span>
+<span class='line-number'>261</span>
+<span class='line-number'>262</span>
+<span class='line-number'>263</span>
+<span class='line-number'>264</span>
+<span class='line-number'>265</span>
+<span class='line-number'>266</span>
+<span class='line-number'>267</span>
+<span class='line-number'>268</span>
+<span class='line-number'>269</span>
+<span class='line-number'>270</span>
+<span class='line-number'>271</span>
+<span class='line-number'>272</span>
+<span class='line-number'>273</span>
+<span class='line-number'>274</span>
+<span class='line-number'>275</span>
+<span class='line-number'>276</span>
+<span class='line-number'>277</span>
+<span class='line-number'>278</span>
+<span class='line-number'>279</span>
+<span class='line-number'>280</span>
+<span class='line-number'>281</span>
+<span class='line-number'>282</span>
+<span class='line-number'>283</span>
+<span class='line-number'>284</span>
+<span class='line-number'>285</span>
+<span class='line-number'>286</span>
+<span class='line-number'>287</span>
+<span class='line-number'>288</span>
+<span class='line-number'>289</span>
+<span class='line-number'>290</span>
+<span class='line-number'>291</span>
+<span class='line-number'>292</span>
+<span class='line-number'>293</span>
+<span class='line-number'>294</span>
+<span class='line-number'>295</span>
+<span class='line-number'>296</span>
+<span class='line-number'>297</span>
+<span class='line-number'>298</span>
+<span class='line-number'>299</span>
+<span class='line-number'>300</span>
+<span class='line-number'>301</span>
+<span class='line-number'>302</span>
+<span class='line-number'>303</span>
+<span class='line-number'>304</span>
+<span class='line-number'>305</span>
+<span class='line-number'>306</span>
+<span class='line-number'>307</span>
+<span class='line-number'>308</span>
+<span class='line-number'>309</span>
+<span class='line-number'>310</span>
+<span class='line-number'>311</span>
+<span class='line-number'>312</span>
+<span class='line-number'>313</span>
+<span class='line-number'>314</span>
+<span class='line-number'>315</span>
+<span class='line-number'>316</span>
+<span class='line-number'>317</span>
+<span class='line-number'>318</span>
+<span class='line-number'>319</span>
+<span class='line-number'>320</span>
+<span class='line-number'>321</span>
+<span class='line-number'>322</span>
+<span class='line-number'>323</span>
+<span class='line-number'>324</span>
+<span class='line-number'>325</span>
+<span class='line-number'>326</span>
+<span class='line-number'>327</span>
+<span class='line-number'>328</span>
+<span class='line-number'>329</span>
+<span class='line-number'>330</span>
+<span class='line-number'>331</span>
+<span class='line-number'>332</span>
+<span class='line-number'>333</span>
+<span class='line-number'>334</span>
+<span class='line-number'>335</span>
+<span class='line-number'>336</span>
+<span class='line-number'>337</span>
+<span class='line-number'>338</span>
+<span class='line-number'>339</span>
+<span class='line-number'>340</span>
+<span class='line-number'>341</span>
+<span class='line-number'>342</span>
+<span class='line-number'>343</span>
+<span class='line-number'>344</span>
+<span class='line-number'>345</span>
+<span class='line-number'>346</span>
+<span class='line-number'>347</span>
+<span class='line-number'>348</span>
+<span class='line-number'>349</span>
+<span class='line-number'>350</span>
+<span class='line-number'>351</span>
+<span class='line-number'>352</span>
+<span class='line-number'>353</span>
+<span class='line-number'>354</span>
+<span class='line-number'>355</span>
+<span class='line-number'>356</span>
+<span class='line-number'>357</span>
+<span class='line-number'>358</span>
+<span class='line-number'>359</span>
+<span class='line-number'>360</span>
+<span class='line-number'>361</span>
+<span class='line-number'>362</span>
+<span class='line-number'>363</span>
+<span class='line-number'>364</span>
+<span class='line-number'>365</span>
+<span class='line-number'>366</span>
+<span class='line-number'>367</span>
+<span class='line-number'>368</span>
+<span class='line-number'>369</span>
+<span class='line-number'>370</span>
+<span class='line-number'>371</span>
+<span class='line-number'>372</span>
+<span class='line-number'>373</span>
+<span class='line-number'>374</span>
+<span class='line-number'>375</span>
+<span class='line-number'>376</span>
+<span class='line-number'>377</span>
+<span class='line-number'>378</span>
+<span class='line-number'>379</span>
+<span class='line-number'>380</span>
+<span class='line-number'>381</span>
+<span class='line-number'>382</span>
+<span class='line-number'>383</span>
+<span class='line-number'>384</span>
+<span class='line-number'>385</span>
+<span class='line-number'>386</span>
+<span class='line-number'>387</span>
+<span class='line-number'>388</span>
+<span class='line-number'>389</span>
+<span class='line-number'>390</span>
+<span class='line-number'>391</span>
+<span class='line-number'>392</span>
+<span class='line-number'>393</span>
+<span class='line-number'>394</span>
+<span class='line-number'>395</span>
+<span class='line-number'>396</span>
+<span class='line-number'>397</span>
+<span class='line-number'>398</span>
+<span class='line-number'>399</span>
+<span class='line-number'>400</span>
+<span class='line-number'>401</span>
+<span class='line-number'>402</span>
+<span class='line-number'>403</span>
+<span class='line-number'>404</span>
+<span class='line-number'>405</span>
+<span class='line-number'>406</span>
+<span class='line-number'>407</span>
+<span class='line-number'>408</span>
+<span class='line-number'>409</span>
+<span class='line-number'>410</span>
+<span class='line-number'>411</span>
+<span class='line-number'>412</span>
+<span class='line-number'>413</span>
+<span class='line-number'>414</span>
+<span class='line-number'>415</span>
+<span class='line-number'>416</span>
+<span class='line-number'>417</span>
+<span class='line-number'>418</span>
+<span class='line-number'>419</span>
+<span class='line-number'>420</span>
+<span class='line-number'>421</span>
+<span class='line-number'>422</span>
+<span class='line-number'>423</span>
+<span class='line-number'>424</span>
+<span class='line-number'>425</span>
+<span class='line-number'>426</span>
+<span class='line-number'>427</span>
+<span class='line-number'>428</span>
+<span class='line-number'>429</span>
+<span class='line-number'>430</span>
+<span class='line-number'>431</span>
+<span class='line-number'>432</span>
+<span class='line-number'>433</span>
+<span class='line-number'>434</span>
+<span class='line-number'>435</span>
+<span class='line-number'>436</span>
+<span class='line-number'>437</span>
+<span class='line-number'>438</span>
+<span class='line-number'>439</span>
+<span class='line-number'>440</span>
+<span class='line-number'>441</span>
+<span class='line-number'>442</span>
+<span class='line-number'>443</span>
+<span class='line-number'>444</span>
+<span class='line-number'>445</span>
+<span class='line-number'>446</span>
+<span class='line-number'>447</span>
+<span class='line-number'>448</span>
+<span class='line-number'>449</span>
+<span class='line-number'>450</span>
+<span class='line-number'>451</span>
+<span class='line-number'>452</span>
+<span class='line-number'>453</span>
+<span class='line-number'>454</span>
+<span class='line-number'>455</span>
+<span class='line-number'>456</span>
+<span class='line-number'>457</span>
+<span class='line-number'>458</span>
+<span class='line-number'>459</span>
+<span class='line-number'>460</span>
+<span class='line-number'>461</span>
+<span class='line-number'>462</span>
+<span class='line-number'>463</span>
+<span class='line-number'>464</span>
+<span class='line-number'>465</span>
+<span class='line-number'>466</span>
+<span class='line-number'>467</span>
+<span class='line-number'>468</span>
+<span class='line-number'>469</span>
+<span class='line-number'>470</span>
+<span class='line-number'>471</span>
+<span class='line-number'>472</span>
+<span class='line-number'>473</span>
+<span class='line-number'>474</span>
+<span class='line-number'>475</span>
+<span class='line-number'>476</span>
+<span class='line-number'>477</span>
+<span class='line-number'>478</span>
+<span class='line-number'>479</span>
+<span class='line-number'>480</span>
+<span class='line-number'>481</span>
+<span class='line-number'>482</span>
+<span class='line-number'>483</span>
+<span class='line-number'>484</span>
+<span class='line-number'>485</span>
+<span class='line-number'>486</span>
+<span class='line-number'>487</span>
+<span class='line-number'>488</span>
+<span class='line-number'>489</span>
+<span class='line-number'>490</span>
+<span class='line-number'>491</span>
+<span class='line-number'>492</span>
+<span class='line-number'>493</span>
+<span class='line-number'>494</span>
+<span class='line-number'>495</span>
+<span class='line-number'>496</span>
+<span class='line-number'>497</span>
+<span class='line-number'>498</span>
+<span class='line-number'>499</span>
+<span class='line-number'>500</span>
+<span class='line-number'>501</span>
+<span class='line-number'>502</span>
+<span class='line-number'>503</span>
+<span class='line-number'>504</span>
+<span class='line-number'>505</span>
+<span class='line-number'>506</span>
+<span class='line-number'>507</span>
+<span class='line-number'>508</span>
+<span class='line-number'>509</span>
+<span class='line-number'>510</span>
+<span class='line-number'>511</span>
+<span class='line-number'>512</span>
+<span class='line-number'>513</span>
+<span class='line-number'>514</span>
+<span class='line-number'>515</span>
+<span class='line-number'>516</span>
+<span class='line-number'>517</span>
+<span class='line-number'>518</span>
+<span class='line-number'>519</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">;;;</span> <span class="o">-*-</span> <span class="n">Mode</span><span class="p">:</span> <span class="n">Lisp</span><span class="p">;</span> <span class="n">Syntax</span><span class="p">:</span> <span class="n">Common</span><span class="o">-</span><span class="n">Lisp</span><span class="p">;</span> <span class="o">-*-</span> <span class="n">File</span><span class="p">:</span> <span class="n">utilities</span><span class="o">.</span><span class="n">lisp</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Basic</span> <span class="n">utility</span> <span class="n">functions</span> <span class="ow">and</span> <span class="n">macros</span><span class="p">,</span> <span class="n">used</span> <span class="n">throughout</span> <span class="n">the</span> <span class="n">code</span><span class="o">.</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;</span> <span class="n">The</span> <span class="n">utilities</span> <span class="n">are</span> <span class="n">divided</span> <span class="n">into</span> <span class="n">control</span> <span class="n">flow</span> <span class="n">macros</span><span class="p">,</span> <span class="nb">list</span>
+</span><span class='line'><span class="p">;;;</span> <span class="n">utilities</span><span class="p">,</span> <span class="n">functions</span> <span class="k">for</span> <span class="mi">2</span><span class="o">-</span><span class="n">dimensional</span> <span class="n">points</span><span class="p">,</span> <span class="n">numeric</span> <span class="n">utilities</span><span class="p">,</span>
+</span><span class='line'><span class="p">;;;</span> <span class="n">some</span> <span class="n">trivial</span> <span class="n">functions</span><span class="p">,</span> <span class="n">utilities</span> <span class="k">for</span> <span class="n">strings</span><span class="p">,</span> <span class="n">symbols</span> <span class="ow">and</span>
+</span><span class='line'><span class="p">;;;</span> <span class="n">printing</span><span class="p">,</span> <span class="n">a</span> <span class="n">debugging</span> <span class="n">tool</span><span class="p">,</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">testing</span> <span class="n">tool</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nb">eval</span><span class="o">-</span><span class="n">when</span> <span class="p">(</span><span class="nb">eval</span> <span class="nb">compile</span> <span class="n">load</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">Make</span> <span class="n">it</span> <span class="n">ok</span> <span class="n">to</span> <span class="n">place</span> <span class="n">a</span> <span class="n">function</span> <span class="n">definition</span> <span class="n">on</span> <span class="n">a</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">LISP</span> <span class="n">symbol</span><span class="o">.</span>
+</span><span class='line'>  <span class="c">#+(or Allegro EXCL)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">dolist</span> <span class="p">(</span><span class="n">pkg</span> <span class="s">&#39;(excl common-lisp common-lisp-user))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">setf</span> <span class="p">(</span><span class="n">excl</span><span class="p">:</span><span class="n">package</span><span class="o">-</span><span class="n">definition</span><span class="o">-</span><span class="n">lock</span> <span class="p">(</span><span class="n">find</span><span class="o">-</span><span class="n">package</span> <span class="n">pkg</span><span class="p">))</span> <span class="n">nil</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Control</span> <span class="n">Flow</span> <span class="n">Macros</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;</span> <span class="n">We</span> <span class="n">define</span> <span class="n">iteration</span> <span class="n">macros</span> <span class="n">to</span> <span class="n">match</span> <span class="n">the</span> <span class="n">book</span><span class="s">&#39;s pseudo-code.</span>
+</span><span class='line'><span class="p">;;;</span> <span class="n">This</span> <span class="n">could</span> <span class="nb">all</span> <span class="n">be</span> <span class="n">done</span> <span class="k">with</span> <span class="n">LOOP</span><span class="p">,</span> <span class="n">but</span> <span class="n">some</span> <span class="n">users</span> <span class="n">don</span><span class="s">&#39;t have</span>
+</span><span class='line'><span class="p">;;;</span> <span class="n">the</span> <span class="n">LOOP</span> <span class="kn">from</span> <span class="nn">the</span><span class="err"> 2</span><span class="nn">nd</span><span class="err"> </span><span class="nn">edition</span><span class="err"> </span><span class="nn">of</span><span class="err"> &#39;</span><span class="nn">Common</span><span class="err"> </span><span class="nn">Lisp</span><span class="err">: </span><span class="nn">the</span><span class="err"> </span><span class="nn">Language</span><span class="err">&#39;</span><span class="nn">.</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defmacro</span> <span class="k">while</span> <span class="p">(</span><span class="n">test</span> <span class="n">do</span> <span class="o">&amp;</span><span class="n">body</span> <span class="n">body</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Execute body while the test is true.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">assert</span> <span class="p">(</span><span class="n">eq</span> <span class="n">do</span> <span class="s">&#39;do))</span>
+</span><span class='line'>  <span class="err">`</span><span class="p">(</span><span class="n">do</span> <span class="p">()</span> <span class="p">((</span><span class="ow">not</span> <span class="p">,</span><span class="n">test</span><span class="p">)</span> <span class="n">nil</span><span class="p">)</span> <span class="p">,</span><span class="nd">@body</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defmacro</span> <span class="k">for</span><span class="o">-</span><span class="n">each</span> <span class="p">(</span><span class="n">var</span> <span class="ow">in</span> <span class="nb">list</span> <span class="n">do</span> <span class="o">&amp;</span><span class="n">body</span> <span class="n">body</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Execute body for each element of list.  VAR can be a list or tree</span>
+</span><span class='line'>  <span class="n">of</span> <span class="n">variables</span><span class="p">,</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">case</span> <span class="n">the</span> <span class="n">elements</span> <span class="n">are</span> <span class="n">destructured</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">assert</span> <span class="p">(</span><span class="n">eq</span> <span class="ow">in</span> <span class="s">&#39;in)) (assert (eq do &#39;</span><span class="n">do</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">typecase</span> <span class="n">var</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">symbol</span> <span class="err">`</span><span class="p">(</span><span class="n">dolist</span> <span class="p">(,</span><span class="n">var</span> <span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="p">,</span><span class="nd">@body</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">cons</span> <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="nb">list</span><span class="o">-</span><span class="n">var</span> <span class="p">(</span><span class="n">gensym</span><span class="p">)))</span>
+</span><span class='line'>      <span class="err">`</span><span class="p">(</span><span class="n">dolist</span> <span class="p">(,</span><span class="nb">list</span><span class="o">-</span><span class="n">var</span> <span class="p">,</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>         <span class="p">(</span><span class="n">destructuring</span><span class="o">-</span><span class="n">bind</span> <span class="p">,</span><span class="n">var</span> <span class="p">,</span><span class="nb">list</span><span class="o">-</span><span class="n">var</span> <span class="p">,</span><span class="nd">@body</span><span class="p">))))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="n">error</span> <span class="s">&quot;~V is an illegal variable in (for each ~V in ~A ...)&quot;</span>
+</span><span class='line'>        <span class="n">var</span> <span class="nb">list</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defmacro</span> <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="o">=</span> <span class="n">start</span> <span class="n">to</span> <span class="n">end</span> <span class="n">do</span> <span class="o">&amp;</span><span class="n">body</span> <span class="n">body</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Execute body with var bound to succesive integers.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="n">eq</span> <span class="n">var</span> <span class="s">&#39;each) ; Allow (for each ...) instead of (for-each ...)</span>
+</span><span class='line'>   <span class="err">`</span><span class="p">(</span><span class="k">for</span><span class="o">-</span><span class="n">each</span> <span class="p">,</span><span class="o">=</span> <span class="p">,</span><span class="n">start</span> <span class="p">,</span><span class="n">to</span> <span class="p">,</span><span class="n">end</span> <span class="p">,</span><span class="n">do</span> <span class="p">,</span><span class="nd">@body</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="k">assert</span> <span class="p">(</span><span class="n">eq</span> <span class="o">=</span> <span class="s">&#39;=)) (assert (eq to &#39;</span><span class="n">to</span><span class="p">))</span> <span class="p">(</span><span class="k">assert</span> <span class="p">(</span><span class="n">eq</span> <span class="n">do</span> <span class="s">&#39;do))</span>
+</span><span class='line'>     <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">end</span><span class="o">-</span><span class="n">var</span> <span class="p">(</span><span class="n">gensym</span> <span class="s">&quot;END&quot;</span><span class="p">)))</span>
+</span><span class='line'>       <span class="err">`</span><span class="p">(</span><span class="n">do</span> <span class="p">((,</span><span class="n">var</span> <span class="p">,</span><span class="n">start</span> <span class="p">(</span><span class="o">+</span> <span class="mi">1</span> <span class="p">,</span><span class="n">var</span><span class="p">))</span> <span class="p">(,</span><span class="n">end</span><span class="o">-</span><span class="n">var</span> <span class="p">,</span><span class="n">end</span><span class="p">))</span>
+</span><span class='line'>        <span class="p">((</span><span class="o">&gt;</span> <span class="p">,</span><span class="n">var</span> <span class="p">,</span><span class="n">end</span><span class="o">-</span><span class="n">var</span><span class="p">)</span> <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">,</span><span class="nd">@body</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defmacro</span> <span class="n">deletef</span> <span class="p">(</span><span class="n">item</span> <span class="n">sequence</span> <span class="o">&amp;</span><span class="n">rest</span> <span class="n">keys</span> <span class="o">&amp;</span><span class="n">environment</span> <span class="n">env</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Destructively delete item from sequence, which must be SETF-able.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">multiple</span><span class="o">-</span><span class="n">value</span><span class="o">-</span><span class="n">bind</span> <span class="p">(</span><span class="n">temps</span> <span class="n">vals</span> <span class="n">stores</span> <span class="n">store</span><span class="o">-</span><span class="n">form</span> <span class="n">access</span><span class="o">-</span><span class="n">form</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">get</span><span class="o">-</span><span class="n">setf</span><span class="o">-</span><span class="n">expansion</span> <span class="n">sequence</span> <span class="n">env</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">assert</span> <span class="p">(</span><span class="o">=</span> <span class="p">(</span><span class="n">length</span> <span class="n">stores</span><span class="p">)</span> <span class="mi">1</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">item</span><span class="o">-</span><span class="n">var</span> <span class="p">(</span><span class="n">gensym</span> <span class="s">&quot;ITEM&quot;</span><span class="p">)))</span>
+</span><span class='line'>    <span class="err">`</span><span class="p">(</span><span class="n">let</span><span class="o">*</span> <span class="p">((,</span><span class="n">item</span><span class="o">-</span><span class="n">var</span> <span class="p">,</span><span class="n">item</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">,</span><span class="err">@</span><span class="p">(</span><span class="n">mapcar</span> <span class="c">#&#39;list temps vals)</span>
+</span><span class='line'>      <span class="p">(,(</span><span class="n">first</span> <span class="n">stores</span><span class="p">)</span> <span class="p">(</span><span class="n">delete</span> <span class="p">,</span><span class="n">item</span><span class="o">-</span><span class="n">var</span> <span class="p">,</span><span class="n">access</span><span class="o">-</span><span class="n">form</span> <span class="p">,</span><span class="nd">@keys</span><span class="p">)))</span>
+</span><span class='line'>      <span class="p">,</span><span class="n">store</span><span class="o">-</span><span class="n">form</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defmacro</span> <span class="n">define</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">undefined</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">definitions</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Use this to conditionally define functions, variables, or macros that</span>
+</span><span class='line'>  <span class="n">may</span> <span class="ow">or</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">pre</span><span class="o">-</span><span class="n">defined</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">Lisp</span><span class="o">.</span>  <span class="n">This</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">provide</span>
+</span><span class='line'>  <span class="n">CLtL2</span> <span class="n">compatibility</span> <span class="k">for</span> <span class="n">older</span> <span class="n">Lisps</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>  <span class="err">`</span><span class="p">(</span><span class="n">progn</span>
+</span><span class='line'>     <span class="p">,</span><span class="err">@</span><span class="p">(</span><span class="n">mapcar</span> <span class="c">#&#39;(lambda (def)</span>
+</span><span class='line'>         <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">name</span> <span class="p">(</span><span class="n">second</span> <span class="n">def</span><span class="p">)))</span>
+</span><span class='line'>           <span class="err">`</span><span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="ow">or</span> <span class="p">(</span><span class="n">boundp</span> <span class="s">&#39;,name) (fboundp &#39;</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+</span><span class='line'>                   <span class="p">(</span><span class="n">special</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">p</span> <span class="s">&#39;,name)</span>
+</span><span class='line'>                   <span class="p">(</span><span class="n">macro</span><span class="o">-</span><span class="n">function</span> <span class="s">&#39;,name)))</span>
+</span><span class='line'>             <span class="p">,</span><span class="n">def</span><span class="p">)))</span>
+</span><span class='line'>         <span class="n">definitions</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">List</span> <span class="n">Utilities</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">length</span><span class="o">&gt;</span><span class="mi">1</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Is this a list of 2 or more elements?&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="n">consp</span> <span class="nb">list</span><span class="p">)</span> <span class="p">(</span><span class="n">cdr</span> <span class="nb">list</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">length</span><span class="o">=</span><span class="mi">1</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Is this a list of exactly one element?&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="n">consp</span> <span class="nb">list</span><span class="p">)</span> <span class="p">(</span><span class="n">null</span> <span class="p">(</span><span class="n">cdr</span> <span class="nb">list</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">random</span><span class="o">-</span><span class="n">element</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Return some element of the list, chosen at random.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">nth</span> <span class="p">(</span><span class="n">random</span> <span class="p">(</span><span class="n">length</span> <span class="nb">list</span><span class="p">))</span> <span class="nb">list</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">mappend</span> <span class="p">(</span><span class="n">fn</span> <span class="o">&amp;</span><span class="n">rest</span> <span class="n">lists</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Apply fn to respective elements of list(s), and append results.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">reduce</span> <span class="c">#&#39;append (apply #&#39;mapcar fn lists) :from-end t))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">starts</span><span class="o">-</span><span class="k">with</span> <span class="p">(</span><span class="nb">list</span> <span class="n">element</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Is this a list that starts with the given element?&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="n">consp</span> <span class="nb">list</span><span class="p">)</span> <span class="p">(</span><span class="n">eq</span> <span class="p">(</span><span class="n">first</span> <span class="nb">list</span><span class="p">)</span> <span class="n">element</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">last1</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Return the last element of a list.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">first</span> <span class="p">(</span><span class="n">last</span> <span class="nb">list</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">left</span><span class="o">-</span><span class="n">rotate</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Move the first element to the end of the list.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">append</span> <span class="p">(</span><span class="n">rest</span> <span class="nb">list</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="n">first</span> <span class="nb">list</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">right</span><span class="o">-</span><span class="n">rotate</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Move the last element to the front of the list.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">append</span> <span class="p">(</span><span class="n">last</span> <span class="nb">list</span><span class="p">)</span> <span class="p">(</span><span class="n">butlast</span> <span class="nb">list</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">transpose</span> <span class="p">(</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">lists</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Transpose a matrix represented as a list of lists.</span>
+</span><span class='line'>  <span class="n">Example</span><span class="p">:</span> <span class="p">(</span><span class="n">transpose</span> <span class="s">&#39;((a b c) (d e f))) =&gt; ((a d) (b e) (c f)).&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">apply</span> <span class="c">#&#39;mapcar #&#39;list list-of-lists))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">reuse</span><span class="o">-</span><span class="n">cons</span> <span class="p">(</span><span class="n">x</span> <span class="n">y</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Return (cons x y), or reuse x-y if it is equal to (cons x y)&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="n">eql</span> <span class="n">x</span> <span class="p">(</span><span class="n">car</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">))</span> <span class="p">(</span><span class="n">eql</span> <span class="n">y</span> <span class="p">(</span><span class="n">cdr</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)))</span>
+</span><span class='line'>      <span class="n">x</span><span class="o">-</span><span class="n">y</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">cons</span> <span class="n">x</span> <span class="n">y</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="s">&quot;An expression is a list consisting of a prefix operator followed by args,</span>
+</span><span class='line'><span class="n">Or</span> <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="n">a</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">denoting</span> <span class="n">an</span> <span class="n">operator</span> <span class="k">with</span> <span class="n">no</span> <span class="n">arguments</span><span class="o">.</span>
+</span><span class='line'><span class="n">Expressions</span> <span class="n">are</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">Logic</span><span class="p">,</span> <span class="ow">and</span> <span class="k">as</span> <span class="n">actions</span> <span class="k">for</span> <span class="n">agents</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">make</span><span class="o">-</span><span class="n">exp</span> <span class="p">(</span><span class="n">op</span> <span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span> <span class="p">(</span><span class="n">cons</span> <span class="n">op</span> <span class="n">args</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">op</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="s">&quot;Operator of an expression&quot;</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">listp</span> <span class="n">exp</span><span class="p">)</span> <span class="p">(</span><span class="n">first</span> <span class="n">exp</span><span class="p">)</span> <span class="n">exp</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">args</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="s">&quot;Arguments of an expression&quot;</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">listp</span> <span class="n">exp</span><span class="p">)</span> <span class="p">(</span><span class="n">rest</span> <span class="n">exp</span><span class="p">)</span> <span class="n">nil</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">arg1</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="s">&quot;First argument&quot;</span> <span class="p">(</span><span class="n">first</span> <span class="p">(</span><span class="n">args</span> <span class="n">exp</span><span class="p">)))</span>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">arg2</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="s">&quot;Second argument&quot;</span> <span class="p">(</span><span class="n">second</span> <span class="p">(</span><span class="n">args</span> <span class="n">exp</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defsetf</span> <span class="n">args</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span> <span class="p">(</span><span class="n">new</span><span class="o">-</span><span class="n">value</span><span class="p">)</span>
+</span><span class='line'>  <span class="err">`</span><span class="p">(</span><span class="n">setf</span> <span class="p">(</span><span class="n">cdr</span> <span class="p">,</span><span class="n">exp</span><span class="p">)</span> <span class="p">,</span><span class="n">new</span><span class="o">-</span><span class="n">value</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">prefix</span><span class="o">-&gt;</span><span class="n">infix</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Convert a fully parenthesized prefix expression into infix notation.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="n">atom</span> <span class="n">exp</span><span class="p">)</span> <span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">((</span><span class="n">length</span><span class="o">=</span><span class="mi">1</span> <span class="p">(</span><span class="n">args</span> <span class="n">exp</span><span class="p">))</span> <span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="n">insert</span><span class="o">-</span><span class="n">between</span> <span class="p">(</span><span class="n">op</span> <span class="n">exp</span><span class="p">)</span> <span class="p">(</span><span class="n">mapcar</span> <span class="c">#&#39;prefix-&gt;infix (args exp))))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">insert</span><span class="o">-</span><span class="n">between</span> <span class="p">(</span><span class="n">item</span> <span class="nb">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Insert item between every element of list.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="ow">or</span> <span class="p">(</span><span class="n">null</span> <span class="nb">list</span><span class="p">)</span> <span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">1</span> <span class="nb">list</span><span class="p">))</span>
+</span><span class='line'>      <span class="nb">list</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">list</span><span class="o">*</span> <span class="p">(</span><span class="n">first</span> <span class="nb">list</span><span class="p">)</span> <span class="n">item</span> <span class="p">(</span><span class="n">insert</span><span class="o">-</span><span class="n">between</span> <span class="n">item</span> <span class="p">(</span><span class="n">rest</span> <span class="nb">list</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Functions</span> <span class="k">for</span> <span class="n">manipulating</span> <span class="mi">2</span><span class="o">-</span><span class="n">dimensional</span> <span class="n">points</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defstruct</span> <span class="p">(</span><span class="n">xy</span> <span class="p">(:</span><span class="nb">type</span> <span class="nb">list</span><span class="p">))</span> <span class="s">&quot;A two-dimensional (i.e. x and y) point.&quot;</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">xy</span><span class="o">-</span><span class="n">p</span> <span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Is the argument a 2-D point?&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="n">consp</span> <span class="n">arg</span><span class="p">)</span> <span class="p">(</span><span class="o">=</span> <span class="p">(</span><span class="n">length</span> <span class="n">arg</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="n">every</span> <span class="c">#&#39;numberp arg)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="err">@</span> <span class="p">(</span><span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="s">&quot;Create a 2-D point&quot;</span> <span class="p">(</span><span class="n">make</span><span class="o">-</span><span class="n">xy</span> <span class="p">:</span><span class="n">x</span> <span class="n">x</span> <span class="p">:</span><span class="n">y</span> <span class="n">y</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">xy</span><span class="o">-</span><span class="n">equal</span> <span class="p">(</span><span class="n">p</span> <span class="n">q</span><span class="p">)</span> <span class="p">(</span><span class="n">equal</span> <span class="n">p</span> <span class="n">q</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">xy</span><span class="o">-</span><span class="n">add</span> <span class="p">(</span><span class="n">p</span> <span class="n">q</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Add two points, component-wise.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="err">@</span> <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">q</span><span class="p">))</span> <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">q</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">xy</span><span class="o">-</span><span class="n">distance</span> <span class="p">(</span><span class="n">p</span> <span class="n">q</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;The distance between two points.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">sqrt</span> <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="n">square</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">q</span><span class="p">)))</span>
+</span><span class='line'>     <span class="p">(</span><span class="n">square</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">q</span><span class="p">))))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">-</span><span class="n">distance</span> <span class="p">(</span><span class="n">p</span> <span class="n">q</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;The &#39;city block distance&#39; between two points.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">q</span><span class="p">)))</span>
+</span><span class='line'>     <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">q</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">xy</span><span class="o">-</span><span class="n">between</span> <span class="p">(</span><span class="n">xy1</span> <span class="n">xy2</span> <span class="n">xy3</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Predicate; return t iff xy1 is between xy2 and xy3. Points are collinear.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="n">between</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">xy1</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">xy2</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">xy3</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="n">between</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">xy1</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">xy2</span><span class="p">)</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">xy3</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">rotate</span> <span class="p">(</span><span class="n">o</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">x</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">o</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">y</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">o</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="err">@</span> <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="o">*</span> <span class="n">a</span> <span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span> <span class="n">b</span> <span class="n">y</span><span class="p">))</span> <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="o">*</span> <span class="n">c</span> <span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span> <span class="n">d</span> <span class="n">y</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">inside</span> <span class="p">(</span><span class="n">l</span> <span class="n">xmax</span> <span class="n">ymax</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Is the point l inside a rectangle from 0,0 to xmax,ymax?&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">x</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">x</span> <span class="n">l</span><span class="p">))</span> <span class="p">(</span><span class="n">y</span> <span class="p">(</span><span class="n">xy</span><span class="o">-</span><span class="n">y</span> <span class="n">l</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="ow">and</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="n">x</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="n">y</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="o">&lt;</span> <span class="n">x</span> <span class="n">xmax</span><span class="p">)</span> <span class="p">(</span><span class="o">&lt;</span> <span class="n">y</span> <span class="n">ymax</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Numeric</span> <span class="n">Utilities</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defconstant</span> <span class="n">infinity</span> <span class="n">most</span><span class="o">-</span><span class="n">positive</span><span class="o">-</span><span class="n">single</span><span class="o">-</span><span class="nb">float</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="n">defconstant</span> <span class="n">minus</span><span class="o">-</span><span class="n">infinity</span> <span class="n">most</span><span class="o">-</span><span class="n">negative</span><span class="o">-</span><span class="n">single</span><span class="o">-</span><span class="nb">float</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">average</span> <span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Numerical average (mean) of a list of numbers.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">/</span> <span class="p">(</span><span class="nb">sum</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">(</span><span class="n">length</span> <span class="n">numbers</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">running</span><span class="o">-</span><span class="n">average</span> <span class="p">(</span><span class="n">avg</span> <span class="n">new</span> <span class="n">n</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Calculate new average given previous average over n data points&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">/</span> <span class="p">(</span><span class="o">+</span> <span class="n">new</span> <span class="p">(</span><span class="o">*</span> <span class="n">avg</span> <span class="n">n</span><span class="p">))</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="n">n</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">square</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span> <span class="n">x</span> <span class="n">x</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="nb">sum</span> <span class="p">(</span><span class="n">numbers</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">key</span> <span class="c">#&#39;identity))</span>
+</span><span class='line'>  <span class="s">&quot;Add up all the numbers; if KEY is given, apply it to each number first.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">null</span> <span class="n">numbers</span><span class="p">)</span>
+</span><span class='line'>      <span class="mi">0</span>
+</span><span class='line'>      <span class="p">(</span><span class="o">+</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">key</span> <span class="p">(</span><span class="n">first</span> <span class="n">numbers</span><span class="p">))</span> <span class="p">(</span><span class="nb">sum</span> <span class="p">(</span><span class="n">rest</span> <span class="n">numbers</span><span class="p">)</span> <span class="n">key</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">between</span> <span class="p">(</span><span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Predicate; return t iff number x is between numbers y and z.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="ow">or</span> <span class="p">(</span><span class="o">&lt;=</span> <span class="n">y</span> <span class="n">x</span> <span class="n">z</span><span class="p">)</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="n">y</span> <span class="n">x</span> <span class="n">z</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">rms</span><span class="o">-</span><span class="n">error</span> <span class="p">(</span><span class="n">predicted</span> <span class="n">target</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Compute root mean square error between predicted list and target list&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">sqrt</span> <span class="p">(</span><span class="n">ms</span><span class="o">-</span><span class="n">error</span> <span class="n">predicted</span> <span class="n">target</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">ms</span><span class="o">-</span><span class="n">error</span> <span class="p">(</span><span class="n">predicted</span> <span class="n">target</span> <span class="o">&amp;</span><span class="n">aux</span> <span class="p">(</span><span class="nb">sum</span> <span class="mi">0</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Compute mean square error between predicted list and target list&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">mapc</span> <span class="c">#&#39;(lambda (x y) (incf sum (square (- x y)))) predicted target)</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">/</span> <span class="nb">sum</span> <span class="p">(</span><span class="n">length</span> <span class="n">predicted</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">boolean</span><span class="o">-</span><span class="n">error</span> <span class="p">(</span><span class="n">predicted</span> <span class="n">target</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">equal</span> <span class="n">predicted</span> <span class="n">target</span><span class="p">)</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">dot</span><span class="o">-</span><span class="n">product</span> <span class="p">(</span><span class="n">l1</span> <span class="n">l2</span> <span class="o">&amp;</span><span class="n">aux</span> <span class="p">(</span><span class="nb">sum</span> <span class="mi">0</span><span class="p">))</span> <span class="p">;;;</span> <span class="n">dot</span> <span class="n">product</span> <span class="n">of</span> <span class="n">two</span> <span class="n">lists</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">mapc</span> <span class="c">#&#39;(lambda (x1 x2) (incf sum (* x1 x2))) l1 l2)</span>
+</span><span class='line'>  <span class="nb">sum</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">iota</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">start</span><span class="o">-</span><span class="n">at</span> <span class="mi">0</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Return a list of n consecutive integers, by default starting at 0.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="o">&lt;=</span> <span class="n">n</span> <span class="mi">0</span><span class="p">)</span> <span class="n">nil</span> <span class="p">(</span><span class="n">cons</span> <span class="n">start</span><span class="o">-</span><span class="n">at</span> <span class="p">(</span><span class="n">iota</span> <span class="p">(</span><span class="o">-</span> <span class="n">n</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span> <span class="n">start</span><span class="o">-</span><span class="n">at</span> <span class="mi">1</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">random</span><span class="o">-</span><span class="n">integer</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">to</span><span class="err">)</span>
+</span><span class='line'>  <span class="s">&quot;Return an integer chosen at random from the given interval.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">+</span> <span class="kn">from</span> <span class="err">(</span><span class="nn">random</span><span class="err"> (+ 1 (- </span><span class="nn">to</span><span class="err"> </span><span class="nn">from</span><span class="err">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">normal</span> <span class="p">(</span><span class="n">x</span> <span class="n">mu</span> <span class="n">sigma</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">/</span> <span class="p">(</span><span class="n">exp</span> <span class="p">(</span><span class="o">/</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">square</span> <span class="p">(</span><span class="o">-</span> <span class="n">x</span> <span class="n">mu</span><span class="p">)))</span> <span class="p">(</span><span class="o">*</span> <span class="mi">2</span> <span class="p">(</span><span class="n">square</span> <span class="n">sigma</span><span class="p">))))</span>
+</span><span class='line'>     <span class="p">(</span><span class="o">*</span> <span class="p">(</span><span class="n">sqrt</span> <span class="p">(</span><span class="o">*</span> <span class="mi">2</span> <span class="n">pi</span><span class="p">))</span> <span class="n">sigma</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">sample</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">replacement</span> <span class="p">(</span><span class="n">n</span> <span class="n">population</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">result</span> <span class="n">nil</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">dotimes</span> <span class="p">(</span><span class="n">i</span> <span class="n">n</span><span class="p">)</span> <span class="p">(</span><span class="n">push</span> <span class="p">(</span><span class="n">random</span><span class="o">-</span><span class="n">element</span> <span class="n">population</span><span class="p">)</span> <span class="n">result</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">result</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">sample</span><span class="o">-</span><span class="n">without</span><span class="o">-</span><span class="n">replacement</span> <span class="p">(</span><span class="n">n</span> <span class="n">population</span> <span class="o">&amp;</span><span class="n">optional</span>
+</span><span class='line'>                   <span class="p">(</span><span class="n">m</span> <span class="p">(</span><span class="n">length</span> <span class="n">population</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">Assumes</span> <span class="n">that</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">length</span> <span class="n">population</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="o">&lt;=</span> <span class="n">n</span> <span class="mi">0</span><span class="p">)</span> <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">((</span><span class="o">&gt;=</span> <span class="n">n</span> <span class="n">m</span><span class="p">)</span> <span class="n">population</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">((</span><span class="o">&gt;=</span> <span class="p">(</span><span class="o">/</span> <span class="n">n</span> <span class="n">m</span><span class="p">)</span> <span class="p">(</span><span class="n">random</span> <span class="mf">1.0</span><span class="p">))</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">cons</span> <span class="p">(</span><span class="n">first</span> <span class="n">population</span><span class="p">)</span> <span class="p">(</span><span class="n">sample</span><span class="o">-</span><span class="n">without</span><span class="o">-</span><span class="n">replacement</span>
+</span><span class='line'>                 <span class="p">(</span><span class="o">-</span> <span class="n">n</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">rest</span> <span class="n">population</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span> <span class="n">m</span> <span class="mi">1</span><span class="p">))))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="n">sample</span><span class="o">-</span><span class="n">without</span><span class="o">-</span><span class="n">replacement</span> <span class="n">n</span> <span class="p">(</span><span class="n">rest</span> <span class="n">population</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span> <span class="n">m</span> <span class="mi">1</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">fuzz</span> <span class="p">(</span><span class="n">quantity</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">proportion</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">round</span><span class="o">-</span><span class="n">off</span> <span class="o">.</span><span class="mo">01</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Add and also subtract a random fuzz-factor to a quantity.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">round</span><span class="o">-</span><span class="n">off</span> <span class="p">(</span><span class="o">+</span> <span class="n">quantity</span>
+</span><span class='line'>      <span class="p">(</span><span class="o">*</span> <span class="n">quantity</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">random</span> <span class="p">(</span><span class="nb">float</span> <span class="n">proportion</span><span class="p">))</span>
+</span><span class='line'>                 <span class="p">(</span><span class="n">random</span> <span class="p">(</span><span class="nb">float</span> <span class="n">proportion</span><span class="p">)))))</span>
+</span><span class='line'>       <span class="nb">round</span><span class="o">-</span><span class="n">off</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="nb">round</span><span class="o">-</span><span class="n">off</span> <span class="p">(</span><span class="n">number</span> <span class="n">precision</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Round off the number to specified precision. E.g. (round-off 1.23 .1) = 1.2&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">*</span> <span class="n">precision</span> <span class="p">(</span><span class="nb">round</span> <span class="n">number</span> <span class="n">precision</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Trivial</span> <span class="n">Functions</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">nothing</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Don&#39;t do anything, and return nil.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">declare</span> <span class="p">(</span><span class="n">ignore</span> <span class="n">args</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">declare</span><span class="o">-</span><span class="n">ignore</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Ignore the arguments.&quot;</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">compiler</span> <span class="n">warnings</span> <span class="ow">in</span> <span class="n">defmethod</span><span class="o">.</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">Some</span> <span class="n">compilers</span> <span class="n">warn</span> <span class="s">&quot;Variable unused&quot;</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">bound</span> <span class="n">by</span> <span class="n">a</span> <span class="n">method</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">but</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">body</span><span class="o">.</span>  <span class="n">However</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">put</span> <span class="ow">in</span> <span class="n">a</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="p">(</span><span class="n">declare</span> <span class="p">(</span><span class="n">ignore</span> <span class="n">var</span><span class="p">)),</span> <span class="n">then</span> <span class="n">other</span> <span class="n">compilers</span> <span class="n">warn</span> <span class="s">&quot;var declared</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">ignored</span><span class="p">,</span> <span class="n">but</span> <span class="ow">is</span> <span class="n">actually</span> <span class="n">used</span><span class="s">&quot;, on the grounds that it is implicitly</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">used</span> <span class="n">to</span> <span class="n">do</span> <span class="n">method</span> <span class="n">dispatch</span><span class="o">.</span>  <span class="n">So</span> <span class="n">its</span> <span class="n">safest</span> <span class="n">to</span> <span class="n">use</span> <span class="n">declare</span><span class="o">-</span><span class="n">ignore</span><span class="o">.</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">If</span> <span class="n">you</span> <span class="n">like</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">redefine</span> <span class="n">declare</span><span class="o">-</span><span class="n">ignore</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">macro</span> <span class="n">that</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">expands</span> <span class="n">to</span> <span class="n">either</span> <span class="p">(</span><span class="n">declare</span> <span class="p">(</span><span class="n">ignore</span> <span class="n">args</span><span class="p">)),</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">nothing</span><span class="p">,</span> <span class="n">depending</span>
+</span><span class='line'>  <span class="p">;;</span> <span class="n">on</span> <span class="n">the</span> <span class="n">implementation</span><span class="o">.</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">declare</span> <span class="p">(</span><span class="n">ignore</span> <span class="n">args</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#-(or MCL Lispworks) ;; MCL, Lispworks already define this function</span>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">true</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span> <span class="s">&quot;Always return true.&quot;</span> <span class="p">(</span><span class="n">declare</span> <span class="p">(</span><span class="n">ignore</span> <span class="n">args</span><span class="p">))</span> <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#-(or MCL Lispworks) ;; MCL, Lispworks already define this function</span>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">false</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span> <span class="s">&quot;Always return false.&quot;</span> <span class="p">(</span><span class="n">declare</span> <span class="p">(</span><span class="n">ignore</span> <span class="n">args</span><span class="p">))</span> <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">required</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">msg</span> <span class="s">&quot;A required argument is missing.&quot;</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;If this ever gets called, it means something that was required was not</span>
+</span><span class='line'>  <span class="n">supplied</span><span class="o">.</span>  <span class="n">Use</span> <span class="k">as</span> <span class="n">default</span> <span class="n">value</span> <span class="k">for</span> <span class="o">&amp;</span><span class="n">key</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">defstruct</span> <span class="n">slots</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">apply</span> <span class="c">#&#39;error msg args))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Utilities</span> <span class="k">for</span> <span class="n">strings</span> <span class="ow">and</span> <span class="n">symbols</span> <span class="ow">and</span> <span class="n">printing</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">stringify</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Coerce argument to a string.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="n">stringp</span> <span class="n">exp</span><span class="p">)</span> <span class="n">exp</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">((</span><span class="n">symbolp</span> <span class="n">exp</span><span class="p">)</span> <span class="p">(</span><span class="n">symbol</span><span class="o">-</span><span class="n">name</span> <span class="n">exp</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="n">format</span> <span class="n">nil</span> <span class="s">&quot;~A&quot;</span> <span class="n">exp</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">concat</span><span class="o">-</span><span class="n">symbol</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Concatenate the args into one string, and turn that into a symbol.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">intern</span> <span class="p">(</span><span class="n">format</span> <span class="n">nil</span> <span class="s">&quot;~{~a~}&quot;</span> <span class="n">args</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="k">print</span><span class="o">-</span><span class="n">grid</span> <span class="p">(</span><span class="n">array</span> <span class="o">&amp;</span><span class="n">key</span> <span class="p">(</span><span class="n">stream</span> <span class="n">t</span><span class="p">)</span> <span class="p">(</span><span class="n">key</span> <span class="c">#&#39;identity) (width 3))</span>
+</span><span class='line'>  <span class="s">&quot;Print the contents of a 2-D array, numbering the edges.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="nb">max</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">array</span><span class="o">-</span><span class="n">dimension</span> <span class="n">array</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">1</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">max</span><span class="o">-</span><span class="n">y</span> <span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">array</span><span class="o">-</span><span class="n">dimension</span> <span class="n">array</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">1</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">;;</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">header</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;~&amp;&quot;</span><span class="p">)</span> <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="s">&quot; &quot;</span> <span class="n">width</span> <span class="n">stream</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">for</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="nb">max</span><span class="o">-</span><span class="n">x</span> <span class="n">do</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;|&quot;</span><span class="p">)</span> <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">dashes</span> <span class="n">width</span> <span class="n">stream</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;|~%&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">;;</span> <span class="n">Print</span> <span class="n">each</span> <span class="n">row</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">for</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="nb">max</span><span class="o">-</span><span class="n">y</span> <span class="n">do</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">y</span> <span class="p">(</span><span class="o">-</span> <span class="nb">max</span><span class="o">-</span><span class="n">y</span> <span class="n">y1</span><span class="p">)))</span>
+</span><span class='line'>     <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">centered</span> <span class="n">y</span> <span class="n">width</span> <span class="n">stream</span><span class="p">)</span>
+</span><span class='line'>     <span class="p">;;</span> <span class="n">Print</span> <span class="n">each</span> <span class="n">location</span>
+</span><span class='line'>     <span class="p">(</span><span class="k">for</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="nb">max</span><span class="o">-</span><span class="n">x</span> <span class="n">do</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;|&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">centered</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">key</span> <span class="p">(</span><span class="n">aref</span> <span class="n">array</span> <span class="n">x</span> <span class="n">y</span><span class="p">))</span> <span class="n">width</span> <span class="n">stream</span><span class="p">))</span>
+</span><span class='line'>     <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;|~%&quot;</span><span class="p">)</span>
+</span><span class='line'>     <span class="p">;;</span> <span class="n">Print</span> <span class="n">a</span> <span class="n">dashed</span> <span class="n">line</span>
+</span><span class='line'>     <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="s">&quot; &quot;</span> <span class="n">width</span> <span class="n">stream</span><span class="p">)</span>
+</span><span class='line'>     <span class="p">(</span><span class="k">for</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="nb">max</span><span class="o">-</span><span class="n">x</span> <span class="n">do</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;|&quot;</span><span class="p">)</span> <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">dashes</span> <span class="n">width</span> <span class="n">stream</span><span class="p">)))</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;|~%&quot;</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">;;</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">X</span><span class="o">-</span><span class="n">coordinates</span> <span class="n">along</span> <span class="n">the</span> <span class="n">bottom</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="s">&quot; &quot;</span> <span class="n">width</span> <span class="n">stream</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">for</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="nb">max</span><span class="o">-</span><span class="n">x</span> <span class="n">do</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot; &quot;</span><span class="p">)</span> <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">centered</span> <span class="n">x</span> <span class="n">width</span> <span class="n">stream</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">array</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="k">print</span><span class="o">-</span><span class="n">centered</span> <span class="p">(</span><span class="n">string</span> <span class="n">width</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">stream</span> <span class="n">t</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Print STRING centered in a field WIDTH wide.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">blanks</span> <span class="p">(</span><span class="o">-</span> <span class="n">width</span> <span class="p">(</span><span class="n">length</span> <span class="p">(</span><span class="n">stringify</span> <span class="n">string</span><span class="p">)))))</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="n">floor</span> <span class="n">blanks</span> <span class="mi">2</span><span class="p">)</span> <span class="n">stream</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;~A&quot;</span> <span class="n">string</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="n">ceiling</span> <span class="n">blanks</span> <span class="mi">2</span><span class="p">)</span> <span class="n">stream</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="p">(</span><span class="n">string</span> <span class="n">n</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">stream</span> <span class="n">t</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Print the string n times.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">dotimes</span> <span class="p">(</span><span class="n">i</span> <span class="n">n</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;~A&quot;</span> <span class="n">string</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="k">print</span><span class="o">-</span><span class="n">dashes</span> <span class="p">(</span><span class="n">width</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">stream</span> <span class="n">t</span><span class="p">)</span> <span class="n">separate</span><span class="o">-</span><span class="n">line</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Print a line of dashes WIDTH wide.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">when</span> <span class="n">separate</span><span class="o">-</span><span class="n">line</span> <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;~&amp;&quot;</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">print</span><span class="o">-</span><span class="n">repeated</span> <span class="s">&quot;-&quot;</span> <span class="n">width</span> <span class="n">stream</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">when</span> <span class="n">separate</span><span class="o">-</span><span class="n">line</span> <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;~%&quot;</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Assorted</span> <span class="n">conversion</span> <span class="n">utilities</span> <span class="ow">and</span> <span class="n">predicates</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">copy</span><span class="o">-</span><span class="n">array</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span><span class="n">aux</span> <span class="p">(</span><span class="n">dim</span> <span class="p">(</span><span class="n">array</span><span class="o">-</span><span class="n">dimensions</span> <span class="n">a</span><span class="p">))</span>
+</span><span class='line'>                          <span class="p">(</span><span class="n">b</span> <span class="p">(</span><span class="n">make</span><span class="o">-</span><span class="n">array</span> <span class="n">dim</span><span class="p">)))</span>
+</span><span class='line'>  <span class="s">&quot;Make a copy of an array.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">copy</span><span class="o">-</span><span class="n">subarray</span> <span class="n">a</span> <span class="n">b</span> <span class="n">nil</span> <span class="n">dim</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">b</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">copy</span><span class="o">-</span><span class="n">subarray</span> <span class="p">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">indices</span> <span class="n">dim</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="n">dim</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">dotimes</span> <span class="p">(</span><span class="n">i</span> <span class="p">(</span><span class="n">first</span> <span class="n">dim</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">copy</span><span class="o">-</span><span class="n">subarray</span> <span class="n">a</span> <span class="n">b</span> <span class="p">(</span><span class="n">append</span> <span class="n">indices</span> <span class="p">(</span><span class="nb">list</span> <span class="n">i</span><span class="p">))</span> <span class="p">(</span><span class="n">rest</span> <span class="n">dim</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">setf</span> <span class="p">(</span><span class="nb">apply</span> <span class="c">#&#39;aref (cons b indices))</span>
+</span><span class='line'>          <span class="p">(</span><span class="nb">apply</span> <span class="c">#&#39;aref (cons a indices)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">array</span><span class="o">-&gt;</span><span class="n">vector</span> <span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Convert a multi-dimensional array to a vector with the same elements.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">make</span><span class="o">-</span><span class="n">array</span> <span class="p">(</span><span class="n">array</span><span class="o">-</span><span class="n">total</span><span class="o">-</span><span class="n">size</span> <span class="n">array</span><span class="p">)</span> <span class="p">:</span><span class="n">displaced</span><span class="o">-</span><span class="n">to</span> <span class="n">array</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">plot</span><span class="o">-</span><span class="n">alist</span> <span class="p">(</span><span class="n">alist</span> <span class="nb">file</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">with</span><span class="o">-</span><span class="nb">open</span><span class="o">-</span><span class="nb">file</span> <span class="p">(</span><span class="n">stream</span> <span class="nb">file</span> <span class="p">:</span><span class="n">direction</span> <span class="p">:</span><span class="n">output</span> <span class="p">:</span><span class="k">if</span><span class="o">-</span><span class="n">does</span><span class="o">-</span><span class="ow">not</span><span class="o">-</span><span class="n">exist</span> <span class="p">:</span><span class="n">create</span>
+</span><span class='line'>                     <span class="p">:</span><span class="k">if</span><span class="o">-</span><span class="n">exists</span> <span class="p">:</span><span class="n">supersede</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">dolist</span> <span class="p">(</span><span class="n">xy</span> <span class="n">alist</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">format</span> <span class="n">stream</span> <span class="s">&quot;~&amp;~A ~A~%&quot;</span> <span class="p">(</span><span class="n">car</span> <span class="n">xy</span><span class="p">)</span> <span class="p">(</span><span class="n">cdr</span> <span class="n">xy</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">copy</span><span class="o">-</span><span class="nb">hash</span><span class="o">-</span><span class="n">table</span> <span class="p">(</span><span class="n">H1</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">copy</span><span class="o">-</span><span class="n">fn</span> <span class="c">#&#39;identity))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">H2</span> <span class="p">(</span><span class="n">make</span><span class="o">-</span><span class="nb">hash</span><span class="o">-</span><span class="n">table</span> <span class="p">:</span><span class="n">test</span> <span class="c">#&#39;equal)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">maphash</span> <span class="c">#&#39;(lambda (key val) (setf (gethash key H2) (funcall copy-fn val)))</span>
+</span><span class='line'>       <span class="n">H1</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">H2</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="nb">hash</span><span class="o">-</span><span class="n">table</span><span class="o">-&gt;</span><span class="nb">list</span> <span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Convert a hash table into a list of (key . val) pairs.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">maphash</span> <span class="c">#&#39;cons table))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">hprint</span> <span class="p">(</span><span class="n">h</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">stream</span> <span class="n">t</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;prints a hash table line by line&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">maphash</span> <span class="c">#&#39;(lambda (key val) (format stream &quot;~&amp;~A:~10T ~A&quot; key val)) h)</span>
+</span><span class='line'>  <span class="n">h</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">compose</span> <span class="p">(</span><span class="n">f</span> <span class="n">g</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Return a function h such that (h x) = (f (g x)).&quot;</span>
+</span><span class='line'>  <span class="c">#&#39;(lambda (x) (funcall f (funcall g x))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">the</span><span class="o">-</span><span class="n">biggest</span> <span class="p">(</span><span class="n">fn</span> <span class="n">l</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">biggest</span> <span class="p">(</span><span class="n">first</span> <span class="n">l</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">best</span><span class="o">-</span><span class="n">val</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">fn</span> <span class="p">(</span><span class="n">first</span> <span class="n">l</span><span class="p">))))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">dolist</span> <span class="p">(</span><span class="n">x</span> <span class="p">(</span><span class="n">rest</span> <span class="n">l</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">val</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">fn</span> <span class="n">x</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="o">&gt;</span> <span class="n">val</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">setq</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span> <span class="n">val</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">setq</span> <span class="n">biggest</span> <span class="n">x</span><span class="p">))))</span>
+</span><span class='line'>    <span class="n">biggest</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">the</span><span class="o">-</span><span class="n">biggest</span><span class="o">-</span><span class="n">random</span><span class="o">-</span><span class="n">tie</span> <span class="p">(</span><span class="n">fn</span> <span class="n">l</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">random</span><span class="o">-</span><span class="n">element</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">biggest</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="n">first</span> <span class="n">l</span><span class="p">)))</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">best</span><span class="o">-</span><span class="n">val</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">fn</span> <span class="p">(</span><span class="n">first</span> <span class="n">l</span><span class="p">))))</span>
+</span><span class='line'>     <span class="p">(</span><span class="n">dolist</span> <span class="p">(</span><span class="n">x</span> <span class="p">(</span><span class="n">rest</span> <span class="n">l</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">val</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">fn</span> <span class="n">x</span><span class="p">)))</span>
+</span><span class='line'>   <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="o">&gt;</span> <span class="n">val</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">setq</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span> <span class="n">val</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">setq</span> <span class="n">biggest</span> <span class="p">(</span><span class="nb">list</span> <span class="n">x</span><span class="p">)))</span>
+</span><span class='line'>         <span class="p">((</span><span class="o">=</span> <span class="n">val</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">push</span> <span class="n">x</span> <span class="n">biggest</span><span class="p">)))))</span>
+</span><span class='line'>     <span class="n">biggest</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">the</span><span class="o">-</span><span class="n">biggest</span><span class="o">-</span><span class="n">that</span> <span class="p">(</span><span class="n">fn</span> <span class="n">p</span> <span class="n">l</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">biggest</span> <span class="p">(</span><span class="n">first</span> <span class="n">l</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">best</span><span class="o">-</span><span class="n">val</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">fn</span> <span class="p">(</span><span class="n">first</span> <span class="n">l</span><span class="p">))))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">dolist</span> <span class="p">(</span><span class="n">x</span> <span class="p">(</span><span class="n">rest</span> <span class="n">l</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">p</span> <span class="n">x</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">val</span> <span class="p">(</span><span class="n">funcall</span> <span class="n">fn</span> <span class="n">x</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="o">&gt;</span> <span class="n">val</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">setq</span> <span class="n">best</span><span class="o">-</span><span class="n">val</span> <span class="n">val</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">setq</span> <span class="n">biggest</span> <span class="n">x</span><span class="p">)))))</span>
+</span><span class='line'>    <span class="n">biggest</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">the</span><span class="o">-</span><span class="n">smallest</span> <span class="p">(</span><span class="n">fn</span> <span class="n">l</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">the</span><span class="o">-</span><span class="n">biggest</span> <span class="p">(</span><span class="n">compose</span> <span class="c">#&#39;- fn) l))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">the</span><span class="o">-</span><span class="n">smallest</span><span class="o">-</span><span class="n">random</span><span class="o">-</span><span class="n">tie</span> <span class="p">(</span><span class="n">fn</span> <span class="n">l</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">the</span><span class="o">-</span><span class="n">biggest</span><span class="o">-</span><span class="n">random</span><span class="o">-</span><span class="n">tie</span> <span class="p">(</span><span class="n">compose</span> <span class="c">#&#39;- fn) l))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">the</span><span class="o">-</span><span class="n">smallest</span><span class="o">-</span><span class="n">that</span> <span class="p">(</span><span class="n">fn</span> <span class="n">p</span> <span class="n">l</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">the</span><span class="o">-</span><span class="n">biggest</span><span class="o">-</span><span class="n">that</span> <span class="p">(</span><span class="n">compose</span> <span class="c">#&#39;- fn) p l))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Debugging</span> <span class="n">tool</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defvar</span> <span class="o">*</span><span class="n">debugging</span><span class="o">*</span> <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">dprint</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">rest</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Echo all the args when *debugging* is true.  Return the first one.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">when</span> <span class="o">*</span><span class="n">debugging</span><span class="o">*</span> <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;~&amp;~{~S ~}~%&quot;</span> <span class="n">args</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">first</span> <span class="n">args</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">;;;;</span> <span class="n">Testing</span> <span class="n">Tool</span><span class="p">:</span> <span class="n">deftest</span> <span class="ow">and</span> <span class="n">test</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defmacro</span> <span class="n">deftest</span> <span class="p">(</span><span class="n">name</span> <span class="o">&amp;</span><span class="n">rest</span> <span class="n">examples</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;Define a set of test examples.  Each example is of the form (exp test)</span>
+</span><span class='line'>  <span class="ow">or</span> <span class="p">(</span><span class="n">exp</span><span class="p">)</span><span class="o">.</span>  <span class="n">Evaluate</span> <span class="n">exp</span> <span class="ow">and</span> <span class="n">see</span> <span class="k">if</span> <span class="n">the</span> <span class="n">result</span> <span class="n">passes</span> <span class="n">the</span> <span class="n">test</span><span class="o">.</span> <span class="n">Within</span> <span class="n">the</span>
+</span><span class='line'>  <span class="n">test</span><span class="p">,</span> <span class="n">the</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">bound</span> <span class="n">to</span> <span class="o">*.</span>  <span class="n">The</span> <span class="n">example</span> <span class="p">((</span><span class="n">f</span> <span class="mi">2</span><span class="p">)))</span> <span class="n">has</span> <span class="n">no</span> <span class="n">test</span> <span class="n">to</span>
+</span><span class='line'>  <span class="n">fail</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">alweays</span> <span class="n">passes</span> <span class="n">the</span> <span class="n">test</span><span class="o">.</span>  <span class="n">But</span> <span class="p">((</span><span class="o">+</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="o">=</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="n">has</span> <span class="n">the</span> <span class="n">test</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">=</span> <span class="o">*</span> <span class="mi">3</span><span class="p">),</span> <span class="n">which</span> <span class="n">fails</span> <span class="n">because</span> <span class="o">*</span> <span class="n">will</span> <span class="n">be</span> <span class="n">bound</span> <span class="n">to</span> <span class="n">the</span> <span class="n">result</span> <span class="mi">4</span><span class="p">,</span> <span class="n">so</span> <span class="n">the</span> <span class="n">test</span>
+</span><span class='line'>  <span class="n">fails</span><span class="o">.</span>  <span class="n">Call</span> <span class="p">(</span><span class="n">TEST</span> <span class="n">name</span><span class="p">)</span> <span class="n">to</span> <span class="n">count</span> <span class="n">how</span> <span class="n">many</span> <span class="n">tests</span> <span class="n">are</span> <span class="n">failed</span> <span class="n">within</span> <span class="n">the</span>
+</span><span class='line'>  <span class="n">named</span> <span class="n">test</span><span class="o">.</span>  <span class="n">NAME</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">an</span> <span class="n">aima</span><span class="o">-</span><span class="n">system</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>  <span class="err">`</span><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">test</span> <span class="s">&#39;,name &#39;</span><span class="p">,</span><span class="n">examples</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">add</span><span class="o">-</span><span class="n">test</span> <span class="p">(</span><span class="n">name</span> <span class="n">examples</span><span class="p">)</span>
+</span><span class='line'>  <span class="s">&quot;The functional interface for deftest: adds test examples to a system.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">system</span> <span class="p">(</span><span class="ow">or</span> <span class="p">(</span><span class="n">get</span><span class="o">-</span><span class="n">aima</span><span class="o">-</span><span class="n">system</span> <span class="n">name</span><span class="p">)</span>
+</span><span class='line'>          <span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">aima</span><span class="o">-</span><span class="n">system</span> <span class="p">:</span><span class="n">name</span> <span class="n">name</span> <span class="p">:</span><span class="n">examples</span> <span class="n">examples</span><span class="p">))))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">setf</span> <span class="p">(</span><span class="n">aima</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">examples</span> <span class="n">system</span><span class="p">)</span> <span class="n">examples</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">name</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">test</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="n">name</span> <span class="s">&#39;all) (print? &#39;</span><span class="n">t</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Run a test suite and sum the number of errors.  If all is well, this</span>
+</span><span class='line'>  <span class="n">should</span> <span class="k">return</span> <span class="mf">0.</span>  <span class="n">The</span> <span class="n">second</span> <span class="n">argument</span> <span class="n">says</span> <span class="n">what</span> <span class="n">to</span> <span class="k">print</span><span class="p">:</span> <span class="n">nil</span> <span class="k">for</span>
+</span><span class='line'>  <span class="n">nothing</span><span class="p">,</span> <span class="n">t</span> <span class="k">for</span> <span class="n">everything</span><span class="p">,</span> <span class="ow">or</span> <span class="n">FAIL</span> <span class="k">for</span> <span class="n">just</span> <span class="n">those</span> <span class="n">examples</span> <span class="n">that</span> <span class="n">fail</span><span class="o">.</span>
+</span><span class='line'>  <span class="n">If</span> <span class="n">there</span> <span class="n">are</span> <span class="n">no</span> <span class="n">test</span> <span class="n">examples</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">named</span> <span class="n">system</span><span class="p">,</span> <span class="n">put</span> <span class="n">the</span> <span class="n">system</span> <span class="n">has</span>
+</span><span class='line'>  <span class="n">other</span> <span class="n">systems</span> <span class="k">as</span> <span class="n">parts</span><span class="p">,</span> <span class="n">run</span> <span class="n">the</span> <span class="n">tests</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">those</span> <span class="ow">and</span> <span class="nb">sum</span> <span class="n">the</span> <span class="n">result</span><span class="o">.</span><span class="s">&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="o">*</span><span class="k">print</span><span class="o">-</span><span class="n">pretty</span><span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="o">*</span><span class="n">standard</span><span class="o">-</span><span class="n">output</span><span class="o">*</span> <span class="p">(</span><span class="k">if</span> <span class="k">print</span><span class="err">?</span> <span class="o">*</span><span class="n">standard</span><span class="o">-</span><span class="n">output</span><span class="o">*</span>
+</span><span class='line'>               <span class="p">(</span><span class="n">make</span><span class="o">-</span><span class="n">broadcast</span><span class="o">-</span><span class="n">stream</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">system</span> <span class="p">(</span><span class="n">aima</span><span class="o">-</span><span class="n">load</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">unloaded</span> <span class="n">name</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="n">null</span> <span class="n">system</span><span class="p">)</span> <span class="p">(</span><span class="n">warn</span> <span class="s">&quot;No such system as ~A.&quot;</span> <span class="n">name</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">((</span><span class="ow">and</span> <span class="p">(</span><span class="n">null</span> <span class="p">(</span><span class="n">aima</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">examples</span> <span class="n">system</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">every</span> <span class="c">#&#39;symbolp (aima-system-parts system)))</span>
+</span><span class='line'>     <span class="p">(</span><span class="nb">sum</span>  <span class="p">(</span><span class="n">aima</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">parts</span> <span class="n">system</span><span class="p">)</span>
+</span><span class='line'>       <span class="c">#&#39;(lambda (part) (test part print?))))</span>
+</span><span class='line'>          <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="n">when</span> <span class="k">print</span><span class="err">?</span> <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;Testing System ~A~%&quot;</span> <span class="n">name</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="n">let</span> <span class="p">((</span><span class="n">errors</span> <span class="p">(</span><span class="n">count</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="ow">not</span> <span class="c">#&#39;(lambda (example) </span>
+</span><span class='line'>                       <span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">example</span> <span class="n">example</span> <span class="k">print</span><span class="err">?</span><span class="p">))</span>
+</span><span class='line'>             <span class="p">(</span><span class="n">aima</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">examples</span> <span class="n">system</span><span class="p">))))</span>
+</span><span class='line'>         <span class="p">(</span><span class="n">format</span> <span class="o">*</span><span class="n">debug</span><span class="o">-</span><span class="n">io</span><span class="o">*</span> <span class="s">&quot;~%~2D error~P on system ~A~%&quot;</span>
+</span><span class='line'>             <span class="n">errors</span> <span class="n">errors</span> <span class="n">name</span><span class="p">)</span>
+</span><span class='line'>         <span class="n">errors</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="n">defun</span> <span class="n">test</span><span class="o">-</span><span class="n">example</span> <span class="p">(</span><span class="n">example</span> <span class="o">&amp;</span><span class="n">optional</span> <span class="p">(</span><span class="k">print</span><span class="err">?</span> <span class="n">t</span><span class="p">))</span>
+</span><span class='line'>  <span class="s">&quot;Does the EXP part of this example pass the TEST?&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">stringp</span> <span class="n">example</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">progn</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="n">eq</span> <span class="k">print</span><span class="err">?</span> <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>          <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;~&amp;;;; ~A~%&quot;</span> <span class="n">example</span><span class="p">))</span>
+</span><span class='line'>        <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">let</span><span class="o">*</span> <span class="p">((</span><span class="n">exp</span> <span class="p">(</span><span class="n">first</span> <span class="n">example</span><span class="p">))</span>
+</span><span class='line'>     <span class="p">(</span><span class="o">*</span> <span class="n">nil</span><span class="p">)</span>
+</span><span class='line'>     <span class="p">(</span><span class="n">test</span> <span class="p">(</span><span class="n">cond</span> <span class="p">((</span><span class="n">null</span> <span class="p">(</span><span class="n">second</span> <span class="n">example</span><span class="p">))</span> <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>             <span class="p">((</span><span class="n">constantp</span> <span class="p">(</span><span class="n">second</span> <span class="n">example</span><span class="p">))</span>
+</span><span class='line'>          <span class="err">`</span><span class="p">(</span><span class="n">equal</span> <span class="o">*</span> <span class="p">,(</span><span class="n">second</span> <span class="n">example</span><span class="p">)))</span>
+</span><span class='line'>             <span class="p">(</span><span class="n">t</span> <span class="p">(</span><span class="n">second</span> <span class="n">example</span><span class="p">))))</span>
+</span><span class='line'>           <span class="n">test</span><span class="o">-</span><span class="n">result</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="n">eq</span> <span class="k">print</span><span class="err">?</span> <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;~&amp;&gt; ~S~%&quot;</span> <span class="n">exp</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">setf</span> <span class="o">*</span> <span class="p">(</span><span class="nb">eval</span> <span class="n">exp</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="n">eq</span> <span class="k">print</span><span class="err">?</span> <span class="n">t</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;~&amp;~S~%&quot;</span> <span class="o">*</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">setf</span> <span class="n">test</span><span class="o">-</span><span class="n">result</span> <span class="p">(</span><span class="nb">eval</span> <span class="n">test</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="n">null</span> <span class="n">test</span><span class="o">-</span><span class="n">result</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">case</span> <span class="k">print</span><span class="err">?</span>
+</span><span class='line'>          <span class="p">((</span><span class="n">FAIL</span><span class="p">)</span> <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;~&amp;;;; FAILURE on ~S; expected ~S, got:~%;;; ~S~%&quot;</span>
+</span><span class='line'>                          <span class="n">exp</span> <span class="n">test</span> <span class="o">*</span><span class="p">))</span>
+</span><span class='line'>          <span class="p">((</span><span class="n">T</span><span class="p">)</span> <span class="p">(</span><span class="n">format</span> <span class="n">t</span> <span class="s">&quot;~&amp;;;; FAILURE: expected ~S&quot;</span> <span class="n">test</span><span class="p">))</span>
+</span><span class='line'>          <span class="p">(</span><span class="n">otherwise</span><span class="p">)))</span>
+</span><span class='line'>      <span class="n">test</span><span class="o">-</span><span class="n">result</span><span class="p">)))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
