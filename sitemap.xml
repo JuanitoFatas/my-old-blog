@@ -1,15 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://JuanitoFatas.github.com/blog/2011/10/31/1234567/</loc>
+        <lastmod>2011-10-31T16:39:00+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://JuanitoFatas.github.com/about/</loc>
         <lastmod>2011-10-31T15:23:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://JuanitoFatas.github.com/blog/archives/</loc>
-        <lastmod>2011-10-31T11:40:01+08:00</lastmod>
+        <lastmod>2011-10-31T16:39:00+08:00</lastmod>
     </url>
     <url>
         <loc>http://JuanitoFatas.github.com/</loc>
-        <lastmod>2011-10-31T11:40:01+08:00</lastmod>
+        <lastmod>2011-10-31T16:39:00+08:00</lastmod>
     </url>
 </urlset>
