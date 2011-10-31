@@ -4,7 +4,7 @@
   <title><![CDATA[Juanito Fatas Huang]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-10-31T16:39:27+08:00</updated>
+  <updated>2011-10-31T16:46:02+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -31,6 +31,15 @@
 
 
 <h2>This is another regular paragraph.</h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="http://JuanitoFatas.github.com/blog/2011/10/31/test/"/>
+    <updated>2011-10-31T13:48:00+08:00</updated>
+    <id>http://JuanitoFatas.github.com/blog/2011/10/31/test</id>
+    <content type="html"><![CDATA[<p>Liquid error: ClassNotFound: no lexer for alias &#8216;lisp&#8217; found</p>
 ]]></content>
   </entry>
   
