@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-10-31T17:31:38+08:00</updated>
+  <updated>2011-10-31T22:14:13+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -19,6 +19,17 @@
     <updated>2011-10-31T16:35:00+08:00</updated>
     <id>http://JuanitoFatas.github.com/blog/2011/10/31/1234567</id>
     <content type="html"><![CDATA[<h1>This is a regular paragraph.</h1>
+
+<figure class='code'><figcaption><span>if it is a atom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scheme'><span class='line'><span class="p">(</span><span class="k">define </span><span class="nv">atom?</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">lambda </span><span class="nv">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nb">pair? </span><span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nb">null? </span><span class="nv">x</span><span class="p">)))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <table>
     <tr>
