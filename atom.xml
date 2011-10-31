@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-10-31T22:14:13+08:00</updated>
+  <updated>2011-10-31T22:25:27+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -23,10 +23,28 @@
 <figure class='code'><figcaption><span>if it is a atom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scheme'><span class='line'><span class="p">(</span><span class="k">define </span><span class="nv">atom?</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">lambda </span><span class="nv">x</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nb">pair? </span><span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nb">null? </span><span class="nv">x</span><span class="p">)))))</span>
+</pre></td><td class='code'><pre><code class='common-lisp'><span class='line'><span class="p">(</span><span class="nv">define</span> <span class="nv">atom?</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">lambda</span> <span class="nv">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nv">pair?</span> <span class="nv">x</span><span class="p">))</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nv">null?</span> <span class="nv">x</span><span class="p">))))</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<p>regular ~~~~~</p>
+
+<div><script src='https://gist.github.com/1327580.js?file='></script>
+<noscript><pre><code>// From: https://mail.mozilla.org/pipermail/es-discuss/2011-October/thread.html#17696
+
+const className = superClass &lt;| function(/*constructor parameters */) {
+    //constructor body
+    super.constructor(/*arguments to super constructor */);
+    this.{
+     //per instance property definitions
+    };
+}.prototype.{
+    //instance properties defined on prototype
+}.constructor.{
+    //class (ie, constructor) properties
+};</code></pre></noscript></div>
 
 
 
@@ -42,6 +60,16 @@
 
 
 <h2>This is another regular paragraph.</h2>
+
+<figure class='code'><figcaption><span> (test.rb)</span> <a href='http://JuanitoFatas.github.com/downloads/code/test.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="p">(</span><span class="n">define</span> <span class="n">add1</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="o">+</span> <span class="n">x</span> <span class="mi">1</span><span class="p">)))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
