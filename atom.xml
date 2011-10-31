@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-10-31T22:25:27+08:00</updated>
+  <updated>2011-10-31T22:30:24+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -70,6 +70,13 @@ const className = superClass &lt;| function(/*constructor parameters */) {
 </span><span class='line'>    <span class="p">(</span><span class="o">+</span> <span class="n">x</span> <span class="mi">1</span><span class="p">)))</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<h2>test</h2>
+
+<p><span class='pullquote-right' data-pullquote='surround it like this '>
+Surround your paragraph with the pull quote tags. Then when you come to
+the text you want to pull, surround it like this and that&#8217;s all there is to it.
+</span></p>
 ]]></content>
   </entry>
   
