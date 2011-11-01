@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-01T09:51:25+08:00</updated>
+  <updated>2011-11-01T09:53:10+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -12,5 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[first]]></title>
+    <link href="http://JuanitoFatas.github.com/blog/2011/11/01/first/"/>
+    <updated>2011-11-01T09:52:00+08:00</updated>
+    <id>http://JuanitoFatas.github.com/blog/2011/11/01/first</id>
+    <content type="html"><![CDATA[<h1>test</h1>
+
+<p>this is a test post.</p>
+]]></content>
+  </entry>
   
 </feed>
