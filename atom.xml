@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-03T10:43:22+08:00</updated>
+  <updated>2011-11-03T10:48:47+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -76,20 +76,6 @@ comments: true <br>
     <updated>2011-11-03T09:58:00+08:00</updated>
     <id>http://JuanitoFatas.github.com/blog/2011/11/03/micro-ruby</id>
     <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[first]]></title>
-    <link href="http://JuanitoFatas.github.com/blog/2011/11/01/first/"/>
-    <updated>2011-11-01T09:52:00+08:00</updated>
-    <id>http://JuanitoFatas.github.com/blog/2011/11/01/first</id>
-    <content type="html"><![CDATA[<h1>test</h1>
-
-<p>this is a test post.</p>
-
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
-<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
 ]]></content>
   </entry>
   
