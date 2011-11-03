@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-03T10:35:11+08:00</updated>
+  <updated>2011-11-03T10:38:30+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/"/>
     <updated>2011-11-03T10:02:00+08:00</updated>
     <id>http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue</id>
-    <content type="html"><![CDATA[<p>I&#8217;m blogging with octopress and my ruby version is <code>ruby 1.9.2p290</code></p>
+    <content type="html"><![CDATA[<p>I&#8217;m blogging with <code>octopress</code> and my ruby version is <code>ruby 1.9.2p290</code></p>
 
 <p>While running:</p>
 
