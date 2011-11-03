@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | 台北小碼農]]></title>
+  <link href="http://JuanitoFatas.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://JuanitoFatas.github.com/"/>
+  <updated>2011-11-03T11:20:57+08:00</updated>
+  <id>http://JuanitoFatas.github.com/</id>
+  <author>
+    <name><![CDATA[Juanito Fatas Huang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[micro ruby notes]]></title>
+    <link href="http://JuanitoFatas.github.com/blog/2011/11/03/micro-ruby/"/>
+    <updated>2011-11-03T09:58:00+08:00</updated>
+    <id>http://JuanitoFatas.github.com/blog/2011/11/03/micro-ruby</id>
+    <content type="html"><![CDATA[<p>For my personal cosulting...  <br/>
+No guarantees XD</p>
+
+<p><code>ruby
+puts('huang')
+</code></p>
+
+<p><strong>Constructor:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>instance = Class.new
+</code></pre>
+
+<p>```</p>
+
+<p><strong>instance variable:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>@var
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Ruby naming convention:</strong></p>
+
+<p><strong>methods, variables</strong></p>
+
+<blockquote><p>using line_item instead of lineItem</p></blockquote>
+
+<p><strong>Ruby's symbol</strong></p>
+
+<pre><code>":" + var
+</code></pre>
+
+<blockquote><p>e.g., :name, :action, :id...etc.</p></blockquote>
+
+<p><strong>Define a method:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>def methodName
+    # your code goes here
+end
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Expression Interpolation:</strong>
+``` ruby</p>
+
+<pre><code>def say(name)
+  puts "hi, #{name.capitalize}"
+end
+</code></pre>
+
+<p>```</p>
+
+<p>``` ruby
+$ puts say(juan)</p>
+
+<blockquote><blockquote><p>"hi, Juan"
+```</p></blockquote></blockquote>
+
+<p><strong>Ruby Class:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>Class order &lt; ActiveRecord::Base
+
+    has_many :line_items
+
+    def self.find_all_unpaid 
+        find(:all, 'paid=0')
+    end
+
+    def total
+        sum=0
+        line_items.each {|li| sum += li.total}
+    end
+end
+</code></pre>
+
+<p>```</p>
+
+<blockquote><p>A method with "self." is a class-level method</p></blockquote>
+
+<p><strong>Quick access to Instance variable:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>Class Car
+    attr_accessor :name # Read &amp; Write
+    attr_reader :color # read only
+    attr_writer :weight # write only
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Public / Private / Protected :</strong></p>
+
+<blockquote><p>Public for everyone, protected for instances with same class, private instance only.</p></blockquote>
+
+<p><strong>Modules:</strong></p>
+
+<blockquote><p>You can define it but cannot create it. For sharing methods and naming spaces issue.</p></blockquote>
+
+<p><strong>Array:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>a = [ '1', 23, 7.6, 'ppl' ]
+age = [ ]
+</code></pre>
+
+<p>```</p>
+
+<p><strong>\'&lt;&lt;\' operator (Appending at the end)</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>for person in @people
+  age &lt;&lt; person.age
+end
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Quickly for declaring char array:</strong></p>
+
+<pre><code>a [ 'a', 'b', 'c', 'd'] is equivalent to a %w{a b c d}
+</code></pre>
+
+<p><strong>Hash:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>sample_hash = {
+    :a =&gt; 'a'
+    :b =&gt; 'b'
+}
+</code></pre>
+
+<p>```</p>
+
+<p><strong>To get value of symbol a:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>sample_hash[:a]
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Hashes and Parameter List:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>redirecto_to :action =&gt; 'show' , :id =&gt; product.id
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Control Structures:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>if a &gt; 10
+  puts 'a&gt;10'
+elsif a == 3
+  puts 'a=3'
+else
+  puts 'a&lt;10&amp;a!=3'
+end
+
+while a&lt;100
+  a += 1
+end
+</code></pre>
+
+<p>```</p>
+
+<p><strong>with only 1 expression</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>puts 'a&gt;10' if a &gt; 10
+distance *= 1.2 while distance &lt; 100
+</code></pre>
+
+<p>```
+<strong>Blocks and Iterators:</strong></p>
+
+<p>Single Line Block</p>
+
+<pre><code>{ ... }
+</code></pre>
+
+<p>Multi-line Block
+``` ruby</p>
+
+<pre><code>do
+  club.enroll(person)
+  person.socialize
+end
+</code></pre>
+
+<p>```</p>
+
+<blockquote><p>The block can only invoke right after method call.</p></blockquote>
+
+<p>``` ruby</p>
+
+<pre><code>greet ("Huang", "Ni-hao") { puts "Hi" } # greet is a method
+</code></pre>
+
+<p>```</p>
+
+<blockquote><p>method_call (parm1, ...) { block }</p></blockquote>
+
+<p><strong>Example usage:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>animals.each { |animal| puts animal}
+3.times { print 'I love you' }
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Exceptions:</strong></p>
+
+<p>``` ruby</p>
+
+<pre><code>begin
+    #your code here
+  rescue BlogDataNotFound
+    #do something
+  ...
+end
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Require:</strong></p>
+
+<blockquote><p>loading resources outside</p></blockquote>
+
+<p>``` ruby</p>
+
+<pre><code>require File.dirname(___FILE___) + '/.../test_helper'
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Ruby api cosult:</strong></p>
+
+<p><code>$ gem_server</code></p>
+
+<p>Go to <a href="http://localhost:8808">http://localhost:8808</a> for consulting.</p>
+]]></content>
+  </entry>
+  
+</feed>
