@@ -9,8 +9,7 @@
   <meta name="author" content="Juanito Fatas Huang">
 
   
-  <meta name="description" content="test this is a test post.
-">
+  <meta name="description" content="I&#8217;m blogging with octopress and my ruby version is ruby 1.9.2p290 While running: $ rake generate You see this error: /Users/Mac/.rvm/rubies/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -38,7 +37,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">台北小碼農</a></h1>
   
-    <h2>Farmer of Programming @ Taipei</h2>
+    <h2>Farmer of Programming at Taipei</h2>
   
 </hgroup>
 
@@ -70,6 +69,120 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2011/11/03/psych-issue/">Couldn&#8217;t Parse YAML, psych.rb:148</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-03T10:02:00+08:00" pubdate>Nov 3<span>rd</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/03/psych-issue/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;m blogging with octopress and my ruby version is <code>ruby 1.9.2p290</code></p>
+
+<p>While running:</p>
+
+<p><code>$ rake generate</code></p>
+
+<p>You see this error:</p>
+
+<p><code>/Users/Mac/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/psych.rb:148:in `parse': couldn't parse YAML at line 5 column 0 (Psych::SyntaxError)
+</code></p>
+
+<p>This error you see is probably <strong>you have some invalid yaml somewhere around your code</strong>.</p>
+
+<blockquote><p>psych.rb is a new ruby YAML parser.</p></blockquote>
+
+<p>You may find solutions from Stack Overflow and octopress support forum below.</p>
+
+<p><a href="http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml">Rails error, couldn&#8217;t parse YAML</a>  <br/>
+<a href="https://github.com/imathis/octopress/issues/57">error with rake generate</a></p>
+
+<p>My case I found it is a simple yaml error probably when creating new post.
+Every new post begins with yaml stuff:</p>
+
+<p>
+&#45;&#45;&#45; <br>
+layout: post    <br>
+title: &#34;some title&#34; <br>   
+date: 2011-11-03 10:00 <br>   
+comments: true <br>   
+&#45;&#45;&#45; <br>
+</p>
+
+
+<p>If you accidentally write:</p>
+
+<p>
+&#45;&#45;&#45; <br>
+<strong>layout:post</strong> <br>
+title: &#34;some title&#34; <br>   
+date: 2011-11-03 10:00 <br>   
+comments: true <br>   
+&#45;&#45;&#45; <br>
+</p>
+
+
+<p>You&#8217;ll see this error because you do not have space between &#39;:&#39; and the following value.
+<strong>Make sure you save a space after &#39;:&#39;</strong></p>
+
+<p>Hope it helps!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/03/micro-ruby/">Micro Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-03T09:58:00+08:00" pubdate>Nov 3<span>rd</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/03/micro-ruby/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2011/11/01/first/">First</a></h1>
     
     
@@ -93,6 +206,9 @@
   <div class="entry-content"><h1>test</h1>
 
 <p>this is a test post.</p>
+
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
+<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
 </div>
   
   
@@ -111,6 +227,14 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/03/psych-issue/">couldn&#8217;t parse YAML, psych.rb:148</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/03/micro-ruby/">micro ruby</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/11/01/first/">first</a>

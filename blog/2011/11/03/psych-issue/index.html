@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - 台北小碼農</title>
+  <title>couldn't parse YAML, psych.rb:148 - 台北小碼農</title>
   <meta name="author" content="Juanito Fatas Huang">
 
   
-  <meta name="description" content="Blog Archive 2011 couldn&#8217;t parse YAML, psych.rb:148
-Nov 03 2011 posted in octopress, yaml issue micro ruby
-Nov 03 2011 first
-Nov 01 2011 &hellip;">
+  <meta name="description" content="I&#8217;m blogging with octopress and my ruby version is ruby 1.9.2p290 While running: $ rake generate You see this error: /Users/Mac/.rvm/rubies/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@ Nov 01 2011 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://JuanitoFatas.github.com/blog/archives">
+  <link rel="canonical" href="http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -65,56 +62,135 @@ Nov 01 2011 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Couldn't Parse YAML, psych.rb:148</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-03T10:02:00+08:00" pubdate>Nov 3<span>rd</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>I&#8217;m blogging with octopress and my ruby version is <code>ruby 1.9.2p290</code></p>
 
-  
-  <h2>2011</h2>
+<p>While running:</p>
 
-<article>
-  
-<h1><a href="/blog/2011/11/03/psych-issue/">couldn&#8217;t parse YAML, psych.rb:148</a></h1>
-<time datetime="2011-11-03T10:02:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>03</span> <span class='year'>2011</span></time>
+<p><code>$ rake generate</code></p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/yaml-issue/'>yaml issue</a></span>
-</footer>
+<p>You see this error:</p>
 
+<p><code>/Users/Mac/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/psych.rb:148:in `parse': couldn't parse YAML at line 5 column 0 (Psych::SyntaxError)
+</code></p>
 
-</article>
+<p>This error you see is probably <strong>you have some invalid yaml somewhere around your code</strong>.</p>
 
+<blockquote><p>psych.rb is a new ruby YAML parser.</p></blockquote>
 
+<p>You may find solutions from Stack Overflow and octopress support forum below.</p>
 
-<article>
-  
-<h1><a href="/blog/2011/11/03/micro-ruby/">micro ruby</a></h1>
-<time datetime="2011-11-03T09:58:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>03</span> <span class='year'>2011</span></time>
+<p><a href="http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml">Rails error, couldn&#8217;t parse YAML</a>  <br/>
+<a href="https://github.com/imathis/octopress/issues/57">error with rake generate</a></p>
 
+<p>My case I found it is a simple yaml error probably when creating new post.
+Every new post begins with yaml stuff:</p>
 
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/11/01/first/">first</a></h1>
-<time datetime="2011-11-01T09:52:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>01</span> <span class='year'>2011</span></time>
+<p>
+&#45;&#45;&#45; <br>
+layout: post    <br>
+title: &#34;some title&#34; <br>   
+date: 2011-11-03 10:00 <br>   
+comments: true <br>   
+&#45;&#45;&#45; <br>
+</p>
 
 
-</article>
+<p>If you accidentally write:</p>
 
+<p>
+&#45;&#45;&#45; <br>
+<strong>layout:post</strong> <br>
+title: &#34;some title&#34; <br>   
+date: 2011-11-03 10:00 <br>   
+comments: true <br>   
+&#45;&#45;&#45; <br>
+</p>
+
+
+<p>You&#8217;ll see this error because you do not have space between &#39;:&#39; and the following value.
+<strong>Make sure you save a space after &#39;:&#39;</strong></p>
+
+<p>Hope it helps!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Juanito Fatas Huang</span></span>
+
+      
+
+
+
+
+  
+
+<time datetime="2011-11-03T10:02:00+08:00" pubdate>Nov 3<span>rd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/yaml-issue/'>yaml issue</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/" data-via="" data-counturl="http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/03/micro-ruby/" title="Previous Post: micro ruby">&laquo; micro ruby</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -177,7 +253,10 @@ Nov 01 2011 &hellip;">
       var disqus_shortname = 'juanfatas';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/';
+        var disqus_url = 'http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/';
+        var disqus_script = 'embed.js';
       
 
     (function () {

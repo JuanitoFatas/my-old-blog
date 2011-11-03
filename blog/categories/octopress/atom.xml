@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[台北小碼農]]></title>
-  <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress | 台北小碼農]]></title>
+  <link href="http://JuanitoFatas.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
   <updated>2011-11-03T10:31:49+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
@@ -18,7 +18,7 @@
     <link href="http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/"/>
     <updated>2011-11-03T10:02:00+08:00</updated>
     <id>http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue</id>
-    <content type="html"><![CDATA[<p>I&#8217;m blogging with octopress and my ruby version is <code>ruby 1.9.2p290</code></p>
+    <content type="html"><![CDATA[<p>I'm blogging with octopress and my ruby version is <code>ruby 1.9.2p290</code></p>
 
 <p>While running:</p>
 
@@ -35,7 +35,7 @@
 
 <p>You may find solutions from Stack Overflow and octopress support forum below.</p>
 
-<p><a href="http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml">Rails error, couldn&#8217;t parse YAML</a>  <br/>
+<p><a href="http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml">Rails error, couldn't parse YAML</a>  <br/>
 <a href="https://github.com/imathis/octopress/issues/57">error with rake generate</a></p>
 
 <p>My case I found it is a simple yaml error probably when creating new post.
@@ -44,7 +44,7 @@ Every new post begins with yaml stuff:</p>
 <p>
 &#45;&#45;&#45; <br>
 layout: post    <br>
-title: &#34;some title&#34; <br>   
+title: \"some title\" <br>   
 date: 2011-11-03 10:00 <br>   
 comments: true <br>   
 &#45;&#45;&#45; <br>
@@ -56,40 +56,17 @@ comments: true <br>
 <p>
 &#45;&#45;&#45; <br>
 <strong>layout:post</strong> <br>
-title: &#34;some title&#34; <br>   
+title: \"some title\" <br>   
 date: 2011-11-03 10:00 <br>   
 comments: true <br>   
 &#45;&#45;&#45; <br>
 </p>
 
 
-<p>You&#8217;ll see this error because you do not have space between &#39;:&#39; and the following value.
-<strong>Make sure you save a space after &#39;:&#39;</strong></p>
+<p>You'll see this error because you do not have space between \':\' and the following value.
+<strong>Make sure you save a space after \':\'</strong></p>
 
 <p>Hope it helps!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[micro ruby]]></title>
-    <link href="http://JuanitoFatas.github.com/blog/2011/11/03/micro-ruby/"/>
-    <updated>2011-11-03T09:58:00+08:00</updated>
-    <id>http://JuanitoFatas.github.com/blog/2011/11/03/micro-ruby</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[first]]></title>
-    <link href="http://JuanitoFatas.github.com/blog/2011/11/01/first/"/>
-    <updated>2011-11-01T09:52:00+08:00</updated>
-    <id>http://JuanitoFatas.github.com/blog/2011/11/01/first</id>
-    <content type="html"><![CDATA[<h1>test</h1>
-
-<p>this is a test post.</p>
-
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
-<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
 ]]></content>
   </entry>
   
