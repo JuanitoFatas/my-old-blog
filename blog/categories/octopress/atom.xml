@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-03T10:41:36+08:00</updated>
+  <updated>2011-11-03T10:43:22+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -38,7 +38,7 @@
 <p><a href="http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml">Rails error, couldn't parse YAML</a>  <br/>
 <a href="https://github.com/imathis/octopress/issues/57">error with rake generate</a></p>
 
-<p>My case I found it is a simple yaml error probably when creating new post.
+<p>My case I found it is a simple yaml error when creating new post.
 Every new post begins with yaml stuff:</p>
 
 <p>
