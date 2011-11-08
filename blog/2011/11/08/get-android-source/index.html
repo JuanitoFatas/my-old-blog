@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Android 原始碼版本控制 - 使用git與repo - 台北小碼農</title>
+  <title>Android 原始碼下載及版本控制 - 使用git與repo - 台北小碼農</title>
   <meta name="author" content="Juanito Fatas Huang">
 
   
-  <meta name="description" content="要取得Android的原始碼，會需要用到Git和Repo還有Gerrit。 什麼是Git? Git is an open-source version-control system designed to handle
-very large projects that are &hellip;">
+  <meta name="description" content="要取得Android的原始碼，會需要用到Git和Repo還有Gerrit。
+以下解釋一些工具，太冗長，可直接拉到最下方看如何取得Android原始碼。 什麼是Git? Git is an open-source version-control system designed to handle &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,7 +68,7 @@ very large projects that are &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Android 原始碼版本控制 - 使用git與repo</h1>
+      <h1 class="entry-title">Android 原始碼下載及版本控制 - 使用git與repo</h1>
     
     
       <p class="meta">
@@ -88,7 +88,8 @@ very large projects that are &hellip;">
   </header>
 
 
-<div class="entry-content"><p>要取得Android的原始碼，會需要用到<em>Git</em>和<em>Repo</em>還有<em>Gerrit</em>。</p>
+<div class="entry-content"><p>要取得Android的原始碼，會需要用到<em>Git</em>和<em>Repo</em>還有<em>Gerrit</em>。
+以下解釋一些工具，太冗長，可直接拉到最下方看如何取得Android原始碼。</p>
 
 <h3>什麼是<a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a>?</h3>
 
@@ -131,6 +132,25 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 <li>Gerrit 給使用git專案的雲端code review伺服器</li>
 </ul>
 
+
+<h3>安裝Git</h3>
+
+<p>請至<a href="http://git-scm.com/">Git官網</a>下載適合版本。</p>
+
+<h3>安裝repo ( Mac OSX 為例 )</h3>
+
+<p>首先在HOME目錄建立bin資料夾（如果沒有）</p>
+
+<p><code>$ mkdir ~/bin</code></p>
+
+<p>將此資料夾加入環境變數 $PATH</p>
+
+<p><code>$ PATH=~/bin:$PATH</code></p>
+
+<p>下載repo至~/bin/並設置權限為可執行</p>
+
+<p><code>$ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo &gt; ~/bin/repo</code>
+<code>$ chmod a+x ~/bin/repo</code></p>
 
 <h2>基本的工作流程</h2>
 
@@ -278,7 +298,78 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p><img src="http://source.android.com/images/git-repo-1.png" style="float:center"></p>
 
-<p>打完收工&#8230;</p>
+<h2>那究竟怎麼取得 Android 原始碼呢？</h2>
+
+<h3>首先建立一個 <em>Repo Client</em></h3>
+
+<p>建立要放置Android 原始碼的資料夾並切換至此資料夾</p>
+
+<p><code>$ mkdir WORKING_DIRECTORY
+$ cd WORKING_DIRECTORY</code></p>
+
+<p>初始化repo</p>
+
+<p><code>$ repo init -u https://android.googlesource.com/platform/manifest</code></p>
+
+<p>要使用Gerrit code-review工具，需要輸入與google連結之email、名字。</p>
+
+<p>取得特定Android branch</p>
+
+<p><code>$ repo init -u https://android.googlesource.com/platform/manifest -b android-2.3.7_r1</code></p>
+
+<h3>取得檔案</h3>
+
+<p><code>$ repo sync</code></p>
+
+<p>記得要在剛剛的 WORKING_DIRECTORY</p>
+
+<h3>輸入Android原始碼的公用金鑰</h3>
+
+<h4>會使用到<a href="http://www.gnupg.org/gph/en/manual.html#AEN84">gpg</a> &#8211;import sample_name.gpg</h4>
+
+<p>打開記事本輸入以下內容並另存為 xxx.gpg</p>
+
+<p>`
+&#8212;&#8211;BEGIN PGP PUBLIC KEY BLOCK&#8212;&#8211;
+Version: GnuPG v1.4.2.2 (GNU/Linux)</p>
+
+<p>mQGiBEnnWD4RBACt9/h4v9xnnGDou13y3dvOx6/t43LPPIxeJ8eX9WB+8LLuROSV
+lFhpHawsVAcFlmi7f7jdSRF+OvtZL9ShPKdLfwBJMNkU66/TZmPewS4m782ndtw7
+8tR1cXb197Ob8kOfQB3A9yk2XZ4ei4ZC3i6wVdqHLRxABdncwu5hOF9KXwCgkxMD
+u4PVgChaAJzTYJ1EG+UYBIUEAJmfearb0qRAN7dEoff0FeXsEaUA6U90sEoVks0Z
+wNj96SA8BL+a1OoEUUfpMhiHyLuQSftxisJxTh+2QclzDviDyaTrkANjdYY7p2cq
+/HMdOY7LJlHaqtXmZxXjjtw5Uc2QG8UY8aziU3IE9nTjSwCXeJnuyvoizl9/I1S5
+jU5SA/9WwIps4SC84ielIXiGWEqq6i6/sk4I9q1YemZF2XVVKnmI1F4iCMtNKsR4
+MGSa1gA8s4iQbsKNWPgp7M3a51JCVCu6l/8zTpA+uUGapw4tWCp4o0dpIvDPBEa9
+b/aF/ygcR8mh5hgUfpF9IpXdknOsbKCvM9lSSfRciETykZc4wrRCVGhlIEFuZHJv
+aWQgT3BlbiBTb3VyY2UgUHJvamVjdCA8aW5pdGlhbC1jb250cmlidXRpb25AYW5k
+cm9pZC5jb20+iGAEExECACAFAknnWD4CGwMGCwkIBwMCBBUCCAMEFgIDAQIeAQIX
+gAAKCRDorT+BmrEOeNr+AJ42Xy6tEW7r3KzrJxnRX8mij9z8tgCdFfQYiHpYngkI
+2t09Ed+9Bm4gmEO5Ag0ESedYRBAIAKVW1JcMBWvV/0Bo9WiByJ9WJ5swMN36/vAl
+QN4mWRhfzDOk/Rosdb0csAO/l8Kz0gKQPOfObtyYjvI8JMC3rmi+LIvSUT9806Up
+hisyEmmHv6U8gUb/xHLIanXGxwhYzjgeuAXVCsv+EvoPIHbY4L/KvP5x+oCJIDbk
+C2b1TvVk9PryzmE4BPIQL/NtgR1oLWm/uWR9zRUFtBnE411aMAN3qnAHBBMZzKMX
+LWBGWE0znfRrnczI5p49i2YZJAjyX1P2WzmScK49CV82dzLo71MnrF6fj+Udtb5+
+OgTg7Cow+8PRaTkJEW5Y2JIZpnRUq0CYxAmHYX79EMKHDSThf/8AAwUIAJPWsB/M
+pK+KMs/s3r6nJrnYLTfdZhtmQXimpoDMJg1zxmL8UfNUKiQZ6esoAWtDgpqt7Y7s
+KZ8laHRARonte394hidZzM5nb6hQvpPjt2OlPRsyqVxw4c/KsjADtAuKW9/d8phb
+N8bTyOJo856qg4oOEzKG9eeF7oaZTYBy33BTL0408sEBxiMior6b8LrZrAhkqDjA
+vUXRwm/fFKgpsOysxC6xi553CxBUCH2omNV6Ka1LNMwzSp9ILz8jEGqmUtkBszwo
+G1S8fXgE0Lq3cdDM/GJ4QXP/p6LiwNF99faDMTV3+2SAOGvytOX6KjKVzKOSsfJQ
+hN0DlsIw8hqJc0WISQQYEQIACQUCSedYRAIbDAAKCRDorT+BmrEOeCUOAJ9qmR0l
+EXzeoxcdoafxqf6gZlJZlACgkWF7wi2YLW3Oa+jv2QSTlrx4KLM=
+=Wi5D
+&#8212;&#8211;END PGP PUBLIC KEY BLOCK&#8212;&#8211;</p>
+
+<p>`</p>
+
+<p>把此金鑰加入到gpg key database裡</p>
+
+<p><code>gpg --import sample_name.gpg</code></p>
+
+<p>加入金鑰後可以用來確認git的tag</p>
+
+<p><code>$ git tag -v TAG_NAME</code></p>
 </div>
 
 
@@ -339,7 +430,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2011/11/08/get-android-source/">Android 原始碼版本控制 - 使用git與repo</a>
+        <a href="/blog/2011/11/08/get-android-source/">Android 原始碼下載及版本控制 - 使用git與repo</a>
       </li>
     
       <li class="post">
