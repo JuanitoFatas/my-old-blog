@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-08T12:47:16+08:00</updated>
+  <updated>2011-11-08T12:49:03+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[版本控制系統 - 使用git與repo]]></title>
+    <title type="html"><![CDATA[Android 原始碼版本控制 - 使用git與repo]]></title>
     <link href="http://JuanitoFatas.github.com/blog/2011/11/08/get-android-source/"/>
     <updated>2011-11-08T10:39:00+08:00</updated>
     <id>http://JuanitoFatas.github.com/blog/2011/11/08/get-android-source</id>
@@ -206,7 +206,9 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <h2>Git &amp; Repo Cheatsheet</h2>
 
-<p>![git&amp;repo cheatsheet][http://source.android.com/images/git-repo-1.png]</p>
+<p><img src="http://source.android.com/images/git-repo-1.png" style="float:center"></p>
+
+<p>打完收工&#8230;</p>
 ]]></content>
   </entry>
   
