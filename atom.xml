@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-08T13:29:25+08:00</updated>
+  <updated>2011-11-08T14:08:47+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -85,7 +85,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p><code>$ repo sync</code></p>
 
-<p>同步<em>被選擇的</em>的專案</p>
+<p>同步被選擇的的專案</p>
 
 <p>`$ repo sync project0 project1 &#8230; projectN</p>
 
@@ -138,8 +138,8 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <h4>git diff與repo diff的差別?</h4>
 
-<p><code>repo diff</code> 顯示本機的編輯（ <em>不會</em> 列入commit）
-<code>git diff</code> 顯示本機的編輯（ <em>會</em> 列入commit）</p>
+<p><code>repo diff</code> 顯示本機的編輯（ #不會 列入commit）
+<code>git diff</code> 顯示本機的編輯（ #會 列入commit）</p>
 
 <p>在執行<code>git diff</code>之前，確定你是在專案的目錄底下：</p>
 
