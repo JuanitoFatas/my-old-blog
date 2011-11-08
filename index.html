@@ -152,9 +152,9 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p></img></p>
 
-<h3>基本的工作項目：</h3>
+<h2>基本的工作項目：</h2>
 
-<h4>同步clinet端</h4>
+<h3>同步clinet端</h3>
 
 <p>同步所有現有的專案：</p>
 
@@ -164,7 +164,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>`$ repo sync project0 project1 &#8230; projectN</p>
 
-<h4>建立topic branches</h4>
+<h3>建立topic branches</h3>
 
 <p>開始一個新分支</p>
 
@@ -193,7 +193,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 如果在你運行 <code>repo sync</code> 之後 <code>git branch</code> 顯示 *(no branch)
 再運行一次 <code>git checkout</code> 即可。</p>
 
-<h4>Staging files</h4>
+<h3>Staging files</h3>
 
 <p>添加檔案到stage</p>
 
@@ -201,7 +201,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>ARGUMENTS可以是檔案、資料夾&#8230;etc。</p>
 
-<h4>檢視Client的狀態</h4>
+<h3>檢視Client的狀態</h3>
 
 <p>列出檔案狀態的清單</p>
 
@@ -211,7 +211,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p><code>$ repo diff</code></p>
 
-<h5>git diff與repo diff的差別?</h5>
+<h4>git diff與repo diff的差別?</h4>
 
 <p><code>repo diff</code> 顯示本機的編輯（ <em>不會</em> 列入commit）
 <code>git diff</code> 顯示本機的編輯（ <em>會</em> 列入commit）</p>
@@ -221,7 +221,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 <p><code>$ cd ~/WORKING_DIRECTORY/PROJECT</code>
 <code>$ git diff --cached</code></p>
 
-<h4>提交變更</h4>
+<h3>提交變更</h3>
 
 <p>提交</p>
 
@@ -229,7 +229,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>要輸入commit message否則會提交失敗</p>
 
-<h4>上傳變更到Gerrit</h4>
+<h3>上傳變更到Gerrit</h3>
 
 <p>在上傳之前，先更新到最新版本。</p>
 
@@ -241,7 +241,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>會問你要選擇哪個分支到 review server</p>
 
-<h4>修復Sync衝突</h4>
+<h3>修復Sync衝突</h3>
 
 <p>如果 <code>repo sync</code> 顯示 sync conflicts:</p>
 
@@ -263,7 +263,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p><code>$ repo sync PROJECT0 PROJECT1 ... PROJECTN</code></p>
 
-<h4>清理client檔案</h4>
+<h3>清理client檔案</h3>
 
 <p>變動之後更新本機工作目錄</p>
 
@@ -279,7 +279,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>注意：會永久刪除所有你還沒有上傳的變更</p>
 
-<h2>Git &amp; Repo Cheatsheet</h2>
+<h1>Git &amp; Repo Cheatsheet</h1>
 
 <p><img src="http://source.android.com/images/git-repo-1.png" style="float:center"></p>
 
