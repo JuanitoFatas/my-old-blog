@@ -9,7 +9,8 @@
   <meta name="author" content="Juanito Fatas Huang">
 
   
-  <meta name="description" content="I&#8217;m blogging with octopress and my ruby version is ruby 1.9.2p290 While running: $ rake generate You see this error: /Users/Mac/.rvm/rubies/ &hellip;">
+  <meta name="description" content="要取得Android的原始碼，會需要用到Git和Repo還有Gerrit。 什麼是Git? Git is an open-source version-control system designed to handle
+very large projects that are &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +67,227 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/08/get-android-source/">如何取得Android原始碼 使用git與repo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-08T10:39:00+08:00" pubdate>Nov 8<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/11/08/get-android-source/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>要取得Android的原始碼，會需要用到<em>Git</em>和<em>Repo</em>還有<em>Gerrit</em>。</p>
+
+<h3>什麼是<a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a>?</h3>
+
+<blockquote><p>Git is an open-source version-control system designed to handle
+very large projects that are distributed over multiple repositories.</p></blockquote>
+
+<h3>那Git for Android是?</h3>
+
+<blockquote><p>In the context of Android, we use Git for local operations such as
+local branching, commits, diffs, and edits. One of the challenges
+in setting up the Android project was figuring out how to best support
+the outside community&#8211;from the hobbiest community to large OEMs
+building mass-market consumer devices. We wanted components to be
+replaceable, and we wanted interesting components to be able to grow a
+life of their own outside of Android. We first chose a distributed
+revision control system, then further narrowed it down to Git.</p></blockquote>
+
+<h3>什麼是<a href="http://en.wikipedia.org/wiki/Repo_(script)">Repo</a>?</h3>
+
+<blockquote><p>Repo is a tool that Google built on top of Git
+to manage the many Git repositories, do the uploads
+to revision control system, and automate parts of the
+Android development workflow.
+- from wikipedia</p></blockquote>
+
+<h3>什麼是Gerrit?</h3>
+
+<blockquote><p>Gerrit is a web-based code review system for projects that use git.
+Gerrit encourages more centralized use of Git by allowing all authorized
+users to submit changes, which are automatically merged if they pass code
+review. In addition, Gerrit makes reviewing easier by displaying changes
+side by side in-browser and enabling inline comments.</p></blockquote>
+
+<h4>我覺得簡單來說就是：</h4>
+
+<ul>
+<li>Git 是玩遊戲存檔的複雜工具</li>
+<li>Git for Android 是玩Android遊戲存檔的複雜工具</li>
+<li>Repo 是Google推出的遊戲存檔工具</li>
+<li>Gerrit 雲端code review系統</li>
+</ul>
+
+
+<h2>基本的工作流程</h2>
+
+<p><img src="http://source.android.com/images/submit-patches-0.png" style="float:right"></p>
+
+<p><ol>
+<li>用repo開始一個新的分支</li>
+<li>編輯檔案</li>
+<li>用git加入Stage changes</li>
+<li>用git commit來commit變更</li>
+<li>用repo upload來上傳變更至review server</li>
+</ol></p>
+
+
+<p></img></p>
+
+<h3>基本的工作項目：</h3>
+
+<h4>同步clinet端</h4>
+
+<p>同步所有現有的專案：</p>
+
+<p><code>$ repo sync</code></p>
+
+<p>同步<em>被選擇的</em>的專案</p>
+
+<p>`$ repo sync project0 project1 &#8230; projectN</p>
+
+<h4>建立topic branches</h4>
+
+<p>開始一個新分支</p>
+
+<p><code>$ repo start BRANCH_NAME</code></p>
+
+<p>確認是否建立成功</p>
+
+<p><code>$ repo status</code></p>
+
+<p>使用topic branches</p>
+
+<p><code>$ repo start BRANCH_NAME PROJECT</code></p>
+
+<p>切換分支</p>
+
+<p><code>$ git checkout BRANCH_NAME</code></p>
+
+<p>分支列表</p>
+
+<p><code>$ git branch</code> 或是 <code>$ repo branches</code></p>
+
+<p>當下的分支前面有個*號</p>
+
+<p>注意：
+有一個bug會使repo sync重置到local topic branch。
+如果在你運行 repo sync 之後 git branch顯示 *(no branch)
+再運行一次git checkout即可。</p>
+
+<h4>Staging files</h4>
+
+<p>添加檔案到stage</p>
+
+<p><code>$ git add ARGUMENTS</code></p>
+
+<p>ARGUMENTS可以是檔案、資料夾&#8230;etc。</p>
+
+<h4>檢視Client的狀態</h4>
+
+<p>列出檔案狀態的清單</p>
+
+<p><code>$ repo status</code></p>
+
+<p>看還沒commit的編輯</p>
+
+<p><code>$ repo diff</code></p>
+
+<h5>git diff與repo diff的差別?</h5>
+
+<p><code>repo diff</code> 顯示本機的編輯（ <em>不會</em> 列入commit）
+<code>git diff</code> 顯示本機的編輯（ <em>會</em> 列入commit）</p>
+
+<p>在執行git diff之前，確定你是在專案的目錄底下：</p>
+
+<p><code>$ cd ~/WORKING_DIRECTORY/PROJECT</code>
+<code>$ git diff --cached</code></p>
+
+<h4>提交變更</h4>
+
+<p>提交</p>
+
+<p><code>$ git commit</code></p>
+
+<p>要輸入commit message否則會提交失敗</p>
+
+<h4>上傳變更到Gerrit</h4>
+
+<p>在上傳之前，先更新到最新版本。</p>
+
+<p><code>$ repo sync</code></p>
+
+<p>之後執行</p>
+
+<p><code>$ repo upload</code></p>
+
+<p>會問你要選擇哪個分支到review server</p>
+
+<h4>修復Sync衝突</h4>
+
+<p>如果 repo sync 顯示 sync conflicts:</p>
+
+<ul>
+<li>檢視還沒merged的檔案 (status code = U)</li>
+<li><p>去修改編輯有衝突的地方</p></li>
+<li><p>變更相關的專案目錄</p></li>
+</ul>
+
+
+<p><code>$ git add .</code>
+<code>$ git commit</code>
+<code>$ git rebase --continue</code></p>
+
+<ul>
+<li>當rebase完成後開始sync</li>
+</ul>
+
+
+<p><code>$ repo sync PROJECT0 PROJECT1 ... PROJECTN</code></p>
+
+<h4>清理client檔案</h4>
+
+<p>變動之後更新本機工作目錄</p>
+
+<p><code>$ repo sync</code></p>
+
+<p>安全移除舊的topic branches</p>
+
+<p><code>$ repo prune</code></p>
+
+<p>刪除一個client</p>
+
+<p><code>$ rm -rf WORKING_DIRECTORY</code></p>
+
+<p>注意：會永久刪除所有你還沒有上傳的變更</p>
+
+<h2>Git &amp; Repo Cheatsheet</h2>
+
+<p>![][http://source.android.com/images/git-repo-1.png]</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -470,6 +692,10 @@ No guarantees XD</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/get-android-source/">如何取得Android原始碼 使用git與repo</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/11/03/psych-issue/">couldn&#8217;t parse YAML, psych.rb:148</a>
