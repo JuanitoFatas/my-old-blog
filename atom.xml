@@ -4,7 +4,7 @@
   <title><![CDATA[台北小碼農]]></title>
   <link href="http://JuanitoFatas.github.com/atom.xml" rel="self"/>
   <link href="http://JuanitoFatas.github.com/"/>
-  <updated>2011-11-08T19:43:54+08:00</updated>
+  <updated>2011-11-08T20:02:25+08:00</updated>
   <id>http://JuanitoFatas.github.com/</id>
   <author>
     <name><![CDATA[Juanito Fatas Huang]]></name>
@@ -163,7 +163,7 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>在執行<code>git diff</code>之前，確定你是在專案的目錄底下：</p>
 
-<p><code>$ cd ~/WORKING_DIRECTORY/PROJECT</code>
+<p><code>$ cd ~/WORKING_DIRECTORY/PROJECT</code>  <br/>
 <code>$ git diff --cached</code></p>
 
 <h3>提交變更</h3>
@@ -197,8 +197,8 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 </ul>
 
 
-<p><code>$ git add .</code>
-<code>$ git commit</code>
+<p><code>$ git add .</code>  <br/>
+<code>$ git commit</code>  <br/>
 <code>$ git rebase --continue</code></p>
 
 <ul>
@@ -234,8 +234,8 @@ side by side in-browser and enabling inline comments.</p></blockquote>
 
 <p>建立要放置Android 原始碼的資料夾並切換至此資料夾</p>
 
-<p><code>$ mkdir WORKING_DIRECTORY
-$ cd WORKING_DIRECTORY</code></p>
+<p><code>$ mkdir WORKING_DIRECTORY</code>  <br/>
+<code>$ cd WORKING_DIRECTORY</code></p>
 
 <p>初始化repo</p>
 
@@ -259,11 +259,11 @@ $ cd WORKING_DIRECTORY</code></p>
 
 <p>打開記事本輸入以下內容並另存為 xxx.gpg</p>
 
-<p>`
-&#8212;&#8211;BEGIN PGP PUBLIC KEY BLOCK&#8212;&#8211;
-Version: GnuPG v1.4.2.2 (GNU/Linux)</p>
+<div><script src='https://gist.github.com/1347589.js?file='></script>
+<noscript><pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.2.2 (GNU/Linux)
 
-<p>mQGiBEnnWD4RBACt9/h4v9xnnGDou13y3dvOx6/t43LPPIxeJ8eX9WB+8LLuROSV
+mQGiBEnnWD4RBACt9/h4v9xnnGDou13y3dvOx6/t43LPPIxeJ8eX9WB+8LLuROSV
 lFhpHawsVAcFlmi7f7jdSRF+OvtZL9ShPKdLfwBJMNkU66/TZmPewS4m782ndtw7
 8tR1cXb197Ob8kOfQB3A9yk2XZ4ei4ZC3i6wVdqHLRxABdncwu5hOF9KXwCgkxMD
 u4PVgChaAJzTYJ1EG+UYBIUEAJmfearb0qRAN7dEoff0FeXsEaUA6U90sEoVks0Z
@@ -289,9 +289,8 @@ G1S8fXgE0Lq3cdDM/GJ4QXP/p6LiwNF99faDMTV3+2SAOGvytOX6KjKVzKOSsfJQ
 hN0DlsIw8hqJc0WISQQYEQIACQUCSedYRAIbDAAKCRDorT+BmrEOeCUOAJ9qmR0l
 EXzeoxcdoafxqf6gZlJZlACgkWF7wi2YLW3Oa+jv2QSTlrx4KLM=
 =Wi5D
-&#8212;&#8211;END PGP PUBLIC KEY BLOCK&#8212;&#8211;</p>
+-----END PGP PUBLIC KEY BLOCK-----</code></pre></noscript></div>
 
-<p>`</p>
 
 <p>把此金鑰加入到gpg key database裡</p>
 
