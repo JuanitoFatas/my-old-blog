@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | 台北小碼農]]></title>
+  <link href="http://JuanitoFatas.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://JuanitoFatas.github.com/"/>
+  <updated>2011-11-16T10:35:23+08:00</updated>
+  <id>http://JuanitoFatas.github.com/</id>
+  <author>
+    <name><![CDATA[Juanito Fatas Huang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[couldn't parse YAML, psych.rb:148]]></title>
+    <link href="http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue/"/>
+    <updated>2011-11-03T10:02:00+08:00</updated>
+    <id>http://JuanitoFatas.github.com/blog/2011/11/03/psych-issue</id>
+    <content type="html"><![CDATA[<p>I'm blogging with <code>octopress</code> and my ruby version is <code>ruby 1.9.2p290</code></p>
+
+<p>While running:</p>
+
+<p><code>$ rake generate</code></p>
+
+<p>You see this error:</p>
+
+<p><code>/Users/Mac/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/psych.rb:148:in `parse': couldn't parse YAML at line 5 column 0 (Psych::SyntaxError)
+</code></p>
+
+<p>This error you see is probably <strong>you have some invalid yaml somewhere around your code</strong>.</p>
+
+<blockquote><p>psych.rb is a new ruby YAML parser.</p></blockquote>
+
+<p>You may find solutions from Stack Overflow and octopress support forum below.</p>
+
+<p><a href="http://stackoverflow.com/questions/4980877/rails-error-couldnt-parse-yaml">Rails error, couldn't parse YAML</a>  <br/>
+<a href="https://github.com/imathis/octopress/issues/57">error with rake generate</a></p>
+
+<p>My case I found it is a simple yaml error when creating new post.
+Every new post begins with yaml stuff:</p>
+
+<p>
+&#45;&#45;&#45; <br>
+layout: post    <br>
+title: \"some title\" <br>   
+date: 2011-11-03 10:00 <br>   
+comments: true <br>   
+&#45;&#45;&#45; <br>
+</p>
+
+
+<p>If you accidentally write:</p>
+
+<p>
+&#45;&#45;&#45; <br>
+<strong>layout:post</strong> <br>
+title: \"some title\" <br>   
+date: 2011-11-03 10:00 <br>   
+comments: true <br>   
+&#45;&#45;&#45; <br>
+</p>
+
+
+<p>You'll see this error because you do not have space between \':\' and the following value.
+<strong>Make sure you save a space after \':\'</strong></p>
+
+<p>Hope it helps!</p>
+]]></content>
+  </entry>
+  
+</feed>
