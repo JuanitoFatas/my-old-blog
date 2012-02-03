@@ -1,2 +1,27 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+.rank-1 {
+	font-size: 2.0em; 
+	font-weight: 900; 
+}
+.rank-2 {
+	font-size: 1.6em; 
+	font-weight: 800; 
+}
+.rank-3 {
+	font-size: 1.4em; 
+	font-weight: 600; 
+}
+.rank-4 {
+	font-size: 1.2em; 
+	font-weight: 400; 
+}
+.rank-5 {
+	font-size: 1.0em; 
+	font-weight: 200; 
+}
+
+.tag-cloud > span {
+	line-height: 1.2em;
+}

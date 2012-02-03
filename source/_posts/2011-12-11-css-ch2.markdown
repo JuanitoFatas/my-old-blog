@@ -1,0 +1,97 @@
+---
+layout: post
+title: "CSS 從基本學起 - ch2 加上樣式及建立樣式表"
+date: 2011-12-11 02:42
+comments: true
+categories: CSSGNDUP
+tags: css
+---
+
+即便是最複雜的網站，也要從創建一個樣式表(CSS)開始。
+接下來我介紹一些基本的規則，及如何創建一個基本的樣式表。
+
+<!--more-->
+
+### 什麼是樣式(Style)？
+
+一個樣式由2個元素組成，選擇器及宣告區塊。
+
+選擇器是網頁的元素。
+宣告區塊告訴瀏覽器，如何對選中的元素進行排版。
+
+` p { color: red; }`
+
+p 是 選擇器
+宣告區塊由 { } 所包起來
+一個宣告由 屬性: 值 所組成。
+color是屬性(attribute)
+red是屬性的值
+
+` selector { declaration1; declaration2; ... declarationN; }`
+` declaration 等於 property: value;`
+
+而不論你是寫成`color:red, color: red, color:     red` 都可以！
+
+一個簡單的樣式是不會把你的網站變神奇的，你需要的是樣式表(stylesheet)。
+樣式表裡面放了很多的樣式，就叫做樣式表。
+
+### Internal / External / Linking ?
+
+要使用樣式表的方式有分為內部引用(Internal）、外部引用(External）或是連結(Linking)。
+
+#### 內部引用：
+
+你可以用`<style>`標籤包住你的樣式，並把它放在網頁的 `<head>` 標籤裡面。
+
+``` css
+<style type="text/css">
+	h1{
+		color: #123456;
+	}
+	p{
+		color: #987654;
+		font-size: 2.0 em;
+	}
+</style>
+```
+
+內部引用標籤很容易使用，適合在測試效果的時候用。
+
+#### 外部引用：
+
+name.css的檔案內只需要放樣式，而不需要加入`<style>`標籤。
+
+一個簡單的樣式表：
+
+``` css style.css
+p {
+	color: black;
+}
+
+h1 {
+	font-size: 2.0em;
+}
+```
+
+用HTML的`<link>`標籤來引用一個外部樣式表：
+
+``` css
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+```
+href是你放置樣式表的位置。
+
+把上段代碼放在網頁的 `<head>` 標籤裡面。
+你可以引用多個外部樣式表。
+
+#### 連結
+
+``` css
+<style type="text/css">
+    @import url(css/style.css);
+</style>
+```
+
+連結方式來引用一個外部樣式表要用url而不是href。
+
+
+

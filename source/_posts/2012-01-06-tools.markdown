@@ -1,0 +1,110 @@
+---
+layout: post
+title: "Mac 工具"
+date: 2012-01-06 23:34
+comments: true
+categories: productivity
+tags: productivity
+---
+
+
+Mac 工具箱。
+
+打起來免得重灌的時候忘了...
+
+生產力
+
+* TotalTerm 
+* TotalFinder 有tab的Finder
+* Homebrew 命令列套件管理工具
+* Evernote
+
+<!--more-->
+
+電子書
+
+* Adobe Digital Edition
+* Kindle
+
+錄影工具
+
+* screenflow 錄教學影片用
+
+
+系統管理
+
+* coconutBattery 看電池的壽命
+
+文字編輯
+
+* Sublime Text 2 （要裝zen coding，自定義snippet）
+* Textmate （有很多bundle可以裝，貼高亮語法到ppt的好用！）
+* MaDe Chrome的套件，可以編輯Markdown，雙欄式所見即所得編輯。
+
+文書處理
+
+* MacTex
+* iWork
+* M$ office
+
+圖片工具
+
+* skitch 
+
+影片播放
+
+* VLC
+* MPlayerX
+* QuickTime with Perian
+
+網路工具
+
+* Welly BBS
+* Skype
+
+輸入法
+
+* Yahoo! KeyKey
+
+瀏覽器
+
+* webkit
+* chrome
+* opera
+* firefox
+* Raven
+
+其他
+
+* ZTerm 監看serial port
+* Xee 看圖片用的
+* Wallpapers HD Lite 換桌布用的
+* Thunder 下載BT
+* The Unarchiver 解壓縮rar
+* TeamViewer 幫正妹修電腦
+* SecondBar 外接螢幕有另外一個系統工具列可用
+* Mindnote 心智圖
+* Messenger MSN聊天
+* iChm 讀chm用
+* FileZilla 上傳工具
+* Dropbox 備份工具、小檔案傳輸
+* Eclipse 開發Java、Android
+* Xcode 開發iOS, Mac app
+* Sigil epub工具
+* Appcleaner 移除軟體用
+* Betterzip 打包沒有含資料夾的壓縮檔
+
+Lisp
+
+* Clozure CL
+* Lispworks Personal Edition 64bit
+* Emacs + slime + sbcl
+
+Scheme 
+
+* Racket
+* PLT Scheme v372 (Arc用）
+
+
+
+

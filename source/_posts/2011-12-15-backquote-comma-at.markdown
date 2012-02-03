@@ -1,0 +1,72 @@
+---
+layout: post
+title: "LISP的 倒引號 逗號 小老鼠"
+date: 2011-12-15 01:45
+comments: true
+categories: ["Common Lisp"]
+tags: lisp
+---
+
+
+## ` , @
+
+今天不才來給大家講一講這三個的差別。    
+首先大家可能比較不熟悉的是 Backquote 叫做 倒引號。    
+是長這樣子 `` ` `` 。
+
+<!--more-->
+
+### 倒引號
+
+是拿來建構 List 的 一種偷懶的方法。
+
+那 倒引號 跟 本來的 引號 有什麼差別啊？
+
+<strong>倒引號在單獨用的時候跟單引號是沒有差別的哦。</strong>
+
+### 逗號 
+
+<strong> ¡ 只能在倒引號裡面使用 ！ </strong>
+
+是一個 "unquote" 運算元。
+
+#### 什麼是unquote? 
+就跟負負得正的道理一樣，你 quote 一個東西的時候，
+那個東西不會被求值，而你 unquote 就會被求值摟
+
+看個例子
+
+``` clojure
+
+(setq Foo '(A B)) 
+`(Foo ,Foo) => (FOO (A B))
+(list 'Foo Foo) => (FOO (A B))
+(setq X 1) 
+ `(X ,X (+ X 1) (+ ,X 1) ,(+ X 1)) => (X 1 (+ X 1) (+ 1 1) 2)
+
+```
+
+### 小老鼠 @
+
+<strong> ¡ 只能在倒引號裡面使用 ！ </strong>
+
+是一個 "unquote-splice" 運算元。
+
+unquote一個 List 並把它的衣服扒了。（去掉 List 的括號）
+
+看個例子
+
+``` clojure
+
+(setq foo '(a b))
+`(foo ,foo ,@foo) => (FOO (A B) A B)
+
+```
+
+@foo 前面 要在加一個逗號是因為 要先 unquote 才會把 @當成 unquote-splice 運算元喔！
+
+
+### 後記：
+
+理解這三個符號的用途，將對了解LISP中的Macro有很大的幫助。
+

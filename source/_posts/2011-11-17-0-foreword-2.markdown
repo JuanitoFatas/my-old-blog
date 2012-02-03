@@ -1,0 +1,85 @@
+---
+layout: post
+title: "0_foreword"
+date: 2011-11-17 11:17
+comments: true
+categories: 
+published: false
+---
+
+# 寫在前面
+
+第一次接觸到Lisp家族的語言是在2008年的某個夏天。
+有天我去逛書局，宅男逛書局，逛的是電腦書專區，
+看到各式各樣的書籍，3天學會Java，7天學會C++，
+WindowsXP秘技、電腦防駭300招...等等這種隨處可見的電腦書。
+有一本書跟其他的書，散發出不同的氣質，微微的發出光芒，    
+～「駭客與畫家」～ by [Paul Graham][0]
+
+<!--more-->    
+
+一開始看這本書的書名覺得很奇怪，駭客跟畫家有什麼關係？
+當時我只學過一點點的C語言、喝過一兩杯Java咖啡，
+幾乎沒有什麼編程經驗，只是覺得駭客很酷！我想當個駭客！
+就買回家看了。
+
+駭客是極為崇高的一種身分，不是入侵別人電腦的那種，
+是真的對計算機科學界有貢獻的人，極為聰明的一小群人。
+
+駭客跟畫家都有一個共同的特質，就是「創造」。
+
+我想編程跟踢足球一樣，還是講點天份的，
+我想我一直都會只是個碼農...
+
+[0]: http://www.paulgraham.com/
+
+看完之後，作者在書中多次提及一個程式語言叫做「LISP」。
+於是開啟了我的LISP學習旅途。
+
+學習LISP是一個奇妙的過程，雖然我直至現在還不能掌握它。
+但實在讓我的眼界大開，接觸到很多不會接觸到的東西，
+最重要的是，讓我感受到編程的樂趣。
+
+LISP首現於1958年，由一個已故的偉大的計算機科學家，
+[John McCarthy][JM]在MIT發明，當時McCarthy發表了一篇論文，
+
+[JM]: http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)
+
+名為：
+> Recursive Functions of Symbolic Expressions and Their Compututation by Machine, Part I.
+當時Lisp被拿來應用在人工智能領域，直至現在，人們還是存在LISP=人工智能的想法。
+但LISP不僅僅只能應用在人工智能領域，LISP幾乎無所不能。
+
+
+LISP發展了五十多年，對於計算機科學界算是很長很長一段的時間了，
+而它仍然存活在世界上，仍有很多的人在使用它，它經歷了時間的考驗，
+是一個偉大且值得學習的語言。
+
+## 為什麼選擇Scheme而不是LISP
+
+LISP經過長久的發展變得龐大且複雜，Scheme(R5RS)算是精簡版的LISP，
+但麻雀雖小，五臟俱全。幾乎所有的LISP特色都可以在學習Scheme時學習到。
+同時可以專注在學習新的觀念，而不是繁瑣的語法及函式庫。
+
+我們在學習Java, C++, C時，一般的編程書是循序的告訴你，
+這個語法怎麼用，而不是告訴你背後的觀念。
+
+選擇Scheme想讓第一次接觸編程的朋友可以了解到一些計算機科學的基礎及概念，
+專注在思考，而不是花時間在複雜的語法。
+
+# 什麼是 Scheme?
+
+維基百科的解釋：
+
+Scheme，一種多範型的程式語言，它是兩種Lisp主要的方言之一。
+它是由[Guy Lewis Steele Jr][1]跟[Gerald Jay Sussman][2]在1970年代發展出來。
+現在的標準是 [R5RS][3]，並且 [R6RS][4]目前已經被批准了。
+Scheme也是第一個使用靜態而非動態變數區域的Lisp方言。
+Scheme的哲學是：設計電腦語言不應該進行功能（feature）的堆砌，
+而應該儘可能減少弱點（weakness）和限制（restriction），使剩下的功能顯得必要。
+
+[1]: http://en.wikipedia.org/wiki/Guy_L._Steele,_Jr.
+[2]: http://en.wikipedia.org/wiki/Gerald_Jay_Sussman
+[3]: http://www.schemers.org/Documents/Standards/R5RS/
+[4]: http://www.r6rs.org/
+

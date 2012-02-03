@@ -1,0 +1,15 @@
+---
+layout: post
+title: "第0章 為什麼要學習Scheme"
+date: 2011-11-17 10:37
+comments: true
+categories: 
+published: false
+---
+
+# 為什麼要學Scheme?
+
+
+
+
+# Scheme的用途？

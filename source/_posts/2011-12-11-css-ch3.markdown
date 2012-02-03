@@ -1,0 +1,323 @@
+---
+layout: post
+title: "CSS 從基本學起 - ch3 選擇器"
+date: 2011-12-11 03:16
+comments: true
+categories: CSSGNDUP
+tags: css 
+---
+
+一個css樣式由 選擇器 及 宣告區塊 所組成。
+
+<!--more-->
+
+### Tag Selector
+
+藉由選擇器來告訴瀏覽器，你想要對什麼加上樣式。
+
+比如：
+
+把h1的顏色變成#CCDDFF 字型為Arial
+
+``` css
+
+h1{
+	font-family: Arial;
+	color: #CCDDFF;
+}
+```
+而這種h1, p, a 稱作 標籤選擇器(tag selector)。
+也叫做 type selector。
+
+這種選擇器很方便，可以選中整個頁面內的標籤。
+而選擇器與HTML的標籤相同，很容易記住。
+
+但如果你想要選中段落，而有幾個段落又需要不一樣的樣式時，該怎麼辦？
+
+
+### Class Selector
+
+類別選擇器，藉由替html標籤加上類別，就可以選中特定類別的選擇器！
+多個標籤可以具有相同類別。
+
+``` html
+<p class="special">
+   A special paragraphy.
+</p>
+```
+
+此時你可以使用 `.special` 來選中類別為special的段落！
+
+假設你已經有一個樣式了，但某個特定的段落你希望她的顏色是紅色。
+那麼你可以這麼做：
+
+``` css
+p{
+	font-family: Arial;
+	color: black;
+}
+
+.special{
+	color: red;
+}
+
+```
+
+在類別前面加上一個點，就是類別選擇器。
+
+你可以用類別選擇器來對多個不同的標籤加上同樣的效果！
+
+#### CSS 類別取名限制
+
+* 區分大小寫
+* 只接受英文字母、數字、一槓 hyphen( - )、下滑線( _ )
+* 不可由數字開頭
+* 不可由下滑線、一槓開頭
+
+可以使用： `.main .content .post`
+不可使用: `._main .-content .2post`
+
+類別選擇器不適合來控制頁面的排版，因為他會選中多個符合的標籤，
+這時候就要用ID選擇器了。
+
+
+### ID Selector
+
+不同於類別選擇器，ID選擇器只會選中一個具有特定ID的標籤！
+每一個ID在一個網頁當中是獨一無二的。
+所以不會有重複的情形。想要使用重複的狀況，那使用類別選擇器。
+
+假設我們有一個div的id為banner，要如何選中它並把它設置為行內元素呢？
+
+``` css
+
+#banner{
+	float: inline;
+}
+
+```
+
+在id名稱前加上井字號就是ID選擇器。
+
+
+### Descendent Selector
+
+結合tag selector與class / id selector就是後代選擇器。
+
+要理解後代選擇器，必須先了解HTML的家族樹。
+
+請看以下HTML代碼：
+
+``` html
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Juanito's site</title>
+</head>
+<body>
+	<h1>Juan's shopping track</h1>
+	<p> My shopping list
+		<ul>
+			<li> list item 1</li>
+			<li> list item 2</li>
+		</ul>
+	</p>
+</body>
+</html>
+```
+
+撇開<!DOCTYPE HTML>不看，我們創造了一棵HTML家族樹。
+
+``` html
+<html>
+  -- <head>
+    -- <meta>
+    -- <title>
+  -- <body>
+    -- <h1>
+    -- <p>
+      -- <ul> 
+        --<li>
+        --<li>
+```
+
+* Ancestor: 包住別人的標籤就是被包標籤的ancestor。
+* Descendent: 在別人裡面的標籤是外標籤的descendent。
+* Parent: 最近的ancestor為Parent。
+* Child: 被包在某個標籤內的唯一標籤為Child，多個稱children。
+* Sibling: 同是某人的children的標籤叫做Sibling。
+
+看看上面的例子
+
+* html 標籤 是 所有人的ancestor
+* body 標籤 是 h1, p標籤 的ancestor
+* meta 標籤 是 head 及 html標籤 的 descendent
+* html 標籤 是 head及body標籤 的 parent
+* h1, p 標籤是 body標籤的 children
+* h1, p 標籤雙方是 sibling。
+
+
+為什麼要這樣呢？比如我們想要選中在具有nav類別的ul標籤內的li，並幫它加上行高。
+
+這時候就會需要標籤內的標籤了。
+
+``` css
+ul .nav li {
+	line-height: 20px;
+}
+```
+
+``` css
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<h1>
+	</h1>
+	<p>
+		<strong>
+			<a href="#"></a>
+		</strong>
+	</p>
+	<h2></h2>
+	<ul>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+	</ul>
+</body>
+</html>
+```
+
+要怎麼選中li標籤中的a標籤呢？
+
+ul li a    
+body li a    
+html li a    
+html body ul li a    
+
+這四個都是合法的選擇器，但你永遠可以用簡潔的方式來選中你要的元素。
+
+用 ul li a 而不是 html body ul li a。
+
+### Group Selector
+
+群組選擇器。
+
+你可以一次選中多個HTML標籤並加上樣式：
+
+``` css
+h1,h2,h3,h4,h5,h6 { color: pink; }
+```
+不僅限於標籤，類別、ID選擇器也可以。
+
+``` css
+h1,h2 ,h3 ,p , .intro, #myPink { color: pink; }
+```
+
+這兩個的差別？
+
+`p .intro a { color: yellow; }`
+
+p標籤的descendent中具intro類別的a標籤
+
+`.intro a { color: yellow; }`
+
+具intro類別的a標籤
+
+
+### Universal Selector
+
+全選擇器。
+
+`* { font-weight: bold; }`
+
+把所有的標籤的font-weight屬性都設為bold。
+
+### Pseudo Class & Pseudo Elements
+
+虛擬類與虛擬元素
+
+#### a:link
+
+選取訪客還沒按過的連結（滑鼠沒有經過或按過的）。
+
+#### a:visited
+
+選取訪客按過的連結（根據瀏覽器的history）
+
+#### a:hover
+
+讓你可以即時改變訪客把滑鼠移到連結上時的樣子。
+
+
+以上 `:hover :link :visited` 都叫做 pseudo-class。
+
+你可以用 `:hover` 讓你的段落或是div即時改變效果。
+
+> IE6 :hover only works for links.
+
+## Advanced Selector
+
+進階選擇器
+
+### Child Selector
+
+子選擇器
+
+假定我們有以下html：
+
+``` html
+<body>
+	<h1> </h1>
+	<h2> </h2>
+	<div>
+		<h2> </h2>
+		<p> </p>
+	</div>
+</body>
+```
+
+如果我們想要選中h2
+我們可以用 body h2 來選中它，但是會選到body內的h2及div內的h2。
+但有了子選擇器，
+
+`body > h1`
+
+我們可以更加明確地選中 body標籤內的h1 。
+
+### Adjacent Siblings Selector
+
+鄰接選擇器
+
+假設我們想要把h2標題後的文章p做特殊的效果，這時候可以使用鄰接選擇器。
+
+``` css
+h2+p {
+	// your code goes here
+}
+```
+
+注意：    
+只有p會套上樣式，h2不會。
+只會選中緊接在h2之後的段落p。
+
+### Attribute Selector
+
+屬性選擇器
+
+假設我們想要替連結到google.com的連結做特殊的效果，那該怎麼做呢？
+
+``` css
+img[href="http://google.com"]{
+
+// special effect goes here
+	
+}
+```
+> CSS3 has more variant attr selectors
