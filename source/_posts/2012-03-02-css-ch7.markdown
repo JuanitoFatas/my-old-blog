@@ -1,0 +1,102 @@
+---
+layout: post
+title: "CSS 從基本學起 - ch7 馬郡撲丁波德"
+date: 2012-03-02 21:36
+categories: CSSGNDUP
+tags: css
+---
+
+## Margins, Padding and Borders
+
+CSS有一個盒子模型，你可以很容易的google一下找到圖。
+
+每個元素都有一個盒子包起來，最外面是 Margin，再來是 Border，最內部是 Padding。
+
+每個屬性都有 top, right, bottom, left 。
+
+<!--more-->
+
+這章講完了。開玩笑的！
+
+好，如果你不設置這些元素的話，瀏覽器有自己一套的設定。
+ 
+通常設定 margin ，可以這樣
+
+`margin: 0px 1px 2px 3px; `
+
+分別把 (top right bottom left) 設為 (0px 1px 2px 3px) 。
+
+也可以 `margin 0px 5px`
+
+((top+bottom) (left+right)) 設為 (0px 5px)
+
+上下設為 0px，左右設為 5px 。
+
+當你有兩個東西之間想要擁有35px的距離時，上面的用：
+`margin-bottom: 20px;`   
+下面的使用：
+`margin-top:15px;`
+
+**這樣是不行的！** 重複的 `margin` ，只會套用一個 (collapsing margins)，請使用`padding`。
+
+浮動元素的左右 `margin` 是不會 collapse 的，Absoulte及Relative 位置也是。
+
+雖然每個元素都是一個盒子，但實際上有兩種盒子：
+
+行內 (inline)及區塊 (block)盒子，區塊盒子在它本身前後加入了斷行，如`p`、`div`、表格、清單標籤。
+反之行內盒子不會在前後加入斷行，而是在行內顯示，如`strong`、`img`、`a`標籤。
+
+要注意的是行內元素是不能套用 top跟bottom margin及padding的。請使用 `line-height`。
+
+你可以讓行內元素像區塊那樣顯示: `display: block;`  
+或是讓區塊元素像行內元素顯示： `display: inline;`
+
+border 可以改的有三個， width, style, 以及color。
+
+`border: 4px solid #f00;` 4px的紅色實線。
+
+等於
+
+`border-width: 4px;`  
+`border-style: solid;`  
+`border-color: #f00;`
+
+## 改變元素的背景顏色
+
+`background-color: #345678;`
+
+## 元素寬度高度
+
+`width: 300px;`
+另有 `max-width` 及 `min-width` 可設置。
+`height: 500px;`
+另有 `max-height` 及 `min-height` 可設置。
+
+## 內容超出盒子怎麼辦？
+
+當內容超出盒子的時候，可以用 `overflow` 來修補它。
+
+`overflow: hidden;`
+
+瀏覽器預設是 `visible` ，也就是你會看到跑出盒子了（如果你有設定 border 的話）
+
+`scroll` 加上捲動軸， `auto` 自動加上捲動軸，或是 `hidden` ，把超出的內容隱藏起來。
+
+## 浮動元素 float
+
+把元素浮動起來！！！
+
+有三個可以設置 `left` `right` `none` 。
+
+有得時候有一個float元素擋住了你的元素，你可以使用 `overflow: hidden;` 或是使用 **clear fix 技巧** 。
+
+`clear` 屬性接受四個值，
+
+`left` 讓他不要跟左邊的floated元素貼在一起。
+`right` 讓他不要跟右邊的floated元素貼在一起。
+`both` 讓他不要跟兩邊的floated元素貼在一起。
+`none` 瀏覽器預設值，讓他跟floated的元素貼在一起。
+
+
+
+

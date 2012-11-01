@@ -1,0 +1,46 @@
+---
+layout: post
+title: "在30天內可以學會什麼？"
+date: 2012-02-04 15:33
+comments: true
+categories: jQuery Learning
+---
+
+只有30天，你可以學會什麼？
+
+If you only have 30 days, what can you learn?
+
+可以學會...
+
+You may learn...
+
+<!--more-->
+
+1. HTML AND CSS
+2. jQuery
+
+Free course from Nettuts
+
+由 Nettuts 所推出的免費課程：
+
+## 30 days to Learn HTML and CSS
+
+[Course Link][30hc]
+
+[30hc]:http://learncss.tutsplus.com/
+
+## 30 days to Learn jQuery
+
+[Course Link][30jQ]
+
+[30jQ]: http://learnjquery.tutsplus.com/
+
+You may also join the Tuts+ Premium program to get more!
+
+也可以加入（收費）會員享受更多的課程、免費電子書、教學。
+
+請參考 [Tuts+ Premium][np]
+
+[np]:http://tutsplus.com/
+
+如有新課程將持續更新，Stay tuned!

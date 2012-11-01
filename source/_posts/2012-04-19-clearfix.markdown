@@ -1,0 +1,105 @@
+---
+layout: post
+title: "CSS clearfix 更好的名字"
+date: 2012-04-19 16:05
+comments: true
+categories: css
+tags: css
+---
+
+## 問題：
+
+在 CSS 裡使用 float 產生一個左圖右文的形式非常方便，考慮以下 markup:
+
+<!--more-->
+
+```html
+	<div class="box">
+		<img src="/img/foo.png" alt="foo">
+		<p class="description">Foo is foo and Fools are fool...</p>
+	</div>
+```
+
+及 CSS：
+
+```css
+	div.box {
+		background: #fff;
+	}
+
+	div.box img {
+		width: 25%;
+	}
+
+	div.box p.description {
+		float: right;
+		width: 70%;
+	}
+```
+
+會呈現出圖片在左，文字在右這種很常見的形式。
+
+然而事情沒有我們所想的那麼美好（包在容器裡面的內容不會溢出），
+
+當**浮動**的段落內容長於左邊**無浮動**的圖片時，段落內容就會跑出容器。
+
+<hr>
+
+## 解決辦法：
+
+在包住內容的(父節點)後方加入一個句號，清除浮動，隱藏該句號。
+
+## clearfix 解法
+
+**注意**：IE8才支援。
+
+```css
+.clearfix:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+```
+
+如此一來只要加上 clearfix 類別就可以修復：
+
+`<div class="box clearfix">`
+
+### 更好的名字
+
+選一個更好的名字：
+
+`.group` 是一個比 `.clearfix` 好的名字。
+
+> the container is a “group” of items that happens to have floats applied.
+
+CSS：
+
+```css
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+```
+
+另附上 IE 6 與 7 的解法：
+
+```css
+/* IE6 */
+* html .group {
+	height: 1%;
+}
+
+/* IE7 */
+*:first-child+html .group{
+	min-height: 1px;
+}
+```
+
+#### 出處：Handcrafted CSS

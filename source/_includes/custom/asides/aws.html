@@ -1,28 +1,50 @@
 <section>
+  <header>
   <h1> Recommend Books </h1>
+  </header>
   <!--The Little schemer-->
-  <p> 
-    {{ "0262560992" | amazon_large_image }}
-  </p>
-  <p>
-    {{ "0262560992" | amazon_link }}
-    by {{ "0262560992" | amazon_authors }}
-  </p>
-  <h1>Recent Readings</h1>
+  <article>
+    <p>
+      {{ "0262560992" | amazon_large_image }}
+    </p>
+    <p>
+      {{ "0262560992" | amazon_link }}
+      by {{ "0262560992" | amazon_authors }}
+    </p>
+  </article>
+
+  <article>
+    <p>
+      {{ "0307463745" | amazon_medium_image }}
+    </p>
+    <p>
+      {{ "0307463745" | amazon_link }}
+      by {{ "0307463745" | amazon_authors }}
+    </p>
+  </article>
+</section>
+<section>
+  <header>
+    <h1>Recent Readings</h1>
+  </header>
+  <article>
   <!--Paradigms of Artificial Intelligence, case study common lisp-->
-  <p> 
-    {{ "0307463745" | amazon_medium_image }}
-  </p>
-  <p>
-    {{ "0307463745" | amazon_link }}
-    by {{ "0307463745" | amazon_authors }}
-  </p>
+    <p>
+      {{ "1935182277" | amazon_medium_image }}
+    </p>
+    <p>
+      {{ "1935182277" | amazon_link }}
+      by {{ "1935182277" | amazon_authors }}
+    </p>
+  </article>
   <!--AI modern approach-->
-  <p> 
-    {{ "0136042597" | amazon_medium_image }}
-  </p>
-  <p>
-    {{ "0136042597" | amazon_link }}
-    by {{ "0136042597" | amazon_authors }}
-  </p>
+  <article>
+    <p>
+      {{ "1934356379" | amazon_medium_image }}
+    </p>
+    <p>
+      {{ "1934356379" | amazon_link }}
+      by {{ "1934356379" | amazon_authors }}
+    </p>
+  </article>
 </section>

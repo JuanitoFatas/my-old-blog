@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://JuanitoFatas.github.com
-title: 台北小碼農
-subtitle: Happy 2012!
+title: 台北小碼農 -- Juanito Fatas
+subtitle: 台北小码农的零碎笔记
 author: Juanito Fatas Huang
 simple_search: http://google.com/search
 
@@ -35,7 +35,7 @@ tag_dir: blog/tags
 markdown: rdiscount
 pygments: false # default python pygments have been replaced by pygments.rb
 
-paginate: 7          # Posts per page on the blog index
+paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
 friends: 10        # Posts in the sidebar Friends section
@@ -53,7 +53,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # blog_index_asides: [custom/asides/about.html, asides/recent_posts.html]
 # post_asides: [asides/recent_posts.html]
 # post_asides: [custom/asides/about.html, asides/recent_posts.html]
-# page_asides: 
+# page_asides:
 
 # ----------------------- #
 #   3rd Party Settings    #
@@ -66,7 +66,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: JuanitoFatas
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
@@ -96,9 +96,9 @@ disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-26995626-1
-   
+
 # Facebook Like
-facebook_like: true   
+facebook_like: true
 
 # Weibo Like
 weibo_like: true

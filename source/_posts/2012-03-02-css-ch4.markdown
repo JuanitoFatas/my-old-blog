@@ -1,0 +1,59 @@
+---
+layout: post
+title: "CSS 從基本學起 - ch4 繼承人生"
+date: 2012-03-02 19:46
+comments: true
+categories: CSSGNDUP
+tags: css 
+---
+
+標題打了繼承人生，但這裡不是要討論電影＠＠。
+
+今天要說的是CSS的繼承。
+
+小孩從爸媽繼承了眼睛顏色、髮色、身高、生理特徵，當然CSS也可以！
+
+<!--more-->
+
+上一章談到了
+
+讓我們看一下下面這個HTML:
+
+``` html
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	h1{
+		font-size: 32px;
+	}
+	span{
+		font-weight: bold;
+		font-style: italic;
+	}
+	</style>
+</head>
+<body>
+	
+	<h1> Juanito <span>Fatas</span> Huang </h1>
+
+</body>
+</html>
+```
+
+如同小孩孫子一樣，在`h1`內的`span` 繼承了`h1`原來有的樣式，這就是繼承摟。
+
+繼承的好處有什麼？ **節省重複樣式的時間** ，但要注意的是有一些特性是不會繼承的。
+
+比如 `border` 屬性，是預設不會繼承的。
+
+有幾個簡單的規則讓你知道什麼東西預設不會繼承：
+
+- 跟位置有關的元素、margin、背景顏色、borders。
+- 瀏覽器有自己一套繼承的規則，即便你把body tag內的預設字體設為14px，在body tag裡的h1仍舊比一般的文字大，這是因為瀏覽器有自己一套繼承規則的原因。
+- 當樣式衝突時，較具體指定的元素獲得高優先權套用樣式。
+
+
+

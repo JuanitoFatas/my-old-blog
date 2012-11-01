@@ -56,7 +56,7 @@ comments: true <br>
 &#45;&#45;&#45; <br>
 </p>
 
-You'll see this error because you do not have space between \':\' and the following value.
-**Make sure you save a space after \':\'**
+You'll see this error because you do NOT have space between `':'` and the following value.
+**Make sure you save a space after `':'`**
 
 Hope it helps!

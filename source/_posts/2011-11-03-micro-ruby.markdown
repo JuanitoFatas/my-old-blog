@@ -5,6 +5,7 @@ date: 2011-11-03 09:58
 comments: true
 categories: [Ruby]
 tags: Ruby
+published: false
 ---
 
 For my personal cosulting...    

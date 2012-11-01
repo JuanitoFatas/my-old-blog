@@ -1,0 +1,64 @@
+---
+layout: post
+title: "關於 Lisp 的那些小事"
+date: 2012-02-23 23:36
+comments: true
+categories: ["Common Lisp"]
+tags: lisp
+---
+
+
+0. `LENGTH`只算top-level的cons cell.
+0. NIL是空表，是符號。
+0. `CONS` 函數創造一個cons核
+0. `LIST` 函數則創造一串cons核 (nil結尾)
+0. `APPEND` 把列表連起來，傳入第一個參數必須是列表。
+0. `(cons nil nil)` => (NIL)
+
+<!--more-->
+
+0. 判斷式 `ATOM` 回傳真，只要輸入不是cons cell。(atom nil) 也回傳真。
+0. atom from greek means indivisible.
+0. 數字與符號是原子，因為他們不能再被分割了。
+0. proper list 是 cons cell chain ending in nil
+0. 變數不是符號，變數是由符號命名的，函數也是。
+0. `AND`一次對一個句子求值，全部為真回傳最後一個。一有假，nil。
+0. `OR`一次對一個句子求值，全部為假回傳 nil。一有非nil，回傳它。
+0. and/or可以做錯誤檢查
+0. MACROS do not evaluate their arguments first.
+0. ``IF``最容易使用，不適合複雜，``AND-OR``適合複雜，``COND``適合多問句。
+0. LISP註解使用場合：一個 ``;`` 程式碼那行右方。兩個 `;` 函數內，佔一行。 三個 ``;`` 函數外，佔一行。
+0. ``REVERSE``函數只對top-level元素有效，符號無效，非破壞性。
+0. asssociation list (a-list)就是 table，每個entry是key value 對。
+0. ``RASSOC`` 搜索的是 cdr (value)， ``ASSOC``搜索的是 car (key)。要用RASSOC，必須是dotted list。
+0. cardinality of a set = length of list
+0. ``SET-EXCLUSIVE-OR`` 兩個物件的差別，有在第一個出現但沒在第二個出現的，有在第二個出現但沒在第一個出現的。
+0. ``REMOVE_DUPLICATES`` 可以移除重複的元素。
+0. ``SUBST`` 替換列表元素 ``SUBLIS`` 一次替換多個元素。
+0. 符號是唯一的，所以符號會有一個唯一的位址，一個名字只能有一個符號。
+0. ``EQ``比較兩個指標是否指向相同物件，比較的是位址，位址相同才為真。
+0. ``EQ``比``EQUAL``快，因為只要比較位址。``EQUAL``要先測試輸入是否是列表，再逐一比較每個元素。
+0. 比較符號時可以用``EQ``，列表不用，因為列表不一定是唯一的！
+0. ``EQL`` 它比較物件的位址，但若兩個物件為同型別，就比較值而已。CL標準預設比較法。
+0. ``=``是最有效率的方式來比較數字。
+0. ``EQUALP``跟``EQUAL``相似，但是不管大小寫。
+0. ``EQ最快``，比較符號用。``EQL``比較同型物件，預設。``EQUAL``比較每個元素。``EQUALP``如``EQUAL``，但忽略大小寫。=只能比數字。
+0. KEYWORDS就是前面有冒號的符號，對自己求值。有``KEYWORDP``可以測試符號是否是KEYWORD。
+0. MEMBER預設使用EQL，對符號跟數字有效，但有包含列表就用``EQUAL``。:TEST #'EQUAL
+0. 什麼是APPLICATIVE PROGRAMMING? 把函數當作資料一樣使用，可傳入別的函數，可當回傳值。
+0. CLOSURE，閉包。在閉包內，不僅可用自己的區域變數，還可用包含閉包函數的區域變數。
+0. ``YES-OR-NO-P``? YES. ``Y-OR-N-P``? N.
+0. 遞迴與迭代：flat list用遞迴與迭代皆可，但樹狀結構非遞迴不可。
+0. ``PROG1 PROG2 PROGN?``都接受多個表達式。``PROG1``回傳第一個表達式。``PROG2``回傳第二個表達式。``PROGN``回傳最後一個。
+0. PROGX已經不常用了，唯一有用的地方是替IF的真假部分加上多表達式。
+0. ``&optional``讓函數接受選擇性提供的參數。預設是nil。可設預設值。
+0. ``&rest``讓函數接受無限多參數的秘密。把參數蒐集成列表。遞迴操作時用``APPLY``，因為會再次被打包成列表。
+0. ``&key``定義自己的關鍵字參數，定義內不用分號，調用時才要。
+0. ``&AUX``定義一個輔助區域變數。&AUX作用跟LET*一樣。
+0. array 不是一串cons核，是一塊記憶體。
+0. ``#n()``標示陣列，``#<STRUCT-NAME >``標示結構。``#\k``字元物件（自求值）。
+0. 要看到array的元素，設置``*print-array*``為真。
+0. `LAST`回傳最後一個元素所在的cons核。
+0. `APPEND`、`REVERSE`、`REMOVE`非破壞性函數。
+0. `intersection`跟`union`不只可以處理set，列表也可以。
+0. 

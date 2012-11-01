@@ -1,0 +1,78 @@
+---
+layout: post
+title: "擁抱GIT 邊玩邊學Git"
+date: 2012-03-16 15:26
+comments: true
+categories: Git
+tags: Git
+---
+
+
+##Githug
+
+是一個讓你邊玩邊學 git 的 互動文字介面遊戲。
+
+一次闖一關，每關有特定的任務要解決，
+
+首先要來安裝githug...
+
+## 安裝 githug
+
+`gem install githug`
+
+不知道什麼是gem嗎? [去這裡][RG]
+[RG]:http://rubygems.org/
+
+
+安裝好後到終端機輸入 `githug`，建立githug資料夾。
+
+開始玩第一關吧！
+
+```
+********************************************************************************
+*                                    Githug                                    *
+********************************************************************************
+No githug directory found, do you wish to create one? [yn]  y
+Welcome to Githug
+
+Level: 1
+Difficulty: *
+
+Initialize an empty repository
+```
+
+這關的任務是初始化一個空的 repository 。
+
+第一關我就先幫你過了吧 : P...   
+
+`git init`
+
+完成後，再次敲入 `githug play`
+
+```
+********************************************************************************
+*                                    Githug                                    *
+********************************************************************************
+Congratulations, you have solved the level
+
+Level: 2
+Difficulty: *
+
+There is a file in your folder called README, you should add it to your staging area
+```
+
+接下來就不說了，會玩了吧 : )
+
+
+`githug` 基本有4個命令：
+
+- githug help 描述待解的任務或某個特定任務
+- githug hint 得到本關提示
+- githug play 初始化遊戲及繼續玩
+- githug reset 重置本關
+
+
+[githug 項目首頁][ghug]
+[ghug]: https://github.com/Gazler/githug
+
+（裡面有教你如何寫一個 githug 關卡）

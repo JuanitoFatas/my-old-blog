@@ -1,0 +1,48 @@
+---
+layout: post
+title: "CSS 從基本學起 - ch5 多重樣式"
+date: 2012-03-02 20:23
+comments: true
+categories: CSSGNDUP
+tags: css 
+---
+
+當你給一個標籤套用了多個樣式，怎麼決定哪個樣式被套用呢？
+
+- 最近的 Ancestor 獲勝！
+- 直接套用的樣式獲勝！
+- 用權重來計算
+
+<!--more-->
+
+##權重計算法
+
+一個tag selector (p, body, h1) 值 1 分。
+一個class selector (p, body, h1) 值 10 分。
+一個ID selector (p, body, h1) 值 100 分。
+一個行內 selector (p, body, h1) 值 1000 分。
+
+**高分獲勝**
+
+分數計算例子：
+
+`div` 1分  
+`.container` 10分  
+`div.container` 11分  
+`#footer` 100分
+
+同分時，最後套用的樣式獲勝...。
+
+你也可以開外掛，在一個樣式後面加上 `!important` ，
+
+讓他無論如何都會贏（都會被套用）。
+
+``` css
+#nav a {color: yellow; }
+a {color: #blue !important; }
+```
+
+雖然`#nav a`有101分，而`a`只有1分，但是連結還是藍色。
+
+
+
