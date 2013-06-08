@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+		Juanito Fatas -- Webmaster@lisp.es -- @JuanitoFatas
+
+# THANKS
+
+
+# TECHNOLOGY COLOPHON
+
+    Hexo

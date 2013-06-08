@@ -1,0 +1,859 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 3 頁 | I'm Juanito Fatas</title>
+  <meta name="author" content="Juanito Fatas">
+  
+  <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="I'm Juanito Fatas"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="I'm Juanito Fatas" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#sidebar').delay(400).animate({ width: '285px' }, 500, function() {
+      $('.personal-info').css({display: 'table'}).hide().fadeIn(500);
+    });
+  });
+  </script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41041908-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><!-- <div class="alignleft">
+  <h1><a href="/">I'm Juanito Fatas</a></h1>
+  <h2><a href="/">C-x C-f...C-x C-s...</a></h2>
+</div>
+ --><!-- <nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首頁</a></li>
+    
+      <li><a href="/archives">彙整</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+ --></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper">
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/css-ch7/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch7/">CSS 從基本學起 - ch7 馬郡撲丁波德</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>Margins, Padding and Borders</h2>
+<p>CSS 有一個盒子模型，你可以很容易的 google 一下找到圖。</p>
+<p>每個元素都有一個盒子包起來，最外面是 Margin，再來是 Border，最內部是 Padding。</p>
+<p>每個屬性都有 top, right, bottom, left 。</p>
+<p>型別</p>
+<p>這章講完了。開玩笑的！</p>
+<p>好，如果你不設置這些元素的話，瀏覽器有自己一套的設定。</p>
+<p>通常設定 margin ，可以這樣</p>
+<p><code>margin: 0px 1px 2px 3px;</code></p>
+<p>分別把 (top right bottom left) 設為 (0px 1px 2px 3px) 。</p>
+<p>也可以 <code>margin 0px 5px</code></p>
+<p>((top+bottom) (left+right)) 設為 (0px 5px)</p>
+<p>上下設為 0px，左右設為 5px 。</p>
+<p>當你有兩個東西之間想要擁有 35px 的距離時，上面的用：
+<code>margin-bottom: 20px;</code><br>下面的使用：
+<code>margin-top:15px;</code></p>
+<p><strong>這樣是不行的！</strong> 重複的 <code>margin</code> ，只會套用一個 (collapsing margins)，請使用<code>padding</code>。</p>
+<p>浮動元素的左右 <code>margin</code> 是不會 collapse 的，Absoulte 及 Relative 位置也是。</p>
+<p>雖然每個元素都是一個盒子，但實際上有兩種盒子：</p>
+<p>行內 (inline) 及區塊 (block) 盒子，區塊盒子在它本身前後加入了斷行，如<code>p</code>、<code>div</code>、表格、清單標籤。
+反之行內盒子不會在前後加入斷行，而是在行內顯示，如<code>strong</code>、<code>img</code>、<code>a</code>標籤。</p>
+<p>要注意的是行內元素是不能套用 top 跟 bottom margin 及 padding 的。請使用 <code>line-height</code>。</p>
+<p>你可以讓行內元素像區塊那樣顯示: <code>display: block;</code><br>或是讓區塊元素像行內元素顯示： <code>display: inline;</code></p>
+<p>border 可以改的有三個， width, style, 以及 color。</p>
+<p><code>border: 4px solid #f00;</code> 4px 的紅色實線。</p>
+<p>等於</p>
+<p><code>border-width: 4px;</code><br><code>border-style: solid;</code><br><code>border-color: #f00;</code></p>
+<h2>改變元素的背景顏色</h2>
+<p><code>background-color: #345678;</code></p>
+<h2>元素寬度高度</h2>
+<p><code>width: 300px;</code>
+另有 <code>max-width</code> 及 <code>min-width</code> 可設置。
+<code>height: 500px;</code>
+另有 <code>max-height</code> 及 <code>min-height</code> 可設置。</p>
+<h2>內容超出盒子怎麼辦？</h2>
+<p>當內容超出盒子的時候，可以用 <code>overflow</code> 來修補它。</p>
+<p><code>overflow: hidden;</code></p>
+<p>瀏覽器預設是 <code>visible</code> ，也就是你會看到跑出盒子了（如果你有設定 border 的話）</p>
+<p><code>scroll</code> 加上捲動軸， <code>auto</code> 自動加上捲動軸，或是 <code>hidden</code> ，把超出的內容隱藏起來。</p>
+<h2>浮動元素 float</h2>
+<p>把元素浮動起來！！！</p>
+<p>有三個可以設置 <code>left</code> <code>right</code> <code>none</code> 。</p>
+<p>有得時候有一個 float 元素擋住了你的元素，你可以使用 <code>overflow: hidden;</code> 或是使用 <strong>clear fix 技巧</strong> 。</p>
+<p><code>clear</code> 屬性接受四個值，</p>
+<p><code>left</code> 讓他不要跟左邊的 floated 元素貼在一起。
+<code>right</code> 讓他不要跟右邊的 floated 元素貼在一起。
+<code>both</code> 讓他不要跟兩邊的 floated 元素貼在一起。
+<code>none</code> 瀏覽器預設值，讓他跟 floated 的元素貼在一起。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch7/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/03/02/css-ch7/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/03/02/css-ch7/">CSS 從基本學起 - ch7 馬郡撲丁波德</a></h2>
+            
+            <time class="time title depth" datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/css-ch7/">Mar 2 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T12:33:00.000Z"><a href="/2012/03/02/css-ch6/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch6/">CSS 從基本學起 - ch6 字體排版</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>你可以用 <code>font-family</code> 來設定字型。</p>
+<p>但是字型有千千萬萬種，到底該用哪種字型勒？</p>
+<p>型別</p>
+<h2>字體</h2>
+<p>分為兩大類：</p>
+<h3>serif</h3>
+<p><strong>Serif</strong>類的字型適合長篇文章，字體有微小的襯線，引領讀者逐字往下讀，讓文字更好讀。
+serif 類的字體有 Times, Times New Roman, Georgia。</p>
+<h3>sans-serif</h3>
+<p><strong>Sans-serif</strong>有簡潔與簡單的外表，適合用在標題。
+sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
+<p>一般如果你網站的訪客沒有你所使用的字體，他們會使用他們電腦內預設的字體。理論上你可以使用任何字體，你可以使用你電腦專有的字體，只不過你網站的訪客看不到這個字體而已！但現在有了 Google web font，你可以用 CDN 的方式，讓網站的用戶瀏覽時下載字體。</p>
+<p>接下來看看 <code>font-family</code> ：</p>
+<p><code>font-family: Arial, Helvetica, sans-serif;</code></p>
+<p>他會依序的套用字體，如果用戶沒有 Arial 字體，就用 Helvetica，再不然就用 sans-serif。</p>
+<p>sans-serif 是 arial, helvetica 的通用字體 (generic font)。</p>
+<p>以下列出了常見的字體，及他們的通用字體（放在最後）</p>
+<ul>
+<li>Arial, Helvetica, sans-serif</li>
+<li>Verdana, Arial, Helvetica, sans-serif</li>
+<li>Geneva, Arial, Helvetica, sans-serif</li>
+<li>Tahoma, &quot;Lucida Grande&quot;, Arial, sans-serif</li>
+<li><p>&quot;Century Gothic&quot;, &quot;Gill Sans&quot;, Arial, sans-serif</p>
+</li>
+<li><p>Times New Roman, Times, serif</p>
+</li>
+<li>Georgia, Times New Roman, Times, serif</li>
+</ul>
+<p>等寬字體，適合顯示程式碼，寫程式，終端機使用</p>
+<ul>
+<li>Courier New, Courier, monospace</li>
+<li>&quot;Lucida Console&quot;, Monaco, monospace</li>
+</ul>
+<h2>字體顏色</h2>
+<p>用 <code>color</code> 屬性來改顏色。</p>
+<p>可以用 16 進制表示顏色，有三位元與六位元 <code>#123</code> <code>#f3f3f3</code> 這兩種格式。</p>
+<p>也可以用 RGB, RGBA 。</p>
+<p><code>rgb(0,0,0)</code><br><code>rgb(100%, 75%, 75%)</code><br><code>rgba (0,0,0,0.5)</code> 那個 a 是 alpha，調透明度用的。</p>
+<h2>字體大小</h2>
+<p>藉由</p>
+<p><code>font-size = 30px;</code> </p>
+<p>記得是寫成 <code>30px</code> 而不是 <code>30 px</code> 。</p>
+<p>常用的單位有 <code>px</code>, <code>em</code>, <code>percentage</code>, <code>Keywords</code></p>
+<p>如果你沒指定大小的話，瀏覽器有自己一套 base text size 替你幫標籤指定大小。</p>
+<p><code>px</code> 在任何瀏覽器都一樣大，沒有彈性，但是 okay。</p>
+<p><code>keywords</code> 有 xx-small, x-small, small, medium, large, x-large, xx-large 。</p>
+<p>一般瀏覽器的預設 base text size 就是 medium。</p>
+<p>每個 size 的大小差距是 1.2 倍。</p>
+<p>雖然有 keywords，但是只有七種選擇，對於追求完美的人根本不夠用！</p>
+<p><code>percentage</code> 一般 100% 是 16px 大。一般是繼承瀏覽器的 base text size，但是要是有 parent tag，或是 ancestor tag 設定字型的話，base text size 就不是瀏覽器的摟。會繼承。</p>
+<p><code>em</code> 此字型中一個大寫 M 的大小。</p>
+<p><code>em</code> 與 <code>percentage</code> 互換：</p>
+<p>0.5 em = 50%
+1.2 em = 120%</p>
+<p><code>em</code>跟<code>percentage</code>一樣，也會有繼承。</p>
+<h2>粗體 斜體</h2>
+<p>設定粗體</p>
+<p><code>font-weight: bold;</code>  </p>
+<p>設定斜體</p>
+<p><code>font-style: italic;</code><br><code>font-style: oblique</code>  </p>
+<p>瀏覽器預設 <code>&lt;em&gt;</code> <code>&lt;i&gt;</code> 是斜體。<br>瀏覽器預設 <code>&lt;storng&gt;</code> <code>&lt;b&gt;</code> <code>&lt;th&gt;</code> <code>&lt;h1&gt;</code> 是粗體。  </p>
+<h2>大寫 小寫</h2>
+<p>將字轉成大寫 <code>text-transform: uppercase;</code><br>將字轉成小寫 <code>text-transform: lowercase;</code><br>字體開頭大寫 <code>text-transform: capitalize;</code>  </p>
+<p><code>text-transform</code> 預設是會繼承的，要記得改回來。  </p>
+<h2>小寫的大寫</h2>
+<p>.....smallcap。一個詞會變成比較小的大寫。</p>
+<p><code>font-variant: small-caps;</code></p>
+<h2>底線跟頂線</h2>
+<h3>字體下方畫線</h3>
+<p><code>text-decoration: underline;</code>  </p>
+<h3>字體上方畫線</h3>
+<p><code>text-decoration: overline;</code>  </p>
+<h2>間距</h2>
+<h3>letter-spacing 每個字的間距</h3>
+<p>大奶。</p>
+<p>大跟奶中間的距離叫做字元間距。</p>
+<p>EX: 大跟奶靠得很近。 <code>letter-spacing: -1px;</code> </p>
+<h3>word-spacing 單字的間距</h3>
+<p>宅男 正妹</p>
+<p><code>word-spacing: 100000000000px;</code></p>
+<p>這不用解釋吧？</p>
+<h3>line-height 行高</h3>
+<p>這是第一行。<br>這是第二行。</p>
+<p>第一行跟第二行之間的距離，行高。</p>
+<p><code>line-height: 130%;</code></p>
+<p><strong>瀏覽器預設行高是 120% 喔！</strong></p>
+<p>也可以：</p>
+<p><code>line-height: 1.5;</code></p>
+<p>瀏覽器會自動換算 1.5*font-size 的高度。</p>
+<h2>排列字體</h2>
+<p>置中</p>
+<p><code>text-align: center;</code> </p>
+<p>有 <code>center</code>, <code>left</code>, <code>right</code>, <code>justify</code> 可以設定。</p>
+<p><code>justify</code> 讓左右的間距相等。</p>
+<h2>縮進</h2>
+<p><code>text-indent: 25px;</code></p>
+<p>讓字體有縮排唷。</p>
+<h2>段落間的距離</h2>
+<p>用 <code>margin</code> 來設定。</p>
+<p><code>margin-top</code> 及 <code>margin-bottom</code> 來設定段落間的距離。</p>
+<h2>每段的第一個字</h2>
+<p>透過 pseudo-class 來設定...</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="tag">p</span><span class="pseudo">:first-letter</span><span class="rules">{
+<span class="rule"><span class="attribute">truefont-weight</span>:<span class="value"> bold;</span></span>
+<span class="rule"><span class="attribute">truecolor</span>:<span class="value"> red;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<h2>替 list 排版</h2>
+<p>分為有序跟無序清單</p>
+<p><code>ul</code> Unordered List 無序<br><code>ol</code> Ordered List 有序</p>
+<p>通常一個清單都會有一個 小圖示（bullet）</p>
+<p>透過 <code>list-style-type</code> 可以設定清單的樣式。</p>
+<p>無序的小圖示可以有 <code>disc</code> 子彈， <code>circle</code> 挖空圓形 ， <code>square</code> 實體正方形。</p>
+<p>有序的數字可以從 1、0 開始數，大小寫英文字母，大小寫羅馬數字。</p>
+<p>分別是 <code>decimal</code> , <code>decimal-leading-zero</code> , <code>upper-alpha</code> , <code>lower-alpha</code> , <code>upper-roman</code> , <code>lower-roman</code> 。</p>
+<p>你可以讓清單旁邊跟的數字顯示在裡面或是外面唷！</p>
+<p><code>list-style-position: outside;</code><br><code>list-style-position: inside;</code></p>
+<p>更改清單左邊的距離：</p>
+<p><code>padding-left</code> 及 <code>margin-left</code> 。</p>
+<p>你也可以用自定的小圖示：</p>
+<p><code>list-style-image: url(img/my.gif)</code></p>
+<p>但是用這招，圖就不能調位置了，還是使用 <code>background-image</code> 會比較好！</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch6/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/03/02/css-ch6/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/03/02/css-ch6/">CSS 從基本學起 - ch6 字體排版</a></h2>
+            
+            <time class="time title depth" datetime="2012-03-02T12:33:00.000Z"><a href="/2012/03/02/css-ch6/">Mar 2 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T12:23:00.000Z"><a href="/2012/03/02/css-ch5/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch5/">CSS 從基本學起 - ch5 多重樣式</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>當你給一個標籤套用了多個樣式，怎麼決定哪個樣式被套用呢？</p>
+<ul>
+<li>最近的 Ancestor 獲勝！</li>
+<li>直接套用的樣式獲勝！</li>
+<li>用權重來計算</li>
+</ul>
+<p>型別</p>
+<h2>權重計算法</h2>
+<p>一個 tag selector (p, body, h1) 值 1 分。
+一個 class selector (p, body, h1) 值 10 分。
+一個 ID selector (p, body, h1) 值 100 分。
+一個行內 selector (p, body, h1) 值 1000 分。</p>
+<p><strong>高分獲勝</strong></p>
+<p>分數計算例子：</p>
+<p><code>div</code> 1 分<br><code>.container</code> 10 分<br><code>div.container</code> 11 分<br><code>#footer</code> 100 分</p>
+<p>同分時，最後套用的樣式獲勝...。</p>
+<p>你也可以開外掛，在一個樣式後面加上 <code>!important</code> ，</p>
+<p>讓他無論如何都會贏（都會被套用）。</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="id">#nav</span> <span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value"> yellow;</span></span> <span class="rule">}</span></span>
+<span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#b</span>lue <span class="important">!important</span>;</span></span> <span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<p>雖然<code>#nav a</code>有 101 分，而<code>a</code>只有 1 分，但是連結還是藍色。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch5/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/03/02/css-ch5/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/03/02/css-ch5/">CSS 從基本學起 - ch5 多重樣式</a></h2>
+            
+            <time class="time title depth" datetime="2012-03-02T12:23:00.000Z"><a href="/2012/03/02/css-ch5/">Mar 2 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/css-ch4/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>標題打了繼承人生，但這裡不是要討論電影＠＠。</p>
+<p>今天要說的是 CSS 的繼承。</p>
+<p>小孩從爸媽繼承了眼睛顏色、髮色、身高、生理特徵，當然 CSS 也可以！</p>
+<p>上一章談到了</p>
+<p>讓我們看一下下面這個 HTML:</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre>&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en-US"&gt;
+&lt;head&gt;
+true&lt;meta charset="UTF-8"&gt;
+true&lt;title&gt;&lt;/title&gt;
+true&lt;style type="text/css"&gt;
+trueh1{
+truetruefont-size: 32px;
+true}
+truespan{
+truetruefont-weight: bold;
+truetruefont-style: italic;
+true}
+true&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></td></tr></table></figure>
+
+<p>如同小孩孫子一樣，在<code>h1</code>內的<code>span</code> 繼承了<code>h1</code>原來有的樣式，這就是繼承摟。</p>
+<p>繼承的好處有什麼？ <strong>節省重複樣式的時間</strong> ，但要注意的是有一些特性是不會繼承的。</p>
+<p>比如 <code>border</code> 屬性，是預設不會繼承的。</p>
+<p>有幾個簡單的規則讓你知道什麼東西預設不會繼承：</p>
+<ul>
+<li>跟位置有關的元素、margin、背景顏色、borders。</li>
+<li>瀏覽器有自己一套繼承的規則，即便你把 body tag 內的預設字體設為 14px，在 body tag 裡的 h1 仍舊比一般的文字大，這是因為瀏覽器有自己一套繼承規則的原因。</li>
+<li>當樣式衝突時，較具體指定的元素獲得高優先權套用樣式。</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch4/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/03/02/css-ch4/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/03/02/css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h2>
+            
+            <time class="time title depth" datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/css-ch4/">Mar 2 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-02-04T08:15:00.000Z"><a href="/2012/02/04/online-learning/">Feb 4 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/02/04/online-learning/">線上教育：改變世界的起點</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>（文章很長）</p>
+<p>線上教育，最近有很多大學都開始這麼做。其實很早以前就有了，但我覺得算不上線上教育，只能說線上教學資源觀賞。</p>
+<p>在幾年前，我就已經有自己在 MIT opencourse 自我學習的經驗，但是收穫沒有很多，就是看錄好的上課影片，讀它們的 ppt，做習題、參考解答，做期中、參考解答。簡單來說有點吃菜尾的感覺啦！撿人家剩下的。</p>
+<p>而 2011 10 月推出的 Stanford Online Class 就不是如此了。</p>
+<p>分享一下我自己上過一門課的心得。</p>
+<h2>個人心得分享：</h2>
+<p>我個人參加過 2011 推出的一門課程，人工智慧導論。一開始是報著好玩的心態去上這門課的（有 150000 人報名）。</p>
+<p>以下我回想了幾點關於 Stanford Online class：</p>
+<ol>
+<li>課程長度在 2 個月上下，每天花 1 小時即可。</li>
+<li>課程良好規劃（單元制），20 個單元左右。</li>
+<li>每單元有錄好的 video，長度控制在可接受範圍 (至多 10 分鐘)。</li>
+<li>想看幾次就看幾次，愛學幾次就學幾次。</li>
+<li>每個 video(有 / 沒有)quiz，可以馬上檢驗是否聽懂了。</li>
+<li>quiz 是互動的，直接在嵌入的 youtube 影片中作答。</li>
+<li>幾個單元有 1 次作業，作業也是直接在嵌入的影片作答。</li>
+<li>寬鬆的作業期限 7-10 天內交</li>
+<li>嚴禁討論作業相關答案。</li>
+<li>有課程活動記錄（記錄小考分數、作業分數、學習進度）</li>
+<li>有社群互動 (facebook 粉絲團, google+)</li>
+<li>高質量專業討論區 （stackover flow-like 的討論區）</li>
+<li>2 個多月就產生了數千個高質量的問答。</li>
+<li>艱澀的理論有了更平民化的解釋。</li>
+<li>老師是一流的專家，Peter Norvig 跟 Sebastian!!!!!!</li>
+<li>成績超好的還有工作機會..（前 0.5% 內）</li>
+<li>學習結束有一張證書（含分數記錄）</li>
+<li>影片還有多國語言字幕（有自願者貢獻字幕翻譯）</li>
+<li>Office hour 3 次！（每個人都可以問，老師回答票數高或有趣的問題）</li>
+<li>使用的課本銷量大幅上升，而課本的作者 Peter Norvig 全部捐給慈善團體。</li>
+<li>有更多自己思考解答問題的機會。</li>
+<li>老師風趣又幽默，極具熱情。</li>
+<li>期中期末考嚴禁討論考試相關答案。</li>
+</ol>
+<p>還有很多想不起來了...</p>
+<p>對於我這種不喜歡坐在教室（也沒機會了），聽根本沒有教學熱情的教授，講枯燥乏味的理論。兩個月下來，居然比大學一學期上課，學到更多東西。因為是自己報名的，所以動機十足。高質量的討論區，讓我想跟同學討論問題，看別人如何討論問題也讓我學到更多東西。分數根本不重要，重要的是學習的過程。</p>
+<p>我預估 Sebastian Thrun 將是改變 21 世紀的人之一。</p>
+<p>看完以上廣告文，還沒按上一頁的朋友，有興趣學習、精進自己的朋友可以至課程網頁看看。 這裡 <a href="http://www.class-central.com/">Class Central</a> 。</p>
+<h2>目前 Stanford 線上學習提供了：</h2>
+<p><strong> 課程預計二月中開始上課，但因不明因素延宕中。 </strong></p>
+<h2>創業：</h2>
+<ul>
+<li><a href="http://www.launchpad-class.org/">精實創業</a></li>
+<li><a href="http://www.venture-class.org/">科技創業</a></li>
+</ul>
+<h2>藥學：</h2>
+<ul>
+<li><a href="http://www.anatomy-class.org/">解剖學</a></li>
+</ul>
+<h2>土木工程</h2>
+<ul>
+<li><a href="http://www.greenbuilding-class.org/">建造綠色建築</a></li>
+</ul>
+<h2>電機工程</h2>
+<ul>
+<li><a href="http://www.infotheory-class.org/">資訊理論</a></li>
+</ul>
+<h2>複雜系統</h2>
+<ul>
+<li><a href="http://www.modelthinker-class.org/">模型化思考</a></li>
+</ul>
+<h2>電腦科學</h2>
+<ul>
+<li><p><a href="http://www.cs101-class.org/">電腦科學 101</a></p>
+</li>
+<li><p><a href="http://jan2012.ml-class.org/">機器學習</a></p>
+</li>
+<li><p><a href="http://www.saas-class.org/">作為服務的軟體</a></p>
+</li>
+<li><p><a href="http://www.hci-class.org/">人機互動</a></p>
+</li>
+<li><p><a href="http://www.nlp-class.org/">自然語言處理</a></p>
+</li>
+<li><p><a href="http://www.game-theory-class.org/">賽局理論</a></p>
+</li>
+<li><p><a href="http://www.pgm-class.org/">機率圖模型</a></p>
+</li>
+<li><p><a href="http://www.crypto-class.org/">密碼學</a></p>
+</li>
+<li><p><a href="http://www.security-class.org/">電腦安全</a></p>
+</li>
+<li><p><a href="http://www.algo-class.org/">演算法設計分析 I</a></p>
+</li>
+</ul>
+<p>上面提到的教授 (Sebastian Thrun，Google 無人駕駛車計畫主持人、Robotics 專家) 因為參與了首次的線上教育教學，無法自拔跳出來創業，創辦了線上學習機構，叫做 Udacity。Sebastian 是一個富有極大熱情的教授，有費曼的影子。</p>
+<h2>目前 <a href="http://www.udacity.com/">Udacity</a> 提供的課程有</h2>
+<ul>
+<li>CS101: 打造搜索引擎</li>
+<li>CS373: 機器人車程式設計</li>
+</ul>
+<p>預計於 2012 推出的課程：</p>
+<ul>
+<li>計算理論</li>
+<li>作業系統</li>
+<li>電腦網路</li>
+<li>分散式系統</li>
+<li>電腦安全</li>
+<li>演算法與資料結構</li>
+<li>軟體工程實踐</li>
+<li>打造網路應用</li>
+</ul>
+<p>據說全部課程上完還能拿到 degree (Udacity)。</p>
+<blockquote>
+<p>‎&quot;In the next months, we will offer an entire computer science curriculum through Udacity, and offer certification services so that an entire degree can be obtained online.&quot;</p>
+</blockquote>
+<p>最棒的是， </p>
+<p><strong> 以上全部都是免費的 </strong></p>
+<p>好課程，不學嗎？</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/02/04/online-learning/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/02/04/online-learning/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/02/04/online-learning/">線上教育：改變世界的起點</a></h2>
+            
+            <time class="time title depth" datetime="2012-02-04T08:15:00.000Z"><a href="/2012/02/04/online-learning/">Feb 4 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-01-28T03:51:00.000Z"><a href="/2012/01/28/tex-note/">Jan 28 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/01/28/tex-note/">(XeLa)TeX 設定中文</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>人老了常忘事，記起來......</p>
+<p>設定這個文件，預設文字大小：12pt, 紙張：a4, 書本。
+<code>\documentclass[12pt,a4paper]{book}</code>
+設定字體用的 包
+<code>\usepackage{fontspec}</code>
+使用 xeCJK 包
+<code>\usepackage{xeCJK}</code>
+設定中文預設字型 （可直接使用系統內的字型）
+<code>\setCJKmainfont{BiauKai}</code>
+中文自動換行
+<code>\XeTeXlinebreaklocale &quot;zh&quot;</code>
+文字彈性間距
+<code>\XeTeXlinebreakskip = 0pt plus 1pt</code>
+段落間距離
+<code>\setlength{\parskip}{0.3cm}</code>
+行距
+<code>\linespread{1.5}\selectfont</code>
+正文開始</p>
+<figure class="highlight lang-tex"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="command">\begin</span><span class="special">{</span>document<span class="special">}</span>
+
+<span class="command">\end</span><span class="special">{</span>document<span class="special">}</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/01/28/tex-note/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/01/28/tex-note/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/01/28/tex-note/">(XeLa)TeX 設定中文</a></h2>
+            
+            <time class="time title depth" datetime="2012-01-28T03:51:00.000Z"><a href="/2012/01/28/tex-note/">Jan 28 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+
+<nav id="pagination">
+  
+    <a href="/page/2/" class="alignleft prev">上一頁</a>
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignleft"><!-- 
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:lisp.es/">
+  </form>
+</div>
+
+  
+<div class="widget twitter">
+  <h3 class="title">推文</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['JuanitoFatas', 5, false];
+var moment_js_path = '/js/moment.min.js';
+</script>
+<script src="/js/twitter.js"></script>
+
+
+ -->
+<div class="personal-info">
+  <figure>
+    
+      <a href="/">
+        <img class="personal-photo" src="https://secure.gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" alt="Juanito Fatas">
+      </a>
+    
+    <figcaption>
+      <h3 class=>Juanito Fatas</h3>
+      <p>城市中的迷途小碼農</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/JuanitoFatas"></a>
+    
+    
+    
+      <a target="_blank" class="icon github depth" href="http://github.com/JuanitoFatas"></a>
+    
+    
+      <a target="_blank" class="icon email depth" href="mailto:katehuang0320@gmail.com"></a>
+    
+  </section>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignright depth">
+  <a href="http://github.com/thiagopnts/hexo-persona-dark" style="text-decoration: underline;">Persona Dark Theme</a> 
+  &copy; - 2013 Juanito Fatas
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'juanfatas';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
