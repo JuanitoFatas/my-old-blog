@@ -67,33 +67,131 @@
 <h2 class="archive-title category">Python</h2>
 
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-05-10T14:35:00.000Z"><a href="/2012/05/10/python-zebra/">May 10 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/05/10/python-zebra/">Python 解决 Zebra 谜题</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-05-10T14:09:00.000Z"><a href="/2012/05/10/python-for-inside/">May 10 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/05/10/python-for-inside/">Python For 循环的迭代器实现</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-05-10T14:35:00.000Z"><a href="/2012/05/10/python-zebra/">May 10 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/10/python-zebra/">Python 解决 Zebra 谜题</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>爱因斯坦养鱼问题的学名就叫 Zebra Puzzle。之所以叫爱因斯坦养鱼问题是为了刊登在杂志上吸引读者的注意，其实这个问题不是爱因斯坦搞的...</p>
+<p>问题可以到这里看：<a href="http://en.wikipedia.org/wiki/Zebra_Puzzle">Zebra Puzzle</a></p>
+<p>型別</p>
+<p>首先实现了 2 个 小函数，<code>imright</code> 跟 <code>nextto</code></p>
+<p>确定某房是不是在某房右边、或是两个房挨著。</p>
+<p>接下来给每个房子编上号，12345，</p>
+<p>然后使用了 Python 自带的排列工具 <code>itertools.permutations</code> 给出房子可能的排列。</p>
+<p>接著用了一个 Python 的奇技淫巧，叫做 Generator Expression，</p>
+<p>语法是：<code>(term for- 子句 (选择性) for-if- 子句)</code></p>
+<p>这个 generator expression 会返回一个 Generator 对象。</p>
+<p>恩，给个例子好了：</p>
+<p>先定义一个算平方的函数，然后用 Generator Expression：</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">sqr</span><span class="params">(x)</span>:</span> <span class="keyword">print</span> <span class="string">'调用 sqr, 参数 '</span>, x; <span class="keyword">return</span> x*x
+
+g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">0</span>)
+</code></pre>
+<p>这个时候如果调用 g ：</p>
+<pre><code>&gt;&gt;&gt; <span class="comment">g</span>
+&lt;<span class="comment">GeneratorObject</span> <span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span>&gt;
+</code></pre>
+<p>不会去调用函数，只返回一个 Generator 对象、然而</p>
+<pre><code>&gt;&gt;&gt; <span class="keyword">next</span>(g)
+调用 <span class="built_in">sqr</span>, 参数 <span class="number">0</span>
+<span class="number">0</span>
+</code></pre>
+<p>才会调用这个 Generator 所绑定的函数。。。汗。。。</p>
+<p>这个问题要找，水在哪个房子被喝的，哪个房子养斑马。</p>
+<p>藉由把 Constraint 移到对的地方，减少需要的计算，再搭配 Generator-exp 的特性，最后大概 0.00028 秒之类的就算好了，
+本来用 嵌套 For-loop 要算 1 小时。</p>
+<p>至于那个 c 函数 是拿来显示统计数据跟除错用的。</p>
+<p>完整代码：</p>
+<script src="https://gist.github.com/2653290.js"></script>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/10/python-zebra/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
   </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-05-10T14:09:00.000Z"><a href="/2012/05/10/python-for-inside/">May 10 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/10/python-for-inside/">Python For 循环的迭代器实现</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>给定一段 Python 代码：</p>
+<pre><code><span class="keyword">for</span> x <span class="keyword">in</span> items:
+    <span class="built_in">print</span> x
+</code></pre>
+<p>这个 items 可以是字串、列表、等等，这种可以迭代的集合称之为 iterable。</p>
+<p>型別</p>
+<p>这个 iter 就是创一个迭代器出来，相信有学过 Java 的人都不陌生。</p>
+<p>然后用一个 <code>try .. except</code> 语句包住，迭代至停为止，停时会抛出 StopIteration。</p>
+<p>实际上是这样实现的：</p>
+<pre><code>it = iter(items)
+<span class="keyword">try</span>:
+    <span class="keyword">while</span> <span class="built_in">True</span>
+        x = next(it)
+        <span class="keyword">print</span> x
+<span class="keyword">except</span> StopIteration:
+    <span class="keyword">pass</span>
+</code></pre>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/10/python-for-inside/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
 </div></div>
     <aside id="sidebar" class="alignleft"><!-- 
   <div class="search">
@@ -146,7 +244,8 @@ var moment_js_path = '/js/moment.min.js';
     <div class="clearfix"></div>
   </div>
   <footer id="footer" class="inner"><div class="alignright depth">
-  <a href="http://github.com/thiagopnts/hexo-persona-dark" style="text-decoration: underline;">Persona Dark Theme</a> 
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
   &copy; - 2013 Juanito Fatas
   
 </div>

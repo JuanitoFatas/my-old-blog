@@ -67,81 +67,662 @@
 <h2 class="archive-title tag">css</h2>
 
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-05-12T15:04:00.000Z"><a href="/2012/05/12/nth-child-common-gotcha/">May 12 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/05/12/nth-child-common-gotcha/">CSS 一个常见 nth-child 的误区</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/css-ch7/">Mar 2 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/03/02/css-ch7/">CSS 從基本學起 - ch7 馬郡撲丁波德</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-03-02T12:33:00.000Z"><a href="/2012/03/02/css-ch6/">Mar 2 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/03/02/css-ch6/">CSS 從基本學起 - ch6 字體排版</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-03-02T12:23:00.000Z"><a href="/2012/03/02/css-ch5/">Mar 2 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/03/02/css-ch5/">CSS 從基本學起 - ch5 多重樣式</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/css-ch4/">Mar 2 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/03/02/css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-05-12T15:04:00.000Z"><a href="/2012/05/12/nth-child-common-gotcha/">May 12 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/12/nth-child-common-gotcha/">CSS 一个常见 nth-child 的误区</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>给定有如下的 HTML 代码片段：</p>
+<p>型別</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="code"><pre>&lt;html&gt;
+...
+&lt;style&gt;
+truedt {
+truetrueboder-top: 1px solid white;
+truetrueboder-bottom: 1px solid gray;
+true}
+&lt;/style&gt;
+&lt;body&gt;
+true&lt;dl&gt;
+truetrue&lt;dt&gt;How to install&lt;/dt&gt;
+truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
+truetrue&lt;dt&gt;How to install&lt;/dt&gt;
+truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
+truetrue&lt;dt&gt;How to install&lt;/dt&gt;
+truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
+truetrue&lt;dt&gt;How to install&lt;/dt&gt;
+truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
+truetrue&lt;dt&gt;How to install&lt;/dt&gt;
+truetrue&lt;dd&gt;last ...&lt;/dd&gt;
+true&lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></td></tr></table></figure>
+
+<p>假设这是一个 FAQ，我们有一个 Definition list (<code>dl</code>)，并有五个 item (<code>dt</code>)，五个 item 描述 (<code>dd</code>)，</p>
+<p>每个 <code>dt</code> 的上下有边界，分别是白色、黑色。</p>
+<p>今天假如我们想要第一个 <code>dt</code> 上方没有 boder，以及最后一个 <code>dt</code> 下方没有 boder，这时候 CSS 该怎么写呢？</p>
+<p>我们可以使用 CSS3 的 <code>first-child</code>：</p>
+<pre><code><span class="tag">dt</span><span class="pseudo">:first-child</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-top</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span>
+</code></pre>
+<p>现在你可能会想要使用 <code>last-child</code> 来把 最后一个 dd 的 boder-bottom 拿掉：</p>
+<pre><code><span class="tag">dt</span><span class="pseudo">:last-child</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-bottom</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span>
+</code></pre>
+<p>而这样不行，因为 <code>last-child</code> 是选择 parent 的最后一个 child，这个例子里会选中：</p>
+<pre><code>&lt;dd&gt;last <span class="keyword">...</span>&lt;/dd&gt;
+</code></pre>
+<p>那该怎么办呢？可以使用 <code>nth-last-child</code> ：</p>
+<pre><code><span class="tag">dt</span><span class="pseudo">:nth-last-child(2)</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-bottom</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span>
+</code></pre>
+<p>这样子会从 <code>dl</code> 的最后一个 child 开始往上 2 个，也就是我们想要的最后一个 <code>dt</code>。</p>
+<p>That&#39;s it!!!</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/12/nth-child-common-gotcha/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
   </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>問題：</h2>
+<p>在 CSS 裡使用 float 產生一個左圖右文的形式非常方便，考慮以下 markup:</p>
+<p>型別</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>	&lt;div class="box"&gt;
+truetrue&lt;img src="/img/foo.png" alt="foo"&gt;
+truetrue&lt;p class="description"&gt;Foo is foo and Fools are fool...&lt;/p&gt;
+true&lt;/div&gt;
+</pre></td></tr></table></figure>
+
+<p>及 CSS：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre>	div.box {
+truetruebackground: #fff;
+true}
+
+truediv.box img {
+truetruewidth: 25%;
+true}
+
+truediv.box p.description {
+truetruefloat: right;
+truetruewidth: 70%;
+true}
+</pre></td></tr></table></figure>
+
+<p>會呈現出圖片在左，文字在右這種很常見的形式。</p>
+<p>然而事情沒有我們所想的那麼美好（包在容器裡面的內容不會溢出），</p>
+<p>當<strong>浮動</strong>的段落內容長於左邊<strong>無浮動</strong>的圖片時，段落內容就會跑出容器。</p>
+<hr>
+
+<h2>解決辦法：</h2>
+<p>在包住內容的 (父節點) 後方加入一個句號，清除浮動，隱藏該句號。</p>
+<h2>clearfix 解法</h2>
+<p><strong>注意</strong>：IE8 才支援。</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
+<span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
+<span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">0</span>;</span></span>
+<span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
+<span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<p>如此一來只要加上 clearfix 類別就可以修復：</p>
+<p><code>&lt;div class=&quot;box clearfix&quot;&gt;</code></p>
+<h3>更好的名字</h3>
+<p>選一個更好的名字：</p>
+<p><code>.group</code> 是一個比 <code>.clearfix</code> 好的名字。</p>
+<blockquote>
+<p>the container is a “group” of items that happens to have floats applied.</p>
+</blockquote>
+<p>CSS：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="class">.group</span><span class="pseudo">:after</span> <span class="rules">{
+<span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
+<span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">0</span>;</span></span>
+<span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
+<span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
+<span class="rule">}</span></span>
+
+</pre></td></tr></table></figure>
+
+<p>另附上 IE 6 與 7 的解法：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="comment">/* IE6 */</span>
+* <span class="tag">html</span> <span class="class">.group</span> <span class="rules">{
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">1</span>%;</span></span>
+<span class="rule">}</span></span>
+
+<span class="comment">/* IE7 */</span>
+*<span class="pseudo">:first-child+html</span> <span class="class">.group</span><span class="rules">{
+<span class="rule"><span class="attribute">truemin-height</span>:<span class="value"> <span class="number">1</span>px;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<h4>出處：Handcrafted CSS</h4>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/04/19/clearfix/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/css-ch7/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch7/">CSS 從基本學起 - ch7 馬郡撲丁波德</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>Margins, Padding and Borders</h2>
+<p>CSS 有一個盒子模型，你可以很容易的 google 一下找到圖。</p>
+<p>每個元素都有一個盒子包起來，最外面是 Margin，再來是 Border，最內部是 Padding。</p>
+<p>每個屬性都有 top, right, bottom, left 。</p>
+<p>型別</p>
+<p>這章講完了。開玩笑的！</p>
+<p>好，如果你不設置這些元素的話，瀏覽器有自己一套的設定。</p>
+<p>通常設定 margin ，可以這樣</p>
+<p><code>margin: 0px 1px 2px 3px;</code></p>
+<p>分別把 (top right bottom left) 設為 (0px 1px 2px 3px) 。</p>
+<p>也可以 <code>margin 0px 5px</code></p>
+<p>((top+bottom) (left+right)) 設為 (0px 5px)</p>
+<p>上下設為 0px，左右設為 5px 。</p>
+<p>當你有兩個東西之間想要擁有 35px 的距離時，上面的用：
+<code>margin-bottom: 20px;</code><br>下面的使用：
+<code>margin-top:15px;</code></p>
+<p><strong>這樣是不行的！</strong> 重複的 <code>margin</code> ，只會套用一個 (collapsing margins)，請使用<code>padding</code>。</p>
+<p>浮動元素的左右 <code>margin</code> 是不會 collapse 的，Absoulte 及 Relative 位置也是。</p>
+<p>雖然每個元素都是一個盒子，但實際上有兩種盒子：</p>
+<p>行內 (inline) 及區塊 (block) 盒子，區塊盒子在它本身前後加入了斷行，如<code>p</code>、<code>div</code>、表格、清單標籤。
+反之行內盒子不會在前後加入斷行，而是在行內顯示，如<code>strong</code>、<code>img</code>、<code>a</code>標籤。</p>
+<p>要注意的是行內元素是不能套用 top 跟 bottom margin 及 padding 的。請使用 <code>line-height</code>。</p>
+<p>你可以讓行內元素像區塊那樣顯示: <code>display: block;</code><br>或是讓區塊元素像行內元素顯示： <code>display: inline;</code></p>
+<p>border 可以改的有三個， width, style, 以及 color。</p>
+<p><code>border: 4px solid #f00;</code> 4px 的紅色實線。</p>
+<p>等於</p>
+<p><code>border-width: 4px;</code><br><code>border-style: solid;</code><br><code>border-color: #f00;</code></p>
+<h2>改變元素的背景顏色</h2>
+<p><code>background-color: #345678;</code></p>
+<h2>元素寬度高度</h2>
+<p><code>width: 300px;</code>
+另有 <code>max-width</code> 及 <code>min-width</code> 可設置。
+<code>height: 500px;</code>
+另有 <code>max-height</code> 及 <code>min-height</code> 可設置。</p>
+<h2>內容超出盒子怎麼辦？</h2>
+<p>當內容超出盒子的時候，可以用 <code>overflow</code> 來修補它。</p>
+<p><code>overflow: hidden;</code></p>
+<p>瀏覽器預設是 <code>visible</code> ，也就是你會看到跑出盒子了（如果你有設定 border 的話）</p>
+<p><code>scroll</code> 加上捲動軸， <code>auto</code> 自動加上捲動軸，或是 <code>hidden</code> ，把超出的內容隱藏起來。</p>
+<h2>浮動元素 float</h2>
+<p>把元素浮動起來！！！</p>
+<p>有三個可以設置 <code>left</code> <code>right</code> <code>none</code> 。</p>
+<p>有得時候有一個 float 元素擋住了你的元素，你可以使用 <code>overflow: hidden;</code> 或是使用 <strong>clear fix 技巧</strong> 。</p>
+<p><code>clear</code> 屬性接受四個值，</p>
+<p><code>left</code> 讓他不要跟左邊的 floated 元素貼在一起。
+<code>right</code> 讓他不要跟右邊的 floated 元素貼在一起。
+<code>both</code> 讓他不要跟兩邊的 floated 元素貼在一起。
+<code>none</code> 瀏覽器預設值，讓他跟 floated 的元素貼在一起。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch7/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T12:33:00.000Z"><a href="/2012/03/02/css-ch6/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch6/">CSS 從基本學起 - ch6 字體排版</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>你可以用 <code>font-family</code> 來設定字型。</p>
+<p>但是字型有千千萬萬種，到底該用哪種字型勒？</p>
+<p>型別</p>
+<h2>字體</h2>
+<p>分為兩大類：</p>
+<h3>serif</h3>
+<p><strong>Serif</strong>類的字型適合長篇文章，字體有微小的襯線，引領讀者逐字往下讀，讓文字更好讀。
+serif 類的字體有 Times, Times New Roman, Georgia。</p>
+<h3>sans-serif</h3>
+<p><strong>Sans-serif</strong>有簡潔與簡單的外表，適合用在標題。
+sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
+<p>一般如果你網站的訪客沒有你所使用的字體，他們會使用他們電腦內預設的字體。理論上你可以使用任何字體，你可以使用你電腦專有的字體，只不過你網站的訪客看不到這個字體而已！但現在有了 Google web font，你可以用 CDN 的方式，讓網站的用戶瀏覽時下載字體。</p>
+<p>接下來看看 <code>font-family</code> ：</p>
+<p><code>font-family: Arial, Helvetica, sans-serif;</code></p>
+<p>他會依序的套用字體，如果用戶沒有 Arial 字體，就用 Helvetica，再不然就用 sans-serif。</p>
+<p>sans-serif 是 arial, helvetica 的通用字體 (generic font)。</p>
+<p>以下列出了常見的字體，及他們的通用字體（放在最後）</p>
+<ul>
+<li>Arial, Helvetica, sans-serif</li>
+<li>Verdana, Arial, Helvetica, sans-serif</li>
+<li>Geneva, Arial, Helvetica, sans-serif</li>
+<li>Tahoma, &quot;Lucida Grande&quot;, Arial, sans-serif</li>
+<li><p>&quot;Century Gothic&quot;, &quot;Gill Sans&quot;, Arial, sans-serif</p>
+</li>
+<li><p>Times New Roman, Times, serif</p>
+</li>
+<li>Georgia, Times New Roman, Times, serif</li>
+</ul>
+<p>等寬字體，適合顯示程式碼，寫程式，終端機使用</p>
+<ul>
+<li>Courier New, Courier, monospace</li>
+<li>&quot;Lucida Console&quot;, Monaco, monospace</li>
+</ul>
+<h2>字體顏色</h2>
+<p>用 <code>color</code> 屬性來改顏色。</p>
+<p>可以用 16 進制表示顏色，有三位元與六位元 <code>#123</code> <code>#f3f3f3</code> 這兩種格式。</p>
+<p>也可以用 RGB, RGBA 。</p>
+<p><code>rgb(0,0,0)</code><br><code>rgb(100%, 75%, 75%)</code><br><code>rgba (0,0,0,0.5)</code> 那個 a 是 alpha，調透明度用的。</p>
+<h2>字體大小</h2>
+<p>藉由</p>
+<p><code>font-size = 30px;</code> </p>
+<p>記得是寫成 <code>30px</code> 而不是 <code>30 px</code> 。</p>
+<p>常用的單位有 <code>px</code>, <code>em</code>, <code>percentage</code>, <code>Keywords</code></p>
+<p>如果你沒指定大小的話，瀏覽器有自己一套 base text size 替你幫標籤指定大小。</p>
+<p><code>px</code> 在任何瀏覽器都一樣大，沒有彈性，但是 okay。</p>
+<p><code>keywords</code> 有 xx-small, x-small, small, medium, large, x-large, xx-large 。</p>
+<p>一般瀏覽器的預設 base text size 就是 medium。</p>
+<p>每個 size 的大小差距是 1.2 倍。</p>
+<p>雖然有 keywords，但是只有七種選擇，對於追求完美的人根本不夠用！</p>
+<p><code>percentage</code> 一般 100% 是 16px 大。一般是繼承瀏覽器的 base text size，但是要是有 parent tag，或是 ancestor tag 設定字型的話，base text size 就不是瀏覽器的摟。會繼承。</p>
+<p><code>em</code> 此字型中一個大寫 M 的大小。</p>
+<p><code>em</code> 與 <code>percentage</code> 互換：</p>
+<p>0.5 em = 50%
+1.2 em = 120%</p>
+<p><code>em</code>跟<code>percentage</code>一樣，也會有繼承。</p>
+<h2>粗體 斜體</h2>
+<p>設定粗體</p>
+<p><code>font-weight: bold;</code>  </p>
+<p>設定斜體</p>
+<p><code>font-style: italic;</code><br><code>font-style: oblique</code>  </p>
+<p>瀏覽器預設 <code>&lt;em&gt;</code> <code>&lt;i&gt;</code> 是斜體。<br>瀏覽器預設 <code>&lt;storng&gt;</code> <code>&lt;b&gt;</code> <code>&lt;th&gt;</code> <code>&lt;h1&gt;</code> 是粗體。  </p>
+<h2>大寫 小寫</h2>
+<p>將字轉成大寫 <code>text-transform: uppercase;</code><br>將字轉成小寫 <code>text-transform: lowercase;</code><br>字體開頭大寫 <code>text-transform: capitalize;</code>  </p>
+<p><code>text-transform</code> 預設是會繼承的，要記得改回來。  </p>
+<h2>小寫的大寫</h2>
+<p>.....smallcap。一個詞會變成比較小的大寫。</p>
+<p><code>font-variant: small-caps;</code></p>
+<h2>底線跟頂線</h2>
+<h3>字體下方畫線</h3>
+<p><code>text-decoration: underline;</code>  </p>
+<h3>字體上方畫線</h3>
+<p><code>text-decoration: overline;</code>  </p>
+<h2>間距</h2>
+<h3>letter-spacing 每個字的間距</h3>
+<p>大奶。</p>
+<p>大跟奶中間的距離叫做字元間距。</p>
+<p>EX: 大跟奶靠得很近。 <code>letter-spacing: -1px;</code> </p>
+<h3>word-spacing 單字的間距</h3>
+<p>宅男 正妹</p>
+<p><code>word-spacing: 100000000000px;</code></p>
+<p>這不用解釋吧？</p>
+<h3>line-height 行高</h3>
+<p>這是第一行。<br>這是第二行。</p>
+<p>第一行跟第二行之間的距離，行高。</p>
+<p><code>line-height: 130%;</code></p>
+<p><strong>瀏覽器預設行高是 120% 喔！</strong></p>
+<p>也可以：</p>
+<p><code>line-height: 1.5;</code></p>
+<p>瀏覽器會自動換算 1.5*font-size 的高度。</p>
+<h2>排列字體</h2>
+<p>置中</p>
+<p><code>text-align: center;</code> </p>
+<p>有 <code>center</code>, <code>left</code>, <code>right</code>, <code>justify</code> 可以設定。</p>
+<p><code>justify</code> 讓左右的間距相等。</p>
+<h2>縮進</h2>
+<p><code>text-indent: 25px;</code></p>
+<p>讓字體有縮排唷。</p>
+<h2>段落間的距離</h2>
+<p>用 <code>margin</code> 來設定。</p>
+<p><code>margin-top</code> 及 <code>margin-bottom</code> 來設定段落間的距離。</p>
+<h2>每段的第一個字</h2>
+<p>透過 pseudo-class 來設定...</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="tag">p</span><span class="pseudo">:first-letter</span><span class="rules">{
+<span class="rule"><span class="attribute">truefont-weight</span>:<span class="value"> bold;</span></span>
+<span class="rule"><span class="attribute">truecolor</span>:<span class="value"> red;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<h2>替 list 排版</h2>
+<p>分為有序跟無序清單</p>
+<p><code>ul</code> Unordered List 無序<br><code>ol</code> Ordered List 有序</p>
+<p>通常一個清單都會有一個 小圖示（bullet）</p>
+<p>透過 <code>list-style-type</code> 可以設定清單的樣式。</p>
+<p>無序的小圖示可以有 <code>disc</code> 子彈， <code>circle</code> 挖空圓形 ， <code>square</code> 實體正方形。</p>
+<p>有序的數字可以從 1、0 開始數，大小寫英文字母，大小寫羅馬數字。</p>
+<p>分別是 <code>decimal</code> , <code>decimal-leading-zero</code> , <code>upper-alpha</code> , <code>lower-alpha</code> , <code>upper-roman</code> , <code>lower-roman</code> 。</p>
+<p>你可以讓清單旁邊跟的數字顯示在裡面或是外面唷！</p>
+<p><code>list-style-position: outside;</code><br><code>list-style-position: inside;</code></p>
+<p>更改清單左邊的距離：</p>
+<p><code>padding-left</code> 及 <code>margin-left</code> 。</p>
+<p>你也可以用自定的小圖示：</p>
+<p><code>list-style-image: url(img/my.gif)</code></p>
+<p>但是用這招，圖就不能調位置了，還是使用 <code>background-image</code> 會比較好！</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch6/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T12:23:00.000Z"><a href="/2012/03/02/css-ch5/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch5/">CSS 從基本學起 - ch5 多重樣式</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>當你給一個標籤套用了多個樣式，怎麼決定哪個樣式被套用呢？</p>
+<ul>
+<li>最近的 Ancestor 獲勝！</li>
+<li>直接套用的樣式獲勝！</li>
+<li>用權重來計算</li>
+</ul>
+<p>型別</p>
+<h2>權重計算法</h2>
+<p>一個 tag selector (p, body, h1) 值 1 分。
+一個 class selector (p, body, h1) 值 10 分。
+一個 ID selector (p, body, h1) 值 100 分。
+一個行內 selector (p, body, h1) 值 1000 分。</p>
+<p><strong>高分獲勝</strong></p>
+<p>分數計算例子：</p>
+<p><code>div</code> 1 分<br><code>.container</code> 10 分<br><code>div.container</code> 11 分<br><code>#footer</code> 100 分</p>
+<p>同分時，最後套用的樣式獲勝...。</p>
+<p>你也可以開外掛，在一個樣式後面加上 <code>!important</code> ，</p>
+<p>讓他無論如何都會贏（都會被套用）。</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="id">#nav</span> <span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value"> yellow;</span></span> <span class="rule">}</span></span>
+<span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#b</span>lue <span class="important">!important</span>;</span></span> <span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<p>雖然<code>#nav a</code>有 101 分，而<code>a</code>只有 1 分，但是連結還是藍色。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch5/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/css-ch4/">Mar 2 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/02/css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>標題打了繼承人生，但這裡不是要討論電影＠＠。</p>
+<p>今天要說的是 CSS 的繼承。</p>
+<p>小孩從爸媽繼承了眼睛顏色、髮色、身高、生理特徵，當然 CSS 也可以！</p>
+<p>上一章談到了</p>
+<p>讓我們看一下下面這個 HTML:</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre>&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en-US"&gt;
+&lt;head&gt;
+true&lt;meta charset="UTF-8"&gt;
+true&lt;title&gt;&lt;/title&gt;
+true&lt;style type="text/css"&gt;
+trueh1{
+truetruefont-size: 32px;
+true}
+truespan{
+truetruefont-weight: bold;
+truetruefont-style: italic;
+true}
+true&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></td></tr></table></figure>
+
+<p>如同小孩孫子一樣，在<code>h1</code>內的<code>span</code> 繼承了<code>h1</code>原來有的樣式，這就是繼承摟。</p>
+<p>繼承的好處有什麼？ <strong>節省重複樣式的時間</strong> ，但要注意的是有一些特性是不會繼承的。</p>
+<p>比如 <code>border</code> 屬性，是預設不會繼承的。</p>
+<p>有幾個簡單的規則讓你知道什麼東西預設不會繼承：</p>
+<ul>
+<li>跟位置有關的元素、margin、背景顏色、borders。</li>
+<li>瀏覽器有自己一套繼承的規則，即便你把 body tag 內的預設字體設為 14px，在 body tag 裡的 h1 仍舊比一般的文字大，這是因為瀏覽器有自己一套繼承規則的原因。</li>
+<li>當樣式衝突時，較具體指定的元素獲得高優先權套用樣式。</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/02/css-ch4/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
 </div></div>
     <aside id="sidebar" class="alignleft"><!-- 
   <div class="search">
@@ -194,7 +775,8 @@ var moment_js_path = '/js/moment.min.js';
     <div class="clearfix"></div>
   </div>
   <footer id="footer" class="inner"><div class="alignright depth">
-  <a href="http://github.com/thiagopnts/hexo-persona-dark" style="text-decoration: underline;">Persona Dark Theme</a> 
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
   &copy; - 2013 Juanito Fatas
   
 </div>

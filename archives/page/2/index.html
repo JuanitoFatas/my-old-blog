@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Rails | I'm Juanito Fatas</title>
+  <title>第 2 頁 | 彙整 | I'm Juanito Fatas</title>
   <meta name="author" content="Juanito Fatas">
   
   <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
@@ -64,7 +64,176 @@
  --></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignright"><div id="wrapper">
-<h2 class="archive-title category">Rails</h2>
+<h2 class="archive-title">彙整</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-05-10T14:35:00.000Z"><a href="/2012/05/10/python-zebra/">May 10 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/10/python-zebra/">Python 解决 Zebra 谜题</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>爱因斯坦养鱼问题的学名就叫 Zebra Puzzle。之所以叫爱因斯坦养鱼问题是为了刊登在杂志上吸引读者的注意，其实这个问题不是爱因斯坦搞的...</p>
+<p>问题可以到这里看：<a href="http://en.wikipedia.org/wiki/Zebra_Puzzle">Zebra Puzzle</a></p>
+<p>型別</p>
+<p>首先实现了 2 个 小函数，<code>imright</code> 跟 <code>nextto</code></p>
+<p>确定某房是不是在某房右边、或是两个房挨著。</p>
+<p>接下来给每个房子编上号，12345，</p>
+<p>然后使用了 Python 自带的排列工具 <code>itertools.permutations</code> 给出房子可能的排列。</p>
+<p>接著用了一个 Python 的奇技淫巧，叫做 Generator Expression，</p>
+<p>语法是：<code>(term for- 子句 (选择性) for-if- 子句)</code></p>
+<p>这个 generator expression 会返回一个 Generator 对象。</p>
+<p>恩，给个例子好了：</p>
+<p>先定义一个算平方的函数，然后用 Generator Expression：</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">sqr</span><span class="params">(x)</span>:</span> <span class="keyword">print</span> <span class="string">'调用 sqr, 参数 '</span>, x; <span class="keyword">return</span> x*x
+
+g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">0</span>)
+</code></pre>
+<p>这个时候如果调用 g ：</p>
+<pre><code>&gt;&gt;&gt; <span class="comment">g</span>
+&lt;<span class="comment">GeneratorObject</span> <span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span>&gt;
+</code></pre>
+<p>不会去调用函数，只返回一个 Generator 对象、然而</p>
+<pre><code>&gt;&gt;&gt; <span class="keyword">next</span>(g)
+调用 <span class="built_in">sqr</span>, 参数 <span class="number">0</span>
+<span class="number">0</span>
+</code></pre>
+<p>才会调用这个 Generator 所绑定的函数。。。汗。。。</p>
+<p>这个问题要找，水在哪个房子被喝的，哪个房子养斑马。</p>
+<p>藉由把 Constraint 移到对的地方，减少需要的计算，再搭配 Generator-exp 的特性，最后大概 0.00028 秒之类的就算好了，
+本来用 嵌套 For-loop 要算 1 小时。</p>
+<p>至于那个 c 函数 是拿来显示统计数据跟除错用的。</p>
+<p>完整代码：</p>
+<script src="https://gist.github.com/2653290.js"></script>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/10/python-zebra/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-05-10T14:09:00.000Z"><a href="/2012/05/10/python-for-inside/">May 10 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/10/python-for-inside/">Python For 循环的迭代器实现</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>给定一段 Python 代码：</p>
+<pre><code><span class="keyword">for</span> x <span class="keyword">in</span> items:
+    <span class="built_in">print</span> x
+</code></pre>
+<p>这个 items 可以是字串、列表、等等，这种可以迭代的集合称之为 iterable。</p>
+<p>型別</p>
+<p>这个 iter 就是创一个迭代器出来，相信有学过 Java 的人都不陌生。</p>
+<p>然后用一个 <code>try .. except</code> 语句包住，迭代至停为止，停时会抛出 StopIteration。</p>
+<p>实际上是这样实现的：</p>
+<pre><code>it = iter(items)
+<span class="keyword">try</span>:
+    <span class="keyword">while</span> <span class="built_in">True</span>
+        x = next(it)
+        <span class="keyword">print</span> x
+<span class="keyword">except</span> StopIteration:
+    <span class="keyword">pass</span>
+</code></pre>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/10/python-for-inside/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-04-30T16:51:00.000Z"><a href="/2012/05/01/mac-install-growlnotify/">May 1 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/01/mac-install-growlnotify/">Homebrew Install growlnotify on Snow Leopard and Lion</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>Currently homebrew already removed formula of growlnotify. If you want to use the Gem <a href="http://rubygems.org/gems/growl">growl</a> with a well-known app growlnotify and you may encounter this error with Growlnotify on Snow Leopard:</p>
+<pre><code>dyld: Symbol <span class="keyword">not</span> found: _kSecRandomDefault
+  Referenced from: <span class="regexp">/usr/local/bin/g</span>rowlnotify
+  Expected <span class="keyword">in</span>: <span class="regexp">/System/Library/Frameworks/Security.framework/Versions/A/</span>Security
+ <span class="keyword">in</span> <span class="regexp">/usr/local/bin/g</span>rowlnotify
+Trace/BPT trap
+</code></pre>
+<p>型別</p>
+<p>Here are the formulas:</p>
+<h3>For Snow Leopard with growlnotify v1.2.2</h3>
+<pre><code>brew install https://raw<span class="preprocessor">.github</span><span class="preprocessor">.com</span>/mxcl/homebrew/bd40f1e5f89fad962b021c827d56a9fdea0c847d/Library/Formula/growlnotify<span class="preprocessor">.rb</span>
+</code></pre>
+<h3>For Lion with growlnotify v1.3</h3>
+<pre><code>brew install https://raw<span class="preprocessor">.github</span><span class="preprocessor">.com</span>/mxcl/homebrew/<span class="number">15</span>d6da0023924969fa6ad8a7cf743c4b39838e6e/Library/Formula/growlnotify<span class="preprocessor">.rb</span>
+</code></pre>
+<p>Alternatively you could try on their <a href="http://growl.info/downloads">offical download page</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/01/mac-install-growlnotify/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
 
 
   
@@ -1414,9 +1583,235 @@ end
 
 
   
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>問題：</h2>
+<p>在 CSS 裡使用 float 產生一個左圖右文的形式非常方便，考慮以下 markup:</p>
+<p>型別</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>	&lt;div class="box"&gt;
+truetrue&lt;img src="/img/foo.png" alt="foo"&gt;
+truetrue&lt;p class="description"&gt;Foo is foo and Fools are fool...&lt;/p&gt;
+true&lt;/div&gt;
+</pre></td></tr></table></figure>
+
+<p>及 CSS：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre>	div.box {
+truetruebackground: #fff;
+true}
+
+truediv.box img {
+truetruewidth: 25%;
+true}
+
+truediv.box p.description {
+truetruefloat: right;
+truetruewidth: 70%;
+true}
+</pre></td></tr></table></figure>
+
+<p>會呈現出圖片在左，文字在右這種很常見的形式。</p>
+<p>然而事情沒有我們所想的那麼美好（包在容器裡面的內容不會溢出），</p>
+<p>當<strong>浮動</strong>的段落內容長於左邊<strong>無浮動</strong>的圖片時，段落內容就會跑出容器。</p>
+<hr>
+
+<h2>解決辦法：</h2>
+<p>在包住內容的 (父節點) 後方加入一個句號，清除浮動，隱藏該句號。</p>
+<h2>clearfix 解法</h2>
+<p><strong>注意</strong>：IE8 才支援。</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
+<span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
+<span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">0</span>;</span></span>
+<span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
+<span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<p>如此一來只要加上 clearfix 類別就可以修復：</p>
+<p><code>&lt;div class=&quot;box clearfix&quot;&gt;</code></p>
+<h3>更好的名字</h3>
+<p>選一個更好的名字：</p>
+<p><code>.group</code> 是一個比 <code>.clearfix</code> 好的名字。</p>
+<blockquote>
+<p>the container is a “group” of items that happens to have floats applied.</p>
+</blockquote>
+<p>CSS：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="class">.group</span><span class="pseudo">:after</span> <span class="rules">{
+<span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
+<span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">0</span>;</span></span>
+<span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
+<span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
+<span class="rule">}</span></span>
+
+</pre></td></tr></table></figure>
+
+<p>另附上 IE 6 與 7 的解法：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="comment">/* IE6 */</span>
+* <span class="tag">html</span> <span class="class">.group</span> <span class="rules">{
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">1</span>%;</span></span>
+<span class="rule">}</span></span>
+
+<span class="comment">/* IE7 */</span>
+*<span class="pseudo">:first-child+html</span> <span class="class">.group</span><span class="rules">{
+<span class="rule"><span class="attribute">truemin-height</span>:<span class="value"> <span class="number">1</span>px;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<h4>出處：Handcrafted CSS</h4>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/04/19/clearfix/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-28T15:45:00.000Z"><a href="/2012/03/28/einstein-problem-prolog/">Mar 28 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/03/28/einstein-problem-prolog/">[轉發] 用 Prolog 解决爱因斯坦养鱼问题 </a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>推薦一下由 <strong>泰安小碼農馮迪</strong> 所寫的：</p>
+<p><a href="http://blog.csdn.net/fengdidi/article/details/7343367">用 ECLiPSe 解决爱因斯坦养鱼问题</a>。</p>
+<p>ECLiPSE 是一個使用 Prolog 的 Constraint processing 工具。</p>
+<p>爱因斯坦养鱼问题：</p>
+<p>世界上最难的一道题！爱因斯坦在 20 世纪初出的这个谜语。</p>
+<p>他说世界上有 98％的人答不出来。</p>
+<p>聪明的你，试试吧！</p>
+<ol>
+<li><p>在一条街上，有 5 座房子，喷了 5 种颜色。</p>
+</li>
+<li><p>每个房里住着不同国籍的人</p>
+</li>
+<li><p>每个人喝不同的饮料，抽不同品牌的香烟，养不同的宠物</p>
+</li>
+</ol>
+<p><strong>问题是</strong>：谁养鱼？</p>
+<p>提示：</p>
+<ol>
+<li>英国人住红色房子  </li>
+<li>瑞典人养狗  </li>
+<li>丹麦人喝茶  </li>
+<li>绿色房子在白色房子左面  </li>
+<li>绿色房子主人喝咖啡  </li>
+<li>抽 PallMall 香烟的人养鸟  </li>
+<li>黄色房子主人抽 Dunhill 香烟  </li>
+<li>住在中间房子的人喝牛奶  </li>
+<li>挪威人住第一间房  </li>
+<li>抽 Blends 香烟的人住在养猫的人隔壁  </li>
+<li>养马的人住抽 Dunhill 香烟的人隔壁  </li>
+<li>抽 BlueMaster 的人喝啤酒  </li>
+<li>德国人抽 Prince 香烟  </li>
+<li>挪威人住蓝色房子隔壁  </li>
+<li>抽 Blends 香烟的人有一个喝水的邻居  </li>
+</ol>
+<script src="https://gist.github.com/2227711.js?file=einstein-puzzle.pl"></script>
+
+
+<p>-- 轉載自 <a href="http://blog.csdn.net/fengdidi">泰安小碼農馮迪</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/03/28/einstein-problem-prolog/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
 
   <nav id="pagination">
   
+    <a href="/archives/" class="alignleft prev">上一頁</a>
+  
+  
+    <a href="/archives/page/3/" class="alignright next">下一頁</a>
   
   <div class="clearfix"></div>
 </nav>

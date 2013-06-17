@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>HTML5 | I'm Juanito Fatas</title>
+  <title>第 2 頁 | 彙整：2012/5 | I'm Juanito Fatas</title>
   <meta name="author" content="Juanito Fatas">
   
   <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
@@ -64,7 +64,7 @@
  --></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignright"><div id="wrapper">
-<h2 class="archive-title category">HTML5</h2>
+<h2 class="archive-title">2012/5</h2>
 
 
   
@@ -74,33 +74,32 @@
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-12T09:33:00.000Z"><a href="/2012/05/12/dont-use-cdn-html5shiv/">May 12 2012</a></time>
+        <time class="depth" datetime="2012-04-30T16:51:00.000Z"><a href="/2012/05/01/mac-install-growlnotify/">May 1 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/05/12/dont-use-cdn-html5shiv/">不要使用 CDN 来放第三方 Javascript</a></h1>
+    <h1 class="title depth"><a href="/2012/05/01/mac-install-growlnotify/">Homebrew Install growlnotify on Snow Leopard and Lion</a></h1>
   
 
     </header>
     <div class="entry depth">
       
-        <p><a href="http://code.google.com/p/html5shiv/">HTML5shiv</a> 是一个让 IE 8 启用 HTML5 元素的第三方 JS，通常 CDN 引用的链接是：</p>
-<p><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">http://html5shiv.googlecode.com/svn/trunk/html5.js</a></p>
-<p>不要这么做的理由：</p>
+        <p>Currently homebrew already removed formula of growlnotify. If you want to use the Gem <a href="http://rubygems.org/gems/growl">growl</a> with a well-known app growlnotify and you may encounter this error with Growlnotify on Snow Leopard:</p>
+<pre><code>dyld: Symbol <span class="keyword">not</span> found: _kSecRandomDefault
+  Referenced from: <span class="regexp">/usr/local/bin/g</span>rowlnotify
+  Expected <span class="keyword">in</span>: <span class="regexp">/System/Library/Frameworks/Security.framework/Versions/A/</span>Security
+ <span class="keyword">in</span> <span class="regexp">/usr/local/bin/g</span>rowlnotify
+Trace/BPT trap
+</code></pre>
 <p>型別</p>
-<ol>
-<li><p>没有使用 HTTP 压缩</p>
-</li>
-<li><p>没有 cached，通常这个文件只缓存 180 秒。</p>
-</li>
-<li><p>googlecode.com 不支援 partial response (可以提高效能的东东)</p>
-</li>
-<li><p>你连到别人的地方，无法控制什么事情会发生，说不定那哥儿们不爽了直接删掉。。。</p>
-</li>
-<li><p>实际上压缩后才 1200 Bytes，造成很多额外的 Overhead (DNS lookup, TCP handshake...etc.)</p>
-</li>
-</ol>
-<p>原始文章：<a href="http://zoompf.com/blog/2012/05/html5shiv-and-serving-content-from-code-repositories">html5shiv and Serving Content From Code Repositories</a></p>
+<p>Here are the formulas:</p>
+<h3>For Snow Leopard with growlnotify v1.2.2</h3>
+<pre><code>brew install https://raw<span class="preprocessor">.github</span><span class="preprocessor">.com</span>/mxcl/homebrew/bd40f1e5f89fad962b021c827d56a9fdea0c847d/Library/Formula/growlnotify<span class="preprocessor">.rb</span>
+</code></pre>
+<h3>For Lion with growlnotify v1.3</h3>
+<pre><code>brew install https://raw<span class="preprocessor">.github</span><span class="preprocessor">.com</span>/mxcl/homebrew/<span class="number">15</span>d6da0023924969fa6ad8a7cf743c4b39838e6e/Library/Formula/growlnotify<span class="preprocessor">.rb</span>
+</code></pre>
+<p>Alternatively you could try on their <a href="http://growl.info/downloads">offical download page</a></p>
 
       
     </div>
@@ -108,7 +107,7 @@
       
         
           <div class="alignleft">
-            <a href="/2012/05/12/dont-use-cdn-html5shiv/#more" class="more-link">閱讀全文</a>
+            <a href="/2012/05/01/mac-install-growlnotify/#more" class="more-link">閱讀全文</a>
           </div>
         
         
@@ -122,6 +121,8 @@
   
 
   <nav id="pagination">
+  
+    <a href="/archives/2012/05/" class="alignleft prev">上一頁</a>
   
   
   <div class="clearfix"></div>

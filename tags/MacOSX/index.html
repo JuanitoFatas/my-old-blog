@@ -67,21 +67,64 @@
 <h2 class="archive-title tag">MacOSX</h2>
 
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2012-04-30T16:51:00.000Z"><a href="/2012/05/01/mac-install-growlnotify/">May 1 2012</a></time>
-            
-              <h1 class="title"><a href="/2012/05/01/mac-install-growlnotify/">Homebrew Install growlnotify on Snow Leopard and Lion</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-04-30T16:51:00.000Z"><a href="/2012/05/01/mac-install-growlnotify/">May 1 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/01/mac-install-growlnotify/">Homebrew Install growlnotify on Snow Leopard and Lion</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>Currently homebrew already removed formula of growlnotify. If you want to use the Gem <a href="http://rubygems.org/gems/growl">growl</a> with a well-known app growlnotify and you may encounter this error with Growlnotify on Snow Leopard:</p>
+<pre><code>dyld: Symbol <span class="keyword">not</span> found: _kSecRandomDefault
+  Referenced from: <span class="regexp">/usr/local/bin/g</span>rowlnotify
+  Expected <span class="keyword">in</span>: <span class="regexp">/System/Library/Frameworks/Security.framework/Versions/A/</span>Security
+ <span class="keyword">in</span> <span class="regexp">/usr/local/bin/g</span>rowlnotify
+Trace/BPT trap
+</code></pre>
+<p>型別</p>
+<p>Here are the formulas:</p>
+<h3>For Snow Leopard with growlnotify v1.2.2</h3>
+<pre><code>brew install https://raw<span class="preprocessor">.github</span><span class="preprocessor">.com</span>/mxcl/homebrew/bd40f1e5f89fad962b021c827d56a9fdea0c847d/Library/Formula/growlnotify<span class="preprocessor">.rb</span>
+</code></pre>
+<h3>For Lion with growlnotify v1.3</h3>
+<pre><code>brew install https://raw<span class="preprocessor">.github</span><span class="preprocessor">.com</span>/mxcl/homebrew/<span class="number">15</span>d6da0023924969fa6ad8a7cf743c4b39838e6e/Library/Formula/growlnotify<span class="preprocessor">.rb</span>
+</code></pre>
+<p>Alternatively you could try on their <a href="http://growl.info/downloads">offical download page</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/05/01/mac-install-growlnotify/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
   </div>
+</article>
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
 </div></div>
     <aside id="sidebar" class="alignleft"><!-- 
   <div class="search">
@@ -134,7 +177,8 @@ var moment_js_path = '/js/moment.min.js';
     <div class="clearfix"></div>
   </div>
   <footer id="footer" class="inner"><div class="alignright depth">
-  <a href="http://github.com/thiagopnts/hexo-persona-dark" style="text-decoration: underline;">Persona Dark Theme</a> 
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
   &copy; - 2013 Juanito Fatas
   
 </div>
