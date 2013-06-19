@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Spork | I'm Juanito Fatas</title>
+  <meta name="author" content="Juanito Fatas">
+  
+  <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="I'm Juanito Fatas"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="I'm Juanito Fatas" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#sidebar').delay(400).animate({ width: '285px' }, 500, function() {
+      $('.personal-info').css({display: 'table'}).hide().fadeIn(500);
+    });
+  });
+  </script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41041908-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><!-- <div class="alignleft">
+  <h1><a href="/">I'm Juanito Fatas</a></h1>
+  <h2><a href="/">C-x C-f...C-x C-s...</a></h2>
+</div>
+ --><!-- <nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首頁</a></li>
+    
+      <li><a href="/archives">彙整</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+ --></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper">
+<h2 class="archive-title tag">Spork</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2013-06-19T17:08:44.000Z"><a href="/2013/06/20/ruby-test-in-sublime-with-spork/">Jun 20 2013</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2013/06/20/ruby-test-in-sublime-with-spork/">在 Sublime 里面运行 Ruby 测试 with Spork。</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <ol>
+<li>安装 package:</li>
+</ol>
+<p>安装办法见 Ruby Tests GitHub 说明页面：<a href="https://github.com/maltize/sublime-text-2-ruby-tests">https://github.com/maltize/sublime-text-2-ruby-tests</a></p>
+<p>安装好后，重启 Sublime Text，RubyTest 提供了以下热键：</p>
+<ul>
+<li>Command-Shift-R: run a single test (if run on an it block) or group of tests (if run on a describe block)</li>
+<li>Command-Shift-E: run the last test(s)</li>
+<li>Command-Shift-T: run all the tests in current file</li>
+</ul>
+<p>由于测试总运行的暴慢，能单独运行是非常好的。</p>
+<p>一个工作流程示例：</p>
+<ol>
+<li>终端启动 Spork。</li>
+<li>写个测试。</li>
+<li>Command-Shift-R 确保测试为失败（红灯）。</li>
+<li>写相应的代码。</li>
+<li>Command-Shift-E 运行刚刚的测试，确保测试通过（绿灯）。</li>
+<li>反覆操作 2-5。</li>
+</ol>
+<p>等代码写到一个阶段的时候， <del>或是女朋友来了</del> ，则抓紧时间运行 <code>rspec spec/</code> ，来确保整组测试通过。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/06/20/ruby-test-in-sublime-with-spork/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignleft"><!-- 
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:lisp.es/">
+  </form>
+</div>
+
+  
+<div class="widget twitter">
+  <h3 class="title">推文</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['JuanitoFatas', 5, false];
+var moment_js_path = '/js/moment.min.js';
+</script>
+<script src="/js/twitter.js"></script>
+
+
+ -->
+<div class="personal-info">
+  <figure>
+    
+      <a href="/">
+        <img class="personal-photo" src="https://secure.gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" alt="Juanito Fatas">
+      </a>
+    
+    <figcaption>
+      <h3 class=>Juanito Fatas</h3>
+      <p>城市中的迷途小碼農</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/JuanitoFatas"></a>
+    
+    
+    
+      <a target="_blank" class="icon github depth" href="http://github.com/JuanitoFatas"></a>
+    
+    
+      <a target="_blank" class="icon email depth" href="mailto:katehuang0320@gmail.com"></a>
+    
+  </section>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignright depth">
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
+  &copy; - 2013 Juanito Fatas
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'juanfatas';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

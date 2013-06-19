@@ -70,6 +70,79 @@
     <header>
       
         <div class="icon depth"></div>
+        <time class="depth" datetime="2013-06-19T17:08:44.000Z"><a href="/2013/06/20/ruby-test-in-sublime-with-spork/">Jun 20 2013</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2013/06/20/ruby-test-in-sublime-with-spork/">在 Sublime 里面运行 Ruby 测试 with Spork。</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <ol>
+<li>安装 package:</li>
+</ol>
+<p>安装办法见 Ruby Tests GitHub 说明页面：<a href="https://github.com/maltize/sublime-text-2-ruby-tests">https://github.com/maltize/sublime-text-2-ruby-tests</a></p>
+<p>安装好后，重启 Sublime Text，RubyTest 提供了以下热键：</p>
+<ul>
+<li>Command-Shift-R: run a single test (if run on an it block) or group of tests (if run on a describe block)</li>
+<li>Command-Shift-E: run the last test(s)</li>
+<li>Command-Shift-T: run all the tests in current file</li>
+</ul>
+<p>由于测试总运行的暴慢，能单独运行是非常好的。</p>
+<p>一个工作流程示例：</p>
+<ol>
+<li>终端启动 Spork。</li>
+<li>写个测试。</li>
+<li>Command-Shift-R 确保测试为失败（红灯）。</li>
+<li>写相应的代码。</li>
+<li>Command-Shift-E 运行刚刚的测试，确保测试通过（绿灯）。</li>
+<li>反覆操作 2-5。</li>
+</ol>
+<p>等代码写到一个阶段的时候， <del>或是女朋友来了</del> ，则抓紧时间运行 <code>rspec spec/</code> ，来确保整组测试通过。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/06/20/ruby-test-in-sublime-with-spork/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2013/06/20/ruby-test-in-sublime-with-spork/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2013/06/20/ruby-test-in-sublime-with-spork/">在 Sublime 里面运行 Ruby 测试 with Spork。</a></h2>
+            
+            <time class="time title depth" datetime="2013-06-19T17:08:44.000Z"><a href="/2013/06/20/ruby-test-in-sublime-with-spork/">Jun 20 2013</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
         <time class="depth" datetime="2012-11-21T13:43:00.000Z"><a href="/2012/11/21/jquery-bind-live-delegate/">Nov 21 2012</a></time>
       
       
@@ -2245,75 +2318,6 @@ true&lt;/dl&gt;
               <h2 class="depth title" ><a href="/2012/05/12/nth-child-common-gotcha/">CSS 一个常见 nth-child 的误区</a></h2>
             
             <time class="time title depth" datetime="2012-05-12T15:04:00.000Z"><a href="/2012/05/12/nth-child-common-gotcha/">May 12 2012</a></time>
-          </header>
-      </div>
-    </article>
-  </div>
-
-
-  <!-- <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-12T09:33:00.000Z"><a href="/2012/05/12/dont-use-cdn-html5shiv/">May 12 2012</a></time>
-      
-      
-  
-    <h1 class="title depth"><a href="/2012/05/12/dont-use-cdn-html5shiv/">不要使用 CDN 来放第三方 Javascript</a></h1>
-  
-
-    </header>
-    <div class="entry depth">
-      
-        <p><a href="http://code.google.com/p/html5shiv/">HTML5shiv</a> 是一个让 IE 8 启用 HTML5 元素的第三方 JS，通常 CDN 引用的链接是：</p>
-<p><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">http://html5shiv.googlecode.com/svn/trunk/html5.js</a></p>
-<p>不要这么做的理由：</p>
-<p>型別</p>
-<ol>
-<li><p>没有使用 HTTP 压缩</p>
-</li>
-<li><p>没有 cached，通常这个文件只缓存 180 秒。</p>
-</li>
-<li><p>googlecode.com 不支援 partial response (可以提高效能的东东)</p>
-</li>
-<li><p>你连到别人的地方，无法控制什么事情会发生，说不定那哥儿们不爽了直接删掉。。。</p>
-</li>
-<li><p>实际上压缩后才 1200 Bytes，造成很多额外的 Overhead (DNS lookup, TCP handshake...etc.)</p>
-</li>
-</ol>
-<p>原始文章：<a href="http://zoompf.com/blog/2012/05/html5shiv-and-serving-content-from-code-repositories">html5shiv and Serving Content From Code Repositories</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2012/05/12/dont-use-cdn-html5shiv/#more" class="more-link">閱讀全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
- -->
-
-
-  <div class="archive">
-
-    <article class="post">
-      <div class="post-content">
-        <header>
-            
-              <a href="/2012/05/12/dont-use-cdn-html5shiv/"><div class="icon depth"></div> </a>
-              <h2 class="depth title" ><a href="/2012/05/12/dont-use-cdn-html5shiv/">不要使用 CDN 来放第三方 Javascript</a></h2>
-            
-            <time class="time title depth" datetime="2012-05-12T09:33:00.000Z"><a href="/2012/05/12/dont-use-cdn-html5shiv/">May 12 2012</a></time>
           </header>
       </div>
     </article>
