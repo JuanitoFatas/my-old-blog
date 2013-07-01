@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lisp.es//2012/06/05/scope-and-extent-in-cl/</loc>
+    <lastmod>2013-07-01T13:22:38.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://lisp.es//2013/06/20/ruby-test-in-sublime-with-spork/</loc>
     <lastmod>2013-06-19T17:10:52.000Z</lastmod>
   </url>
@@ -11,10 +15,6 @@
   <url>
     <loc>http://lisp.es//2012/05/19/jquery-events-2/</loc>
     <lastmod>2013-05-18T19:15:29.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
-    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
     <loc>http://lisp.es//2012/03/02/css-ch6/</loc>
@@ -57,7 +57,7 @@
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/18/jquery-query-dom/</loc>
+    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
@@ -89,6 +89,10 @@
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
+    <loc>http://lisp.es//2012/05/18/jquery-query-dom/</loc>
+    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://lisp.es//2012/03/02/css-ch4/</loc>
     <lastmod>2013-05-18T19:15:16.000Z</lastmod>
   </url>
@@ -107,9 +111,5 @@
   <url>
     <loc>http://lisp.es//2012/11/21/jquery-bind-live-delegate/</loc>
     <lastmod>2012-11-24T06:21:32.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://lisp.es//2012/06/05/scope-and-extent-in-cl/</loc>
-    <lastmod>2012-11-01T13:49:59.000Z</lastmod>
   </url>
 </urlset>

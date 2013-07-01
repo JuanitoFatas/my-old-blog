@@ -4,7 +4,7 @@
   <subtitle><![CDATA[C-x C-f...C-x C-s...]]></subtitle>
   <link href="http://lisp.es//atom.xml" rel="self"/>
   <link href="http://lisp.es/"/>
-  <updated>2013-06-19T17:10:59.367Z</updated>
+  <updated>2013-07-01T13:22:47.005Z</updated>
   <id>http://lisp.es//</id>
   <author>
     <name><![CDATA[Juanito Fatas]]></name>
@@ -267,7 +267,7 @@ truetruereturn <span class="keyword">this</span>.on( types, selector, data, fn )
     <link href="http://lisp.es//2012/06/05/scope-and-extent-in-cl/"/>
     <id>http://lisp.es//2012/06/05/scope-and-extent-in-cl/</id>
     <published>2012-06-04T16:24:00.000Z</published>
-    <updated>2012-11-01T13:49:59.000Z</updated>
+    <updated>2013-07-01T13:22:38.000Z</updated>
     <content type="html"><![CDATA[<h2>为什么要理解 Scope 与 Extent?</h2>
 <p>这两个概念在理解许多 Common Lisp 语言的特色时是很有用的，这两个概念出现在某个对象 (object) 或建构子 (construct) 需要被一个程序的某个部分参照时。</p>
 <h2>Scope</h2>
@@ -275,10 +275,10 @@ truetruereturn <span class="keyword">this</span>.on( types, selector, data, fn )
 <h2>Extent</h2>
 <p>Extent 参照可能发生的时间区间。</p>
 <p>一个简单的例子：</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
-</pre></td><td class="code"><pre>	<span class="list">(<span class="title">defun</span><span class="body"> copy-cell <span class="list">(<span class="title">x</span><span class="body">)</span></span>
-truetrue<span class="list">(<span class="title">cons</span><span class="body"> <span class="list">(<span class="title">car</span><span class="body"> x)</span></span> <span class="list">(<span class="title">cdr</span><span class="body"> x)</span></span>)</span></span>)</span></span>
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> copy-cell <span class="list">(<span class="title">x</span><span class="body">)</span></span>
+  <span class="list">(<span class="title">cons</span><span class="body"> <span class="list">(<span class="title">car</span><span class="body"> x)</span></span> <span class="list">(<span class="title">cdr</span><span class="body"> x)</span></span>)</span></span>)</span></span>
 </pre></td></tr></table></figure>
 
 <p>在这个例子里，我们只能在 <code>copy-cell</code> 函数主体中来参照到 <code>x</code> 参数，这个就是参数 <code>x</code> 的 scope。而参数 <code>x</code> 的 extent 是当函数 <code>copy-cell</code> 被调用至离开的这段时间区间。但是参数的 extent 是有可能在离开函数后仍存在的，但上面这个简单的例子是不可能发生的。</p>
@@ -287,17 +287,17 @@ truetrue<span class="list">(<span class="title">cons</span><span class="body"> <
 <li>Lexical scope 由某个特殊建构子所建立的程序區塊（通常是一個主體 body）。可以想想 Common Lisp 的 let、defun 所設立的參數。</li>
 </ul>
 <p>例子 1:</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre><span class="list">(<span class="title">let</span><span class="body"> <span class="list">(<span class="body"><span class="list">(<span class="title">x</span><span class="body"> <span class="number">1</span>)</span></span>
-truetruetrue<span class="list">(<span class="title">y</span><span class="body"> <span class="number">2</span>)</span></span>)</span></span>
-true<span class="list">(<span class="title">+</span><span class="body"> x y)</span></span>)</span></span>
+      <span class="list">(<span class="title">y</span><span class="body"> <span class="number">2</span>)</span></span>)</span></span>
+  <span class="list">(<span class="title">+</span><span class="body"> x y)</span></span>)</span></span>
 </pre></td></tr></table></figure>
 
 <p>x 与 y 的 scope 就是由 let 建构子所建构的主体。</p>
 <p>例子 2:</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> foo <span class="list">(<span class="title">x</span><span class="body">)</span></span>
 true<span class="list">(<span class="title">+</span><span class="body"> x <span class="number">1</span>)</span></span>)</span></span>
@@ -318,7 +318,7 @@ true<span class="list">(<span class="title">+</span><span class="body"> x <span 
 <p>例子：大多数的 Common Lisp 数据对象 (data objecs) 是 indefinite extent 的。
 例子：绑定一个函数 lexcially scoped 的参数是 indefinite extent 的。</p>
 <p>考虑以下函数定义：</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> compose <span class="list">(<span class="title">f</span><span class="body"> g)</span></span>
@@ -327,7 +327,7 @@ true<span class="list">(<span class="title">+</span><span class="body"> x <span 
 </pre></td></tr></table></figure>
 
 <p>当给定两个参数时，返回一个函数作为返回值。参数 <code>f</code> 与 <code>g</code> 的绑定由于返回的函数存在，所以并没有消失。当我们调用这个返回的函数时，我们仍可以参照到 <code>f</code> 与 <code>g</code> 。因此</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="list">(<span class="title">funcall</span><span class="body"> <span class="list">(<span class="title">compose</span><span class="body"> #'sqrt #'abs)</span></span> <span class="number">-9.0</span>)</span></span>
 </pre></td></tr></table></figure>
 
@@ -336,20 +336,20 @@ true<span class="list">(<span class="title">+</span><span class="body"> x <span 
 <h2>Shadowing</h2>
 <p>以上的定义没有考虑到 Shadowing，当我们定义两个同样名称的 entities 时，第二个会遮蔽了第一个，在这个情况下，我们就无法参照到第一个了。</p>
 <p>在 lexcial scope 的情况，如果两个建构子设置了同名的 entities 时，会做嵌套的动作。内部的会遮蔽外部的。举个例子：</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 </pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> foo <span class="list">(<span class="title">x</span><span class="body"> z)</span></span>
   <span class="list">(<span class="title">let</span><span class="body"> <span class="list">(<span class="body"><span class="list">(<span class="title">z</span><span class="body"> <span class="list">(<span class="title">*</span><span class="body"> x <span class="number">2</span>)</span></span>)</span></span>)</span></span>
-  	<span class="list">(<span class="title">print</span><span class="body"> z)</span></span>)</span></span>
+    <span class="list">(<span class="title">print</span><span class="body"> z)</span></span>)</span></span>
   z)</span></span>
 </pre></td></tr></table></figure>
 
 <p>内部的 <code>z</code> 会是 <code>(* x 2)</code>，而外部的 z 会是传入的参数 <code>z</code> 。</p>
 <p>在 dynamic extent 的情况，如果两个 entities 的发生时间区间重叠时，一个会被嵌套在另一个里面。</p>
 <p>一个有著 dynamic extent 的 entity 透过名字来参照时，总是参照到最近一次尚未被释放的 (disestablished) entity。比如：</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -369,7 +369,7 @@ true<span class="list">(<span class="title">+</span><span class="body"> x <span 
 
 <p>调用 <code>(fun1 7)</code> 的结果会是 <code>10</code>。在 <code>throw</code> 执行时，同时有两个 <code>catch</code> 在监看 <code>trap</code> : 一个由 <code>fun1</code> 配置的，另一个是 <code>fun2</code> 。第二个 <code>fun2</code> 是最新的那个，所以 <code>7</code> 会在 <code>fun2</code> 里返回。从 <code>fun3</code> 内部来看， <code>fun2</code> 遮蔽了 <code>fun1</code> 。</p>
 <p>若是 <code>fun2</code> 是这样定义的话：</p>
-<figure class="highlight lang-scheme"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> fun<span class="number">2</span> <span class="list">(<span class="title">y</span><span class="body">)</span></span>
   <span class="list">(<span class="title">catch</span><span class="body"> 'snare <span class="list">(<span class="title">*</span><span class="body"> <span class="number">5</span> <span class="list">(<span class="title">fun3</span><span class="body"> y)</span></span>)</span></span>)</span></span>)</span></span>
