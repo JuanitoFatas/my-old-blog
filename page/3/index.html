@@ -70,6 +70,172 @@
     <header>
       
         <div class="icon depth"></div>
+        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>問題：</h2>
+<p>在 CSS 裡使用 float 產生一個左圖右文的形式非常方便，考慮以下 markup:</p>
+<p>型別</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>	&lt;div class="box"&gt;
+truetrue&lt;img src="/img/foo.png" alt="foo"&gt;
+truetrue&lt;p class="description"&gt;Foo is foo and Fools are fool...&lt;/p&gt;
+true&lt;/div&gt;
+</pre></td></tr></table></figure>
+
+<p>及 CSS：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre>	div.box {
+truetruebackground: #fff;
+true}
+
+truediv.box img {
+truetruewidth: 25%;
+true}
+
+truediv.box p.description {
+truetruefloat: right;
+truetruewidth: 70%;
+true}
+</pre></td></tr></table></figure>
+
+<p>會呈現出圖片在左，文字在右這種很常見的形式。</p>
+<p>然而事情沒有我們所想的那麼美好（包在容器裡面的內容不會溢出），</p>
+<p>當<strong>浮動</strong>的段落內容長於左邊<strong>無浮動</strong>的圖片時，段落內容就會跑出容器。</p>
+<hr>
+
+<h2>解決辦法：</h2>
+<p>在包住內容的 (父節點) 後方加入一個句號，清除浮動，隱藏該句號。</p>
+<h2>clearfix 解法</h2>
+<p><strong>注意</strong>：IE8 才支援。</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
+<span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
+<span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">0</span>;</span></span>
+<span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
+<span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<p>如此一來只要加上 clearfix 類別就可以修復：</p>
+<p><code>&lt;div class=&quot;box clearfix&quot;&gt;</code></p>
+<h3>更好的名字</h3>
+<p>選一個更好的名字：</p>
+<p><code>.group</code> 是一個比 <code>.clearfix</code> 好的名字。</p>
+<blockquote>
+<p>the container is a “group” of items that happens to have floats applied.</p>
+</blockquote>
+<p>CSS：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="class">.group</span><span class="pseudo">:after</span> <span class="rules">{
+<span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
+<span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">0</span>;</span></span>
+<span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
+<span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
+<span class="rule">}</span></span>
+
+</pre></td></tr></table></figure>
+
+<p>另附上 IE 6 與 7 的解法：</p>
+<figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="comment">/* IE6 */</span>
+* <span class="tag">html</span> <span class="class">.group</span> <span class="rules">{
+<span class="rule"><span class="attribute">trueheight</span>:<span class="value"> <span class="number">1</span>%;</span></span>
+<span class="rule">}</span></span>
+
+<span class="comment">/* IE7 */</span>
+*<span class="pseudo">:first-child+html</span> <span class="class">.group</span><span class="rules">{
+<span class="rule"><span class="attribute">truemin-height</span>:<span class="value"> <span class="number">1</span>px;</span></span>
+<span class="rule">}</span></span>
+</pre></td></tr></table></figure>
+
+<h4>出處：Handcrafted CSS</h4>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/04/19/clearfix/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/04/19/clearfix/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h2>
+            
+            <time class="time title depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
         <time class="depth" datetime="2012-03-28T15:45:00.000Z"><a href="/2012/03/28/einstein-problem-prolog/">Mar 28 2012</a></time>
       
       
