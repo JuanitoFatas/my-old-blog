@@ -4,7 +4,7 @@
   <subtitle><![CDATA[C-x C-f...C-x C-s...]]></subtitle>
   <link href="http://lisp.es//atom.xml" rel="self"/>
   <link href="http://lisp.es/"/>
-  <updated>2013-07-01T18:48:07.199Z</updated>
+  <updated>2013-07-01T18:54:01.671Z</updated>
   <id>http://lisp.es//</id>
   <author>
     <name><![CDATA[Juanito Fatas]]></name>
@@ -16,7 +16,7 @@
     <link href="http://lisp.es//2013/07/02/hello-ruby/"/>
     <id>http://lisp.es//2013/07/02/hello-ruby/</id>
     <published>2013-07-01T17:57:51.000Z</published>
-    <updated>2013-07-01T18:48:03.000Z</updated>
+    <updated>2013-07-01T18:53:57.000Z</updated>
     <content type="html"><![CDATA[<p>來分享一下，一個人、一本書。</p>
 <p>那個人？<a href="http://lindaliukas.fi/">Linda Liukas</a>，Rails Girls 共同創辦人，Codecademy 的社群管理員。2013 年的 Ruby 英雄。哪本書？由她所寫的 Ruby 童書<a href="http://helloruby.com/">《Hello Ruby》</a>，我是從 Heroku Waza 2013 Conf 看到的一個影片，由 Codecademy 的 Linda 小姐帶來的題目：人人有程編，發現到這位 Linda 小姐。</p>
 <p>她分享了兩個故事，前半段簡略的講了下《Hello Ruby》，後半段講她的心路歷程，提到編程世界的女權問題、教學問題、文化問題，很精采也很有感染力，我就不多說了，留給你與她來一個面對面的交流！</p>
@@ -40,7 +40,6 @@
 <p>Linda Liukas 如是說：“我相信每個人小時候，都有一本屬於童年的魔法書。一本讓你看到世界是如此美麗，充滿著無限可能性的一本魔法書。而這本是我的魔法書（笑）。”</p>
 <p>聽聽她精妙絕倫的演講，找回編程最初的感動吧！</p>
 <p>傳送門：<a href="https://vimeo.com/61113155">https://vimeo.com/61113155</a></p>
-<p><del>梨窩好可愛，她～好～正～啊～</del></p>
 ]]></content>
     <category scheme="http://lisp.es//tags/ruby/" term="ruby"/>
     <category scheme="http://lisp.es//categories/ruby/" term="ruby"/>
