@@ -4,7 +4,7 @@
   <subtitle><![CDATA[C-x C-f...C-x C-s...]]></subtitle>
   <link href="http://lisp.es//atom.xml" rel="self"/>
   <link href="http://lisp.es/"/>
-  <updated>2013-07-01T18:34:10.773Z</updated>
+  <updated>2013-07-01T18:36:53.136Z</updated>
   <id>http://lisp.es//</id>
   <author>
     <name><![CDATA[Juanito Fatas]]></name>
@@ -16,10 +16,10 @@
     <link href="http://lisp.es//2013/07/02/hello-ruby/"/>
     <id>http://lisp.es//2013/07/02/hello-ruby/</id>
     <published>2013-07-01T17:57:51.000Z</published>
-    <updated>2013-07-01T18:34:02.000Z</updated>
+    <updated>2013-07-01T18:36:32.000Z</updated>
     <content type="html"><![CDATA[<p>來分享一下，一個人、一本書。</p>
 <p>那個人？Linda Liukas，Rails Girls 共同創辦人，Codecademy 的社群管理員。2013 年的 Ruby 英雄。哪本書？由她所寫的 Ruby 童書《Hello Ruby》，我是從 Heroku Waza 2013 Conf 看到的一個影片，發現到這位 Linda 小姐。</p>
-<p><a href="https://vimeo.com/61113155">由 Codecademy 的 Linda 小姐帶來的題目：人人有程編</a></p>
+<p>由 Codecademy 的 Linda 小姐帶來的題目：人人有程編</p>
 <p>她分享了兩個故事，前半段簡略的講了下《Hello Ruby》，後半段講她的心路歷程，提到編程世界的女權問題、教學問題、文化問題，很精采也很有感染力，我就不多說了，留給你與她來一個面對面的交流！</p>
 <p>我這邊稍稍介紹下《Hello Ruby》。</p>
 <p>由 Linda Liukas (念法：琳達●里優可絲）撰寫的 Ruby 童書，<a href="http://konichiwaruby.tumblr.com/">《Hello Ruby》</a>，不久之後即將推出，這是一本什麼樣的書呢？</p>
@@ -36,11 +36,11 @@
 <p>她遇到了小火狐，小火狐喜歡很多小東西，就如同她喜歡與小露比一起玩。</p>
 <p><img src="https://raw.github.com/JuanitoFatas/Foto/master/hello-ruby/06-Django.png" alt=""></p>
 <p>她遇到了一個小男孩，嬉皮士姜狗，姜狗試著要與露比來一場對決。。。</p>
-<p>露比的朋友每個都很不一樣，每個人都不是完美的，有著各自調皮的地方，露比從他們每個人身上學到許多東西，但世界需要他們。</p>
+<p>露比的朋友每個都很不一樣，每個人都不是完美的，有著各自調皮的地方，露比從他們每個人身上學到許多東西，而這個世界需要他們。</p>
 <p><img src="https://raw.github.com/JuanitoFatas/Foto/master/hello-ruby/07-magic-book.png" alt=""></p>
 <p>Linda Liukas 如是說：“我相信每個人小時候，都有一本屬於童年的魔法書。一本讓你看到世界是如此美麗，充滿著無限可能性的一本魔法書。而這本是我的魔法書（笑）。”</p>
-<p>還猶豫嗎？看看她，找回編程最初的感動。</p>
-<p><a href="https://vimeo.com/61113155">https://vimeo.com/61113155</a></p>
+<p>聽聽她精妙絕倫的演講，找回編程最初的感動吧！</p>
+<p>傳送門：<a href="https://vimeo.com/61113155">https://vimeo.com/61113155</a></p>
 <p><del>梨窩好可愛，她～好～正～啊～</del></p>
 ]]></content>
     <category scheme="http://lisp.es//tags/ruby/" term="ruby"/>
