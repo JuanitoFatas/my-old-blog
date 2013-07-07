@@ -73,6 +73,71 @@
     <header>
       
         <div class="icon depth"></div>
+        <time class="depth" datetime="2013-07-07T05:01:23.000Z"><a href="/2013/07/07/meta-object-intro/">Jul 7 2013</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2013/07/07/meta-object-intro/">Metaobject 元对象</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>元对象 metaobject
+在计算机科学里，一个元对象是任何可以操作、创建、描述或实现别的对象的实体。</p>
+<p>基础对象 base object
+关于 metaobject 的对象称作基础对象。</p>
+<p>一个元对象可储存的信息为基础对象的类型 (type)、介面 (interface)、类别 (class)、方法 (methods)、属性 (attributes)、变量 (variables)、函数 (functions)、控制结构 (control structures) 等。</p>
+<p>一个元对象协议 (metaobject protocol) 是一个程序语义的直译器，而此直译器是公开且可扩展的。因此，一个 MOP 决定了一个程序的行为与意义是什么，并且 MOP 是可扩展的，使得一个程序员可以通过扩展 MOP 的部分，来改变程序的行为。MOP 揭露了直译器某些或全部的内部结构给程序员。MOP 也许表现的像是一组类别与方法，允许一个程序来检查支援系统的状态以及改变系统的行为。MOP 面向对象的程序所实现，其中所有的对象是元对象</p>
+<p>MOP 分成执行期或编译期两种。执行期 MOP 的元对象于程序运行、执行时存在。而编译期 MOP 的元对象仅在程序编译时存在。它们或许可以改变或扩展编译过程，但当程序运行时它们是不存在的。</p>
+<p>最为人所知的执行期 MOP 是 The Art of Metaobject Protocol (AMOP) 所描述的 MOP。它应用在 Common Lisp 对象系统上 (CLOS)，并允许我们可以操作继承、方法派发、类别实例化…等等，这些机制。在全录帕罗奥多研究中心 Xerox PARC，AMOP 作者之一，Gregor Kiczales，在 Scheme 上开发了一个小巧但威力强大的基于 MOP 的执行期对象系统，称为 TinyCLOS。被移植到许多 Scheme 实现上。</p>
+<p>一个 MOP 的用途例子是改变多重继承的实作。一个反覆出现的议题是如何解决 slot 的冲突与方法的 superclass。通常语言设计者选择一个解决方案，而语言使用者必须遵循它。取而代之的，元对象协议使得我们可以改变继承的规则，并替每一个单一类别选择不同的解决方案。一个元对象是一种实现 aspect-oriented programming 语言的方法。许多早期 MOP 的创始者，包括 Gregor Kiczales 为早期 aspect-oriented 程序设计的提倡者</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/07/07/meta-object-intro/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<a class="moot" href="https://moot.it/i/lisp_es">
+   <h1 class="title">留言</h1>
+</a> -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2013/07/07/meta-object-intro/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2013/07/07/meta-object-intro/">Metaobject 元对象</a></h2>
+            
+            <time class="time title depth" datetime="2013-07-07T05:01:23.000Z"><a href="/2013/07/07/meta-object-intro/">Jul 7 2013</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
         <time class="depth" datetime="2013-07-07T04:58:30.000Z"><a href="/2013/07/07/spanish-ending-words/">Jul 7 2013</a></time>
       
       
@@ -2026,215 +2091,6 @@ $(<span class="keyword">function</span>() {
               <h2 class="depth title" ><a href="/2012/05/18/jquery-intro-2/">jQuery 1.7 介绍（下）</a></h2>
             
             <time class="time title depth" datetime="2012-05-17T16:31:00.000Z"><a href="/2012/05/18/jquery-intro-2/">May 18 2012</a></time>
-          </header>
-      </div>
-    </article>
-  </div>
-
-
-  <!-- <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-17T15:43:00.000Z"><a href="/2012/05/17/jquery-intro/">May 17 2012</a></time>
-      
-      
-  
-    <h1 class="title depth"><a href="/2012/05/17/jquery-intro/">jQuery 1.7 介绍（上）</a></h1>
-  
-
-    </header>
-    <div class="entry depth">
-      
-        <p>建议不要看我写的文章，赶快到这里学会时下最火最流行的 jQuery!</p>
-<p><a href="http://tutsplus.com/course/30-days-to-learn-jquery/">30 天学会 jQuery</a></p>
-<h2>神马是 jQuery？</h2>
-<p>地球上最受欢迎的 Javascript 函式库、软件攻城狮必备技能之一、网页看起来美妙的魔法之一。</p>
-<p>2012.05.17 现在的版本是 1.7.2。</p>
-<p>型別</p>
-<h2>去哪里获得 jQuery</h2>
-<p>通常有开发版本与生产版本 <strong>32KB</strong> ，建议本地开发使用开发版本 <strong>247KB</strong> ，使用 jQuery 时顺便研读源代码。</p>
-<blockquote>
-<p>开发版本：无压缩、带注释；生产版本：压缩过、不堪入目。</p>
-</blockquote>
-<p><a href="http://jquery.com/">jQuery 官网</a></p>
-<p>jQuery CDN: <a href="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js">1.7.2 development</a> <a href="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">1.7.2 production</a></p>
-<blockquote>
-<p>不建议使用 CDN，可以参考我的不要使用 CDN 来放第三方 Javascript</p>
-</blockquote>
-<h2>怎么在 HTML 里面玩弄 Javascript 代码</h2>
-<p>把 JS 代码放在 script 标签内即可。</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>&lt;script&gt;
-
-&lt;<span class="regexp">/script&gt;
-</pre></td></tr></table></figure>
-
-<h2>如何引用 jQuery 至你的 HTML</h2>
-<p>假设我有一个 app 目录，下面有一个 js 文件夹、一个 index.html，js 目录下有一个 jquery-1.7.1.js。</p>
-<p>使用 script 标签引用：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>&lt;script src="js/jquery-1.7.1.js"&gt;&lt;/script&gt;
-</pre></td></tr></table></figure>
-
-<p>使用 CDN 引用：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"&gt;&lt;/script&gt;
-</pre></td></tr></table></figure>
-
-<p><strong>建议摆放位置</strong> <code>&lt;/body&gt;</code> 标签的正上方。</p>
-<p>理由：浏览器一旦碰到 script 得载入完或下载完才会继续往下载入，所以放在 <code>&lt;/body&gt;</code> 上方可以确保你的页面先载入 HTML 以及 CSS。</p>
-<h2>第一个 jQuery 代码</h2>
-<h3>如何引用 jQuery?</h3>
-<p>jQuery 其实就是一个函数，你可以这样子引用它：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>jQuery(...)
-</pre></td></tr></table></figure>
-
-<p>好，让我们看看怎么让 jQuery 玩弄页面的 CSS。</p>
-<p>假设我们有一个 HTML 页面:</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="code"><pre>&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-true&lt;meta charset=utf-8&gt;
-true&lt;title&gt;&lt;/title&gt;
-true&lt;style&gt;
-true.emphasis{ color: green; }
-true&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;ul&gt;
-true&lt;li&gt;hello&lt;/li&gt;
-true&lt;li&gt;hello 2&lt;/li&gt;
-true&lt;li&gt;hello 3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;script src="js/jquery-1.7.1.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre></td></tr></table></figure>
-
-<p>以下代码添加至 <code>&lt;/body&gt;</code> 上方的 script 标签。</p>
-<p>要怎么样用 jQuery 来添加 CSS 样式？</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>jQuery(<span class="string">'ul li'</span>);
-</pre></td></tr></table></figure>
-
-<p>这一行的作用是，你跟 jQuery 说，帮我根据这个 CSS 选择器搜寻一下 DOM。</p>
-<p>存到一个变量里，并打印到浏览器的 console 看看：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="keyword">var</span> lis = jQuery(<span class="string">'ul li'</span>);
-console.log(lis);
-</pre></td></tr></table></figure>
-
-<p>阿哈，你打开浏览器、打开开发者工具，切换到 console tab，会看到</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>[&lt;li&gt;​hello​&lt;<span class="regexp">/li&gt;​, &lt;li&gt;​hello 2​&lt;/</span>li&gt;​, &lt;li&gt;​hello <span class="number">3</span>​&lt;<span class="regexp">/li&gt;​]
-</pre></td></tr></table></figure>
-
-<p><code>console.log()</code> 可以当之后调试代码的手段之一。</p>
-<p>猛阿，基本上只要懂 CSS 选择器，jQuery 几乎都学会了！呵呵。。。</p>
-<p>再举个例子，怎么给这些清单元素添加红色呢？</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>jQuery(<span class="string">'ul li'</span>).css(<span class="string">'color'</span>,<span class="string">'red'</span>);
-</pre></td></tr></table></figure>
-
-<blockquote>
-<p>尽量把所有的样式交给 CSS 来做，你偶尔才会需要用到 jQuery 来更改样式。</p>
-</blockquote>
-<p>另一个例子，给这些清单元素添加 <code>style</code> 标签内的 <code>.emphasis</code> 这个类：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>jQuery(<span class="string">'ul li'</span>).addClass(<span class="string">'.emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<h3>使用缩写引用 jQuery</h3>
-<p>这一行</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>jQuery(<span class="string">'ul li'</span>).addClass(<span class="string">'.emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>等同于</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul li'</span>).addClass(<span class="string">'.emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>等同于</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>window.jQuery(<span class="string">'ul li'</span>).addClass(<span class="string">'.emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p><strong>你怎么知道的！？</strong></p>
-<p>请看 <a href="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js">jQuery 源代码</a>的最下方：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="comment">// Expose jQuery to the global object</span>
-window.jQuery = window.$ = jQuery;
-</pre></td></tr></table></figure>
-
-<p>呵呵，人家都写在那呢。</p>
-<p>这篇就介绍到这儿吧。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2012/05/17/jquery-intro/#more" class="more-link">閱讀全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-<a class="moot" href="https://moot.it/i/lisp_es">
-   <h1 class="title">留言</h1>
-</a> -->
-
-
-  <div class="archive">
-
-    <article class="post">
-      <div class="post-content">
-        <header>
-            
-              <a href="/2012/05/17/jquery-intro/"><div class="icon depth"></div> </a>
-              <h2 class="depth title" ><a href="/2012/05/17/jquery-intro/">jQuery 1.7 介绍（上）</a></h2>
-            
-            <time class="time title depth" datetime="2012-05-17T15:43:00.000Z"><a href="/2012/05/17/jquery-intro/">May 17 2012</a></time>
           </header>
       </div>
     </article>
