@@ -210,7 +210,7 @@ a:hover {
   }
 }
 #main-col {
-  width: 900px;
+  width: 920px;
   overflow: auto;
 }
 @media screen and (max-width: 1260px) {
@@ -849,6 +849,9 @@ div.search {
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
 }
+.footer-link:hover {
+  text-decoration: underline;
+}
 .entry .gist {
   background: #eee;
   border: 1px solid #2ecc71;
@@ -924,7 +927,6 @@ figure.highlight .gutter {
   display: none;
 }
 figure.highlight .code {
-  padding-left: 15px;
   color: #666;
 }
 pre code {
@@ -1028,6 +1030,9 @@ pre .tex .command {
 }
 .tag .attribute .chunk {
   color: #aaa;
+}
+td.code {
+  padding-left: 0px;
 }
 #article-title {
   font-size: 3em;

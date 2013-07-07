@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lisp.es//2013/07/07/spanish-ending-words/</loc>
+    <lastmod>2013-07-07T04:59:27.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://lisp.es//2013/07/02/hello-ruby/</loc>
     <lastmod>2013-07-01T18:53:57.000Z</lastmod>
   </url>
@@ -21,11 +25,7 @@
     <lastmod>2013-05-18T19:15:29.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch7/</loc>
-    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://lisp.es//2012/05/10/python-for-inside/</loc>
+    <loc>http://lisp.es//2012/05/10/python-zebra/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
@@ -57,11 +57,11 @@
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
+    <loc>http://lisp.es//2012/05/10/python-for-inside/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/10/python-zebra/</loc>
+    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
@@ -94,6 +94,10 @@
   </url>
   <url>
     <loc>http://lisp.es//2012/03/02/css-ch6/</loc>
+    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://lisp.es//2012/03/02/css-ch7/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
