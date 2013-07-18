@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lisp.es//2013/07/19/clone-and-grow/</loc>
+    <lastmod>2013-07-18T16:02:10.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://lisp.es//2013/07/07/meta-object-intro/</loc>
     <lastmod>2013-07-07T05:08:11.000Z</lastmod>
   </url>
@@ -27,10 +31,6 @@
   <url>
     <loc>http://lisp.es//2012/05/19/jquery-events-2/</loc>
     <lastmod>2013-05-18T19:15:29.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://lisp.es//2012/04/19/clearfix/</loc>
-    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
     <loc>http://lisp.es//2012/04/20/ror-0-intro/</loc>
@@ -61,11 +61,11 @@
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
+    <loc>http://lisp.es//2012/05/10/python-zebra/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/12/dont-use-cdn-html5shiv/</loc>
+    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
@@ -101,7 +101,11 @@
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/10/python-zebra/</loc>
+    <loc>http://lisp.es//2012/05/12/dont-use-cdn-html5shiv/</loc>
+    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://lisp.es//2012/04/19/clearfix/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
