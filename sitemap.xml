@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lisp.es//2013/07/19/anatomy-of-require-js/</loc>
+    <lastmod>2013-07-19T08:20:14.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://lisp.es//2013/07/19/clone-and-grow/</loc>
     <lastmod>2013-07-18T16:02:10.000Z</lastmod>
   </url>
@@ -31,10 +35,6 @@
   <url>
     <loc>http://lisp.es//2012/05/19/jquery-events-2/</loc>
     <lastmod>2013-05-18T19:15:29.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://lisp.es//2012/04/20/ror-0-intro/</loc>
-    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
     <loc>http://lisp.es//2012/04/22/ror-1-first-app/</loc>
@@ -106,6 +106,10 @@
   </url>
   <url>
     <loc>http://lisp.es//2012/04/19/clearfix/</loc>
+    <lastmod>2013-05-18T19:15:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://lisp.es//2012/04/20/ror-0-intro/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>

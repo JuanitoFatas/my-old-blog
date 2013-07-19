@@ -81,6 +81,483 @@
     <header>
       
         <div class="icon depth"></div>
+        <time class="depth" datetime="2012-04-25T02:52:00.000Z"><a href="/2012/04/25/ror-3-rspec/">Apr 25 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/04/25/ror-3-rspec/">RSpec 行为驱动测试简介 - 003</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p><strong>1000 个小时学会 Rails 系列</strong></p>
+<blockquote>
+<p>关关雎鸠，在河之洲。
+窈窕淑女，君子好逑。</p>
+</blockquote>
+<p>今天要介绍的是 RSpec 这个 Gem。</p>
+<p>这个 Gem 是干啥用的呢，RSpec 是一个 BDD 测试工具，用起来跟 TDD 工具差不多，只是包了一层 DSL 外衣，也就是说语法比较接近咱人类在用的语言（据说这样开发者与客户可以直接沟通了？）；还有一个 Gem 叫做 Capybara，这个贼难念的单词是 Capybara，水豚，发音可以来<a href="http://goo.gl/mqpiQ">这里</a>听看看，声音没有 <a href="http://railscasts-china.com/">Rails 视频教程</a>的 Terry 老师 (@poshboytl) 那么性感就是了。Capybara 是一个整合测试 Rack 应用的工具，可以模拟真实用户使用你的网站的行为。Capybara 跟 RSpec 起来非常好用！</p>
+<p>但今天先介绍 RSpec。。。</p>
+<p>型別</p>
+<p>接下来要讲的例子呢，你不需要有 Rails 的环境，只需要有 Ruby 与 RubyGems 即可。</p>
+<p>Let&#39;s Dive in!!!</p>
+<p>RSpec 的测试是用 Ruby <a href="http://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> 写成的，看起来像是这样子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>describe Programmer <span class="keyword">do</span>
+  it <span class="string">"is lonely"</span> <span class="keyword">do</span>
+    Programmer<span class="variable">.lonely</span>?<span class="variable">.should</span> be_true
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>程序员寂寞么？恩。。。。。。这语法看起来跟英语差不多吧 : ）这样写的好处是比较 Geek 一点的客户也能在<a href="http://en.wikipedia.org/wiki/Acceptance_testing">验收测试 (Acceptance Testing)</a>的阶段直接跟你讨论，看看上帝的要求有没有都满足了！我们这儿有句话说客户是上帝，不知道你们那。。。圣经有一段：上帝说有光，就有光，客户说这个，就这个。。。而这对一个开发人员呢有什么好处呢？可以看看，嗯，这个功能具体是要做什么，然后去实现它。另外一个用 DSL 写的好处是，客户、开发者、代码，都可以用这种近似英语的语言交流（理想、理想嘛）。</p>
+<p>而实际上 RSpec 是扩展一些 <code>Test::Unit</code> 已经提供的方法。你喜欢的话，也可以在 RSpec 的测试里混著用。好，下面我们会用另外一个例子，讲讲怎么用这个 RSpec。。。</p>
+<p>关关雎鸠，在河之洲，窈窕淑女，君子好逑。。。</p>
+<h3>安装 RSpec</h3>
+<p>一如往常的一键安装 <code>gem install rspec</code> （目前是 2.9.0 ＠20120423)</p>
+<p>会顺便安装相依的 Gem：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="attribute">Fetching</span>: <span class="string">rspec-core-2.9.0.gem (100%)</span>
+<span class="attribute">Fetching</span>: <span class="string">diff-lcs-1.1.3.gem (100%)</span>
+<span class="attribute">Fetching</span>: <span class="string">rspec-expectations-2.9.1.gem (100%)</span>
+<span class="attribute">Fetching</span>: <span class="string">rspec-mocks-2.9.0.gem (100%)</span>
+<span class="attribute">Fetching</span>: <span class="string">rspec-2.9.0.gem (100%)</span>
+</pre></td></tr></table></figure>
+
+<p>最后一行你可以看到我们安了 <code>rspec-2.9.0.gem</code> ，而这些相依的 Gem 是要装的，就像水和鱼，过儿与龙儿，我和苍老师，是离不开彼此的。</p>
+<h3>一个简单例子</h3>
+<p>很好，很好，Gem 装好以后呢，让我们添加一个新的目录叫做 <code>girl</code> ，爱存哪就存哪，而下面再添加一个 <code>spec</code> 目录：</p>
+<p>一键完成： <code>mkdir -p girl/spec</code> </p>
+<p>在 <code>spec</code> 目录下建立一个文件叫做 <code>girl_spec.rb</code> ，注意到这个 <code>_spec</code> 了吗，这样一看就知道是一个 RSpec 的测试文件，有木有！！！！！用你喜欢的编辑器打开 <code>girl_spec.rb</code> 并敲入以下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="title">describe</span> <span class="type">Girl</span> <span class="keyword">do</span>
+<span class="title">trueit</span> <span class="string">"has chance?"</span> <span class="keyword">do</span>
+<span class="title">truetrueGirl</span>.chance?.should be_true
+<span class="title">trueend</span>
+<span class="title">end</span>
+</pre></td></tr></table></figure>
+
+<p>好了，相信各位都看的懂这个例子，我们描述了一个女孩，有机会吗？应该有吧！让我们在更深入的理解以上这位女孩之前，不是，是深入理解这段代码。。。首先 <code>describe</code> 区块 (block) 包含了一个描述这个女孩的测试 (<code>it</code>)，而你宣称你应该有机会 (<code>Girl.chance?.should be_true</code>)。这跟断言有点像 (<code>assert</code>)。而如果其结果不如预期的话，RSpec 会报错并停止这个测试 (spec)。</p>
+<p>那这个 <code>should</code> 哪来的，它还有一个兄弟 <code>should_not</code>，呵呵，RSpec 帮你定义好的。</p>
+<blockquote>
+<p>When RSpec executes specifications, 
+  it defines #should and #should_not 
+  on every object in the system. 
+  These methods are your entry to the    magic of RSpec.
+  -- <a href="http://rspec.info/">RSpec.info</a></p>
+</blockquote>
+<p>现在让我们运行看看，将终端切换到 <code>girl</code> 目录下：<code>[your-path-to/girl] $</code> ，接著输入：</p>
+<p><code>rspec spec</code></p>
+<p>究竟你跟她有没有机会呢。。。登登登。。。</p>
+<p>神马！？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">uninitialized</span> constant Girl (NameError)
+</pre></td></tr></table></figure>
+
+<p>你根本就不知道这女孩是谁，就想追人家了，好小子你，接下来让我们定义一下这个 Girl 常量（类）。要定义她的话，得先添加另外一个目录，叫做 <code>lib</code> ，为什么呢？因为女孩都喜欢住在房子里 (live in building，无恶意。。。)，不是，因为之后 RSpec 会替你识别这个目录，帮你引用进来。。。</p>
+<p>在这个目录里添加一个 <code>girl.rb</code>，并填入：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span> <span class="title">Girl</span>
+
+<span class="title">end</span>
+</pre></td></tr></table></figure>
+
+<p>好了，再来我们还得回头告诉 RSpec 咱要追的是哪个女孩，回到 <code>girl_spec.rb</code> ，添加：<code>require girl</code> 呵呵，大家都需要。。。当你再次运行这个测试 <code>rspec spec</code> ，因为你告诉了 RSpec 要载入这个 <code>girl</code> ，RSpec 会把 <code>lib</code> 目录添加到与 <code>spec</code> 同一层，这就是为什么你可以找到 <code>lib/girl.rb</code> 的原因，但是唉妈呀！又出错了：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre>F
+
+Failures:
+
+  <span class="number">1</span>) Girl has chance?
+     Failure/<span class="keyword">Error</span>: Girl.chance?.should be_true
+     NoMethodError:
+       undefined method `chance?<span class="comment">' for Girl:Class</span>
+     # ./spec/girl_spec.rb:<span class="number">5</span>:<span class="keyword">in</span> `block (<span class="number">2</span> levels) <span class="keyword">in</span> &lt;top (required)&gt;<span class="comment">'</span>
+
+Finished <span class="keyword">in</span> <span class="number">0.00056</span> seconds
+<span class="number">1</span> example, <span class="number">1</span> failure
+
+Failed examples:
+</pre></td></tr></table></figure>
+
+<p>真是完整的错误信息阿！<code>F</code> 告诉我们失败了，就像你在 <code>Test::Unit</code> 里看到的一样，而下面它告诉你详细的错误信息，让你可以即时改正，所以说呢，女生找老公，找程序员是靠谱的了，每天都拼命找哪里犯了错，并且马上改！心动不如马上行动，有兴趣的姑娘立即发短信至 <a href="http://v.youku.com/v_show/id_XMjQzNTkzMDM2.html">13910733521</a>，童叟无欺。</p>
+<p>回头看这到底哪儿错了：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>NoMethodError:
+trueundefined method `chance?' <span class="keyword">for</span> Girl:Class
+</pre></td></tr></table></figure>
+
+<p>哦，原来我们还没研究出，我们和一个女孩到底有没有戏的方法，让我们现在来定义一个：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span> <span class="title">Girl</span>
+<span class="title">truedef</span> <span class="title">self</span>.<span class="title">chance</span>?
+<span class="title">truetruetrue</span>
+<span class="title">trueend</span>
+<span class="title">end</span>
+</pre></td></tr></table></figure>
+
+<p>这里我们用了 <code>self.chance?</code> ，在类的级别定义。意思是说呢，只要是女孩这个类的，都有戏！如果你没有加这个 <code>self</code> 的话，那就得是属于女孩这个类产生的实体才有戏了。现在我们在运行看看 <code>rspec spec</code> ：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>.
+
+Finished <span class="keyword">in</span> 0.00367 seconds
+1 example, 0 failures
+</pre></td></tr></table></figure>
+
+<p>和 <code>Test::Unit</code> 一样，用一个极富深意的点，告诉我们测试通过！太棒了！这是我们写的第一个 RSpec 测试，欢呼！</p>
+<p>好，假设今天，你不想要每个是女孩类别的都有戏，这样子太困扰了，每天都被骚扰。你只想要女孩类别所产生的实体有戏就好了。让我们看看怎么做，首先呢，你打开 <code>lib/girl.rb</code> ，并把 <code>self</code> 拿掉：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span> <span class="title">Girl</span>
+<span class="title">truedef</span> <span class="title">chance</span>?
+<span class="title">truetruetrue</span>
+<span class="title">trueend</span>
+<span class="title">end</span>
+</pre></td></tr></table></figure>
+
+<p>并且相应的改动你的 spec：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre>require <span class="comment">'girl'</span>
+
+describe Girl <span class="keyword">do</span>
+  it <span class="string">"has chance?"</span> <span class="keyword">do</span>
+    Girl.<span class="keyword">new</span>.chance?.should be_true
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>运行： <code>rspec spec</code> ，呼，终于摆脱了一卡车的女孩了，呵呵！</p>
+<p>现在让我们再来往这个测试添点东西，加入一个 <code>taken!</code> 方法，被把走了，也就是说这个女孩没戏了。这个方法呢，在 <code>Girl</code> 对象上创了一个实体变量叫做 <code>@taken</code>，而你将使用 <code>chance?</code> 方法来检验。</p>
+<p>首先呢，你得先在测试里，测试这个 <code>taken!</code> 方法，是否是做你想要做的事儿。让我们在 <code>spec/girl_spec.rb</code> 里面再添一个例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>require <span class="comment">'girl'</span>
+
+describe Girl <span class="keyword">do</span>
+  it <span class="string">"has chance?"</span> <span class="keyword">do</span>
+    Girl.<span class="keyword">new</span>.chance?.should be_true
+  <span class="keyword">end</span>
+
+  it <span class="string">"taken!"</span> <span class="keyword">do</span>
+    girl = Girl.<span class="keyword">new</span>
+    girl.taken!
+    girl.should be_chance
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>再我们测试之前，发现到了没有，有木有？你 YRY 了，You Repeat Yourself! 你可以看到我们定义了一个 <code>Girl.new</code> 然后第一个例子里又使用了 <code>Girl.new</code> ，而我们是果断支持 DRY 的，所以...</p>
+<p>嗯嗯，让我们思索一下如何整理代码，1, 2, 3 秒，OK! 让我们把 <code>Bacon.new</code> 放到一个 <code>subject</code> 区块。 <code>subject</code> 允许你在所有位于 <code>describe</code> 区块内的测试里建立一个对象的索引。你可以这样定义一个 <code>subject</code> ：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>subject { Girl.<span class="keyword">new</span> }
+</pre></td></tr></table></figure>
+
+<p>而现在我们的测试文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre>require <span class="comment">'girl'</span>
+
+describe Girl <span class="keyword">do</span>
+
+truesubject { Girl.<span class="keyword">new</span> }
+
+  it <span class="string">"has chance?"</span> <span class="keyword">do</span>
+    Girl.<span class="keyword">new</span>.chance?.should be_true
+  <span class="keyword">end</span>
+
+  it <span class="string">"taken!"</span> <span class="keyword">do</span>
+    girl = Girl.<span class="keyword">new</span>
+    girl.taken!
+    girl.should be_chance
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>你在这个测试的语境中，宣告了一个 <code>subject</code> ，然后我们来改写一下，比如第一个测试，有没有戏呢，你现在可以这样子替换：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="function"><span class="title">its</span><span class="params">(:chance?)</span> { <span class="title">should</span> <span class="title">be_true</span> }
+</pre></td></tr></table></figure>
+
+<p>这个 <code>its</code> 方法，接受一个方法的名字来调用这个 <code>subject</code> (Ruby 继承自 smalltalk，调用方法其实都是给对象发信息) 。然而后方这个 <code>{ ... }</code> 区块应该要包含一个预测这个方法调用完的结果。</p>
+<p>然而我们还可以这样调用：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>it <span class="string">"taken!"</span> <span class="keyword">do</span>
+  subject<span class="variable">.taken</span>!
+  subject<span class="variable">.should_not</span> be_chance
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>而这里 <code>taken!</code> 方法必须使用 <code>subject</code> 来调用，因为我们只在 <code>Girl</code> 类别里有定义她。在这个情况，你没有使用 <code>its</code> ，因为你想要调用 <code>taken!</code> 方法，并且确认这个方法是否改变了 <code>chance?</code> 方法所返回的结果。</p>
+<p>呼，意思就是女孩被追走了，还有没有戏啊？</p>
+<p>而为了让我们的代码的可读性更猛一点，我使用了 <code>should_not</code> 来判断 <code>be_chance</code> 。</p>
+<p>现在你的 <code>girl_spec.rb</code> 看起来是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="keyword">require</span> <span class="string">'girl'</span>
+
+describe <span class="constant">Girl</span> <span class="keyword">do</span>
+
+  subject { <span class="constant">Girl</span>.new }
+
+  its(<span class="symbol">:chance?</span>) { should be_true }
+
+  it <span class="string">"taken!"</span> <span class="keyword">do</span>
+    subject.taken!
+    subject.should_not be_chance
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>好了，让我们运行看看，土地公公老爷爷阿，究竟女孩与我。。。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>NoMethodError:
+  undefined method `taken!' <span class="keyword">for</span> <span class="preprocessor">#&lt;Girl:0x0000010087bcb0&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>搞半天我根本还没定义 <code>taken!</code> 方法啊，失败！立马定义一个，打开 <code>lib/girl.rb</code> ：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">def</span> <span class="title">taken!</span></span>
+trueself.taken = be_true
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>OK，再运行一次：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>NoMethodError:
+trueundefined method `taken=' <span class="keyword">for</span> <span class="preprocessor">#&lt;Girl:0x0000010087f838&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>呜呜，咋回事儿呢？</p>
+<p>原来我用了 <code>self.taken = true</code> ，Ruby 在跟我抱怨找不到这个 <code>taken=</code> 方法。我们可以使用 Ruby 提供的 <code>attr_accessor</code> 方法来定义这些琐碎的 <code>getter/setter</code> : ） 添加这行代码至 <code>lib/girl.rb</code> 最上方：</p>
+<p><code>attr_accessor :taken</code></p>
+<p>这里 <code>attr</code> 是 attribute 的缩写，学 Ruby 还学英语呢，真好！当你把一个符号（符号是一个冒号带名字 <code>:xxx</code>）传给这个 <code>attr_accessor</code> 方法时，它替你定义了把 <code>taken</code> 设定与取出值的方法。它也替你定义了一个实体变量叫做 <code>@taken</code> 给每一个这个类别的对象设值时使用。</p>
+<p>好的，咱的女孩儿现在看起来像是这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span> <span class="title">Girl</span>
+
+<span class="title">trueattr_accessor</span> :<span class="title">taken</span>
+
+<span class="title">truedef</span> <span class="title">chance</span>?
+<span class="title">truetruetrue</span>
+<span class="title">trueend</span>
+
+<span class="title">truedef</span> <span class="title">taken</span>!
+<span class="title">truetrueself</span>.<span class="title">taken</span> = <span class="title">true</span>
+<span class="title">trueend</span>
+
+<span class="title">end</span>
+</pre></td></tr></table></figure>
+
+<p>再运行一次 <code>rspec spec</code>，月老公公老奶奶阿，看你的了阿：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">expected</span> chance? to return <span class="built_in">false</span>, got <span class="built_in">true</span>
+</pre></td></tr></table></figure>
+
+<p>唔？预期没戏，返回的结果是有戏，怎么会这样呢？哎呀，因为 <code>chance?</code> 永远都返回真嘛，我们应该要判断这个女孩是否被把走了，然后再下手。。。嗯嗯嗯：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">def</span> <span class="title">chance?</span></span>
+<span class="keyword">true</span>!taken
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>运行 <code>rspec spec</code> !</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="string">.</span><span class="string">.</span>
+
+<span class="comment">Finished</span> <span class="comment">in</span> <span class="comment">0</span>.<span class="comment">00917</span> <span class="comment">seconds</span>
+<span class="comment">2</span> <span class="comment">examples</span>, <span class="comment">0</span> <span class="comment">failures
+</pre></td></tr></table></figure>
+
+<p>阿哈，终于成功了！！！！！！！！</p>
+<p>但是，要是我们粗心大意，不小心忘了加 <code>self</code> 前缀呢？现在让我们把 <code>self.taken</code> 的 <code>self</code> 拿掉看看。。。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="number">1</span>) Girl taken!
+   Failure/Error: subject<span class="variable">.should_not</span> be_chance
+     expected chance? to <span class="keyword">return</span> <span class="literal">false</span>, got <span class="literal">true</span>
+</pre></td></tr></table></figure>
+
+<p>RSpec 告诉我们：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="number">1</span>) 女孩被把了！
+<span class="literal">true</span>失败 / 错误：subject<span class="variable">.should_not</span> be_chance
+<span class="literal">true</span>预期没戏，却有戏。
+</pre></td></tr></table></figure>
+
+<p>这样还不用 RSpec 么？太牛了！哈哈哈哈。。。</p>
+<p>好啦，RSpec 可以避免我们犯这种明显的错误，若犯错，即改之。如果你先写测试，然后让你的代码通过测试，你就会有很强大的自信，你的代码是工作的！而之后重构时，也可以一点一点的重构，在跑的过测试的前提之下。</p>
+<p>好的，我们把它改回正确的吧：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">def</span> <span class="title">taken!</span></span>
+trueself.taken = <span class="keyword">true</span>
+<span class="keyword">end</span>
+</pre></td></tr></table></figure>
+
+<p>运行成功。。。</p>
+<p>OK! 现在你对 RSpec 有了基础的认识，之后当你想要这样子开发你的应用时，当然不是我这样子轻浮的方式，是用行为驱动开发方式来开发应用时，你将会需要看看这本书：<a href="http://pragprog.com/book/achbd/the-rspec-book">The RSpec Book</a>。</p>
+<p>最后，路上把妹的时候要注意阿各位，记得先测试一下。</p>
+<p>待续。。。</p>
+<p>延伸阅读：</p>
+<p><a href="http://pragprog.com/book/achbd/the-rspec-book">The RSpec Book</a></p>
+<p><a href="http://www.slideshare.net/ihower/rspec-7394497">RSpec 让你愛上写测试</a></p>
+<p><a href="http://jhjguxin.sinaapp.com/2012/02/26/rspec-best-practices-and-tips/">RSpec Best practices and tips</a></p>
+<p><a href="http://blog.csdn.net/onlyqi/article/details/6740930">CSDN 一篇不错的 对测试的认识</a></p>
+<p><a href="http://www.letrails.cn/archives/20/">RSpec 简明指南</a></p>
+<p><a href="http://vdisk.weibo.com/s/4vJBP">RSpec on Rails PDF</a></p>
+<p><a href="http://bookapp.book.qq.com/origin/book/?workid=1956140">低成本泡妞</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/04/25/ror-3-rspec/#more" class="more-link">閱讀全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+ -->
+
+
+  <div class="archive">
+
+    <article class="post">
+      <div class="post-content">
+        <header>
+            
+              <a href="/2012/04/25/ror-3-rspec/"><div class="icon depth"></div> </a>
+              <h2 class="depth title" ><a href="/2012/04/25/ror-3-rspec/">RSpec 行为驱动测试简介 - 003</a></h2>
+            
+            <time class="time title depth" datetime="2012-04-25T02:52:00.000Z"><a href="/2012/04/25/ror-3-rspec/">Apr 25 2012</a></time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+  <!-- <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
         <time class="depth" datetime="2012-04-25T02:51:00.000Z"><a href="/2012/04/25/ror-2-test-unit/">Apr 25 2012</a></time>
       
       
@@ -1522,166 +1999,6 @@ true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
               <h2 class="depth title" ><a href="/2012/03/02/css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h2>
             
             <time class="time title depth" datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/css-ch4/">Mar 2 2012</a></time>
-          </header>
-      </div>
-    </article>
-  </div>
-
-
-  <!-- <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon depth"></div>
-        <time class="depth" datetime="2012-02-04T08:15:00.000Z"><a href="/2012/02/04/online-learning/">Feb 4 2012</a></time>
-      
-      
-  
-    <h1 class="title depth"><a href="/2012/02/04/online-learning/">線上教育：改變世界的起點</a></h1>
-  
-
-    </header>
-    <div class="entry depth">
-      
-        <p>（文章很長）</p>
-<p>線上教育，最近有很多大學都開始這麼做。其實很早以前就有了，但我覺得算不上線上教育，只能說線上教學資源觀賞。</p>
-<p>在幾年前，我就已經有自己在 MIT opencourse 自我學習的經驗，但是收穫沒有很多，就是看錄好的上課影片，讀它們的 ppt，做習題、參考解答，做期中、參考解答。簡單來說有點吃菜尾的感覺啦！撿人家剩下的。</p>
-<p>而 2011 10 月推出的 Stanford Online Class 就不是如此了。</p>
-<p>分享一下我自己上過一門課的心得。</p>
-<h2>個人心得分享：</h2>
-<p>我個人參加過 2011 推出的一門課程，人工智慧導論。一開始是報著好玩的心態去上這門課的（有 150000 人報名）。</p>
-<p>以下我回想了幾點關於 Stanford Online class：</p>
-<ol>
-<li>課程長度在 2 個月上下，每天花 1 小時即可。</li>
-<li>課程良好規劃（單元制），20 個單元左右。</li>
-<li>每單元有錄好的 video，長度控制在可接受範圍 (至多 10 分鐘)。</li>
-<li>想看幾次就看幾次，愛學幾次就學幾次。</li>
-<li>每個 video(有 / 沒有)quiz，可以馬上檢驗是否聽懂了。</li>
-<li>quiz 是互動的，直接在嵌入的 youtube 影片中作答。</li>
-<li>幾個單元有 1 次作業，作業也是直接在嵌入的影片作答。</li>
-<li>寬鬆的作業期限 7-10 天內交</li>
-<li>嚴禁討論作業相關答案。</li>
-<li>有課程活動記錄（記錄小考分數、作業分數、學習進度）</li>
-<li>有社群互動 (facebook 粉絲團, google+)</li>
-<li>高質量專業討論區 （stackover flow-like 的討論區）</li>
-<li>2 個多月就產生了數千個高質量的問答。</li>
-<li>艱澀的理論有了更平民化的解釋。</li>
-<li>老師是一流的專家，Peter Norvig 跟 Sebastian!!!!!!</li>
-<li>成績超好的還有工作機會..（前 0.5% 內）</li>
-<li>學習結束有一張證書（含分數記錄）</li>
-<li>影片還有多國語言字幕（有自願者貢獻字幕翻譯）</li>
-<li>Office hour 3 次！（每個人都可以問，老師回答票數高或有趣的問題）</li>
-<li>使用的課本銷量大幅上升，而課本的作者 Peter Norvig 全部捐給慈善團體。</li>
-<li>有更多自己思考解答問題的機會。</li>
-<li>老師風趣又幽默，極具熱情。</li>
-<li>期中期末考嚴禁討論考試相關答案。</li>
-</ol>
-<p>還有很多想不起來了...</p>
-<p>對於我這種不喜歡坐在教室（也沒機會了），聽根本沒有教學熱情的教授，講枯燥乏味的理論。兩個月下來，居然比大學一學期上課，學到更多東西。因為是自己報名的，所以動機十足。高質量的討論區，讓我想跟同學討論問題，看別人如何討論問題也讓我學到更多東西。分數根本不重要，重要的是學習的過程。</p>
-<p>我預估 Sebastian Thrun 將是改變 21 世紀的人之一。</p>
-<p>看完以上廣告文，還沒按上一頁的朋友，有興趣學習、精進自己的朋友可以至課程網頁看看。 這裡 <a href="http://www.class-central.com/">Class Central</a> 。</p>
-<h2>目前 Stanford 線上學習提供了：</h2>
-<p><strong> 課程預計二月中開始上課，但因不明因素延宕中。 </strong></p>
-<h2>創業：</h2>
-<ul>
-<li><a href="http://www.launchpad-class.org/">精實創業</a></li>
-<li><a href="http://www.venture-class.org/">科技創業</a></li>
-</ul>
-<h2>藥學：</h2>
-<ul>
-<li><a href="http://www.anatomy-class.org/">解剖學</a></li>
-</ul>
-<h2>土木工程</h2>
-<ul>
-<li><a href="http://www.greenbuilding-class.org/">建造綠色建築</a></li>
-</ul>
-<h2>電機工程</h2>
-<ul>
-<li><a href="http://www.infotheory-class.org/">資訊理論</a></li>
-</ul>
-<h2>複雜系統</h2>
-<ul>
-<li><a href="http://www.modelthinker-class.org/">模型化思考</a></li>
-</ul>
-<h2>電腦科學</h2>
-<ul>
-<li><p><a href="http://www.cs101-class.org/">電腦科學 101</a></p>
-</li>
-<li><p><a href="http://jan2012.ml-class.org/">機器學習</a></p>
-</li>
-<li><p><a href="http://www.saas-class.org/">作為服務的軟體</a></p>
-</li>
-<li><p><a href="http://www.hci-class.org/">人機互動</a></p>
-</li>
-<li><p><a href="http://www.nlp-class.org/">自然語言處理</a></p>
-</li>
-<li><p><a href="http://www.game-theory-class.org/">賽局理論</a></p>
-</li>
-<li><p><a href="http://www.pgm-class.org/">機率圖模型</a></p>
-</li>
-<li><p><a href="http://www.crypto-class.org/">密碼學</a></p>
-</li>
-<li><p><a href="http://www.security-class.org/">電腦安全</a></p>
-</li>
-<li><p><a href="http://www.algo-class.org/">演算法設計分析 I</a></p>
-</li>
-</ul>
-<p>上面提到的教授 (Sebastian Thrun，Google 無人駕駛車計畫主持人、Robotics 專家) 因為參與了首次的線上教育教學，無法自拔跳出來創業，創辦了線上學習機構，叫做 Udacity。Sebastian 是一個富有極大熱情的教授，有費曼的影子。</p>
-<h2>目前 <a href="http://www.udacity.com/">Udacity</a> 提供的課程有</h2>
-<ul>
-<li>CS101: 打造搜索引擎</li>
-<li>CS373: 機器人車程式設計</li>
-</ul>
-<p>預計於 2012 推出的課程：</p>
-<ul>
-<li>計算理論</li>
-<li>作業系統</li>
-<li>電腦網路</li>
-<li>分散式系統</li>
-<li>電腦安全</li>
-<li>演算法與資料結構</li>
-<li>軟體工程實踐</li>
-<li>打造網路應用</li>
-</ul>
-<p>據說全部課程上完還能拿到 degree (Udacity)。</p>
-<blockquote>
-<p>‎&quot;In the next months, we will offer an entire computer science curriculum through Udacity, and offer certification services so that an entire degree can be obtained online.&quot;</p>
-</blockquote>
-<p>最棒的是， </p>
-<p><strong> 以上全部都是免費的 </strong></p>
-<p>好課程，不學嗎？</p>
-
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2012/02/04/online-learning/#more" class="more-link">閱讀全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
- -->
-
-
-  <div class="archive">
-
-    <article class="post">
-      <div class="post-content">
-        <header>
-            
-              <a href="/2012/02/04/online-learning/"><div class="icon depth"></div> </a>
-              <h2 class="depth title" ><a href="/2012/02/04/online-learning/">線上教育：改變世界的起點</a></h2>
-            
-            <time class="time title depth" datetime="2012-02-04T08:15:00.000Z"><a href="/2012/02/04/online-learning/">Feb 4 2012</a></time>
           </header>
       </div>
     </article>
