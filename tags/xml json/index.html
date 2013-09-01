@@ -1,0 +1,302 @@
+<!--
+       _                   _ _          ______    _
+      | |                 (_) |        |  ____|  | |
+      | |_   _  __ _ _ __  _| |_ ___   | |__ __ _| |_ __ _ ___
+  _   | | | | |/ _` | '_ \| | __/ _ \  |  __/ _` | __/ _` / __|
+ | |__| | |_| | (_| | | | | | || (_) | | | | (_| | || (_| \__ \
+  \____/ \__,_|\__,_|_| |_|_|\__\___/  |_|  \__,_|\__\__,_|___/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>xml json | I'm Juanito Fatas</title>
+  <meta name="author" content="Juanito Fatas">
+  
+  <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="I'm Juanito Fatas"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="I'm Juanito Fatas" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+    <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1/moot.css">
+  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#sidebar').delay(400).animate({ width: '285px' }, 500, function() {
+      $('.personal-info').css({display: 'table'}).hide().fadeIn(500);
+    });
+  });
+  </script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41041908-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><!-- <div class="alignleft">
+  <h1><a href="/">I'm Juanito Fatas</a></h1>
+  <h2><a href="/">C-x C-f...C-x C-s...</a></h2>
+</div>
+ --><!-- <nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首頁</a></li>
+    
+      <li><a href="/archives">彙整</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+ --></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper">
+<h2 class="archive-title tag">xml json</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-05-17T14:06:00.000Z"><a href="/2012/05/17/2012-05-17-parse-xml-json/">5月 17 2012</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2012/05/17/2012-05-17-parse-xml-json/">Python 简易解析 XML JSON</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h3>XML</h3>
+<h4>使用轻量快速的 minidom 函式库</h4>
+<p>引用 minidom:</p>
+<pre><code><span class="title">from</span> xml.dom <span class="import"><span class="keyword">import</span> minidom</span></code></pre>
+<blockquote>
+<p>DOM — Document Object Model</p>
+</blockquote>
+<p>minidom 有一个 parseString 函数可以解析 XML 字串。</p>
+<p>型別</p>
+<p>解析一个随意取名的 XML 字串，存入 x：</p>
+<pre><code>x = minidom.parseString("<span class="tag">&lt;<span class="title">foo</span>&gt;</span>Lorem ipsum<span class="tag">&lt;<span class="title">children</span>&gt;</span><span class="tag">&lt;<span class="title">item</span>&gt;</span>1<span class="tag">&lt;/<span class="title">item</span>&gt;</span><span class="tag">&lt;<span class="title">item</span>&gt;</span>2<span class="tag">&lt;/<span class="title">item</span>&gt;</span><span class="tag">&lt;<span class="title">item</span>&gt;</span>3<span class="tag">&lt;/<span class="title">item</span>&gt;</span><span class="tag">&lt;/<span class="title">children</span>&gt;</span><span class="tag">&lt;/<span class="title">foo</span>&gt;</span>")</code></pre>
+<p>x 现在是一个 xml.dom.minidom.Document instance 实例。</p>
+<p><strong>注意</strong> XML 不像 HTML，严格要求每个 open 标签要有一个相应的 close 标签！</p>
+<p>看看 x 有什么可以调用的属性、方法：</p>
+<pre><code><span class="function"><span class="title">dir</span><span class="params">(x)</span>
+
+[<span class="title">'ATTRIBUTE_NODE'</span>, <span class="title">'CDATA_SECTION_NODE'</span>, <span class="title">'COMMENT_NODE'</span>, <span class="title">'DOCUMENT_FRAGMENT_NODE'</span>, <span class="title">'DOCUMENT_NODE'</span>, <span class="title">'DOCUMENT_TYPE_NODE'</span>, <span class="title">'ELEMENT_NODE'</span>, <span class="title">'ENTITY_NODE'</span>, <span class="title">'ENTITY_REFERENCE_NODE'</span>, <span class="title">'NOTATION_NODE'</span>, <span class="title">'PROCESSING_INSTRUCTION_NODE'</span>, <span class="title">'TEXT_NODE'</span>, <span class="title">'__doc__'</span>, <span class="title">'__init__'</span>, <span class="title">'__module__'</span>, <span class="title">'__nonzero__'</span>, <span class="title">'_call_user_data_handler'</span>, <span class="title">'_child_node_types'</span> ... <span class="title">'standalone'</span>, <span class="title">'strictErrorChecking'</span>, <span class="title">'toprettyxml'</span>, <span class="title">'toxml'</span>, <span class="title">'unlink'</span>, <span class="title">'version'</span>, <span class="title">'writexml'</span>]</code></pre>
+<p>转回 xml:</p>
+<pre><code><span class="attribute">x.toprettyxml()</code></pre>
+<p>印出来看看：</p>
+<pre><code><span class="title">print</span> x.toprettyxml()</code></pre>
+<p>输出：</p>
+<pre><code><span class="tag">&lt;<span class="title">foo</span>&gt;</span>
+    Lorem ipsum
+    <span class="tag">&lt;<span class="title">children</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">item</span>&gt;</span>
+            1
+        <span class="tag">&lt;/<span class="title">item</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">item</span>&gt;</span>
+            2
+        <span class="tag">&lt;/<span class="title">item</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">item</span>&gt;</span>
+            3
+        <span class="tag">&lt;/<span class="title">item</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">children</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">foo</span>&gt;</span></code></pre>
+<p>取得第二个 item 标签内的值 2：</p>
+<pre><code><span class="transposed_variable">x.</span>getElementsByTagName(<span class="string">'item'</span>)<span class="matrix">[<span class="number">1</span>].</span>childNodes<span class="matrix">[<span class="number">0</span>].</span>nodeValue</code></pre>
+<p>你可以看看 dir 里面有什么函数可以用，在 python 的直译器里面玩玩看。</p>
+<h3>RSS</h3>
+<p>比如说想要知道 <a href="http://www.nytimes.com/services/xml/rss/nyt/Science.xml" target="_blank">http://www.nytimes.com/services/xml/rss/nyt/Science.xml</a> 有几个 item：</p>
+<pre><code><span class="title">from</span> xml.dom <span class="import"><span class="keyword">import</span> minidom</span>
+
+<span class="import"><span class="keyword">import</span> urllib2</span>
+
+<span class="title">contents</span> = urllib2.urlopen(<span class="string">"http://www.nytimes.com/services/xml/rss/nyt/Science.xml"</span>).read()
+
+<span class="title">d</span> = minidom.parseString(contents)
+
+<span class="title">len</span>(d.getElementsByTagName(<span class="string">"item"</span>)) # =&gt; <span class="number">38</span> on <span class="number">2012.05</span><span class="number">.17</span></code></pre>
+<h3>JSON</h3>
+<p>Javascript Object Notation</p>
+<p>在 Python 用 dictionary 混 List 的形式储存 <code>{ foo: [{&quot;a&quot;: 1}, ... {&quot;c&quot;: 3}] }</code></p>
+<p>使用 JSON 库：</p>
+<pre><code><span class="import"><span class="keyword">import</span> json</span></code></pre>
+<p>假设今天我们有一个 json 格式的字串 j，具有两个键 <code>mon</code> 与 <code>numbers</code>：</p>
+<pre><code><span class="setting">j = <span class="value">'{<span class="string">"mon"</span>: <span class="number">1</span>, <span class="string">"numbers"</span>: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">9.9</span>]}'</span></span></code></pre>
+<p>载入这个 json ，存到 d 里：</p>
+<pre><code><span class="setting">d = <span class="value">json.loads(j)</span></span></code></pre>
+<p>载入后我们得到一个 python 字典（无序）：</p>
+<pre><code>{<span class="string">u'mon'</span>: <span class="number">1</span>, <span class="string">u'numbers'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">9.9</span>]}</code></pre>
+<p>取出 <code>mon</code> 的值：</p>
+<pre><code>d[<span class="string">'mon'</span>] <span class="comment"># =&gt; 1</span>
+d[<span class="string">'numbers'</span>][2] <span class="comment"># =&gt; 9.9</span></code></pre>
+<p>你也可以 <code>eval</code> 这个 json 格式的字串：</p>
+<pre><code><span class="keyword">eval</span>(j)
+<span class="comment"># =&gt; {'mon': 1, 'numbers': [1, 2, 9.9]}</span></code></pre>
+<p><strong>永远别用 eval 来解析 json</strong> 。</p>
+<p>Q: 加总 www.reddit.com 帖子的 up votes。</p>
+<p>A:</p>
+<figure class="highlight lang-python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre>r = urllib2.urlopen(<span class="string">"http://www.reddit.com/.json"</span>)
+j = json.loads(r)
+
+j.keys() <span class="comment"># =&gt; [u'kind', u'data']</span>
+j[<span class="string">'data'</span>].keys() <span class="comment"># =&gt; [u'modhash', u'children', u'after', u'before']</span>
+j[<span class="string">'data'</span>][<span class="string">'children'</span>][<span class="number">0</span>].keys() <span class="comment"># =&gt; [u'kind', u'data']</span>
+j[<span class="string">'data'</span>][<span class="string">'children'</span>][<span class="number">0</span>][<span class="string">'data'</span>].keys() <span class="comment"># =&gt; [..., u'ups']</span>
+j[<span class="string">'data'</span>][<span class="string">'children'</span>][<span class="number">0</span>][<span class="string">'data'</span>][<span class="string">'ups'</span>] <span class="comment"># =&gt; 7902</span>
+
+sum(c[<span class="string">'data'</span>][<span class="string">'ups'</span>] <span class="keyword">for</span> c <span class="keyword">in</span> j[<span class="string">'data'</span>][<span class="string">'children'</span>]) <span class="comment"># =&gt; 84500</span>
+</pre></td></tr></table></figure>
+
+<p>DONE.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignleft"><!-- 
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:lisp.es/">
+  </form>
+</div>
+
+  
+<div class="widget twitter">
+  <h3 class="title">推文</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['JuanitoFatas', 5, false];
+var moment_js_path = '/js/moment.min.js';
+</script>
+<script src="/js/twitter.js"></script>
+
+
+ -->
+<div class="personal-info">
+  <figure>
+    
+      <a href="/">
+        <img class="personal-photo" src="https://secure.gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" alt="Juanito Fatas">
+      </a>
+    
+    <figcaption>
+      <h3 class=>Juanito Fatas</h3>
+      <p>城市中的迷途小碼農</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/JuanitoFatas"></a>
+    
+    
+    
+      <a target="_blank" class="icon github depth" href="http://github.com/JuanitoFatas"></a>
+    
+    
+      <a target="_blank" class="icon email depth" href="mailto:katehuang0320@gmail.com"></a>
+    
+  </section>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignright depth">
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
+  &copy; - 2013 Juanito Fatas
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'juanfatas';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script src="//cdn.moot.it/latest/moot.min.js"></script>
+
+</body>
+</html>

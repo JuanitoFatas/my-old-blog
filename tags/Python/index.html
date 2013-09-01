@@ -85,18 +85,18 @@
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-10T14:35:00.000Z"><a href="/2012/05/10/python-zebra/">May 10 2012</a></time>
+        <time class="depth" datetime="2012-05-10T14:35:00.000Z"><a href="/2012/05/10/2012-05-10-python-zebra/">5月 10 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/05/10/python-zebra/">Python 解决 Zebra 谜题</a></h1>
+    <h1 class="title depth"><a href="/2012/05/10/2012-05-10-python-zebra/">Python 解决 Zebra 谜题</a></h1>
   
 
     </header>
     <div class="entry depth">
       
-        <p>爱因斯坦养鱼问题的学名就叫 Zebra Puzzle。之所以叫爱因斯坦养鱼问题是为了刊登在杂志上吸引读者的注意，其实这个问题不是爱因斯坦搞的...</p>
-<p>问题可以到这里看：<a href="http://en.wikipedia.org/wiki/Zebra_Puzzle">Zebra Puzzle</a></p>
+        <p>爱因斯坦养鱼问题的学名就叫 Zebra Puzzle。之所以叫爱因斯坦养鱼问题是为了刊登在杂志上吸引读者的注意，其实这个问题不是爱因斯坦搞的…</p>
+<p>问题可以到这里看：<a href="http://en.wikipedia.org/wiki/Zebra_Puzzle" target="_blank">Zebra Puzzle</a></p>
 <p>型別</p>
 <p>首先实现了 2 个 小函数，<code>imright</code> 跟 <code>nextto</code></p>
 <p>确定某房是不是在某房右边、或是两个房挨著。</p>
@@ -107,34 +107,27 @@
 <p>这个 generator expression 会返回一个 Generator 对象。</p>
 <p>恩，给个例子好了：</p>
 <p>先定义一个算平方的函数，然后用 Generator Expression：</p>
-<pre><code><span class="function"><span class="keyword">def</span> <span class="title">sqr</span><span class="params">(x)</span>:</span> <span class="keyword">print</span> <span class="string">'调用 sqr, 参数 '</span>, x; <span class="keyword">return</span> x*x
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">sqr</span><span class="params">(x)</span>:</span> <span class="keyword">print</span> <span class="string">' 调用 sqr, 参数 '</span>, x; <span class="keyword">return</span> x*x
 
-g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">0</span>)
-</code></pre>
+g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">0</span>)</code></pre>
 <p>这个时候如果调用 g ：</p>
 <pre><code>&gt;&gt;&gt; <span class="comment">g</span>
-&lt;<span class="comment">GeneratorObject</span> <span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span>&gt;
-</code></pre>
+&lt;<span class="comment">GeneratorObject</span> <span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span>&gt;</code></pre>
 <p>不会去调用函数，只返回一个 Generator 对象、然而</p>
 <pre><code>&gt;&gt;&gt; <span class="keyword">next</span>(g)
 调用 <span class="built_in">sqr</span>, 参数 <span class="number">0</span>
-<span class="number">0</span>
-</code></pre>
+<span class="number">0</span></code></pre>
 <p>才会调用这个 Generator 所绑定的函数。。。汗。。。</p>
 <p>这个问题要找，水在哪个房子被喝的，哪个房子养斑马。</p>
-<p>藉由把 Constraint 移到对的地方，减少需要的计算，再搭配 Generator-exp 的特性，最后大概 0.00028 秒之类的就算好了，
-本来用 嵌套 For-loop 要算 1 小时。</p>
+<p>藉由把 Constraint 移到对的地方，减少需要的计算，再搭配 Generator-exp 的特性，最后大概 0.00028 秒之类的就算好了，<br>本来用 嵌套 For-loop 要算 1 小时。</p>
 <p>至于那个 c 函数 是拿来显示统计数据跟除错用的。</p>
 <p>完整代码：</p>
 <script src="https://gist.github.com/2653290.js"></script>
+
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/05/10/python-zebra/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       
@@ -152,11 +145,11 @@ g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> ra
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-10T14:09:00.000Z"><a href="/2012/05/10/python-for-inside/">May 10 2012</a></time>
+        <time class="depth" datetime="2012-05-10T14:09:00.000Z"><a href="/2012/05/10/2012-05-10-python-for-inside/">5月 10 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/05/10/python-for-inside/">Python For 循环的迭代器实现</a></h1>
+    <h1 class="title depth"><a href="/2012/05/10/2012-05-10-python-for-inside/">Python For 循环的迭代器实现</a></h1>
   
 
     </header>
@@ -164,8 +157,7 @@ g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> ra
       
         <p>给定一段 Python 代码：</p>
 <pre><code><span class="keyword">for</span> x <span class="keyword">in</span> items:
-    <span class="built_in">print</span> x
-</code></pre>
+    <span class="built_in">print</span> x</code></pre>
 <p>这个 items 可以是字串、列表、等等，这种可以迭代的集合称之为 iterable。</p>
 <p>型別</p>
 <p>这个 iter 就是创一个迭代器出来，相信有学过 Java 的人都不陌生。</p>
@@ -177,17 +169,12 @@ g = (sq(x) <span class="keyword">for</span> x <span class="keyword">in</span> ra
         x = next(it)
         <span class="keyword">print</span> x
 <span class="keyword">except</span> StopIteration:
-    <span class="keyword">pass</span>
-</code></pre>
+    <span class="keyword">pass</span></code></pre>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/05/10/python-for-inside/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       

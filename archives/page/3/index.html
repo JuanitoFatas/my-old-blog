@@ -85,11 +85,11 @@
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-04-25T02:51:00.000Z"><a href="/2012/04/25/ror-2-test-unit/">Apr 25 2012</a></time>
+        <time class="depth" datetime="2012-04-25T02:51:00.000Z"><a href="/2012/04/25/2012-04-25-ror-2-test-unit/">4月 25 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/04/25/ror-2-test-unit/">測試！測試！ - 002</a></h1>
+    <h1 class="title depth"><a href="/2012/04/25/2012-04-25-ror-2-test-unit/">測試！測試！ - 002</a></h1>
   
 
     </header>
@@ -97,16 +97,15 @@
       
         <p><strong>1000 个小时学会 Rails 系列</strong></p>
 <blockquote>
-<p>The general idea behind unit testing is that you write a test method that makes certain assertions about your code, working against a test fixture. A bunch of these test methods are bundled up into a test suite and can be run any time the developer wants. The results of a run are gathered in a test result and displayed to the user through some UI.
--- Nathaniel Talbott</p>
+<p>The general idea behind unit testing is that you write a test method that makes certain assertions about your code, working against a test fixture. A bunch of these test methods are bundled up into a test suite and can be run any time the developer wants. The results of a run are gathered in a test result and displayed to the user through some UI.<br>— Nathaniel Talbott</p>
 </blockquote>
 <p>好了，Rails 真的很牛。Ruby 是如此优雅精妙，那么程序员真的性福美满了吗？那究竟要如何写出可维护的代码呢？拜读松本行弘的程序世界？不是！连读七遍 Programming Ruby 1.9？有可能！每天上 Ruby-china 学习？这就对了！好了那到底是什么？答案是写测试！</p>
 <p>型別</p>
 <p>为什么要写测试呢？恩，先谈谈两种程序员吧。一种是自负的程序员，他们觉得：“日出东方，唯我代码不坏”，这种思想其实很好，是社会进步的动力之一。这种人要嘛特别牛，要嘛特别。。。0010，但我们要看清一个事实，是人都会犯错。另一种程序员，怎么著都怕出错，在论坛四处发问，哪本书最好，哪个教程最猛，写程序战战兢兢，就跟相亲挑老婆，结果如墨菲先生预言：只要有可能出错，那就一定会出错。第一种程序员，根本不屑写测试，第二种程序员，拼命学写测试，学的连代码都不会写了。该怎么办？</p>
-<p>还是写测试！在编码前先写测试，这有什么好处？预测程序的行为、确保程序如你想的那般工作、有写测试让你更有自信，更容易重构代码，理清你的思路，等等好处。那为什么大家都不写测试呢？呃。。。很多原因是老板太凶、日期太紧，但我相信测试可以救你于水火之中。而 Rails 也替你打点了许多的测试工具，让你不用在「编码 -&gt; 储存 -&gt; 刷新 -&gt; 编码 -&gt; 储存 -&gt; 刷新...」、要是一个个视图、一个个模型、一个个控制器都是如此手工测试，搞得你晚上八点还在公司，一出错又不知从何查起，真是一场永远不会醒的恶梦。测试可以使我们确保程序正常运作，将用户行为转为测试，让我们有一个开发的方向。未来出错时，可以改动现有的测试来适应新的情况，让你可以早日回家陪老婆孩子（家庭第一），正所谓，测试写得好，挣钱挣到老，测试写的巧，上班没烦恼。</p>
-<p>月有阴晴圆缺，而生命会自己找到出口，就这样，有了<a href="http://zh.wikipedia.org/wiki/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91">测试驱动开发</a>（Test-Driven Development, TDD）以及<a href="http://zh.wikipedia.org/wiki/%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91">行为驱动开发</a>（Behavior-Driven Development, BDD）。TDD 又有一个名字叫做 Red-Green-Refactor。先写好测试，运行，错误一堆（满江红），撰写可以通过测试的代码（绿油油），测试通过后再重构，确保代码仍然工作。这样子的好处是？一来先写测试可以先让你想想程序的思路，与下棋有异曲同功之妙，只不过下棋咱是在脑里演练；二来写测试可以确保你的程序正常工作，预期未来可能发生的错误。然而我们从小的教育不是这样，导致我们害怕犯错，以前可以考试先考差了，再让你重写一次考卷嘛？现在机会来了。写测试吧！</p>
+<p>还是写测试！在编码前先写测试，这有什么好处？预测程序的行为、确保程序如你想的那般工作、有写测试让你更有自信，更容易重构代码，理清你的思路，等等好处。那为什么大家都不写测试呢？呃。。。很多原因是老板太凶、日期太紧，但我相信测试可以救你于水火之中。而 Rails 也替你打点了许多的测试工具，让你不用在「编码 -&gt; 储存 -&gt; 刷新 -&gt; 编码 -&gt; 储存 -&gt; 刷新…」、要是一个个视图、一个个模型、一个个控制器都是如此手工测试，搞得你晚上八点还在公司，一出错又不知从何查起，真是一场永远不会醒的恶梦。测试可以使我们确保程序正常运作，将用户行为转为测试，让我们有一个开发的方向。未来出错时，可以改动现有的测试来适应新的情况，让你可以早日回家陪老婆孩子（家庭第一），正所谓，测试写得好，挣钱挣到老，测试写的巧，上班没烦恼。</p>
+<p>月有阴晴圆缺，而生命会自己找到出口，就这样，有了<a href="http://zh.wikipedia.org/wiki/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" target="_blank">测试驱动开发</a>（Test-Driven Development, TDD）以及<a href="http://zh.wikipedia.org/wiki/%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" target="_blank">行为驱动开发</a>（Behavior-Driven Development, BDD）。TDD 又有一个名字叫做 Red-Green-Refactor。先写好测试，运行，错误一堆（满江红），撰写可以通过测试的代码（绿油油），测试通过后再重构，确保代码仍然工作。这样子的好处是？一来先写测试可以先让你想想程序的思路，与下棋有异曲同功之妙，只不过下棋咱是在脑里演练；二来写测试可以确保你的程序正常工作，预期未来可能发生的错误。然而我们从小的教育不是这样，导致我们害怕犯错，以前可以考试先考差了，再让你重写一次考卷嘛？现在机会来了。写测试吧！</p>
 <p>恩，至于这 BDD 与 TDD 精确的定义呢，危机、摆渡百科都有，谷歌百度一下吧，就不赘述了，用了就知道！BDD 是基于 TDD 所造出来的，旨在测试整个程序中，各个“正常工作代码”之间的互动。也就是说呢，TDD 搭配 BDD 使用。TDD 的工具我们将粗浅介绍 Test::Unit，BDD 我们将介绍的是 RSpec 搭配 海豚 (Capybara)，小黄瓜 (Cucumber) 就别用了，太坑爹了，还是留著配炸酱面吧！</p>
-<p>还是不怎么信么？那我再好好讲一次测试的好处，你想想，如果你要测试某个页面的表单，填了某个值会发生什么事，要是这个表单一共有九种变化，共有九种不同表单，九九八十一个变化，还不算你手滑按错的错误，这测起来真是想死的心都有了（爱惜生命！）。让计算机自动帮我们测试，比起手工测试好、省时又省心。另一个好处是，测试可以预防你犯傻。当你犯了一个再明显不过的错误时，测试可以替你找出来，替你的程序做一个健康检查，让你获得更多信息，由测试通知你，总比暴跳如雷的老板来得好。用户永远都有无止尽的好奇心，会在你想都想不到的地方，把东西弄坏！有了之前的测试，你可以轻松的改写之前的测试，来满足这个你未预期的情况，这又叫作<a href="http://zh.wikipedia.org/wiki/%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95">回归测试</a> (Regression Test)</p>
+<p>还是不怎么信么？那我再好好讲一次测试的好处，你想想，如果你要测试某个页面的表单，填了某个值会发生什么事，要是这个表单一共有九种变化，共有九种不同表单，九九八十一个变化，还不算你手滑按错的错误，这测起来真是想死的心都有了（爱惜生命！）。让计算机自动帮我们测试，比起手工测试好、省时又省心。另一个好处是，测试可以预防你犯傻。当你犯了一个再明显不过的错误时，测试可以替你找出来，替你的程序做一个健康检查，让你获得更多信息，由测试通知你，总比暴跳如雷的老板来得好。用户永远都有无止尽的好奇心，会在你想都想不到的地方，把东西弄坏！有了之前的测试，你可以轻松的改写之前的测试，来满足这个你未预期的情况，这又叫作<a href="http://zh.wikipedia.org/wiki/%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95" target="_blank">回归测试</a> (Regression Test)</p>
 <p>现在我们来看怎么用 Test::Unit 写测试吧！</p>
 <h3>撰写第一个测试</h3>
 <p>Ruby 的 <code>Test::Unit</code> 写了一堆的函式库，就在哪里，等著、盼著、寂寞地等你调用它们。接下来我来讲一个简单的 <code>Test::Unit</code> 例子。首先建立一个目录，叫作 <code>example</code> ，在这个目录里你创一个文件：<code>example_test.rb</code> 。记得把测试加上 <code>_test</code> 的字尾，这样子一看就知道这是一个测试文件。打开这个 <code>example_test.rb</code> ，敲入以下代码：</p>
@@ -116,8 +115,7 @@
   <span class="title">def</span> <span class="title">test_truth</span>
     <span class="title">assert</span> <span class="title">true</span>
   <span class="title">end</span>
-<span class="title">end</span>
-</code></pre>
+<span class="title">end</span></code></pre>
 <p><code>Test::Unit</code> 测试呢，首先引入 Ruby 标准函式库的 <code>&#39;test/unit&#39;</code> 。这让你可以从 <code>Test::Unit::TestCase</code> 继承它所有的东西（要是可以 <code>require &#39; 李嘉诚 &#39;</code> 就好了，我也不用。。。）。那究竟继承了什么？继承了让你可以在类里面，将名字取为 <code>test_</code> 打头的方法来写测试的功能，<code>test_xxxx</code> 会被识别成是测试。</p>
 <p>第一个测试写好了！！！！！！！（咆哮体），让我们来运行看看： </p>
 <p><code>ruby example_test.rb</code> </p>
@@ -126,19 +124,16 @@
 
 Finished tests <span class="keyword">in</span> <span class="number">0.000866</span>s, <span class="number">1154.7344</span> tests<span class="regexp">/s, 1154.7344 assertions/</span>s.
 
-<span class="number">1</span> tests, <span class="number">1</span> assertions, <span class="number">0</span> failures, <span class="number">0</span> errors, <span class="number">0</span> skips
-</code></pre>
+<span class="number">1</span> tests, <span class="number">1</span> assertions, <span class="number">0</span> failures, <span class="number">0</span> errors, <span class="number">0</span> skips</code></pre>
 <p>那个奇怪的点是什么呢？这是 <code>Test::Unit</code> 告诉你一个测试成功通过的方式， <code>F</code> 代表不通过的测试, <code>E</code> 代表有错误的测试，那 <code>(.)(.)</code> 呢？哈哈开个玩笑，确保你有认真看。跟著点之后是一些统计数据，告诉你一个测试、一个断言 (assertion)、零个失败、零个错误、零个跳过。</p>
 <p>在你的测试中你用了一个 <code>assert</code> 方法，你断言传入的参数为真。然而我们传入的是真（非 <code>nil</code> 与 <code>false</code> 亦为真），假如不知为何的这个方法失败了，会引起一个 exception 告诉你。 </p>
 <p>如果你的方法名不是 <code>test_</code> 打头：</p>
 <pre><code>test <span class="string">"truth"</span> <span class="keyword">do</span>
     <span class="built_in">assert</span> <span class="keyword">true</span>
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>你再运行看看 (<code>ruby example_test.rb</code>)，会发现</p>
 <pre><code><span class="title">No</span> tests were specified.
-<span class="number">1</span> tests, <span class="number">1</span> assertions, <span class="number">1</span> failures, <span class="number">0</span> errors
-</code></pre>
+<span class="number">1</span> tests, <span class="number">1</span> assertions, <span class="number">1</span> failures, <span class="number">0</span> errors</code></pre>
 <p>这是因为 <code>Test::Unit</code> 调用了缺省的 <code>default_test</code> 缘故，若你使用的是 1.9.3+ 的 Ruby 只会显示没有测试。</p>
 <p>所以记得把测试方法名用 <code>test_</code> 开头！</p>
 <p>接下来让我们考虑一个更复杂的方法，建立一个 <code>love_test.rb</code> ：</p>
@@ -147,16 +142,13 @@ Finished tests <span class="keyword">in</span> <span class="number">0.000866</sp
   <span class="title">def</span> <span class="title">test_saved</span>
     <span class="title">assert</span> <span class="title">Love</span>.<span class="title">saved</span>?
   <span class="title">end</span>
-<span class="title">end</span>
-</code></pre>
+<span class="title">end</span></code></pre>
 <p>当然了，你想确保你的愛情有保存，但是当你运行时 <code>ruby love_test.rb</code> ，哎呀：</p>
-<pre><code><span class="attribute">NameError</span>: <span class="string">uninitialized constant LoveTest::Love</span>
-</code></pre>
+<pre><code><span class="attribute">NameError</span>: <span class="string">uninitialized constant LoveTest::Love</span></code></pre>
 <p>哪知道你根本还没有愛情，让我们来定义爱情：</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Love</span>
 
-<span class="title">end</span>
-</code></pre>
+<span class="title">end</span></code></pre>
 <p>那这个愛情要放在测试之前呢，还是测试之后呢？在 <code>Test::Unit</code> 里是都可以，在 Ruby 里面东西都是得先定义才能使用，但是 <code>Test::Unit</code> 会先把所有的代码求值，再来运行测试，所以现在 <code>love_test.rb</code> ：</p>
 <pre><code>require <span class="string">'test/unit'</span>
 
@@ -168,18 +160,15 @@ Finished tests <span class="keyword">in</span> <span class="number">0.000866</sp
   <span class="title">def</span> <span class="title">test_saved</span>
     <span class="title">assert</span> <span class="title">Love</span>.<span class="title">saved</span>?
   <span class="title">end</span>
-<span class="title">end</span>
-</code></pre>
+<span class="title">end</span></code></pre>
 <p>接下来再运行看看 <code>ruby love_test.rb</code> ：</p>
-<pre><code><span class="attribute">NoMethodError</span>: <span class="string">undefined method `saved?' for Love:Class</span>
-</code></pre>
+<pre><code><span class="attribute">NoMethodError</span>: <span class="string">undefined method `saved?' for Love:Class</span></code></pre>
 <p>错误信息明确的告诉我们，愛情是不能保质的，看来 Ruby 也挺懂人情事理的，但我們可以自己定義一個保存的方法：</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Love</span></span>
     <span class="function"><span class="keyword">def</span> <span class="title"><span class="keyword">self</span></span>.<span class="title">saved?</span></span>
       <span class="keyword">true</span>
     <span class="keyword">end</span>
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>接著运行你会如预期的发现测试通过，但是有一天，就是風雨交加的那天，不知为何某女把你的测试改成 <code>false</code> ：</p>
 <pre><code>F
 
@@ -187,40 +176,33 @@ Finished tests <span class="keyword">in</span> <span class="number">0.001137</sp
 
   <span class="number">1</span>) Failure:
 test_saved(LoveTest) [love_test.rb:<span class="number">14</span>]:
-Failed assertion, <span class="literal">no</span> message given.
-</code></pre>
+Failed assertion, <span class="literal">no</span> message given.</code></pre>
 <p>失败，最惨的是 <code>no message given</code> 。。。</p>
 <p>居然什么信息也不给，唉，其实这是 <code>Test::Unit</code> 一贯回报测试失败的方式，</p>
 <p>然而某女突然觉得过意不去，又回头给你加上一个更清楚的信息：</p>
-<pre><code>  <span class="comment">assert</span> <span class="comment">Love</span>.<span class="comment">saved?</span>, <span class="comment">"咱俩不合适！</span> <span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="comment">"</span> 
-</code></pre>
+<pre><code>  <span class="comment">assert</span> <span class="comment">Love</span>.<span class="comment">saved?</span>, <span class="comment">" 咱俩不合适！</span> <span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="comment">"</span> </code></pre>
 <p>现在你再运行测试，你会得到一个清楚的错误信息</p>
 <pre><code>  1) <span class="tag">Failure</span>:
 <span class="tag">test_saved</span>(<span class="tag">LoveTest</span>) <span class="attr_selector">[love_test.rb:16]</span>:
-咱俩不合适！
-</code></pre>
+咱俩不合适！</code></pre>
 <p>嗯，你懂得，我的朋友。。。。。他说风雨中这点痛算什么，擦乾泪不要问，至少我们还有梦！</p>
 <p>这就是使用 <code>Test::Unit</code> 非非非非非非常基本的 TDD 了， <code>Test::Unit</code> 是 Rails 缺省的测试框架，在我们漫长的学习 Rails 的旅途中，你将会常常看到它，并且克制不住的或是被逼迫的使用它。</p>
 <p>记得哦，爱情是没有保质期的，亲。</p>
 <p>距离学会 Rails 还有 965 个小时。。。</p>
 <p>待续。。。</p>
 <h3>延伸阅读</h3>
-<p><a href="http://courseware.codeschool.com.s3.amazonaws.com/rails_testing.pdf">CodeSchool: Rails Testing for Zombies slides</a></p>
-<p><a href="http://guides.rubyonrails.org/testing.html">A Guide to Testing Rails Applications</a></p>
-<p><a href="http://ihower.tw/rails3/testing.html">测试 Testing</a></p>
-<p><a href="http://rubykoans.com/">Ruby Koans</a></p>
-<p><a href="http://ruby-china.org/search?q=Test%3A%3AUnit">Ruby-china 上关于测试的帖子</a></p>
-<p><a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit.html">Ruby Test::Unit 函式库</a></p>
-<p><a href="http://www.google.com.hk/webhp?hl=zh-CN&amp;sourceid=cnhp#hl=zh-CN&amp;safe=strict&amp;site=webhp&amp;source=hp&amp;q=%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9C%8B%E5%8F%8B%E4%B8%8D%E8%A6%81%E6%88%91%E4%BA%86&amp;oq=%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9C%8B%E5%8F%8B%E4%B8%8D%E8%A6%81%E6%88%91%E4%BA%86&amp;aq=f&amp;aqi=&amp;aql=&amp;gs_nf=1&amp;gs_l=hp.3...1405.6419.0.6789.34.32.1.0.0.0.105.1818.30j1.31.0.uZEfYhm1ZUM&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=4de69b13c14b576b">为什么女朋友不要我了</a></p>
+<p><a href="http://courseware.codeschool.com.s3.amazonaws.com/rails_testing.pdf" target="_blank">CodeSchool: Rails Testing for Zombies slides</a></p>
+<p><a href="http://guides.rubyonrails.org/testing.html" target="_blank">A Guide to Testing Rails Applications</a></p>
+<p><a href="http://ihower.tw/rails3/testing.html" target="_blank">测试 Testing</a></p>
+<p><a href="http://rubykoans.com/" target="_blank">Ruby Koans</a></p>
+<p><a href="http://ruby-china.org/search?q=Test%3A%3AUnit" target="_blank">Ruby-china 上关于测试的帖子</a></p>
+<p><a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit.html" target="_blank">Ruby Test::Unit 函式库</a></p>
+<p><a href="http://www.google.com.hk/webhp?hl=zh-CN&amp;sourceid=cnhp#hl=zh-CN&amp;safe=strict&amp;site=webhp&amp;source=hp&amp;q=%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9C%8B%E5%8F%8B%E4%B8%8D%E8%A6%81%E6%88%91%E4%BA%86&amp;oq=%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9C%8B%E5%8F%8B%E4%B8%8D%E8%A6%81%E6%88%91%E4%BA%86&amp;aq=f&amp;aqi=&amp;aql=&amp;gs_nf=1&amp;gs_l=hp.3...1405.6419.0.6789.34.32.1.0.0.0.105.1818.30j1.31.0.uZEfYhm1ZUM&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=4de69b13c14b576b" target="_blank">为什么女朋友不要我了</a></p>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/04/25/ror-2-test-unit/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       
@@ -238,11 +220,11 @@ Failed assertion, <span class="literal">no</span> message given.
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-04-22T14:11:00.000Z"><a href="/2012/04/22/ror-1-first-app/">Apr 22 2012</a></time>
+        <time class="depth" datetime="2012-04-22T14:11:00.000Z"><a href="/2012/04/22/2012-04-22-ror-1-first-app/">4月 22 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/04/22/ror-1-first-app/">你的第一个 Rails 应用 - 001</a></h1>
+    <h1 class="title depth"><a href="/2012/04/22/2012-04-22-ror-1-first-app/">你的第一个 Rails 应用 - 001</a></h1>
   
 
     </header>
@@ -262,39 +244,38 @@ Failed assertion, <span class="literal">no</span> message given.
 <p>型別</p>
 <p>再来不免俗的我也来讲讲 MVC，MVC 是 Model View Controller 的缩写，模型、视图、控制器。恩不负责任的解释一下大概是：</p>
 <ul>
-<li><p>模型 -- 让程序员远离操作数据库的恶梦</p>
+<li><p>模型 — 让程序员远离操作数据库的恶梦</p>
 </li>
-<li><p>视图 -- 用户看到的页面</p>
+<li><p>视图 — 用户看到的页面</p>
 </li>
-<li><p>控制器 -- 模型与视图的仲介，跟模型要资料拿给视图显示。</p>
+<li><p>控制器 — 模型与视图的仲介，跟模型要资料拿给视图显示。</p>
 </li>
 </ul>
-<p>为神马要使用 MVC 呢？恩，让业务逻辑脱离页面，还记得<strong>那些年我们一起在 HTML 里面塞 PHP 代码的日子吗？</strong>放心，都过去了，一切都会好起来的。还有一个好处是，让你重复利用你的代码、让你的代码可以更简单的维护。但是这样听起来还是很抽象，等你学了 200 小时左右，你差不多就能有点感觉了，还是没感觉的话，那去 OGC 吧（头转 90 度...）。</p>
-<p>好现在让我们开始一个最简单的 Rails 应用... 在这之前，得先安装好环境。</p>
+<p>为神马要使用 MVC 呢？恩，让业务逻辑脱离页面，还记得<strong>那些年我们一起在 HTML 里面塞 PHP 代码的日子吗？</strong>放心，都过去了，一切都会好起来的。还有一个好处是，让你重复利用你的代码、让你的代码可以更简单的维护。但是这样听起来还是很抽象，等你学了 200 小时左右，你差不多就能有点感觉了，还是没感觉的话，那去 OGC 吧（头转 90 度…）。</p>
+<p>好现在让我们开始一个最简单的 Rails 应用…在这之前，得先安装好环境。</p>
 <h3>安装 Rails</h3>
 <ul>
-<li><p>Windows 有 Installer -&gt; <a href="http://railsinstaller.org/">点我点我点我</a></p>
+<li><p>Windows 有 Installer -&gt; <a href="http://railsinstaller.org/" target="_blank">点我点我点我</a></p>
 </li>
-<li><p>Mac 的朋友可以看看这个安装脚本：<a href="https://github.com/thoughtbot/laptop">ThoughtBot Laptop Script</a></p>
+<li><p>Mac 的朋友可以看看这个安装脚本：<a href="https://github.com/thoughtbot/laptop" target="_blank">ThoughtBot Laptop Script</a></p>
 </li>
 </ul>
-<p>还可以顺便装一下 RVM，RVM 是 Ruby 版本管理工具，可以让你尝鲜安装最新版的 Ruby，也可以装往日美好的 Ruby，重要的是它还替你的 Gems 造了一个空间，让你不怕把系统弄坏！更多信息：<a href="http://beginrescueend.com/">RVM 官网</a>、<a href="http://blog.eddie.com.tw/2011/04/08/rvm-and-gemsets/">RVM 与 Gemset</a>。</p>
+<p>还可以顺便装一下 RVM，RVM 是 Ruby 版本管理工具，可以让你尝鲜安装最新版的 Ruby，也可以装往日美好的 Ruby，重要的是它还替你的 Gems 造了一个空间，让你不怕把系统弄坏！更多信息：<a href="http://beginrescueend.com/" target="_blank">RVM 官网</a>、<a href="http://blog.eddie.com.tw/2011/04/08/rvm-and-gemsets/" target="_blank">RVM 与 Gemset</a>。</p>
 <p>我使用 Rails 3.2.3 版本来讲解之后的例子，你可能需要 Ruby 1.9.3：</p>
 <p><code>rvm install 1.9.3</code> (设为缺省：<code>rvm use --default 1.9.3</code> )</p>
-<p>如果你的电脑已经有了 Ruby 1.9.2+ 与 <a href="http://ruby.taobao.org/">RubyGems</a>，Mac/Unix 安装 Rails 就是：</p>
+<p>如果你的电脑已经有了 Ruby 1.9.2+ 与 <a href="http://ruby.taobao.org/" target="_blank">RubyGems</a>，Mac/Unix 安装 Rails 就是：</p>
 <p>  gem install rails -v 3.2.3</p>
-<p>也可说是一键安装了...</p>
+<p>也可说是一键安装了…</p>
 <p><strong>为什么坊间及各大论坛有无数的帖子及书籍教你如何装 Rails？</strong></p>
-<p>恩，很高兴你这么问，Rails 受益于它集成了很多个第三方的 Gems，这可能是你家楼下卖油条的老伯写的 Gem，或是远在太平洋那端美国小伙子边喝酒边写的，也可能是德艺双馨苍老师写的 Gem ，谁知道呢？说不定那人不维护了，以及 Rails 的版本更迭很快，Gem 的版本也更新的很快，同时 Ruby 也在更新，这些组织起来就会有兼容问题，新的好功能不支援旧语法，就变成现在这个情况了，呃。。。每一次 bundle 胆颤心惊，building native ... 看到这个讯息，很有可能又不兼容了，啊！！！！！！！而 GFW 又大大的加大了我们的难度（详见：<a href="RGC">RubyGems 镜像</a>），真是用心，这样子磨练我们，为了让我们都成为一个更好的人，一个更好的程序员。</p>
-<p>但是我们不怕，其实我略懂命理，我算过了，萤幕前的你，上辈子的名字是... 折腾。</p>
+<p>恩，很高兴你这么问，Rails 受益于它集成了很多个第三方的 Gems，这可能是你家楼下卖油条的老伯写的 Gem，或是远在太平洋那端美国小伙子边喝酒边写的，也可能是德艺双馨苍老师写的 Gem ，谁知道呢？说不定那人不维护了，以及 Rails 的版本更迭很快，Gem 的版本也更新的很快，同时 Ruby 也在更新，这些组织起来就会有兼容问题，新的好功能不支援旧语法，就变成现在这个情况了，呃。。。每一次 bundle 胆颤心惊，building native … 看到这个讯息，很有可能又不兼容了，啊！！！！！！！而 GFW 又大大的加大了我们的难度（详见：<a href="RGC">RubyGems 镜像</a>），真是用心，这样子磨练我们，为了让我们都成为一个更好的人，一个更好的程序员。</p>
+<p>但是我们不怕，其实我略懂命理，我算过了，萤幕前的你，上辈子的名字是…折腾。</p>
 <p><strong>活著就是快乐的折腾著！</strong></p>
 <p>好了，我相信你已经成功安装 Rails。上车吧，动车要开动了。。。</p>
 <p>呜——呜—— 呜——呜——</p>
 <h3>第一个 Rails 应用</h3>
 <p>这个例子呢，叫做 <code>girls_I_loved</code> ，这个应用呢主要是记录我们曾经深爱过的女孩，唉也只是曾经了。</p>
 <p>首先我们使用 <code>rails</code> 命令来创建这个应用：</p>
-<pre><code><span class="title">rails</span> new girls_I_loved
-</code></pre>
+<pre><code><span class="title">rails</span> new girls_I_loved</code></pre>
 <p>接下来，啪拉，一堆信息喷出，<strong>DONT PANIC！</strong> 握紧你的鼠标，真是激动人心的一刻，你终于成为一个大菜鸟 Rails 程序员了。这些产生出来的文件，我们之后会慢慢解释。</p>
 <p><em>温馨提示</em> ：<code>rails help</code> 可以看到 <code>rails</code> 命令的帮助信息。</p>
 <h4>启动你的应用</h4>
@@ -315,12 +296,10 @@ Failed assertion, <span class="literal">no</span> message given.
 <h4>给我一个鹰架，我可以搭起整个 Rails 应用。</h4>
 <p><strong>scaffold</strong> 是 Rails 提供的一个命令，搭载许多基本的功能，让你快速建个原型来看看，我们将会使用鹰架来演示这个例子，基本上实际的项目是不用鹰架的，因为根据不同客户的需求，我们手工打造我们的应用，也有人称 Rails 程序员是 craftman 就是这个缘故。</p>
 <p>让我们来创建这个 <code>我们深爱过的女孩</code> 应用吧：</p>
-<pre><code>rails generate scaffold girl <span class="property">name</span>:<span class="type">string</span> <span class="type">number</span>:<span class="type">integer</span>
-</code></pre>
+<pre><code>rails generate scaffold girl <span class="property">name</span>:<span class="type">string</span> <span class="type">number</span>:<span class="type">integer</span></code></pre>
 <p>又是一堆信息，别慌张，其实就是产生了模型、视图、控制器、剩下的稍后叙述。</p>
 <p>而</p>
-<pre><code>girl <span class="property">name</span>:<span class="type">string</span> <span class="type">number</span>:<span class="type">integer</span>
-</code></pre>
+<pre><code>girl <span class="property">name</span>:<span class="type">string</span> <span class="type">number</span>:<span class="type">integer</span></code></pre>
 <p>这段命令是什么呢？首先 <code>girl</code> 是你深爱过的女孩，<code>name</code> 是她的芳名，类别是字串；<code>number</code> 是第几任，类别是整数。。。</p>
 <p>这个命令顺便也替你把数据库、物件属性（attribute）相关的东西都搞好了，接下来让我们在数据库创建这个表。要创建这个表呢，在 Rails 当中叫做迁移（Migration）。</p>
 <p>迁移是 Rails 管理数据库版本的一种形式，让你的数据库可以滚动增加它的 schema。为什么说它可以管理数据库的版本呢？嗯，每一个迁移都会盖上一个时间戳章（Timestamp），注明了数据库的日期。这样子别人来跟你一起开发应用时，就知道你确切的数据库日期了。不过这个我们深爱过的女孩应用，还是自己开发就好了，你有注意到刚刚产生的信息中，有一个这样子的文件吗：</p>
@@ -335,19 +314,16 @@ Failed assertion, <span class="literal">no</span> message given.
       <span class="title">t</span>.<span class="title">timestamps</span>
     <span class="title">end</span>
   <span class="title">end</span>
-<span class="title">end</span>
-</code></pre>
+<span class="title">end</span></code></pre>
 <p>可以看到这个类继承自 <code>ActiveRecord::Migration</code> ，在类里面呢，定义了一个 <code>change</code> 方法。</p>
 <p>让我们接著看下去：</p>
-<pre><code>create_table <span class="symbol">:girls</span> <span class="keyword">do</span> |t|
-</code></pre>
+<pre><code>create_table <span class="symbol">:girls</span> <span class="keyword">do</span> |t|</code></pre>
 <p>很显然的替我们在数据库建立一个叫做 <code>girls</code> 的表，带有名字与任号，后面的 <code>t.timestamps</code> 就是我刚刚说的时间戳章，会设置成目前的时间（ <code>created_at</code> 与 <code>updated_at</code> ）。有了这个时间戳，Rails 之后还能帮我们恢复数据呢（术语叫做回滚 rollback）！其实呢，这个 <code>change</code> 方法隐含了 <code>up</code> 与 <code>down</code> ，建立与删除资料表，但我们现在不用担心这个，等到你的迁移够复杂时，在拆开来写就好。</p>
 <p>OK! 接下来让我们正式迁移看看，敲入这行命令 <code>rake db:migrate</code> ，产生：</p>
 <pre><code><span class="comment">==</span>  <span class="comment">CreateGirls:</span> <span class="comment">migrating</span> <span class="comment">====================================================</span>
 <span class="literal">-</span><span class="literal">-</span> <span class="comment">create_table(:girls)</span>
    <span class="literal">-</span>&gt; <span class="comment">0</span>.<span class="comment">0021s</span>
-<span class="comment">==</span>  <span class="comment">CreateGirls:</span> <span class="comment">migrated</span> <span class="comment">(0</span>.<span class="comment">0022s)</span> <span class="comment">===========================================
-</code></pre>
+<span class="comment">==</span>  <span class="comment">CreateGirls:</span> <span class="comment">migrated</span> <span class="comment">(0</span>.<span class="comment">0022s)</span> <span class="comment">===========================================</code></pre>
 <p>这个 <code>rake db:migrate</code> 命令实际调用了隐含的 <code>up</code> 方法，因为这是你第一次运行迁移命令， Rails 会产生一个 <code>db/development.sqlite3</code> 文件，并产生 <code>girls</code> 表。注意！这个 <code>rake db:migrate</code> 不仅仅只执行一个迁移，它会依序执行你所有的迁移！</p>
 <p>Rails 同时也持续关注你的一个文件 <code>db/schema.rb</code> ：</p>
 <pre><code>ActiveRecord::Schema<span class="variable">.define</span>(:version =&gt; YYYYMMDDHHMMSS) <span class="keyword">do</span>
@@ -359,15 +335,13 @@ Failed assertion, <span class="literal">no</span> message given.
     t<span class="variable">.datetime</span> <span class="string">"updated_at"</span>, :null =&gt; <span class="literal">false</span>
   <span class="keyword">end</span>
 
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>这里的 <code>YYYYMMDDHHMMSS</code> 应跟你的迁移档</p>
 <p>（ <code>db/migrate/[YYYYMMDDHHMMSS]_create_girls.rb</code> ）匹配，这让你之后可以这样子加载旧的数据库：</p>
-<pre><code><span class="tag">rake</span> <span class="tag">db</span><span class="pseudo">:schema</span><span class="pseudo">:load</span>
-</code></pre>
+<pre><code><span class="tag">rake</span> <span class="tag">db</span><span class="pseudo">:schema</span><span class="pseudo">:load</span></code></pre>
 <p><em>温馨提示</em> ：回滚可以透过 <code>rake db:rollback</code> 来给最新一次的迁移做 <code>down</code> 方法。</p>
 <h4>加入及浏览深爱过的女孩</h4>
-<p>让我们再次启动服务器： <code>rails s</code> ，并开启这个页面： <a href="http://localhost:3000/girls/">http://localhost:3000/girls/</a> ：</p>
+<p>让我们再次启动服务器： <code>rails s</code> ，并开启这个页面： <a href="http://localhost:3000/girls/" target="_blank">http://localhost:3000/girls/</a> ：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/GirlsILoved.png" alt="GirlsILoved"></p>
 <p>还没有深爱过的女孩列在上面，让我们按 <code>New Girl</code> 来添加一个：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/NewGirl.png" alt="NewGirl"></p>
@@ -377,21 +351,18 @@ Failed assertion, <span class="literal">no</span> message given.
 
 <span class="vbscript">&lt;%= render <span class="comment">'form' %&gt;</span></span>
 
-<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span></code></pre>
 <p>这是一个 ERB 文件，什么是 ERB 呢？Embedded RuBy。其实是嵌入 Ruby 代码的 HTML 文件。可以这样嵌入：</p>
 <p><code>&lt;%=  %&gt;</code> 以及 <code>&lt;%  %&gt;</code> ，带等号会输出在页面上，没带等号不会输出至页面。你可以拿不带等号的来创一些变量：</p>
-<pre><code><span class="vbscript">&lt;% hot=<span class="literal">true</span> %&gt;</span>
-</code></pre>
-<p>呵呵... 在这个 ERB 文件里，</p>
+<pre><code><span class="vbscript">&lt;% hot=<span class="literal">true</span> %&gt;</span></code></pre>
+<p>呵呵…在这个 ERB 文件里，</p>
 <p>第一行我们可以看到，我们给这个页面下了一个 <code>h1</code> 标题，<code>render</code> 方法传入了一个字串 <code>&#39;form&#39;</code> ，这个 <code>render</code> 方法会去渲染（render）这个字串名字的 <code>partial</code> 。</p>
 <p>什么是 <code>partial</code> ？一个 <code>partial</code> 是一个模版，我们可以把它加进来，达到不重用代码的最高原则 DRY！！！！！！</p>
 <p><code>link_to</code> 方法替你产生了一个 <code>a</code> 标签，带有 <code>Back</code> 名字，其 <code>href</code> 属性设置为 <code>girls_path</code> ，会自动转成 <code>/girls</code> ，至于为什么我们以后再谈。</p>
 <p>很好！现在我们来看看 <code>_form.html.erb</code> 这个文件：</p>
 <pre><code>&lt;%= form_for(@girl) do |f| %&gt;
   <span class="keyword">...</span>
-&lt;% end %&gt;
-</code></pre>
+&lt;% end %&gt;</code></pre>
 <p>这里定义了一个表单，使用了 <code>form_for</code> 这个 helper。<code>form_for</code> 方法传入了一个参数，一个实体变量叫做 <code>@gril</code> ， 并用这个变量 <code>@girl</code> 来产生一个表单，这个变量是从哪来的呢？茫茫人海中。。。</p>
 <p>是从 <code>GirlsController</code> 控制器的 <code>new</code> 动作来的：</p>
 <pre><code><span class="function"><span class="keyword">def</span> <span class="title">new</span></span>
@@ -401,14 +372,12 @@ Failed assertion, <span class="literal">no</span> message given.
     format.html <span class="comment"># new.html.erb</span>
     format.json { render <span class="symbol">json:</span> <span class="variable">@girl</span> }
   <span class="keyword">end</span>
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>第一行我们呼叫了 Girl 模型的 <code>new</code> 方法，建立了一个实体变量 <code>@girl</code> 。而这个实体变量 <code>@girl</code> 自动由 Rails 替你传给视图。</p>
 <p>接下来，有一个 <code>respond_to</code> 方法，定义了这个动作回应的方法（HTML 与 JSON 格式），这里 <code>format.html</code> 会渲染 <code>new.html.erb</code> 这个文件，<code>format.json</code> 会回传一个 <code>@girl</code> 的 JSON 版本。</p>
 <p>呼，直到现在你只写了一行代码：</p>
-<pre><code>rails generate scaffold girl <span class="property">name</span>:<span class="type">string</span> <span class="type">number</span>:<span class="type">integer</span>
-</code></pre>
-<p>就得到了这么多，<a href="http://www.washingtonpost.com/business/technology/steve-jobss-last-words-oh-wow-oh-wow-oh-wow/2011/10/31/gIQA3vKCZM_story.html">喔！哇！喔！哇！喔！哇！</a></p>
+<pre><code>rails generate scaffold girl <span class="property">name</span>:<span class="type">string</span> <span class="type">number</span>:<span class="type">integer</span></code></pre>
+<p>就得到了这么多，<a href="http://www.washingtonpost.com/business/technology/steve-jobss-last-words-oh-wow-oh-wow-oh-wow/2011/10/31/gIQA3vKCZM_story.html" target="_blank">喔！哇！喔！哇！喔！哇！</a></p>
 <p>让我们再回来看看 <code>_form.html.erb</code> ，在 <code>&lt;%= form_for(@girl) do |f| %&gt;</code> 与 <code>&lt;% end %&gt;</code> 之间的区块：</p>
 <pre><code>&lt;% <span class="keyword">if</span> @girl.errors.any? %&gt;
   <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"error_explanation"</span>&gt;</span>
@@ -420,8 +389,7 @@ Failed assertion, <span class="literal">no</span> message given.
     <span class="vbscript">&lt;% <span class="keyword">end</span> %&gt;</span>
     <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
   <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="vbscript">&lt;% <span class="keyword">end</span> %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;% <span class="keyword">end</span> %&gt;</span></span></code></pre>
 <p>先是检查 <code>@girl</code> 对象是否有任何错误（挑女孩可不能这样哦！），这些错误会从模型来，比如你的这个 <code>@girl</code> 对象没有通过模型所设置的验证（validation）需求，验证稍后讲解。如果有任何错误存在的话，就会被渲染成 <code>if</code> 区块内的内容。</p>
 <p>让我们来看看这个 <code>_form.html.erb</code> 的后半部：</p>
 <pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"field"</span>&gt;</span>
@@ -434,8 +402,7 @@ Failed assertion, <span class="literal">no</span> message given.
 <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
 <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"actions"</span>&gt;</span>
   <span class="vbscript">&lt;%= f.submit %&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
 <p>相信聪明如你，已经看出来这里建立了给我们填入的栏位及按钮。</p>
 <p>现在让我们回到浏览器，填入深爱过的女孩的名字，你会看到类似于下图的结果：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/new%20girl%2001.png" alt="new girl 01"></p>
@@ -453,8 +420,7 @@ Failed assertion, <span class="literal">no</span> message given.
       format.json { render <span class="symbol">json:</span> <span class="variable">@girl</span>.errors, <span class="symbol">status:</span> <span class="symbol">:unprocessable_entity</span> }
     <span class="keyword">end</span>
   <span class="keyword">end</span>
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>这里你同样使用了你在 <code>new</code> 动作看过的 <code>Girl.new</code> 。但这次你传入了一个参数，<code>params[:girl]</code> 。params 是 parameters 的缩写，会回传一个从表单传来的像是哈希 (hash) 的对象。当你把这个 <code>params[:girl]</code> 传给 <code>new</code> 方法时，Rails 使用表单的值帮你设定对象的属性。</p>
 <p>在 <code>respond_to</code> 是一个 <code>if-else</code> 结构，if 这里的 <code>@girl.save</code> 确保这个记录（record）是合法的，如果储存成功即返回真并存入数据库。</p>
 <p>如果我与苍老师之间是真愛，这个 <code>redirect_to</code> 方法将你重導向至新產生的 <code>@girl</code> 对象，这个方法接受一个路径或对象，替你转成相应的路径。这个 <code>redirect_to</code> 方法解读你传入的 <code>@girl</code> 对象，并判断你要到 <code>girl_path</code> 因为这是一个 Girl 模型的对象。这个路径把你带到控制器的 <code>show</code> 动作。里面的 <code>notice:</code> 会显示一个 <code>flash</code> 信息。一个 <code>flash</code> 信息是一个在下次请求（request）所显示的信息。（也就是上图上方的绿色字体）</p>
@@ -469,21 +435,19 @@ Failed assertion, <span class="literal">no</span> message given.
   <span class="title">validates</span> :<span class="title">number</span>, :<span class="title">presence</span> =&gt; <span class="title">true</span>,
                      :<span class="title">uniqueness</span> =&gt; <span class="title">true</span>,
                      :<span class="title">numericality</span> =&gt; {</span> :greater_than =&gt; <span class="number">1</span> }
-end
-</code></pre>
-<p>你使用了 <code>validates</code> 方法来定义一个验证，确保有输入名字，任号确保有输入、唯一、大于一。现在让我们试试看，打开这个页面：<a href="http://localhost:3000/girls">http://localhost:3000/girls</a> 按下 <code>New Girl</code> 链接，并直接按 <code>Create Girl</code> 按钮，你会看到如下图般的错误：</p>
+end</code></pre>
+<p>你使用了 <code>validates</code> 方法来定义一个验证，确保有输入名字，任号确保有输入、唯一、大于一。现在让我们试试看，打开这个页面：<a href="http://localhost:3000/girls" target="_blank">http://localhost:3000/girls</a> 按下 <code>New Girl</code> 链接，并直接按 <code>Create Girl</code> 按钮，你会看到如下图般的错误：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/validate-errors.png" alt="validate-errors"></p>
 <p>如你预期的错误，现在你可以依照伟大母亲大人的指示输入栏位，</p>
 <p>name：<code>&quot;#{初恋情人}&quot;</code></p>
-<pre><code>希望不是 NameError: undefined <span class="keyword">local</span> variable <span class="keyword">or</span> method <span class="string">`初恋情人' for main:Object
-</code></pre>
+<pre><code>希望不是 NameError: undefined <span class="keyword">local</span> variable <span class="keyword">or</span> method <span class="string">`初恋情人' for main:Object</code></pre>
 <p>让我们在试试看我们的 <code>greater_than</code> 有没有起作用，任号输入 <code>-1</code> 看看：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/minus1.png" alt="minus-one"></p>
 <p>It works! 让我们完成这些栏位：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/first-love.png" alt="first-love"></p>
 <p>有的朋友会问，怎么任号是 2 了，不对吧？不好意思各位，<strong>1 号的位置我留给了永远的苍老师。</strong></p>
 <p>在网址栏的结尾你会看到</p>
-<p><a href="http://localhost:3000/girls/N">http://localhost:3000/girls/N</a></p>
+<p><a href="http://localhost:3000/girls/N" target="_blank">http://localhost:3000/girls/N</a></p>
 <p><code>N</code> 是模型 Girl 中一个独一无二的数字 ID。这哪来的？让我们看看控制器中的 <code>show</code> 动作的视图模版（在 <code>app/views/girls/show.html.erb</code> ）：</p>
 <pre><code><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"notice"</span>&gt;</span><span class="vbscript">&lt;%= notice %&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
 
@@ -499,56 +463,47 @@ end
 
 
 <span class="vbscript">&lt;%= link_to <span class="comment">'Edit', edit_girl_path(@girl) %&gt;</span></span> |
-<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span></code></pre>
 <p>第一行是 <code>notice</code> 方法，显示由 <code>create</code> 动作内，重定向 <code>redirec_to</code> 里设置的 <code>notice</code> ：</p>
-<p>  format.html { redirect_to @girl, notice: &#39;Girl was successfully created.&#39; }</p>
+<p>  format.html { redirect_to @girl, notice: ‘Girl was successfully created.’ }</p>
 <p>之后在 <code>p</code> 标签里，呼叫 <code>@girl</code> 的 <code>name</code> 与 <code>number</code> 方法，显示名字及任号，这个对象是在你控制器的 <code>show</code> 动作所定义的：</p>
 <pre><code>def show
   @girl = Girl.find(params[:id])
 
   <span class="keyword">...</span>
-end
-</code></pre>
+end</code></pre>
 <p>这个 <code>Girl</code> 类别的 <code>find</code> 方法让你找到 ID 是 <code>params[:id]</code> 的纪录（record），创建一个新的 <code>Girl</code> 对象，并把 <code>params[:id]</code> 作为网址的结尾数字 <code>N</code>。</p>
 <p>让我们在回到 <code>show.html.erb</code> 文件的下方：</p>
 <pre><code>&lt;<span class="variable">%=</span> link_to <span class="string">'Edit'</span>, edit_girl_path(<span class="variable">@girl</span>) <span class="variable">%&gt;</span> |
-&lt;<span class="variable">%=</span> link_to <span class="string">'Back'</span>, girls_path <span class="variable">%&gt;</span>
-</code></pre>
+&lt;<span class="variable">%=</span> link_to <span class="string">'Back'</span>, girls_path <span class="variable">%&gt;</span></code></pre>
 <p>产生了两个链接，Edit 与 Back。第一个 <code>link_to</code> 方法的第二个参数 <code>edit_girl_path(@girl)</code> 方法是由 <code>config/routes.rb</code> 里的一个方法调用所提供的。让我们现在来看看 <code>config/routes.rb</code> 。</p>
 <h4>陆游：山重水复疑无路，柳暗花明又一村</h4>
 <p>看来我们南宋朝的诗人就懂得 Rails 的路由了。。。（唉你现在知道为什么这篇文章分类是瞎扯淡了吧）</p>
 <p>这柳暗花明又一村呢，是哪一村，让我们看看 <code>config/routes.rb</code> 这一村（没有注解）：</p>
 <pre><code>GirlsILoved::Application<span class="variable">.routes</span><span class="variable">.draw</span> <span class="keyword">do</span>
   resources :girls
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>每个 Rails 应用的 <code>config/routes.rb</code> 文件，都用了简洁的 Ruby 语法定义了应用程序的路由。这个文件里使用的方法，定义了请求至控制器之间的路线。</p>
-<pre><code><span class="title">resources</span> :girls
-</code></pre>
+<pre><code><span class="title">resources</span> :girls</code></pre>
 <p>在 Rails 当中，相似对象的集合，称为资源（resources）。这个方法定义了路由（routes）与路由的 helpers，这个 helper 比如我们使用的这个 <code>edit_girl_path</code> 。下表列出了路由以及对应的 helper：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/helpers-routes.png" alt="helpers-routes"></p>
-<p>在这个表里，:id 可以被记录的 ID 替换。每一个路由的 helper 都有一个替代版本，可以给你全部的网址。把 <code>girls_path</code> 换成 <code>girls_url</code> 就会给你完整的网址：<a href="http://localhost:3000/girls。">http://localhost:3000/girls。</a></p>
-<p>另外，有两个路由会根据不同的请求（request），做出不同的动作。如果你使用 <code>GET</code> 请求的话，第一个路由：<code>/girls</code> 会带你到 <code>GirlsController</code> 的 <code>index</code> 动作。<code>GET</code> 请求是标准浏览器的请求之一，这是你对这个应用做的第一个请求（到 <a href="http://localhost:3000/">http://localhost:3000/</a> 页面）如果你对这个路由 <code>/girls</code> 做 <code>POST</code> 请求，它会去调用控制器的 <code>create</code> 动作。这也是你先前按下 New Girl 的动作。恩，我讲你可能不太相信，让我带你看看，先跳到 <a href="http://localhost:3000/girls/new">http://localhost:3000/girls/new</a> 页面，并鼠标右键 -&gt; 检视源代码，你会看到表单中：</p>
+<p>在这个表里，:id 可以被记录的 ID 替换。每一个路由的 helper 都有一个替代版本，可以给你全部的网址。把 <code>girls_path</code> 换成 <code>girls_url</code> 就会给你完整的网址：<a href="http://localhost:3000/girls。" target="_blank">http://localhost:3000/girls。</a></p>
+<p>另外，有两个路由会根据不同的请求（request），做出不同的动作。如果你使用 <code>GET</code> 请求的话，第一个路由：<code>/girls</code> 会带你到 <code>GirlsController</code> 的 <code>index</code> 动作。<code>GET</code> 请求是标准浏览器的请求之一，这是你对这个应用做的第一个请求（到 <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a> 页面）如果你对这个路由 <code>/girls</code> 做 <code>POST</code> 请求，它会去调用控制器的 <code>create</code> 动作。这也是你先前按下 New Girl 的动作。恩，我讲你可能不太相信，让我带你看看，先跳到 <a href="http://localhost:3000/girls/new" target="_blank">http://localhost:3000/girls/new</a> 页面，并鼠标右键 -&gt; 检视源代码，你会看到表单中：</p>
 <pre><code><span class="tag">&lt;<span class="title">form</span> <span class="attribute">accept-charset</span>=<span class="value">"UTF-8"</span> <span class="attribute">action</span>=<span class="value">"/girls"</span> <span class="attribute">class</span>=<span class="value">"new_girl"</span> <span class="attribute">id</span>=<span class="value">"new_girl"</span> <span class="attribute">method</span>=<span class="value">"post"</span>&gt;</span>
 
-<span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"/purchases"</span> <span class="attribute">class</span>=<span class="value">"new_purchase"</span> <span class="attribute">id</span>=<span class="value">"new_purchase"</span> <span class="attribute">method</span>=<span class="value">"post"</span>&gt;</span>
-</code></pre>
+<span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"/purchases"</span> <span class="attribute">class</span>=<span class="value">"new_purchase"</span> <span class="attribute">id</span>=<span class="value">"new_purchase"</span> <span class="attribute">method</span>=<span class="value">"post"</span>&gt;</span></code></pre>
 <p>嘿嘿！这里有两个要注意的属性，就是 <code>action</code> 与 <code>method</code> 属性。<code>action</code> 指出了这个表单要去的路由，而 <code>method</code> 告诉浏览器何种 HTTP 请求。</p>
 <p>这个表单是在哪渲染的呢？呵呵，你先前已经看过了，在 <code>app/views/girls/new.html.erb</code> ：</p>
 <pre><code><span class="tag">&lt;<span class="title">h1</span>&gt;</span>New girl<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
 
 <span class="vbscript">&lt;%= render <span class="comment">'form' %&gt;</span></span>
 
-<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span></code></pre>
 <p>这里我们渲染了一个 <code>partial</code>，位于 <code>app/views/girls/_form.html.erb</code> 的 <code>form</code>：</p>
-<pre><code>&lt;<span class="variable">%=</span> form_for(<span class="variable">@girl</span>) <span class="keyword">do</span> |f| <span class="variable">%&gt;</span>
-</code></pre>
+<pre><code>&lt;<span class="variable">%=</span> form_for(<span class="variable">@girl</span>) <span class="keyword">do</span> |f| <span class="variable">%&gt;</span></code></pre>
 <p>这一行伟大的代码产生了 <code>form</code> 表单！等会儿我们看看 <code>edit</code> 动作时，你会发现同样的表单有不同的结果，太猛了！</p>
 <p>另一个不同的路由是 <code>/girls/{id}</code> 路由，这个路由有三个方式。第一个是你已经看过的，你加入一个你深愛的女孩，使用 GET 请求来重定向的 <code>show</code> 动作，第二个是我们现在要讨论的 <code>update</code> ，更新你深愛的女孩的数据。</p>
-<p>现在让我们来改动一下女孩的任号，或许初恋情人是你的第五任也说不定（有的人觉得直到他找到对的女孩才算初恋，之前的一点恋愛感觉都没有）打开
-<a href="http://localhost:3000/girls">http://localhost:3000/girls</a> 页面，按下 Edit 链接，你会看到如下的图示：</p>
+<p>现在让我们来改动一下女孩的任号，或许初恋情人是你的第五任也说不定（有的人觉得直到他找到对的女孩才算初恋，之前的一点恋愛感觉都没有）打开<br><a href="http://localhost:3000/girls" target="_blank">http://localhost:3000/girls</a> 页面，按下 Edit 链接，你会看到如下的图示：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/edit-first-love.png" alt="edit-first-love"></p>
 <p>这个页面跟我们看到的 <code>new</code> 动作所产生的页面相似。体会到 <code>partial</code> 的威力了么？你可以根据不同的请求，使用同样的代码。这个 <code>edit.html.erb</code> 的内容为：</p>
 <pre><code><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Editing girl<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
@@ -556,13 +511,11 @@ end
 <span class="vbscript">&lt;%= render <span class="comment">'form' %&gt;</span></span>
 
 <span class="vbscript">&lt;%= link_to <span class="comment">'Show', @girl %&gt;</span></span> |
-<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span></code></pre>
 <p>然而这个动作呢，你在修改的是先前存在的对象，而不是像你在 <code>new</code> 动作所使用的一个新的对象。这个已经存在的对象是透过 <code>GirlsController</code> 的 <code>edit</code> 动作找到的：</p>
 <pre><code><span class="function"><span class="keyword">def</span> <span class="title">edit</span></span>
   <span class="variable">@girl</span> = <span class="constant">Girl</span>.find(params[<span class="symbol">:id</span>])
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>如何找到一个对象的代码跟之前我们看过的 <code>show action</code> 一模一样！！！！！！！也就是说咱重复了代码，但现在先不讨论这个。</p>
 <p>再回到刚刚的 <code>edit.html.erb</code> ：</p>
 <pre><code><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Editing girl<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
@@ -570,17 +523,20 @@ end
 <span class="vbscript">&lt;%= render <span class="comment">'form' %&gt;</span></span>
 
 <span class="vbscript">&lt;%= link_to <span class="comment">'Show', @girl %&gt;</span></span> |
-<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;%= link_to <span class="comment">'Back', girls_path %&gt;</span></span></code></pre>
 <p>下面你使用了 <code>link_to</code> 来创建两个链接，Show 与 Back 链接。Show 链接连到你在控制器的 <code>edit</code> 动作设置好的 <code>@girl</code> 对象。按下这个链接会带你到 <code>girl_path(@girl)</code> (<code>/girls/:id</code>)。Rails 会自己根据对象的类别，想出链接接下来要去哪，使用这种 Rails 特殊的语法，它会去调用 <code>girl_path</code> 方法（因为这个对象是 Girl 类别），并且产生相应的网址给你。</p>
 <p>接下来看看 Back 链接，使用了 <code>girls_path</code>。它不能使用一个对象，因为没道理，你要返回的是你深爱过的女人的清单。。。而呼叫 <code>girls_path</code> 是一个回到 <code>index</code> 动作的简单方法。</p>
 <p>好现在我们来试试看填入这个表单，举例来说，把初恋情人改为第五任好了，并按下 Update Girl 按钮，你会看到：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/fifth.png" alt="fifth"></p>
-<p>按下 Update Girl 会带你回到 <code>show</code> 页面。这是怎么发生的？按下 Back 按钮回到清单，并看看此页的源代码 ( <a href="http://localhost:3000/2/edit/)，你会看到：">http://localhost:3000/2/edit/)，你会看到：</a></p>
-<pre><code class="lang-html">  <span class="tag">&lt;<span class="title">form</span> <span class="attribute">accept-charset</span>=<span class="value">"UTF-8"</span> <span class="attribute">action</span>=<span class="value">"/girls/2"</span> <span class="attribute">class</span>=<span class="value">"edit_girl"</span> <span class="attribute">id</span>=<span class="value">"edit_girl_2"</span> <span class="attribute">method</span>=<span class="value">"post"</span>
-  &lt;<span class="attribute">div</span> <span class="attribute">style</span>=<span class="value">"margin:0;padding:0;display:inline"</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"utf8"</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">value</span>=<span class="value">"&amp;#x2713;"</span> /&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"_method"</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">value</span>=<span class="value">"put"</span> /&gt;</span>...
+<p>按下 Update Girl 会带你回到 <code>show</code> 页面。这是怎么发生的？按下 Back 按钮回到清单，并看看此页的源代码 ( <a href="http://localhost:3000/2/edit/)，你会看到：" target="_blank">http://localhost:3000/2/edit/)，你会看到：</a></p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>  <span class="tag">&lt;<span class="title">form</span> <span class="attribute">accept-charset</span>=<span class="value">"UTF-8"</span> <span class="attribute">action</span>=<span class="value">"/girls/2"</span> <span class="attribute">class</span>=<span class="value">"edit_girl"</span> <span class="attribute">id</span>=<span class="value">"edit_girl_2"</span> <span class="attribute">method</span>=<span class="value">"post"</span>
+  &lt;<span class="attribute">div</span> <span class="attribute">style</span>=<span class="value">"margin:0;padding:0;display:inline"</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"utf8"</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">value</span>=<span class="value">"&#x2713;"</span> /&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"_method"</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">value</span>=<span class="value">"put"</span> /&gt;</span>...
   <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre>
+</pre></td></tr></table></figure>
+
 <p>这个表单的 <code>action</code> 指向 <code>/girls/2</code> ，也就是 <code>GirlsController</code> 的 <code>show</code> 动作。这里使用的 <code>method</code> 使用的是 POST。结束了吗？还没，看看下面透过 <code>_method</code> 参数的 <code>input</code> 标签，其中 <code>value</code> 被设为 PUT。Rails 注意到这个参数，并且把这个 POST 请求变成 PUT 请求。这是我们刚刚说的三个方式之一，这是第二个。藉由给这个路由 <code>/girls/{id}</code> 发送一个 PUT 请求，你被带到了 <code>GirlsController</code> 的 <code>update</code> 动作，让我们来看看 <code>update</code> 动作都干了什么：</p>
 <pre><code>def update
   @girl = <span class="transposed_variable">Girl.</span><span class="built_in">find</span>(params<span class="matrix">[:id]</span>)
@@ -594,8 +550,7 @@ end
       <span class="transposed_variable">format.</span>json <span class="cell">{ render json: @girl.errors, status: :unprocessable_entity }</span>
     <span class="keyword">end</span>
   <span class="keyword">end</span>
-<span class="keyword">end</span>
-</code></pre>
+<span class="keyword">end</span></code></pre>
 <p>和 <code>show</code> 与 <code>edit</code> 动作一样，你用 <code>find</code> 把对象拿出来。而表单的参数和 <code>create</code> 动作使用一样的路数透过 <code>params[:girl]</code> 传进来。而下面不同的是，这里用的是一个 <code>update_attributes</code> 方法。这个方法人如其名，更新属性！而这个方法的名字还有一件你不知道的事儿，它同时也验证了属性，确保你的属性是合法的，如果合法的话呢，更新、储存、返回真。念起来真顺口，哈哈！</p>
 <p>当 <code>update_attributes</code> 返回真的时候呢，你被重定向至这个女孩的 <code>show</code> 动作。那返回假的时候呢？你被显示在 <code>edit</code> 模版，并提示出错的信息，这里跟我们之前看过的 <code>create</code> 方法一样，只是回页面，没有使用 <code>edit</code> 动作：</p>
 <pre><code>def create
@@ -603,13 +558,12 @@ end
 <span class="keyword">else</span>
   format.html { render action: <span class="string">"new"</span> }
   format.json { render json: @girl.errors, status: :unprocessable_entity }
-end
-</code></pre>
+end</code></pre>
 <p>呼，终于讲完验证了，希望你可以让你的娘亲高兴。</p>
-<h4>删除... 删除那些不愉快的记忆</h4>
+<h4>删除…删除那些不愉快的记忆</h4>
 <p>好，要是那个女孩伤你很深，你要把它从记录中抹去呢？（抹的掉记录，抹不掉回忆的。。。）</p>
 <p>在 Rails，<code>DELETE</code> 用一个更强硬的名字，<code>DESTROY</code> ！！！一旦 <code>DESTROY</code> 了，那就是掰掰了，再也不见了。</p>
-<p>好，现在把页面切换到 <a href="http://localhost:3000/girls">http://localhost:3000/girls</a> ：</p>
+<p>好，现在把页面切换到 <a href="http://localhost:3000/girls" target="_blank">http://localhost:3000/girls</a> ：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/delete.png" alt="delete"></p>
 <p>按下 Destroy ：</p>
 <p><img src="https://github.com/JuanitoFatas/Girls_I_Loved/raw/master/app/assets/images/only-one.png" alt="only-one"></p>
@@ -632,44 +586,36 @@ end
 
 <span class="tag">&lt;<span class="title">br</span> /&gt;</span>
 
-<span class="vbscript">&lt;%= link_to <span class="comment">'New Girl', new_girl_path %&gt;</span></span>
-</code></pre>
+<span class="vbscript">&lt;%= link_to <span class="comment">'New Girl', new_girl_path %&gt;</span></span></code></pre>
 <p>在这里，<code>@girls</code> 是一个从 <code>Girl</code> 模型来的所有对象的集合，很难懂吗？所有我们深爱过的女孩。我们遍历每一个女孩，并把每个特别的女孩关在一个小房间里：<code>|girl|</code> 呵呵，我相信你们都这么做过！哈哈，正经的说呢，这么做就是给下面的区块创了一个 <code>girl</code> 变量。</p>
 <p><code>name</code> 与 <code>number</code> 方法跟我们在 <code>app/views/girls/show.html.erb</code> 使用过的一样，是用来显示栏位值的。在这之后，建了三个链接， Show, Edit, Destroy。</p>
 <p>第一个链接把 <code>girl</code> 对象传进来，藉由一个像是 <code>/girls/{id}</code> 的路由连到 <code>GirlsController</code> 的 <code>show</code> 动作， <code>{id}</code> 是这个对象在表里面的 ID。</p>
 <p>第二个链接使用 <code>edit_girl_path</code> 并传入 <code>girl</code> 对象连到 <code>edit</code> 动作，这个 helper 对应的路径是 <code>/girls/{id}/edit</code> 。</p>
 <p>第三个链接和第一个一样把 <code>girl</code> 对象传进来，但是后面指名了方法是 <code>:delete</code> ，这也就是我们的第三个方式，也是这个路由 <code>/girls/{id}</code> 有的最后一个方式。因为你把 <code>method:</code> 设为 <code>:delete</code> Rails 理解你要忘记一个女孩，并带你到 <code>GirlsController</code> 的 <code>destroy</code> 动作：</p>
-<p>  def destroy
-    @girl = Girl.find(params[:id])
-    @girl.destroy</p>
+<p>  def destroy<br>    @girl = Girl.find(params[:id])<br>    @girl.destroy</p>
 <pre><code><span class="title">respond_to</span> do |format|
   format.html { <span class="title">redirect_to</span> girls_url }
   format.json { <span class="title">head</span> :no_content }
-end
-</code></pre>
+end</code></pre>
 <p>  end</p>
 <p>就跟我们之前看过的 <code>show</code> , <code>edit</code> , <code>update</code> 动作一样，先把 <code>@girl</code> 对象取出来（ <code>Girl.find(params[:id]</code> ）。</p>
 <p>然后摧毁她（<code>@girl.destroy</code>）。。。再见了，我的愛人。</p>
-<p>这把你数据库的纪录永远地删除了。然后把你重定向至 <code>girls_url</code> 也就是这里 <a href="http://localhost:3000/girls">http://localhost:3000/girls</a> 。注意！！！ 这里使用的是 <code>girls_url</code> （ <code>path</code> 换成 <code>url</code> ），会产生一个完整的 URL。</p>
+<p>这把你数据库的纪录永远地删除了。然后把你重定向至 <code>girls_url</code> 也就是这里 <a href="http://localhost:3000/girls" target="_blank">http://localhost:3000/girls</a> 。注意！！！ 这里使用的是 <code>girls_url</code> （ <code>path</code> 换成 <code>url</code> ），会产生一个完整的 URL。</p>
 <p>呼，讲到这里讲完了你的第一个 Rails 应用，是不是很简单呢？</p>
 <p>最后献上苍老师的图片一只：</p>
-<p><a href="http://zh.wikipedia.org/wiki/%E8%92%BC%E4%BA%95%E7%A9%BA"><img src="http://ww2.sinaimg.cn/bmiddle/67b532d1jw1dq6lvk4vylj.jpg" alt="蒼井そら"></a></p>
+<p><a href="http://zh.wikipedia.org/wiki/%E8%92%BC%E4%BA%95%E7%A9%BA" target="_blank"><img src="http://ww2.sinaimg.cn/bmiddle/67b532d1jw1dq6lvk4vylj.jpg" alt=" 蒼井そら "></a></p>
 <p>距离学会 Rails 还有 970 个小时。。。</p>
 <p>つづく</p>
 <h4>延伸阅读：</h4>
-<p><a href="http://ihower.tw/rails3/basic.html">打造 CRUD by ihower</a></p>
-<p><a href="http://guides.rubyonrails.org/routing.html">Rails Routing from the Outside In</a></p>
-<p><a href="http://ruby.railstutorial.org/chapters/a-demo-app">Demo App from Learn Rails By Example</a></p>
-<p><a href="http://railsforzombies.org/">Rails For Zombies</a></p>
+<p><a href="http://ihower.tw/rails3/basic.html" target="_blank">打造 CRUD by ihower</a></p>
+<p><a href="http://guides.rubyonrails.org/routing.html" target="_blank">Rails Routing from the Outside In</a></p>
+<p><a href="http://ruby.railstutorial.org/chapters/a-demo-app" target="_blank">Demo App from Learn Rails By Example</a></p>
+<p><a href="http://railsforzombies.org/" target="_blank">Rails For Zombies</a></p>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/04/22/ror-1-first-app/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       
@@ -687,11 +633,11 @@ end
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-04-20T10:52:00.000Z"><a href="/2012/04/20/ror-0-intro/">Apr 20 2012</a></time>
+        <time class="depth" datetime="2012-04-20T10:52:00.000Z"><a href="/2012/04/20/2012-04-20-ror-0-intro/">4月 20 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/04/20/ror-0-intro/">Rails 前世今生 - 000</a></h1>
+    <h1 class="title depth"><a href="/2012/04/20/2012-04-20-ror-0-intro/">Rails 前世今生 - 000</a></h1>
   
 
     </header>
@@ -699,37 +645,33 @@ end
       
         <p><strong>1000 個小時學會 Rails 系列</strong></p>
 <blockquote>
-<p>Any intelligent fool can make things bigger, more 
-  complex, and more violent. It takes a touch of genius
-  – and a lot of courage – to move in the opposite 
-  direction.
-  -- Albert Einstein</p>
+<p>Any intelligent fool can make things bigger, more<br>  complex, and more violent. It takes a touch of genius<br>  – and a lot of courage – to move in the opposite<br>  direction.<br>  — Albert Einstein</p>
 </blockquote>
 <p>相信你一定听过 PHP, ASP.NET, JSP 等红火到不行的网络开发技术。近年才开始有听到 Ruby on Rails。究竟是什么？是 Ruby 还是 Rails？</p>
 <p>型別</p>
-<p>时间来到了 1998 年，盖兹被奶油派砸中、乔帮主从 NeXT 重返苹果、谷歌刚刚成立，互联网正要起步，有一家公司也在 1999 年成立了 – <a href="http://37signals.com/">37 信号</a>，一个开发网路应用的世界级小公司。直到 2004 年，有一件事情，可能改变了世界，好吧，是改变了网络程序员的世界。一个丹麦小伙 – <a href="http://en.wikipedia.org/wiki/David_Heinemeier_Hansson/">David Heinemeier Hansson</a> ，简称 DHH， 创造了 <a href="http://zh.wikipedia.org/wiki/Ruby_on_Rails/">Ruby on Rails 框架</a>。那 2004 年还有什么大事呢？谷歌拥有了 80 亿个条目、祖克柏被女友甩了，发布 Thefacebook、Gmail 在愚人节发布、Mac OSX 10.4 发布、乌邦屠、火狐推出了 1.0。那是最好的时代，也是最坏的时代，互联网正要起飞...。</p>
-<p>时间回到 2003 年，从遥远的美国芝加哥，37 信号公司来了一通电话，接电话的小子是一个高中数学拿了 F、20 岁以前没编过程、大学本科读的是商学院的 DHH，37 信号公司雇用 DHH 来开发一个网络应用，一个项目管理工具 – <a href="http://basecamp.com/">basecamp</a>。DHH 非常兴奋，这是一个非常有挑战性的项目，尽管他只在毕业设计用过 J2EE，只有 2 年的 PHP 开发经验（他也开发过一个 PHP 框架），但他对自己的开发实力与理解力有很大的自信，他知道自己有一种化繁为简的能力。然而真正令 DHH 性奋的是日本的三大产物之一（成人艺术、动漫以及红宝石），Ruby（Ruby 是一门由松本行弘所开发出来的程序语言）！PHP 的语法与设计实在使他抓狂，尽管 PHP 的开发速度很快、尽管 PHP 存在着好多的优点，但是语言的天生缺陷令他决定放弃 PHP，他在朋友的怂恿下，开始使用了 Ruby，来开发他之前所写过的 PHP 框架。</p>
+<p>时间来到了 1998 年，盖兹被奶油派砸中、乔帮主从 NeXT 重返苹果、谷歌刚刚成立，互联网正要起步，有一家公司也在 1999 年成立了 – <a href="http://37signals.com/" target="_blank">37 信号</a>，一个开发网路应用的世界级小公司。直到 2004 年，有一件事情，可能改变了世界，好吧，是改变了网络程序员的世界。一个丹麦小伙 – <a href="http://en.wikipedia.org/wiki/David_Heinemeier_Hansson/" target="_blank">David Heinemeier Hansson</a> ，简称 DHH， 创造了 <a href="http://zh.wikipedia.org/wiki/Ruby_on_Rails/" target="_blank">Ruby on Rails 框架</a>。那 2004 年还有什么大事呢？谷歌拥有了 80 亿个条目、祖克柏被女友甩了，发布 Thefacebook、Gmail 在愚人节发布、Mac OSX 10.4 发布、乌邦屠、火狐推出了 1.0。那是最好的时代，也是最坏的时代，互联网正要起飞…。</p>
+<p>时间回到 2003 年，从遥远的美国芝加哥，37 信号公司来了一通电话，接电话的小子是一个高中数学拿了 F、20 岁以前没编过程、大学本科读的是商学院的 DHH，37 信号公司雇用 DHH 来开发一个网络应用，一个项目管理工具 – <a href="http://basecamp.com/" target="_blank">basecamp</a>。DHH 非常兴奋，这是一个非常有挑战性的项目，尽管他只在毕业设计用过 J2EE，只有 2 年的 PHP 开发经验（他也开发过一个 PHP 框架），但他对自己的开发实力与理解力有很大的自信，他知道自己有一种化繁为简的能力。然而真正令 DHH 性奋的是日本的三大产物之一（成人艺术、动漫以及红宝石），Ruby（Ruby 是一门由松本行弘所开发出来的程序语言）！PHP 的语法与设计实在使他抓狂，尽管 PHP 的开发速度很快、尽管 PHP 存在着好多的优点，但是语言的天生缺陷令他决定放弃 PHP，他在朋友的怂恿下，开始使用了 Ruby，来开发他之前所写过的 PHP 框架。</p>
 <p>一周过后，开发的效率实在是太惊人了，他只花了一周就把 PHP 一个多月要做的事都做好了。Ruby 优雅异常的语法及设计，一切竟是如此简单。他二话不说立马打给美国总部说，我要用 Ruby 开发。两个月后，DHH 开发了自己用的网络框架，再过两个月，整个 basecamp 产品完成了，basecamp 横空出世，一发布就引起轰动，有人觉得这是世界上最好的网络应用。DHH 又兴奋了，他决定把 basecamp 背后的框架公布，Ruby on Rails 诞生了，一个开源的网络框架，旨在提高程序员的幸福与生产力。藉由约定大于配置的概念，写出一行行的美丽代码。</p>
 <h3>Rails 成功案例</h3>
-<p>Rails 框架成熟吗？当然了！目前 2012 年 4 月的版本是 3.2.3，并有许多活跃的开发者正在开发 4.0。看看 Github、Twitter 还有 basecamp， Github 是一个基于 git 的网络代码管控社交工具，这里有一篇关于 GITHUB 写的很好的文章可以看看，<a href="http://www.yangzhiping.com/tech/github.html">如何高效利用 Github</a>。推特是国外知名的微博，每秒有成千上万的人发信息，basecamp 是世界上最好的项目管理工具之一，其它更多知名的网站（参考<a href="http://ruby-china.org/sites/">这里</a>与<a href="http://www.setfiremedia.com/blog/50-of-the-best-websites-developed-using-ruby-on-rails">这里</a>），都是由 Rails 所开发出来的。所以学习 Rails 可说是相当靠谱。</p>
+<p>Rails 框架成熟吗？当然了！目前 2012 年 4 月的版本是 3.2.3，并有许多活跃的开发者正在开发 4.0。看看 Github、Twitter 还有 basecamp， Github 是一个基于 git 的网络代码管控社交工具，这里有一篇关于 GITHUB 写的很好的文章可以看看，<a href="http://www.yangzhiping.com/tech/github.html" target="_blank">如何高效利用 Github</a>。推特是国外知名的微博，每秒有成千上万的人发信息，basecamp 是世界上最好的项目管理工具之一，其它更多知名的网站（参考<a href="http://ruby-china.org/sites/" target="_blank">这里</a>与<a href="http://www.setfiremedia.com/blog/50-of-the-best-websites-developed-using-ruby-on-rails" target="_blank">这里</a>），都是由 Rails 所开发出来的。所以学习 Rails 可说是相当靠谱。</p>
 <h3>基础知识</h3>
 <p>在学习 Rails 之前，最好先掌握一些基础的知识，你可以看看下面我所列的资源，慢慢学，勿躁进。别担心，我们有 1000 个小时，万事起头难，就怕自己懒。现在就卷起袖子，开始吧：</p>
 <p><strong>Ruby</strong>：</p>
 <ul>
-<li><a href="http://tryruby.org/">试试 Ruby</a></li>
-<li><a href="http://saito.im/slide/ruby-new.html/">Ruby 语言新手教程</a></li>
-<li><a href="http://lrthw.github.com/">笨方法学 Ruby</a></li>
+<li><a href="http://tryruby.org/" target="_blank">试试 Ruby</a></li>
+<li><a href="http://saito.im/slide/ruby-new.html/" target="_blank">Ruby 语言新手教程</a></li>
+<li><a href="http://lrthw.github.com/" target="_blank">笨方法学 Ruby</a></li>
 </ul>
 <p><strong>HTML 与 CSS</strong>：</p>
 <ul>
-<li><a href="http://book.42qu.com/">42 区漫游指南</a></li>
-<li><a href="http://learncss.tutsplus.com/">30 天学会 HTML 与 CSS</a></li>
+<li><a href="http://book.42qu.com/" target="_blank">42 区漫游指南</a></li>
+<li><a href="http://learncss.tutsplus.com/" target="_blank">30 天学会 HTML 与 CSS</a></li>
 </ul>
 <p><strong>Rails</strong>：</p>
 <ul>
-<li><a href="http://railscasts-china.com/episodes/1-rails-tutorial/">Railscast 视频教程 #1</a></li>
-<li><a href="http://guides.ruby-china.org/getting_started.html/">Ruby 官方指南 起步</a></li>
-<li><a href="http://pragprog.com/book/rails4/agile-web-development-with-rails/">AWDWR4 第 1 至 4 章</a></li>
+<li><a href="http://railscasts-china.com/episodes/1-rails-tutorial/" target="_blank">Railscast 视频教程 #1</a></li>
+<li><a href="http://guides.ruby-china.org/getting_started.html/" target="_blank">Ruby 官方指南 起步</a></li>
+<li><a href="http://pragprog.com/book/rails4/agile-web-development-with-rails/" target="_blank">AWDWR4 第 1 至 4 章</a></li>
 </ul>
 <p>恭喜你，如果你觉得已经有充足的基础知识，你可以进入下一章了！</p>
 <p>距离学会 Rails 还有倒数 980 个小时。。。</p>
@@ -739,10 +681,6 @@ end
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2012/04/20/ror-0-intro/#more" class="more-link">閱讀全文</a>
-          </div>
-        
         
       
       <div class="clearfix"></div>
@@ -759,11 +697,11 @@ end
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
+        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/2012-04-19-clearfix/">4月 19 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h1>
+    <h1 class="title depth"><a href="/2012/04/19/2012-04-19-clearfix/">CSS clearfix 更好的名字</a></h1>
   
 
     </header>
@@ -776,10 +714,10 @@ end
 2
 3
 4
-</pre></td><td class="code"><pre>	&lt;div class="box"&gt;
-truetrue&lt;img src="/img/foo.png" alt="foo"&gt;
-truetrue&lt;p class="description"&gt;Foo is foo and Fools are fool...&lt;/p&gt;
-true&lt;/div&gt;
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"/img/foo.png"</span> <span class="attribute">alt</span>=<span class="value">"foo"</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"description"</span>&gt;</span>Foo is foo and Fools are fool...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
 </pre></td></tr></table></figure>
 
 <p>及 CSS：</p>
@@ -795,18 +733,18 @@ true&lt;/div&gt;
 10
 11
 12
-</pre></td><td class="code"><pre>	div.box {
-truetruebackground: #fff;
-true}
+</pre></td><td class="code"><pre><span class="tag">div</span><span class="class">.box</span> <span class="rules">{
+<span class="rule"><span class="attribute">truebackground</span>:<span class="value"> <span class="hexcolor">#fff</span>;</span></span>
+<span class="rule">}</span></span>
 
-truediv.box img {
-truetruewidth: 25%;
-true}
+<span class="tag">div</span><span class="class">.box</span> <span class="tag">img</span> <span class="rules">{
+<span class="rule"><span class="attribute">truewidth</span>:<span class="value"> <span class="number">25</span>%;</span></span>
+<span class="rule">}</span></span>
 
-truediv.box p.description {
-truetruefloat: right;
-truetruewidth: 70%;
-true}
+<span class="tag">div</span><span class="class">.box</span> <span class="tag">p</span><span class="class">.description</span> <span class="rules">{
+<span class="rule"><span class="attribute">truefloat</span>:<span class="value"> right;</span></span>
+<span class="rule"><span class="attribute">truewidth</span>:<span class="value"> <span class="number">70</span>%;</span></span>
+<span class="rule">}</span></span>
 </pre></td></tr></table></figure>
 
 <p>會呈現出圖片在左，文字在右這種很常見的形式。</p>
@@ -850,7 +788,6 @@ true}
 5
 6
 7
-8
 </pre></td><td class="code"><pre><span class="class">.group</span><span class="pseudo">:after</span> <span class="rules">{
 <span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
 <span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
@@ -858,7 +795,6 @@ true}
 <span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
 <span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
 <span class="rule">}</span></span>
-
 </pre></td></tr></table></figure>
 
 <p>另附上 IE 6 與 7 的解法：</p>
@@ -889,10 +825,6 @@ true}
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2012/04/19/clearfix/#more" class="more-link">閱讀全文</a>
-          </div>
-        
         
       
       <div class="clearfix"></div>
@@ -909,18 +841,18 @@ true}
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-03-28T15:45:00.000Z"><a href="/2012/03/28/einstein-problem-prolog/">Mar 28 2012</a></time>
+        <time class="depth" datetime="2012-03-28T15:45:00.000Z"><a href="/2012/03/28/2012-03-28-einstein-problem-prolog/">3月 28 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/03/28/einstein-problem-prolog/">[轉發] 用 Prolog 解决爱因斯坦养鱼问题 </a></h1>
+    <h1 class="title depth"><a href="/2012/03/28/2012-03-28-einstein-problem-prolog/">[轉發] 用 Prolog 解决爱因斯坦养鱼问题 </a></h1>
   
 
     </header>
     <div class="entry depth">
       
         <p>推薦一下由 <strong>泰安小碼農馮迪</strong> 所寫的：</p>
-<p><a href="http://blog.csdn.net/fengdidi/article/details/7343367">用 ECLiPSe 解决爱因斯坦养鱼问题</a>。</p>
+<p><a href="http://blog.csdn.net/fengdidi/article/details/7343367" target="_blank">用 ECLiPSe 解决爱因斯坦养鱼问题</a>。</p>
 <p>ECLiPSE 是一個使用 Prolog 的 Constraint processing 工具。</p>
 <p>爱因斯坦养鱼问题：</p>
 <p>世界上最难的一道题！爱因斯坦在 20 世纪初出的这个谜语。</p>
@@ -956,16 +888,13 @@ true}
 <script src="https://gist.github.com/2227711.js?file=einstein-puzzle.pl"></script>
 
 
-<p>-- 轉載自 <a href="http://blog.csdn.net/fengdidi">泰安小碼農馮迪</a></p>
+
+<p>— 轉載自 <a href="http://blog.csdn.net/fengdidi" target="_blank">泰安小碼農馮迪</a></p>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/03/28/einstein-problem-prolog/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       
@@ -983,11 +912,11 @@ true}
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/css-ch7/">Mar 2 2012</a></time>
+        <time class="depth" datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/2012-03-02-css-ch7/">3月 2 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/03/02/css-ch7/">CSS 從基本學起 - ch7 馬郡撲丁波德</a></h1>
+    <h1 class="title depth"><a href="/2012/03/02/2012-03-02-css-ch7/">CSS 從基本學起 - ch7 馬郡撲丁波德</a></h1>
   
 
     </header>
@@ -1006,14 +935,11 @@ true}
 <p>也可以 <code>margin 0px 5px</code></p>
 <p>((top+bottom) (left+right)) 設為 (0px 5px)</p>
 <p>上下設為 0px，左右設為 5px 。</p>
-<p>當你有兩個東西之間想要擁有 35px 的距離時，上面的用：
-<code>margin-bottom: 20px;</code><br>下面的使用：
-<code>margin-top:15px;</code></p>
+<p>當你有兩個東西之間想要擁有 35px 的距離時，上面的用：<br><code>margin-bottom: 20px;</code><br>下面的使用：<br><code>margin-top:15px;</code></p>
 <p><strong>這樣是不行的！</strong> 重複的 <code>margin</code> ，只會套用一個 (collapsing margins)，請使用<code>padding</code>。</p>
 <p>浮動元素的左右 <code>margin</code> 是不會 collapse 的，Absoulte 及 Relative 位置也是。</p>
 <p>雖然每個元素都是一個盒子，但實際上有兩種盒子：</p>
-<p>行內 (inline) 及區塊 (block) 盒子，區塊盒子在它本身前後加入了斷行，如<code>p</code>、<code>div</code>、表格、清單標籤。
-反之行內盒子不會在前後加入斷行，而是在行內顯示，如<code>strong</code>、<code>img</code>、<code>a</code>標籤。</p>
+<p>行內 (inline) 及區塊 (block) 盒子，區塊盒子在它本身前後加入了斷行，如<code>p</code>、<code>div</code>、表格、清單標籤。<br>反之行內盒子不會在前後加入斷行，而是在行內顯示，如<code>strong</code>、<code>img</code>、<code>a</code>標籤。</p>
 <p>要注意的是行內元素是不能套用 top 跟 bottom margin 及 padding 的。請使用 <code>line-height</code>。</p>
 <p>你可以讓行內元素像區塊那樣顯示: <code>display: block;</code><br>或是讓區塊元素像行內元素顯示： <code>display: inline;</code></p>
 <p>border 可以改的有三個， width, style, 以及 color。</p>
@@ -1023,10 +949,7 @@ true}
 <h2>改變元素的背景顏色</h2>
 <p><code>background-color: #345678;</code></p>
 <h2>元素寬度高度</h2>
-<p><code>width: 300px;</code>
-另有 <code>max-width</code> 及 <code>min-width</code> 可設置。
-<code>height: 500px;</code>
-另有 <code>max-height</code> 及 <code>min-height</code> 可設置。</p>
+<p><code>width: 300px;</code><br>另有 <code>max-width</code> 及 <code>min-width</code> 可設置。<br><code>height: 500px;</code><br>另有 <code>max-height</code> 及 <code>min-height</code> 可設置。</p>
 <h2>內容超出盒子怎麼辦？</h2>
 <p>當內容超出盒子的時候，可以用 <code>overflow</code> 來修補它。</p>
 <p><code>overflow: hidden;</code></p>
@@ -1037,19 +960,12 @@ true}
 <p>有三個可以設置 <code>left</code> <code>right</code> <code>none</code> 。</p>
 <p>有得時候有一個 float 元素擋住了你的元素，你可以使用 <code>overflow: hidden;</code> 或是使用 <strong>clear fix 技巧</strong> 。</p>
 <p><code>clear</code> 屬性接受四個值，</p>
-<p><code>left</code> 讓他不要跟左邊的 floated 元素貼在一起。
-<code>right</code> 讓他不要跟右邊的 floated 元素貼在一起。
-<code>both</code> 讓他不要跟兩邊的 floated 元素貼在一起。
-<code>none</code> 瀏覽器預設值，讓他跟 floated 的元素貼在一起。</p>
+<p><code>left</code> 讓他不要跟左邊的 floated 元素貼在一起。<br><code>right</code> 讓他不要跟右邊的 floated 元素貼在一起。<br><code>both</code> 讓他不要跟兩邊的 floated 元素貼在一起。<br><code>none</code> 瀏覽器預設值，讓他跟 floated 的元素貼在一起。</p>
 
       
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/03/02/css-ch7/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       
@@ -1067,11 +983,11 @@ true}
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-03-02T12:33:00.000Z"><a href="/2012/03/02/css-ch6/">Mar 2 2012</a></time>
+        <time class="depth" datetime="2012-03-02T12:33:00.000Z"><a href="/2012/03/02/2012-03-02-css-ch6/">3月 2 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/03/02/css-ch6/">CSS 從基本學起 - ch6 字體排版</a></h1>
+    <h1 class="title depth"><a href="/2012/03/02/2012-03-02-css-ch6/">CSS 從基本學起 - ch6 字體排版</a></h1>
   
 
     </header>
@@ -1083,11 +999,9 @@ true}
 <h2>字體</h2>
 <p>分為兩大類：</p>
 <h3>serif</h3>
-<p><strong>Serif</strong>類的字型適合長篇文章，字體有微小的襯線，引領讀者逐字往下讀，讓文字更好讀。
-serif 類的字體有 Times, Times New Roman, Georgia。</p>
+<p><strong>Serif</strong>類的字型適合長篇文章，字體有微小的襯線，引領讀者逐字往下讀，讓文字更好讀。<br>serif 類的字體有 Times, Times New Roman, Georgia。</p>
 <h3>sans-serif</h3>
-<p><strong>Sans-serif</strong>有簡潔與簡單的外表，適合用在標題。
-sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
+<p><strong>Sans-serif</strong>有簡潔與簡單的外表，適合用在標題。<br>sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 <p>一般如果你網站的訪客沒有你所使用的字體，他們會使用他們電腦內預設的字體。理論上你可以使用任何字體，你可以使用你電腦專有的字體，只不過你網站的訪客看不到這個字體而已！但現在有了 Google web font，你可以用 CDN 的方式，讓網站的用戶瀏覽時下載字體。</p>
 <p>接下來看看 <code>font-family</code> ：</p>
 <p><code>font-family: Arial, Helvetica, sans-serif;</code></p>
@@ -1098,8 +1012,8 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 <li>Arial, Helvetica, sans-serif</li>
 <li>Verdana, Arial, Helvetica, sans-serif</li>
 <li>Geneva, Arial, Helvetica, sans-serif</li>
-<li>Tahoma, &quot;Lucida Grande&quot;, Arial, sans-serif</li>
-<li><p>&quot;Century Gothic&quot;, &quot;Gill Sans&quot;, Arial, sans-serif</p>
+<li>Tahoma, “Lucida Grande”, Arial, sans-serif</li>
+<li><p>“Century Gothic”, “Gill Sans”, Arial, sans-serif</p>
 </li>
 <li><p>Times New Roman, Times, serif</p>
 </li>
@@ -1108,7 +1022,7 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 <p>等寬字體，適合顯示程式碼，寫程式，終端機使用</p>
 <ul>
 <li>Courier New, Courier, monospace</li>
-<li>&quot;Lucida Console&quot;, Monaco, monospace</li>
+<li>“Lucida Console”, Monaco, monospace</li>
 </ul>
 <h2>字體顏色</h2>
 <p>用 <code>color</code> 屬性來改顏色。</p>
@@ -1129,8 +1043,7 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 <p><code>percentage</code> 一般 100% 是 16px 大。一般是繼承瀏覽器的 base text size，但是要是有 parent tag，或是 ancestor tag 設定字型的話，base text size 就不是瀏覽器的摟。會繼承。</p>
 <p><code>em</code> 此字型中一個大寫 M 的大小。</p>
 <p><code>em</code> 與 <code>percentage</code> 互換：</p>
-<p>0.5 em = 50%
-1.2 em = 120%</p>
+<p>0.5 em = 50%<br>1.2 em = 120%</p>
 <p><code>em</code>跟<code>percentage</code>一樣，也會有繼承。</p>
 <h2>粗體 斜體</h2>
 <p>設定粗體</p>
@@ -1142,7 +1055,7 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 <p>將字轉成大寫 <code>text-transform: uppercase;</code><br>將字轉成小寫 <code>text-transform: lowercase;</code><br>字體開頭大寫 <code>text-transform: capitalize;</code>  </p>
 <p><code>text-transform</code> 預設是會繼承的，要記得改回來。  </p>
 <h2>小寫的大寫</h2>
-<p>.....smallcap。一個詞會變成比較小的大寫。</p>
+<p>…..smallcap。一個詞會變成比較小的大寫。</p>
 <p><code>font-variant: small-caps;</code></p>
 <h2>底線跟頂線</h2>
 <h3>字體下方畫線</h3>
@@ -1178,7 +1091,7 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 <p>用 <code>margin</code> 來設定。</p>
 <p><code>margin-top</code> 及 <code>margin-bottom</code> 來設定段落間的距離。</p>
 <h2>每段的第一個字</h2>
-<p>透過 pseudo-class 來設定...</p>
+<p>透過 pseudo-class 來設定…</p>
 <figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -1210,10 +1123,6 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2012/03/02/css-ch6/#more" class="more-link">閱讀全文</a>
-          </div>
-        
         
       
       <div class="clearfix"></div>
@@ -1230,11 +1139,11 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-03-02T12:23:00.000Z"><a href="/2012/03/02/css-ch5/">Mar 2 2012</a></time>
+        <time class="depth" datetime="2012-03-02T12:23:00.000Z"><a href="/2012/03/02/2012-03-02-css-ch5/">3月 2 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/03/02/css-ch5/">CSS 從基本學起 - ch5 多重樣式</a></h1>
+    <h1 class="title depth"><a href="/2012/03/02/2012-03-02-css-ch5/">CSS 從基本學起 - ch5 多重樣式</a></h1>
   
 
     </header>
@@ -1248,14 +1157,11 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 </ul>
 <p>型別</p>
 <h2>權重計算法</h2>
-<p>一個 tag selector (p, body, h1) 值 1 分。
-一個 class selector (p, body, h1) 值 10 分。
-一個 ID selector (p, body, h1) 值 100 分。
-一個行內 selector (p, body, h1) 值 1000 分。</p>
+<p>一個 tag selector (p, body, h1) 值 1 分。<br>一個 class selector (p, body, h1) 值 10 分。<br>一個 ID selector (p, body, h1) 值 100 分。<br>一個行內 selector (p, body, h1) 值 1000 分。</p>
 <p><strong>高分獲勝</strong></p>
 <p>分數計算例子：</p>
 <p><code>div</code> 1 分<br><code>.container</code> 10 分<br><code>div.container</code> 11 分<br><code>#footer</code> 100 分</p>
-<p>同分時，最後套用的樣式獲勝...。</p>
+<p>同分時，最後套用的樣式獲勝…。</p>
 <p>你也可以開外掛，在一個樣式後面加上 <code>!important</code> ，</p>
 <p>讓他無論如何都會贏（都會被套用）。</p>
 <figure class="highlight lang-css"><table><tr><td class="gutter"><pre>1
@@ -1271,10 +1177,6 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2012/03/02/css-ch5/#more" class="more-link">閱讀全文</a>
-          </div>
-        
         
       
       <div class="clearfix"></div>
@@ -1291,11 +1193,11 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/css-ch4/">Mar 2 2012</a></time>
+        <time class="depth" datetime="2012-03-02T11:46:00.000Z"><a href="/2012/03/02/2012-03-02-css-ch4/">3月 2 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/03/02/css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h1>
+    <h1 class="title depth"><a href="/2012/03/02/2012-03-02-css-ch4/">CSS 從基本學起 - ch4 繼承人生</a></h1>
   
 
     </header>
@@ -1327,12 +1229,12 @@ sans-serif 類的字體有 Arial, Helvetica, Verdana, Formata。</p>
 19
 20
 21
-</pre></td><td class="code"><pre>&lt;!DOCTYPE HTML&gt;
-&lt;html lang="en-US"&gt;
-&lt;head&gt;
-true&lt;meta charset="UTF-8"&gt;
-true&lt;title&gt;&lt;/title&gt;
-true&lt;style type="text/css"&gt;
+</pre></td><td class="code"><pre><span class="doctype">&lt;!DOCTYPE HTML&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en-US"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="undefined">
 trueh1{
 truetruefont-size: 32px;
 true}
@@ -1340,14 +1242,14 @@ truespan{
 truetruefont-weight: bold;
 truetruefont-style: italic;
 true}
-true&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
+true</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
 
-true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
+true<span class="tag">&lt;<span class="title">h1</span>&gt;</span> Juanito <span class="tag">&lt;<span class="title">span</span>&gt;</span>Fatas<span class="tag">&lt;/<span class="title">span</span>&gt;</span> Huang <span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </pre></td></tr></table></figure>
 
 <p>如同小孩孫子一樣，在<code>h1</code>內的<code>span</code> 繼承了<code>h1</code>原來有的樣式，這就是繼承摟。</p>
@@ -1365,10 +1267,6 @@ true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2012/03/02/css-ch4/#more" class="more-link">閱讀全文</a>
-          </div>
-        
         
       
       <div class="clearfix"></div>
@@ -1385,11 +1283,11 @@ true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-02-04T08:15:00.000Z"><a href="/2012/02/04/online-learning/">Feb 4 2012</a></time>
+        <time class="depth" datetime="2012-02-04T08:15:00.000Z"><a href="/2012/02/04/2012-02-04-online-learning/">2月 4 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/02/04/online-learning/">線上教育：改變世界的起點</a></h1>
+    <h1 class="title depth"><a href="/2012/02/04/2012-02-04-online-learning/">線上教育：改變世界的起點</a></h1>
   
 
     </header>
@@ -1428,58 +1326,58 @@ true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
 <li>老師風趣又幽默，極具熱情。</li>
 <li>期中期末考嚴禁討論考試相關答案。</li>
 </ol>
-<p>還有很多想不起來了...</p>
+<p>還有很多想不起來了…</p>
 <p>對於我這種不喜歡坐在教室（也沒機會了），聽根本沒有教學熱情的教授，講枯燥乏味的理論。兩個月下來，居然比大學一學期上課，學到更多東西。因為是自己報名的，所以動機十足。高質量的討論區，讓我想跟同學討論問題，看別人如何討論問題也讓我學到更多東西。分數根本不重要，重要的是學習的過程。</p>
 <p>我預估 Sebastian Thrun 將是改變 21 世紀的人之一。</p>
-<p>看完以上廣告文，還沒按上一頁的朋友，有興趣學習、精進自己的朋友可以至課程網頁看看。 這裡 <a href="http://www.class-central.com/">Class Central</a> 。</p>
+<p>看完以上廣告文，還沒按上一頁的朋友，有興趣學習、精進自己的朋友可以至課程網頁看看。 這裡 <a href="http://www.class-central.com/" target="_blank">Class Central</a> 。</p>
 <h2>目前 Stanford 線上學習提供了：</h2>
 <p><strong> 課程預計二月中開始上課，但因不明因素延宕中。 </strong></p>
 <h2>創業：</h2>
 <ul>
-<li><a href="http://www.launchpad-class.org/">精實創業</a></li>
-<li><a href="http://www.venture-class.org/">科技創業</a></li>
+<li><a href="http://www.launchpad-class.org/" target="_blank">精實創業</a></li>
+<li><a href="http://www.venture-class.org/" target="_blank">科技創業</a></li>
 </ul>
 <h2>藥學：</h2>
 <ul>
-<li><a href="http://www.anatomy-class.org/">解剖學</a></li>
+<li><a href="http://www.anatomy-class.org/" target="_blank">解剖學</a></li>
 </ul>
 <h2>土木工程</h2>
 <ul>
-<li><a href="http://www.greenbuilding-class.org/">建造綠色建築</a></li>
+<li><a href="http://www.greenbuilding-class.org/" target="_blank">建造綠色建築</a></li>
 </ul>
 <h2>電機工程</h2>
 <ul>
-<li><a href="http://www.infotheory-class.org/">資訊理論</a></li>
+<li><a href="http://www.infotheory-class.org/" target="_blank">資訊理論</a></li>
 </ul>
 <h2>複雜系統</h2>
 <ul>
-<li><a href="http://www.modelthinker-class.org/">模型化思考</a></li>
+<li><a href="http://www.modelthinker-class.org/" target="_blank">模型化思考</a></li>
 </ul>
 <h2>電腦科學</h2>
 <ul>
-<li><p><a href="http://www.cs101-class.org/">電腦科學 101</a></p>
+<li><p><a href="http://www.cs101-class.org/" target="_blank">電腦科學 101</a></p>
 </li>
-<li><p><a href="http://jan2012.ml-class.org/">機器學習</a></p>
+<li><p><a href="http://jan2012.ml-class.org/" target="_blank">機器學習</a></p>
 </li>
-<li><p><a href="http://www.saas-class.org/">作為服務的軟體</a></p>
+<li><p><a href="http://www.saas-class.org/" target="_blank">作為服務的軟體</a></p>
 </li>
-<li><p><a href="http://www.hci-class.org/">人機互動</a></p>
+<li><p><a href="http://www.hci-class.org/" target="_blank">人機互動</a></p>
 </li>
-<li><p><a href="http://www.nlp-class.org/">自然語言處理</a></p>
+<li><p><a href="http://www.nlp-class.org/" target="_blank">自然語言處理</a></p>
 </li>
-<li><p><a href="http://www.game-theory-class.org/">賽局理論</a></p>
+<li><p><a href="http://www.game-theory-class.org/" target="_blank">賽局理論</a></p>
 </li>
-<li><p><a href="http://www.pgm-class.org/">機率圖模型</a></p>
+<li><p><a href="http://www.pgm-class.org/" target="_blank">機率圖模型</a></p>
 </li>
-<li><p><a href="http://www.crypto-class.org/">密碼學</a></p>
+<li><p><a href="http://www.crypto-class.org/" target="_blank">密碼學</a></p>
 </li>
-<li><p><a href="http://www.security-class.org/">電腦安全</a></p>
+<li><p><a href="http://www.security-class.org/" target="_blank">電腦安全</a></p>
 </li>
-<li><p><a href="http://www.algo-class.org/">演算法設計分析 I</a></p>
+<li><p><a href="http://www.algo-class.org/" target="_blank">演算法設計分析 I</a></p>
 </li>
 </ul>
 <p>上面提到的教授 (Sebastian Thrun，Google 無人駕駛車計畫主持人、Robotics 專家) 因為參與了首次的線上教育教學，無法自拔跳出來創業，創辦了線上學習機構，叫做 Udacity。Sebastian 是一個富有極大熱情的教授，有費曼的影子。</p>
-<h2>目前 <a href="http://www.udacity.com/">Udacity</a> 提供的課程有</h2>
+<h2>目前 <a href="http://www.udacity.com/" target="_blank">Udacity</a> 提供的課程有</h2>
 <ul>
 <li>CS101: 打造搜索引擎</li>
 <li>CS373: 機器人車程式設計</li>
@@ -1497,7 +1395,7 @@ true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
 </ul>
 <p>據說全部課程上完還能拿到 degree (Udacity)。</p>
 <blockquote>
-<p>‎&quot;In the next months, we will offer an entire computer science curriculum through Udacity, and offer certification services so that an entire degree can be obtained online.&quot;</p>
+<p>‎“In the next months, we will offer an entire computer science curriculum through Udacity, and offer certification services so that an entire degree can be obtained online.”</p>
 </blockquote>
 <p>最棒的是， </p>
 <p><strong> 以上全部都是免費的 </strong></p>
@@ -1507,10 +1405,6 @@ true&lt;h1&gt; Juanito &lt;span&gt;Fatas&lt;/span&gt; Huang &lt;/h1&gt;
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/02/04/online-learning/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       

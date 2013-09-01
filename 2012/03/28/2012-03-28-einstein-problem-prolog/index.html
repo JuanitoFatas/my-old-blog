@@ -1,0 +1,270 @@
+<!--
+       _                   _ _          ______    _
+      | |                 (_) |        |  ____|  | |
+      | |_   _  __ _ _ __  _| |_ ___   | |__ __ _| |_ __ _ ___
+  _   | | | | |/ _` | '_ \| | __/ _ \  |  __/ _` | __/ _` / __|
+ | |__| | |_| | (_| | | | | | || (_) | | | | (_| | || (_| \__ \
+  \____/ \__,_|\__,_|_| |_|_|\__\___/  |_|  \__,_|\__\__,_|___/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[轉發] 用 Prolog 解决爱因斯坦养鱼问题  | I'm Juanito Fatas</title>
+  <meta name="author" content="Juanito Fatas">
+  
+  <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="[轉發] 用 Prolog 解决爱因斯坦养鱼问题 "/>
+  <meta property="og:site_name" content="I'm Juanito Fatas"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="I'm Juanito Fatas" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+    <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1/moot.css">
+  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#sidebar').delay(400).animate({ width: '285px' }, 500, function() {
+      $('.personal-info').css({display: 'table'}).hide().fadeIn(500);
+    });
+  });
+  </script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41041908-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><!-- <div class="alignleft">
+  <h1><a href="/">I'm Juanito Fatas</a></h1>
+  <h2><a href="/">C-x C-f...C-x C-s...</a></h2>
+</div>
+ --><!-- <nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首頁</a></li>
+    
+      <li><a href="/archives">彙整</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+ --></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-28T15:45:00.000Z"><a href="/2012/03/28/2012-03-28-einstein-problem-prolog/">3月 28 2012</a></time>
+      
+      
+  
+    <h1 class="depth title">[轉發] 用 Prolog 解决爱因斯坦养鱼问题 </h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>推薦一下由 <strong>泰安小碼農馮迪</strong> 所寫的：</p>
+<p><a href="http://blog.csdn.net/fengdidi/article/details/7343367" target="_blank">用 ECLiPSe 解决爱因斯坦养鱼问题</a>。</p>
+<p>ECLiPSE 是一個使用 Prolog 的 Constraint processing 工具。</p>
+<p>爱因斯坦养鱼问题：</p>
+<p>世界上最难的一道题！爱因斯坦在 20 世纪初出的这个谜语。</p>
+<p>他说世界上有 98％的人答不出来。</p>
+<p>聪明的你，试试吧！</p>
+<ol>
+<li><p>在一条街上，有 5 座房子，喷了 5 种颜色。</p>
+</li>
+<li><p>每个房里住着不同国籍的人</p>
+</li>
+<li><p>每个人喝不同的饮料，抽不同品牌的香烟，养不同的宠物</p>
+</li>
+</ol>
+<p><strong>问题是</strong>：谁养鱼？</p>
+<p>提示：</p>
+<ol>
+<li>英国人住红色房子  </li>
+<li>瑞典人养狗  </li>
+<li>丹麦人喝茶  </li>
+<li>绿色房子在白色房子左面  </li>
+<li>绿色房子主人喝咖啡  </li>
+<li>抽 PallMall 香烟的人养鸟  </li>
+<li>黄色房子主人抽 Dunhill 香烟  </li>
+<li>住在中间房子的人喝牛奶  </li>
+<li>挪威人住第一间房  </li>
+<li>抽 Blends 香烟的人住在养猫的人隔壁  </li>
+<li>养马的人住抽 Dunhill 香烟的人隔壁  </li>
+<li>抽 BlueMaster 的人喝啤酒  </li>
+<li>德国人抽 Prince 香烟  </li>
+<li>挪威人住蓝色房子隔壁  </li>
+<li>抽 Blends 香烟的人有一个喝水的邻居  </li>
+</ol>
+<script src="https://gist.github.com/2227711.js?file=einstein-puzzle.pl"></script>
+
+
+
+<p>— 轉載自 <a href="http://blog.csdn.net/fengdidi" target="_blank">泰安小碼農馮迪</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Prolog/">Prolog</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Prolog/">Prolog</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignleft"><!-- 
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:lisp.es/">
+  </form>
+</div>
+
+  
+<div class="widget twitter">
+  <h3 class="title">推文</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['JuanitoFatas', 5, false];
+var moment_js_path = '/js/moment.min.js';
+</script>
+<script src="/js/twitter.js"></script>
+
+
+ -->
+<div class="personal-info">
+  <figure>
+    
+      <a href="/">
+        <img class="personal-photo" src="https://secure.gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" alt="Juanito Fatas">
+      </a>
+    
+    <figcaption>
+      <h3 class=>Juanito Fatas</h3>
+      <p>城市中的迷途小碼農</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/JuanitoFatas"></a>
+    
+    
+    
+      <a target="_blank" class="icon github depth" href="http://github.com/JuanitoFatas"></a>
+    
+    
+      <a target="_blank" class="icon email depth" href="mailto:katehuang0320@gmail.com"></a>
+    
+  </section>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignright depth">
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
+  &copy; - 2013 Juanito Fatas
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'juanfatas';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script src="//cdn.moot.it/latest/moot.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!--
+       _                   _ _          ______    _
+      | |                 (_) |        |  ____|  | |
+      | |_   _  __ _ _ __  _| |_ ___   | |__ __ _| |_ __ _ ___
+  _   | | | | |/ _` | '_ \| | __/ _ \  |  __/ _` | __/ _` / __|
+ | |__| | |_| | (_| | | | | | || (_) | | | | (_| | || (_| \__ \
+  \____/ \__,_|\__,_|_| |_|_|\__\___/  |_|  \__,_|\__\__,_|___/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS 從基本學起 - ch7 馬郡撲丁波德 | I'm Juanito Fatas</title>
+  <meta name="author" content="Juanito Fatas">
+  
+  <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="CSS 從基本學起 - ch7 馬郡撲丁波德"/>
+  <meta property="og:site_name" content="I'm Juanito Fatas"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="I'm Juanito Fatas" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+    <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1/moot.css">
+  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#sidebar').delay(400).animate({ width: '285px' }, 500, function() {
+      $('.personal-info').css({display: 'table'}).hide().fadeIn(500);
+    });
+  });
+  </script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41041908-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><!-- <div class="alignleft">
+  <h1><a href="/">I'm Juanito Fatas</a></h1>
+  <h2><a href="/">C-x C-f...C-x C-s...</a></h2>
+</div>
+ --><!-- <nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首頁</a></li>
+    
+      <li><a href="/archives">彙整</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+ --></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-03-02T13:36:00.000Z"><a href="/2012/03/02/2012-03-02-css-ch7/">3月 2 2012</a></time>
+      
+      
+  
+    <h1 class="depth title">CSS 從基本學起 - ch7 馬郡撲丁波德</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>Margins, Padding and Borders</h2>
+<p>CSS 有一個盒子模型，你可以很容易的 google 一下找到圖。</p>
+<p>每個元素都有一個盒子包起來，最外面是 Margin，再來是 Border，最內部是 Padding。</p>
+<p>每個屬性都有 top, right, bottom, left 。</p>
+<p>型別</p>
+<p>這章講完了。開玩笑的！</p>
+<p>好，如果你不設置這些元素的話，瀏覽器有自己一套的設定。</p>
+<p>通常設定 margin ，可以這樣</p>
+<p><code>margin: 0px 1px 2px 3px;</code></p>
+<p>分別把 (top right bottom left) 設為 (0px 1px 2px 3px) 。</p>
+<p>也可以 <code>margin 0px 5px</code></p>
+<p>((top+bottom) (left+right)) 設為 (0px 5px)</p>
+<p>上下設為 0px，左右設為 5px 。</p>
+<p>當你有兩個東西之間想要擁有 35px 的距離時，上面的用：<br><code>margin-bottom: 20px;</code><br>下面的使用：<br><code>margin-top:15px;</code></p>
+<p><strong>這樣是不行的！</strong> 重複的 <code>margin</code> ，只會套用一個 (collapsing margins)，請使用<code>padding</code>。</p>
+<p>浮動元素的左右 <code>margin</code> 是不會 collapse 的，Absoulte 及 Relative 位置也是。</p>
+<p>雖然每個元素都是一個盒子，但實際上有兩種盒子：</p>
+<p>行內 (inline) 及區塊 (block) 盒子，區塊盒子在它本身前後加入了斷行，如<code>p</code>、<code>div</code>、表格、清單標籤。<br>反之行內盒子不會在前後加入斷行，而是在行內顯示，如<code>strong</code>、<code>img</code>、<code>a</code>標籤。</p>
+<p>要注意的是行內元素是不能套用 top 跟 bottom margin 及 padding 的。請使用 <code>line-height</code>。</p>
+<p>你可以讓行內元素像區塊那樣顯示: <code>display: block;</code><br>或是讓區塊元素像行內元素顯示： <code>display: inline;</code></p>
+<p>border 可以改的有三個， width, style, 以及 color。</p>
+<p><code>border: 4px solid #f00;</code> 4px 的紅色實線。</p>
+<p>等於</p>
+<p><code>border-width: 4px;</code><br><code>border-style: solid;</code><br><code>border-color: #f00;</code></p>
+<h2>改變元素的背景顏色</h2>
+<p><code>background-color: #345678;</code></p>
+<h2>元素寬度高度</h2>
+<p><code>width: 300px;</code><br>另有 <code>max-width</code> 及 <code>min-width</code> 可設置。<br><code>height: 500px;</code><br>另有 <code>max-height</code> 及 <code>min-height</code> 可設置。</p>
+<h2>內容超出盒子怎麼辦？</h2>
+<p>當內容超出盒子的時候，可以用 <code>overflow</code> 來修補它。</p>
+<p><code>overflow: hidden;</code></p>
+<p>瀏覽器預設是 <code>visible</code> ，也就是你會看到跑出盒子了（如果你有設定 border 的話）</p>
+<p><code>scroll</code> 加上捲動軸， <code>auto</code> 自動加上捲動軸，或是 <code>hidden</code> ，把超出的內容隱藏起來。</p>
+<h2>浮動元素 float</h2>
+<p>把元素浮動起來！！！</p>
+<p>有三個可以設置 <code>left</code> <code>right</code> <code>none</code> 。</p>
+<p>有得時候有一個 float 元素擋住了你的元素，你可以使用 <code>overflow: hidden;</code> 或是使用 <strong>clear fix 技巧</strong> 。</p>
+<p><code>clear</code> 屬性接受四個值，</p>
+<p><code>left</code> 讓他不要跟左邊的 floated 元素貼在一起。<br><code>right</code> 讓他不要跟右邊的 floated 元素貼在一起。<br><code>both</code> 讓他不要跟兩邊的 floated 元素貼在一起。<br><code>none</code> 瀏覽器預設值，讓他跟 floated 的元素貼在一起。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/CSSGNDUP/">CSSGNDUP</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/css/">css</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignleft"><!-- 
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:lisp.es/">
+  </form>
+</div>
+
+  
+<div class="widget twitter">
+  <h3 class="title">推文</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['JuanitoFatas', 5, false];
+var moment_js_path = '/js/moment.min.js';
+</script>
+<script src="/js/twitter.js"></script>
+
+
+ -->
+<div class="personal-info">
+  <figure>
+    
+      <a href="/">
+        <img class="personal-photo" src="https://secure.gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" alt="Juanito Fatas">
+      </a>
+    
+    <figcaption>
+      <h3 class=>Juanito Fatas</h3>
+      <p>城市中的迷途小碼農</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/JuanitoFatas"></a>
+    
+    
+    
+      <a target="_blank" class="icon github depth" href="http://github.com/JuanitoFatas"></a>
+    
+    
+      <a target="_blank" class="icon email depth" href="mailto:katehuang0320@gmail.com"></a>
+    
+  </section>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignright depth">
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
+  &copy; - 2013 Juanito Fatas
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'juanfatas';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script src="//cdn.moot.it/latest/moot.min.js"></script>
+
+</body>
+</html>

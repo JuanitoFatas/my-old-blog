@@ -1,131 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://lisp.es//2013/07/19/clone-and-grow/</loc>
+    <loc>http://lisp.es/2013/07/19/2013-07-19-clone-and-grow/</loc>
     <lastmod>2013-07-18T16:02:10.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2013/07/07/meta-object-intro/</loc>
+    <loc>http://lisp.es/2013/07/07/2013-07-07-meta-object-intro/</loc>
     <lastmod>2013-07-07T05:08:11.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2013/07/07/spanish-ending-words/</loc>
+    <loc>http://lisp.es/2013/07/07/2013-07-07-spanish-ending-words/</loc>
     <lastmod>2013-07-07T05:07:37.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2013/07/02/hello-ruby/</loc>
+    <loc>http://lisp.es/2013/07/02/2013-07-02-hello-ruby/</loc>
     <lastmod>2013-07-01T18:53:57.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/06/05/scope-and-extent-in-cl/</loc>
+    <loc>http://lisp.es/2012/06/05/2012-06-05-scope-and-extent-in-cl/</loc>
     <lastmod>2013-07-01T13:22:38.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2013/06/20/ruby-test-in-sublime-with-spork/</loc>
+    <loc>http://lisp.es/2013/06/20/2013-06-20-ruby-test-in-sublime-with-spork/</loc>
     <lastmod>2013-06-19T17:10:52.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//about/index.html</loc>
+    <loc>http://lisp.es/about/index.html</loc>
     <lastmod>2013-06-17T06:28:46.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/19/jquery-events-2/</loc>
+    <loc>http://lisp.es/2012/05/19/2012-05-19-jquery-events-2/</loc>
     <lastmod>2013-05-18T19:15:29.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/04/20/ror-0-intro/</loc>
+    <loc>http://lisp.es/2012/04/20/2012-04-20-ror-0-intro/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/04/22/ror-1-first-app/</loc>
+    <loc>http://lisp.es/2012/04/22/2012-04-22-ror-1-first-app/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/04/25/ror-2-test-unit/</loc>
+    <loc>http://lisp.es/2012/04/25/2012-04-25-ror-2-test-unit/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/04/25/ror-3-rspec/</loc>
+    <loc>http://lisp.es/2012/04/25/2012-04-25-ror-3-rspec/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/04/30/sprok-guard-rspec/</loc>
+    <loc>http://lisp.es/2012/04/30/2012-04-30-sprok-guard-rspec/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/01/mac-install-growlnotify/</loc>
+    <loc>http://lisp.es/2012/05/01/2012-05-01-mac-install-growlnotify/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/10/python-for-inside/</loc>
+    <loc>http://lisp.es/2012/05/10/2012-05-10-python-for-inside/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/10/python-zebra/</loc>
+    <loc>http://lisp.es/2012/05/10/2012-05-10-python-zebra/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch5/</loc>
+    <loc>http://lisp.es/2012/03/02/2012-03-02-css-ch5/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/12/nth-child-common-gotcha/</loc>
+    <loc>http://lisp.es/2012/05/12/2012-05-12-nth-child-common-gotcha/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/17/jquery-intro/</loc>
+    <loc>http://lisp.es/2012/05/17/2012-05-17-jquery-intro/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/17/parse-xml-json/</loc>
+    <loc>http://lisp.es/2012/05/17/2012-05-17-parse-xml-json/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/18/jquery-events-1/</loc>
+    <loc>http://lisp.es/2012/05/18/2012-05-18-jquery-events-1/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/18/jquery-intro-2/</loc>
+    <loc>http://lisp.es/2012/05/18/2012-05-18-jquery-intro-2/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/18/jquery-query-dom/</loc>
+    <loc>http://lisp.es/2012/05/18/2012-05-18-jquery-query-dom/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch6/</loc>
+    <loc>http://lisp.es/2012/03/02/2012-03-02-css-ch6/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch7/</loc>
+    <loc>http://lisp.es/2012/03/02/2012-03-02-css-ch7/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/05/12/dont-use-cdn-html5shiv/</loc>
+    <loc>http://lisp.es/2012/05/12/2012-05-12-dont-use-cdn-html5shiv/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/04/19/clearfix/</loc>
+    <loc>http://lisp.es/2012/04/19/2012-04-19-clearfix/</loc>
     <lastmod>2013-05-18T19:15:28.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/02/css-ch4/</loc>
+    <loc>http://lisp.es/2012/03/02/2012-03-02-css-ch4/</loc>
     <lastmod>2013-05-18T19:15:16.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/02/04/online-learning/</loc>
+    <loc>http://lisp.es/2012/02/04/2012-02-04-online-learning/</loc>
     <lastmod>2013-05-18T19:15:12.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/01/28/tex-note/</loc>
+    <loc>http://lisp.es/2012/01/28/2012-01-28-tex-note/</loc>
     <lastmod>2013-05-18T19:15:07.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/03/28/einstein-problem-prolog/</loc>
+    <loc>http://lisp.es/2012/03/28/2012-03-28-einstein-problem-prolog/</loc>
     <lastmod>2013-05-18T18:34:54.000Z</lastmod>
   </url>
   <url>
-    <loc>http://lisp.es//2012/11/21/jquery-bind-live-delegate/</loc>
+    <loc>http://lisp.es/2012/11/21/2012-11-21-jquery-bind-live-delegate/</loc>
     <lastmod>2012-11-24T06:21:32.000Z</lastmod>
   </url>
 </urlset>

@@ -85,11 +85,11 @@
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-12T15:04:00.000Z"><a href="/2012/05/12/nth-child-common-gotcha/">May 12 2012</a></time>
+        <time class="depth" datetime="2012-05-12T15:04:00.000Z"><a href="/2012/05/12/2012-05-12-nth-child-common-gotcha/">5月 12 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/05/12/nth-child-common-gotcha/">CSS 一个常见 nth-child 的误区</a></h1>
+    <h1 class="title depth"><a href="/2012/05/12/2012-05-12-nth-child-common-gotcha/">CSS 一个常见 nth-child 的误区</a></h1>
   
 
     </header>
@@ -120,46 +120,42 @@
 21
 22
 23
-</pre></td><td class="code"><pre>&lt;html&gt;
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">html</span>&gt;</span>
 ...
-&lt;style&gt;
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="undefined">
 truedt {
 truetrueboder-top: 1px solid white;
 truetrueboder-bottom: 1px solid gray;
 true}
-&lt;/style&gt;
-&lt;body&gt;
-true&lt;dl&gt;
-truetrue&lt;dt&gt;How to install&lt;/dt&gt;
-truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
-truetrue&lt;dt&gt;How to install&lt;/dt&gt;
-truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
-truetrue&lt;dt&gt;How to install&lt;/dt&gt;
-truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
-truetrue&lt;dt&gt;How to install&lt;/dt&gt;
-truetrue&lt;dd&gt;Check ...&lt;/dd&gt;
-truetrue&lt;dt&gt;How to install&lt;/dt&gt;
-truetrue&lt;dd&gt;last ...&lt;/dd&gt;
-true&lt;/dl&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">dl</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dt</span>&gt;</span>How to install<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dd</span>&gt;</span>Check ...<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dt</span>&gt;</span>How to install<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dd</span>&gt;</span>Check ...<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dt</span>&gt;</span>How to install<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dd</span>&gt;</span>Check ...<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dt</span>&gt;</span>How to install<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dd</span>&gt;</span>Check ...<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dt</span>&gt;</span>How to install<span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+truetrue<span class="tag">&lt;<span class="title">dd</span>&gt;</span>last ...<span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+true<span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </pre></td></tr></table></figure>
 
 <p>假设这是一个 FAQ，我们有一个 Definition list (<code>dl</code>)，并有五个 item (<code>dt</code>)，五个 item 描述 (<code>dd</code>)，</p>
 <p>每个 <code>dt</code> 的上下有边界，分别是白色、黑色。</p>
 <p>今天假如我们想要第一个 <code>dt</code> 上方没有 boder，以及最后一个 <code>dt</code> 下方没有 boder，这时候 CSS 该怎么写呢？</p>
 <p>我们可以使用 CSS3 的 <code>first-child</code>：</p>
-<pre><code><span class="tag">dt</span><span class="pseudo">:first-child</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-top</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span>
-</code></pre>
+<pre><code><span class="tag">dt</span><span class="pseudo">:first-child</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-top</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span></code></pre>
 <p>现在你可能会想要使用 <code>last-child</code> 来把 最后一个 dd 的 boder-bottom 拿掉：</p>
-<pre><code><span class="tag">dt</span><span class="pseudo">:last-child</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-bottom</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span>
-</code></pre>
+<pre><code><span class="tag">dt</span><span class="pseudo">:last-child</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-bottom</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span></code></pre>
 <p>而这样不行，因为 <code>last-child</code> 是选择 parent 的最后一个 child，这个例子里会选中：</p>
-<pre><code>&lt;dd&gt;last <span class="keyword">...</span>&lt;/dd&gt;
-</code></pre>
+<pre><code>&lt;dd&gt;last <span class="keyword">...</span>&lt;/dd&gt;</code></pre>
 <p>那该怎么办呢？可以使用 <code>nth-last-child</code> ：</p>
-<pre><code><span class="tag">dt</span><span class="pseudo">:nth-last-child(2)</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-bottom</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span>
-</code></pre>
+<pre><code><span class="tag">dt</span><span class="pseudo">:nth-last-child(2)</span> <span class="rules">{ <span class="rule"><span class="attribute">boder-bottom</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span></code></pre>
 <p>这样子会从 <code>dl</code> 的最后一个 child 开始往上 2 个，也就是我们想要的最后一个 <code>dt</code>。</p>
 <p>That&#39;s it!!!</p>
 
@@ -167,10 +163,6 @@ true&lt;/dl&gt;
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/05/12/nth-child-common-gotcha/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       
@@ -188,11 +180,11 @@ true&lt;/dl&gt;
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/clearfix/">Apr 19 2012</a></time>
+        <time class="depth" datetime="2012-04-19T08:05:00.000Z"><a href="/2012/04/19/2012-04-19-clearfix/">4月 19 2012</a></time>
       
       
   
-    <h1 class="title depth"><a href="/2012/04/19/clearfix/">CSS clearfix 更好的名字</a></h1>
+    <h1 class="title depth"><a href="/2012/04/19/2012-04-19-clearfix/">CSS clearfix 更好的名字</a></h1>
   
 
     </header>
@@ -205,10 +197,10 @@ true&lt;/dl&gt;
 2
 3
 4
-</pre></td><td class="code"><pre>	&lt;div class="box"&gt;
-truetrue&lt;img src="/img/foo.png" alt="foo"&gt;
-truetrue&lt;p class="description"&gt;Foo is foo and Fools are fool...&lt;/p&gt;
-true&lt;/div&gt;
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"/img/foo.png"</span> <span class="attribute">alt</span>=<span class="value">"foo"</span>&gt;</span>
+true<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"description"</span>&gt;</span>Foo is foo and Fools are fool...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
 </pre></td></tr></table></figure>
 
 <p>及 CSS：</p>
@@ -224,18 +216,18 @@ true&lt;/div&gt;
 10
 11
 12
-</pre></td><td class="code"><pre>	div.box {
-truetruebackground: #fff;
-true}
+</pre></td><td class="code"><pre><span class="tag">div</span><span class="class">.box</span> <span class="rules">{
+<span class="rule"><span class="attribute">truebackground</span>:<span class="value"> <span class="hexcolor">#fff</span>;</span></span>
+<span class="rule">}</span></span>
 
-truediv.box img {
-truetruewidth: 25%;
-true}
+<span class="tag">div</span><span class="class">.box</span> <span class="tag">img</span> <span class="rules">{
+<span class="rule"><span class="attribute">truewidth</span>:<span class="value"> <span class="number">25</span>%;</span></span>
+<span class="rule">}</span></span>
 
-truediv.box p.description {
-truetruefloat: right;
-truetruewidth: 70%;
-true}
+<span class="tag">div</span><span class="class">.box</span> <span class="tag">p</span><span class="class">.description</span> <span class="rules">{
+<span class="rule"><span class="attribute">truefloat</span>:<span class="value"> right;</span></span>
+<span class="rule"><span class="attribute">truewidth</span>:<span class="value"> <span class="number">70</span>%;</span></span>
+<span class="rule">}</span></span>
 </pre></td></tr></table></figure>
 
 <p>會呈現出圖片在左，文字在右這種很常見的形式。</p>
@@ -279,7 +271,6 @@ true}
 5
 6
 7
-8
 </pre></td><td class="code"><pre><span class="class">.group</span><span class="pseudo">:after</span> <span class="rules">{
 <span class="rule"><span class="attribute">truecontent</span>:<span class="value"> <span class="string">"."</span>;</span></span>
 <span class="rule"><span class="attribute">truedisplay</span>:<span class="value"> block;</span></span>
@@ -287,7 +278,6 @@ true}
 <span class="rule"><span class="attribute">trueclear</span>:<span class="value"> both;</span></span>
 <span class="rule"><span class="attribute">truevisibility</span>:<span class="value"> hidden;</span></span>
 <span class="rule">}</span></span>
-
 </pre></td></tr></table></figure>
 
 <p>另附上 IE 6 與 7 的解法：</p>
@@ -317,10 +307,6 @@ true}
     </div>
     <footer>
       
-        
-          <div class="alignleft">
-            <a href="/2012/04/19/clearfix/#more" class="more-link">閱讀全文</a>
-          </div>
         
         
       

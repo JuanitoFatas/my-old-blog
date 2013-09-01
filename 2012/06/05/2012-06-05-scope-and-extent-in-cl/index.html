@@ -1,0 +1,338 @@
+<!--
+       _                   _ _          ______    _
+      | |                 (_) |        |  ____|  | |
+      | |_   _  __ _ _ __  _| |_ ___   | |__ __ _| |_ __ _ ___
+  _   | | | | |/ _` | '_ \| | __/ _ \  |  __/ _` | __/ _` / __|
+ | |__| | |_| | (_| | | | | | || (_) | | | | (_| | || (_| \__ \
+  \____/ \__,_|\__,_|_| |_|_|\__\___/  |_|  \__,_|\__\__,_|___/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Common Lisp 的 Scope 与 Extent | I'm Juanito Fatas</title>
+  <meta name="author" content="Juanito Fatas">
+  
+  <meta name="description" content="This site contains technical articles, presentations, thoughts, software, and other materials by Juanito Fatas.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Common Lisp 的 Scope 与 Extent"/>
+  <meta property="og:site_name" content="I'm Juanito Fatas"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="I'm Juanito Fatas" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+    <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1/moot.css">
+  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#sidebar').delay(400).animate({ width: '285px' }, 500, function() {
+      $('.personal-info').css({display: 'table'}).hide().fadeIn(500);
+    });
+  });
+  </script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41041908-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><!-- <div class="alignleft">
+  <h1><a href="/">I'm Juanito Fatas</a></h1>
+  <h2><a href="/">C-x C-f...C-x C-s...</a></h2>
+</div>
+ --><!-- <nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首頁</a></li>
+    
+      <li><a href="/archives">彙整</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+ --></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2012-06-04T16:24:00.000Z"><a href="/2012/06/05/2012-06-05-scope-and-extent-in-cl/">6月 5 2012</a></time>
+      
+      
+  
+    <h1 class="depth title">Common Lisp 的 Scope 与 Extent</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2>为什么要理解 Scope 与 Extent?</h2>
+<p>这两个概念在理解许多 Common Lisp 语言的特色时是很有用的，这两个概念出现在某个对象 (object) 或建构子 (construct) 需要被一个程序的某个部分参照时。</p>
+<h2>Scope</h2>
+<p>Scope 在一个程序中或是一个程序中特定的范围里，参照可能发生的地方。</p>
+<h2>Extent</h2>
+<p>Extent 参照可能发生的时间区间。</p>
+<p>一个简单的例子：</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> copy-cell <span class="list">(<span class="title">x</span><span class="body">)</span></span>
+  <span class="list">(<span class="title">cons</span><span class="body"> <span class="list">(<span class="title">car</span><span class="body"> x)</span></span> <span class="list">(<span class="title">cdr</span><span class="body"> x)</span></span>)</span></span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p>在这个例子里，我们只能在 <code>copy-cell</code> 函数主体中来参照到 <code>x</code> 参数，这个就是参数 <code>x</code> 的 scope。而参数 <code>x</code> 的 extent 是当函数 <code>copy-cell</code> 被调用至离开的这段时间区间。但是参数的 extent 是有可能在离开函数后仍存在的，但上面这个简单的例子是不可能发生的。</p>
+<p>数种描述 Common Lisp 特别有用的 scope 与 extent:</p>
+<ul>
+<li>Lexical scope 由某个特殊建构子所建立的程序區塊（通常是一個主體 body）。可以想想 Common Lisp 的 let、defun 所設立的參數。</li>
+</ul>
+<p>例子 1:</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="list">(<span class="title">let</span><span class="body"> <span class="list">(<span class="body"><span class="list">(<span class="title">x</span><span class="body"> <span class="number">1</span>)</span></span>
+      <span class="list">(<span class="title">y</span><span class="body"> <span class="number">2</span>)</span></span>)</span></span>
+  <span class="list">(<span class="title">+</span><span class="body"> x y)</span></span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p>x 与 y 的 scope 就是由 let 建构子所建构的主体。</p>
+<p>例子 2:</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> foo <span class="list">(<span class="title">x</span><span class="body">)</span></span>
+true<span class="list">(<span class="title">+</span><span class="body"> x <span class="number">1</span>)</span></span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p><code>x</code> 的 scope 在 defun 建构子所建构的主体。</p>
+<ul>
+<li><p>Indefinite scope. 在程序任何地方都可以參照的叫做 Indefinite scope。</p>
+</li>
+<li><p>Dynamic extent 参照可以发生在配置 (established) 与释放 (disestablished) entity 时发生。 Entity 通常可以想成是对象 (如 cons 核、符號）、变量绑定或是 go 可以到的地方。什么时候释放呢？在配置的 entity 执行完毕或是终止时。因此有 dynamic extent 的 entity 遵循著一种类似栈的规范，同时有著平行执行嵌套的建构。</p>
+</li>
+</ul>
+<p>例子：<code>with-open-file</code> 建构子开启了一个与文件 (file) 的连接并构造了一个流对象来表示这个连接。流对象有著 <code>indefinite extent</code> ，但开启文件的连接有著 dynamic extent: 当 <code>with-open-file</code> 建构子交出控制权时，流会自动关闭。</p>
+<p>例子 2: 一个“特殊”变量的绑定是 dynamic extent。</p>
+<ul>
+<li>Indefinite extent Entity 在离开建构子所设立的区块时，仍有参照的可能性存在。</li>
+</ul>
+<p>例子：大多数的 Common Lisp 数据对象 (data objecs) 是 indefinite extent 的。<br>例子：绑定一个函数 lexcially scoped 的参数是 indefinite extent 的。</p>
+<p>考虑以下函数定义：</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> compose <span class="list">(<span class="title">f</span><span class="body"> g)</span></span>
+  #<span class="quoted">'(lambda (x)
+      (funcall f (funcall g x)))</span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p>当给定两个参数时，返回一个函数作为返回值。参数 <code>f</code> 与 <code>g</code> 的绑定由于返回的函数存在，所以并没有消失。当我们调用这个返回的函数时，我们仍可以参照到 <code>f</code> 与 <code>g</code> 。因此</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="list">(<span class="title">funcall</span><span class="body"> <span class="list">(<span class="title">compose</span><span class="body"> #'sqrt #'abs)</span></span> <span class="number">-9.0</span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p>会返回 <code>3.0</code> 。</p>
+<p>除了上面这些术语之外，通常我们把 dynamic scope 定义成表示 indefinite scope 与 dynamic extent。所以我们说特殊的变数有著 dynamic scope，或是被 dynamically scoped 了，因为它们有 indefinite scope 与 dynamic extent: 一个特别变数可以在任何地方被参照，只要它的绑定 (binding) 仍有效。</p>
+<h2>Shadowing</h2>
+<p>以上的定义没有考虑到 Shadowing，当我们定义两个同样名称的 entities 时，第二个会遮蔽了第一个，在这个情况下，我们就无法参照到第一个了。</p>
+<p>在 lexcial scope 的情况，如果两个建构子设置了同名的 entities 时，会做嵌套的动作。内部的会遮蔽外部的。举个例子：</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> foo <span class="list">(<span class="title">x</span><span class="body"> z)</span></span>
+  <span class="list">(<span class="title">let</span><span class="body"> <span class="list">(<span class="body"><span class="list">(<span class="title">z</span><span class="body"> <span class="list">(<span class="title">*</span><span class="body"> x <span class="number">2</span>)</span></span>)</span></span>)</span></span>
+    <span class="list">(<span class="title">print</span><span class="body"> z)</span></span>)</span></span>
+  z)</span></span>
+</pre></td></tr></table></figure>
+
+<p>内部的 <code>z</code> 会是 <code>(* x 2)</code>，而外部的 z 会是传入的参数 <code>z</code> 。</p>
+<p>在 dynamic extent 的情况，如果两个 entities 的发生时间区间重叠时，一个会被嵌套在另一个里面。</p>
+<p>一个有著 dynamic extent 的 entity 透过名字来参照时，总是参照到最近一次尚未被释放的 (disestablished) entity。比如：</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> fun<span class="number">1</span> <span class="list">(<span class="title">x</span><span class="body">)</span></span>
+  <span class="list">(<span class="title">catch</span><span class="body"> 'trap <span class="list">(<span class="title">+</span><span class="body"> <span class="number">3</span> <span class="list">(<span class="title">fun2</span><span class="body"> x)</span></span>)</span></span>)</span></span>)</span></span>
+
+<span class="list">(<span class="title">defun</span><span class="body"> fun<span class="number">2</span> <span class="list">(<span class="title">y</span><span class="body">)</span></span>
+  <span class="list">(<span class="title">catch</span><span class="body"> 'trap <span class="list">(<span class="title">*</span><span class="body"> <span class="number">5</span> <span class="list">(<span class="title">fun3</span><span class="body"> y)</span></span>)</span></span>)</span></span>)</span></span>
+
+<span class="list">(<span class="title">defun</span><span class="body"> fun<span class="number">3</span> <span class="list">(<span class="title">z</span><span class="body">)</span></span>
+  <span class="list">(<span class="title">throw</span><span class="body"> 'trap z)</span></span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p>调用 <code>(fun1 7)</code> 的结果会是 <code>10</code>。在 <code>throw</code> 执行时，同时有两个 <code>catch</code> 在监看 <code>trap</code> : 一个由 <code>fun1</code> 配置的，另一个是 <code>fun2</code> 。第二个 <code>fun2</code> 是最新的那个，所以 <code>7</code> 会在 <code>fun2</code> 里返回。从 <code>fun3</code> 内部来看， <code>fun2</code> 遮蔽了 <code>fun1</code> 。</p>
+<p>若是 <code>fun2</code> 是这样定义的话：</p>
+<figure class="highlight lang-cl"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="list">(<span class="title">defun</span><span class="body"> fun<span class="number">2</span> <span class="list">(<span class="title">y</span><span class="body">)</span></span>
+  <span class="list">(<span class="title">catch</span><span class="body"> 'snare <span class="list">(<span class="title">*</span><span class="body"> <span class="number">5</span> <span class="list">(<span class="title">fun3</span><span class="body"> y)</span></span>)</span></span>)</span></span>)</span></span>
+</pre></td></tr></table></figure>
+
+<p>那么两个 <code>catch</code> 会有不同的名称，因此 <code>fun1</code> 不会被遮蔽。<code>(fun1 7)</code> 结果会是 <code>7</code>。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Lisp/">Lisp</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/lisp/">lisp</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignleft"><!-- 
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:lisp.es/">
+  </form>
+</div>
+
+  
+<div class="widget twitter">
+  <h3 class="title">推文</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['JuanitoFatas', 5, false];
+var moment_js_path = '/js/moment.min.js';
+</script>
+<script src="/js/twitter.js"></script>
+
+
+ -->
+<div class="personal-info">
+  <figure>
+    
+      <a href="/">
+        <img class="personal-photo" src="https://secure.gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" alt="Juanito Fatas">
+      </a>
+    
+    <figcaption>
+      <h3 class=>Juanito Fatas</h3>
+      <p>城市中的迷途小碼農</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/JuanitoFatas"></a>
+    
+    
+    
+      <a target="_blank" class="icon github depth" href="http://github.com/JuanitoFatas"></a>
+    
+    
+      <a target="_blank" class="icon email depth" href="mailto:katehuang0320@gmail.com"></a>
+    
+  </section>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignright depth">
+  <a class="footer-link" href="/about">About Me</a>
+  <a class="footer-link" href="http://github.com/thiagopnts/hexo-persona-dark">Based on Persona Dark Theme</a> 
+  &copy; - 2013 Juanito Fatas
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'juanfatas';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script src="//cdn.moot.it/latest/moot.min.js"></script>
+
+</body>
+</html>
