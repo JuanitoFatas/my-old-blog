@@ -4,7 +4,7 @@
   <subtitle><![CDATA[C-x C-f...C-x C-s...]]></subtitle>
   <link href="http://lisp.es//atom.xml" rel="self"/>
   <link href="http://lisp.es/"/>
-  <updated>2013-09-22T05:55:04.877Z</updated>
+  <updated>2013-09-22T05:57:23.095Z</updated>
   <id>http://lisp.es//</id>
   <author>
     <name><![CDATA[Juanito Fatas]]></name>
@@ -12,20 +12,20 @@
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
-    <title type="html"><![CDATA[Edge-Ruby-on-Rails-Guides]]></title>
+    <title type="html"><![CDATA[Edge Ruby on Rails Guides 譯文]]></title>
     <link href="http://lisp.es/2013/09/22/2013-09-22-edge-ruby-on-rails-guides/"/>
     <id>http://lisp.es/2013/09/22/2013-09-22-edge-ruby-on-rails-guides/</id>
     <published>2013-09-22T05:51:57.000Z</published>
-    <updated>2013-09-22T05:54:58.000Z</updated>
-    <content type="html"><![CDATA[<h1><a href="http://edgeguides.rubyonrails.org" target="_blank">Edge Ruby on Rails Guides</a> 翻译</h1>
-<p>親愛的訪客你好，小人翻譯了以下 Guides，請移駕至 GitHub 閱讀：</p>
+    <updated>2013-09-22T05:57:17.000Z</updated>
+    <content type="html"><![CDATA[<h1><a href="http://edgeguides.rubyonrails.org" target="_blank">Edge Ruby on Rails Guides</a> 譯文</h1>
+<p>Edge Ruby on Rails Guides 翻譯，目前有這幾篇：</p>
 <p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/i18n-zh_TW.md" target="_blank">Rails I18n</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_TW.md" target="_blank">Rails Form Helpers</a> &arr; <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_CN.md" target="_blank">簡體中文</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_TW.md" target="_blank">Active Record Migrations</a> &arr; <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_CN.md" target="_blank">簡體中文</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/engines-zh_TW.md" target="_blank">Rails Engine</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_TW.md" target="_blank">Action View Form Helpers</a> <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_CN.md" target="_blank">簡體中文</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_TW.md" target="_blank">Rails Database Migrations</a> <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_CN.md" target="_blank">簡體中文</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/engines-zh_TW.md" target="_blank">Getting Started with Engines</a></p>
 <p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/rails-on-rack-zh_TW.md" target="_blank">Rails on Rack</a></p>
 ]]></content>
-    <category scheme="http://lisp.es/tags/Rails/" term="Rails"/>
+    <category scheme="http://lisp.es/tags/Rails RubyOnRails/" term="Rails RubyOnRails"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[山寨与版权的故事一则]]></title>
