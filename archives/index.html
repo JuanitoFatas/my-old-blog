@@ -85,6 +85,45 @@
     <header>
       
         <div class="icon depth"></div>
+        <time class="depth" datetime="2013-09-22T05:51:57.000Z"><a href="/2013/09/22/2013-09-22-edge-ruby-on-rails-guides/">9月 22 2013</a></time>
+      
+      
+  
+    <h1 class="title depth"><a href="/2013/09/22/2013-09-22-edge-ruby-on-rails-guides/">Edge-Ruby-on-Rails-Guides</a></h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h1><a href="http://edgeguides.rubyonrails.org" target="_blank">Edge Ruby on Rails Guides</a> 翻译</h1>
+<p>親愛的訪客你好，小人翻譯了以下 Guides，請移駕至 GitHub 閱讀：</p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/i18n-zh_TW.md" target="_blank">Rails I18n</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_TW.md" target="_blank">Rails Form Helpers</a> &arr; <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_CN.md" target="_blank">簡體中文</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_TW.md" target="_blank">Active Record Migrations</a> &arr; <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_CN.md" target="_blank">簡體中文</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/engines-zh_TW.md" target="_blank">Rails Engine</a></p>
+<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/rails-on-rack-zh_TW.md" target="_blank">Rails on Rack</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
         <time class="depth" datetime="2013-07-18T16:00:56.000Z"><a href="/2013/07/19/2013-07-19-clone-and-grow/">7月 19 2013</a></time>
       
       
@@ -1401,297 +1440,6 @@ $(<span class="string">'button'</span>).on(<span class="string">'click'</span>, 
 
 <p>我会建议你使用 jQuery 的 <code>on()</code> 函数，这个理由下集再谈吧。</p>
 <p>有问题、讲错的欢迎下面留言发问。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon depth"></div>
-        <time class="depth" datetime="2012-05-17T17:04:00.000Z"><a href="/2012/05/18/2012-05-18-jquery-query-dom/">5月 18 2012</a></time>
-      
-      
-  
-    <h1 class="title depth"><a href="/2012/05/18/2012-05-18-jquery-query-dom/">使用 jQuery 查询 DOM</a></h1>
-  
-
-    </header>
-    <div class="entry depth">
-      
-        <p>哈罗，你又来看我文章了，谢谢，这篇讲的是巨基本的使用 jQuery 来查询 DOM。</p>
-<p>给定一个 HTML：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-</pre></td><td class="code"><pre><span class="doctype">&lt;!doctype html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-true<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">utf-8</span>&gt;</span>
-true<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-true<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-<span class="tag">trueli</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value"> black }</span></span></span>
-<span class="tag">true</span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>
-true<span class="tag">&lt;<span class="title">h1</span>&gt;</span>Welcome to My Website <span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-true<span class="tag">&lt;<span class="title">p</span>&gt;</span>
-truetrueLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-truetruetempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-truetruequis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-truetrueconsequat.
-true<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-
-true<span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"emphasis"</span>&gt;</span>
-truetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>item 1<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-truetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>item 2<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-truetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>item 3<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-truetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>item 4<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-truetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>item 5<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-truetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>
-truetruetrue<span class="tag">&lt;<span class="title">ul</span>&gt;</span>
-truetruetruetrue<span class="tag">&lt;<span class="title">li</span>&gt;</span>hello from the nest.<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-truetruetrue<span class="tag">&lt;/<span class="title">ul
-truetrue&lt;</span>/<span class="attribute">li</span>&gt;</span>
-true<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-
-<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>型別</p>
-<p>为了讲解方便，我直接使用 CDN 来引用 jQuery。之后讲述的代码请放在 <code>&lt;/body&gt;</code> 前面的 <code>&lt;script&gt;</code> 标签内。</p>
-<p>OK! 开始！</p>
-<h2>children() find() next() prev() first()</h2>
-<p>假设今天我们想要选中类是 emphasis 的 <code>ul</code>：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>上面这行：嘿，jQuery，帮我根据这个 CSS 选择器 <code>ul.emphasis</code> 去 DOM 把符合条件的找出来。</p>
-<p>取出 <code>ul</code> 的第一个 <code>li</code> ，并添加绿色：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li'</span>).css(<span class="string">'color'</span>, <span class="string">'green'</span>);
-</pre></td></tr></table></figure>
-
-<p>这等同于 CSS:</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>ul.emphasis &gt; li { color: green; }
-</pre></td></tr></table></figure>
-
-<p><strong>注意</strong> 这个 <code>&gt;</code> 在这边起的作用，这说明了我们只选中第一阶层的小孩，direct children。</p>
-<p>试试看这个代码</p>
-<p>你会发现嵌套的那个 ul li 是黑色，不是绿色。这样应该明白 direct children 了吧。</p>
-<p>你也可以使用 jQuery 的 <code>find</code> 来找到：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).find(<span class="string">'li'</span>).css(<span class="string">'color'</span>, <span class="string">'green'</span>);
-</pre></td></tr></table></figure>
-
-<p>但要注意的是，这会从 <code>ul.emphasis</code> 搜寻所有的 li (all descendent)，等同于 CSS 的：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>ul.emphasis li { color: green; }
-</pre></td></tr></table></figure>
-
-<p>好，现在我们在 <code>style</code> 标签内添加一个样式：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>.emphasis { color: green; }
-</pre></td></tr></table></figure>
-
-<p>并移除刚刚那行代码。</p>
-<p>现在我们想替 <code>ul.emphasis</code> 的第一个 <code>li</code> 加上类名的办法来上色，该怎么做呢？</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li:nth-child(1)'</span>).addClass(<span class="string">'emphasis'</span>);
-<span class="comment">// 或是</span>
-$(<span class="string">'ul.emphasis'</span>).find(<span class="string">'li:nth-child(1)'</span>).addClass(<span class="string">'emphasis'</span>);
-<span class="comment">// 或是</span>
-$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li:first'</span>).addClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>你可能会说，干嘛不用 CSS 就好了，因为使用 jQuery 的话，这些新潮的 CSS3 选择器可以支援 IE6+。</p>
-<p>都是万恶的 IE 害的，呜呜。。。</p>
-<p>注意这行代码内的选择器：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li:first'</span>).addClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>不是 CSS 的选择器，而是 jQuery 提供的 Helper。如果有自带的 CSS 选择器可用的话，就使用 CSS 选择器，再来才是使用 jQuery 提供的 Helper。因为这比使用 jQuery 提供的来得快一点点。</p>
-<p>刚刚那行代码，使用 CSS 有的选择器：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li:first-child'</span>).addClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>好，那 jQuery 还有别的方法可用吗，有：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li'</span>).first().addClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>我们用了一个 jQuery 提供的 <code>first()</code>，作用一样。</p>
-<p>那想选中第二个 <code>li</code> (item2) 呢，并把文字改为 Hello from jQuery？</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li:nth-child(2)'</span>).text(<span class="string">'Hello from jQuery'</span>);
-<span class="comment">// 或是</span>
-$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li'</span>).eq(<span class="number">1</span>).text(<span class="string">'Hello from jQuery'</span>);
-</pre></td></tr></table></figure>
-
-<p>注意到，<code>eq(1)</code>，因为 Javascript 跟大多数程序语言一样是 <strong>零索引的</strong> ，从零开始数。</p>
-<p>好如果我想要先选中 item2，再往后一个，该怎么写呢：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li'</span>).eq(<span class="number">1</span>).next().text(<span class="string">'Hello from jQuery'</span>);
-</pre></td></tr></table></figure>
-
-<p>这串长不拉机的东东有个术语叫做 <em>chaining</em> ，它能这么干的原因是每一个调用都返回一个 jQuery 对象。</p>
-<p>但是别 chian 的太长了。</p>
-<p>有 <code>next()</code> 也有 <code>prev()</code> 。</p>
-<p>一个要写出 jQuery 的秘诀是写之前先念一遍，再直观地写出来，大部分都是对的哈哈。</p>
-<p>不过这个贼长的 jQuery 你一般都会写成：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li'</span>).eq(<span class="number">1</span>).next().text(<span class="string">'Hello from jQuery'</span>);
-<span class="comment">// better</span>
-$(<span class="string">'ul.emphasis li:nth-child(2)'</span>).text(<span class="string">'Hello from jQuery'</span>);
-</pre></td></tr></table></figure>
-
-<p>chaining 比较慢，代码也比较长，但你还是会需要动态地使用 chaining。</p>
-<p>这么长的代码也可以这样缩排：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre>$(<span class="string">'ul.emphasis'</span>).children(<span class="string">'li'</span>).eq(<span class="number">1</span>).next().text(<span class="string">'Hello from jQuery'</span>);
-
-<span class="comment">// 等同于</span>
-$(<span class="string">'ul.emphasis'</span>)
-truetrue.children(<span class="string">'li'</span>)
-truetruetrue.eq(<span class="number">1</span>)
-truetruetrue.next().text(<span class="string">'Hello from jQuery'</span>);
-</pre></td></tr></table></figure>
-
-<h2>parent() parents() closest()</h2>
-<p>HTML 实际上就是一个语法树，不懂语法树就想成家庭树，有爷爷奶奶老爸老妈儿子女儿孙子孙女。</p>
-<p>好，看个例子，今天我们想要移除 <code>li</code> 的父节点的类别</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(li).parent().removeClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>也可以显式指定要找的 parent 的类型：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(li).parent(<span class="string">'ul'</span>).removeClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>你可以使用浏览器的开发工具查看源代码来检查是否移除成功。</p>
-<p>现在让我们加入一个新样式：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>.container { color: green; }
-</pre></td></tr></table></figure>
-
-<p>刷新页面，整面绿油油。如果我不想要整片绿油油，我想要移除 parent 的类：container，</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(li).parent(<span class="string">'.container'</span>).removeClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>刷新页面，擦，没作用，这是因为这跟 direct children 一样，只会找到上一层的 parent，如果我把 parent 换成：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(li).parents(<span class="string">'.container'</span>).removeClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>注意那个 <strong>s</strong> ，这样就会像 <code>find</code> 一样，一直往上找。</p>
-<p>你也可以更具体的说，你要移除的是这个 <code>div.container</code> 元素:</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(li).parents(<span class="string">'div.container'</span>).removeClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>而这行代码等同于：</p>
-<figure class="highlight lang-javascript"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$(li).closest(<span class="string">'div.container'</span>).removeClass(<span class="string">'emphasis'</span>);
-</pre></td></tr></table></figure>
-
-<p>让我们到 <a href="http://api.jquery.com/" target="_blank">http://api.jquery.com/</a> 查查这个函数是干嘛使的。</p>
-<h2>.closest()</h2>
-<blockquote>
-<p>Get the first element that matches the selector, beginning at the current element and progressing up through the DOM tree.</p>
-</blockquote>
-<p>我们这个例子是，从 <code>$(li)</code> 开始往上爬 DOM 树，寻找第一个匹配 <code>(&#39;div.container&#39;)</code> 的元素。</p>
-<h2>.removeClass()</h2>
-<blockquote>
-<p>Remove a single class, multiple classes, or all classes from each element in the set of matched elements.</p>
-</blockquote>
-<p>移除匹配元素集合中的每一个元素的单一、多个或整个类别。</p>
-<h2>parents() 与 closest() 的差异？</h2>
-<p>其实是一个微妙的差异，你可以研读一下 API，或是这次我直接跟你说了吧：</p>
-<p><code>parents()</code> 会根据选择器条件，往上爬树，找出所有符合的。</p>
-<p><code>closest()</code> 只会根据选择器条件，找到最近符合的那一个。</p>
-<p>查询 API 与源代码是学习 jQuery 的不二法门。</p>
-<p>本篇结束。</p>
 
       
     </div>
