@@ -4,7 +4,7 @@
   <subtitle><![CDATA[C-x C-f...C-x C-s...]]></subtitle>
   <link href="http://lisp.es//atom.xml" rel="self"/>
   <link href="http://lisp.es/"/>
-  <updated>2013-09-22T05:59:16.917Z</updated>
+  <updated>2013-09-25T12:21:31.712Z</updated>
   <id>http://lisp.es//</id>
   <author>
     <name><![CDATA[Juanito Fatas]]></name>
@@ -16,13 +16,11 @@
     <link href="http://lisp.es/2013/09/22/2013-09-22-edge-ruby-on-rails-guides/"/>
     <id>http://lisp.es/2013/09/22/2013-09-22-edge-ruby-on-rails-guides/</id>
     <published>2013-09-22T05:51:57.000Z</published>
-    <updated>2013-09-22T05:59:09.000Z</updated>
-    <content type="html"><![CDATA[<p>Edge Ruby on Rails Guides 翻譯，目前有這幾篇：</p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/i18n-zh_TW.md" target="_blank">Rails Internationalization API</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_TW.md" target="_blank">Action View Form Helpers</a> <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/form-helpers-zh_CN.md" target="_blank">簡體中文</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_TW.md" target="_blank">Rails Database Migrations</a> <a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/migrations-zh_CN.md" target="_blank">簡體中文</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/engines-zh_TW.md" target="_blank">Getting Started with Engines</a></p>
-<p><a href="https://github.com/JuanitoFatas/Guides/blob/master//guides/edge-translation/rails-on-rack-zh_TW.md" target="_blank">Rails on Rack</a></p>
+    <updated>2013-09-25T12:21:21.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://edgeguides.rubyonrails.org" target="_blank">Edge Ruby on Rails Guides</a> 翻譯 (Rails 4 Edge)，目前有這幾篇：</p>
+<p>請參考目錄：<a href="https://github.com/JuanitoFatas/Guides/blob/master/guides/index.md" target="_blank">https://github.com/JuanitoFatas/Guides/blob/master/guides/index.md</a></p>
+<p>持續更新中。</p>
+<p>發現錯誤歡迎送 Pull Request。</p>
 ]]></content>
     <category scheme="http://lisp.es/tags/Rails/" term="Rails"/>
   </entry>
